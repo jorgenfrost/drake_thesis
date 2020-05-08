@@ -1,0 +1,5 @@
+data/*
+*.pdf
+*.png
+*.tex
+.drake/*
