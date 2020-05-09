@@ -1,34 +1,44 @@
-# This script does two things. First, it attaches product complexity values 
-# to the plant-product observations from the ASI data. Second, it computes
-# the plant-complexity values based on the weighted avg method and the 
-# max- or top-line complexity.
-# Author: Søren Post
+#' This functions does two things. First, it attaches product complexity values 
+#' to the plant-product observations from the ASI data. Second, it computes
+#' the plant-complexity values based on the weighted avg method and the 
+#' max (or top-line) complexity.
+#'
+#' @param product_complexity_data data frame: contains the fitness-complexity values. 
+#' needs a variable listing if an entry contains a product or a country. 
+#' @param plant_output_data data frame: contains the data on output products of the 
+#' plants in the ASI. This data frame needs to first have its product fixed. 
+#' @return data frame with plant-year observations of the average complexity and 
+#' maximum complexity.
 
 # TODO: Add fixed complexity vals (where value is the same for a product across years).
 
-library(tidyverse)
-library(here)
+get_plant_complexity <- function(product_complexity_data, plant_output_data) {
 
+	# check inputs
+	if (!is.data.frame(product_complexity_data)) {
+		stop("Error: `product_complexity_data` is not a data frame.")
+	} 
 
-# Read product data -----------------------------------------------
-output_path <- here("data/interim/asi/output_data_cleaned.rds")
-output_tbl <- readRDS(output_path)
+	if (!is.data.frame(plant_output_data)) {
+		stop ("Error: `plant_output_data` is not a data frame.")
+	}
 
-# Read complexity data --------------------------------------------
-product_complexity_path <-  here("data/processed/economic_complexity/fitness_complexity_rpca_hs96.csv")
-product_complexity_tbl <- read_csv(product_complexity_path) %>%
+# Prep data data --------------------------------------------
+
+product_complexity_tbl <- product_complexity_data %>%
 	filter(type == "product" & iteration == max(iteration)) %>%
 	select(
 		year,
 		hs96_code = id,
 		product_complexity = val
 		)
-
 # non-final iterations are for debugging.
+
+output_tbl <- plant_output_data
 
 # Define function to add complexity values to products ------------
 
-get_plant_complexity <- function(tbl) {
+calculate_plant_complexity <- function(tbl) {
 
 if(!all(c("qty_sold", "net_sale_val", "product_complexity", "year", "dsl") %in% names(tbl))) {
 	stop("Error: not all needed vars are present in tbl.")
@@ -75,20 +85,20 @@ output_tbl <- left_join(output_tbl, product_complexity_tbl, by = c("year" = "yea
 # Calculate strict and lenient plant complexity ---------------------
 
 strict_plant_complexity_tbl <- filter(output_tbl, !is.na(strict_hs96)) %>%
-	get_plant_complexity() %>%
+	calculate_plant_complexity() %>%
 	mutate(
 		match = "strict"
 		) 
 lenient_plant_complexity_tbl <- filter(output_tbl, !is.na(lenient_hs96)) %>%
-	get_plant_complexity() %>%
+	calculate_plant_complexity() %>%
 	mutate(
 		match = "lenient"
 		)
 
 joined_plant_complexity_tbl <- bind_rows(lenient_plant_complexity_tbl, strict_plant_complexity_tbl)
 
-# Write file ---------------------------------------------------------------
-out_path <- here("data/processed/asi/plant_complexity.rds")
-saveRDS(joined_plant_complexity_tbl, out_path)
+# Return file ---------------------------------------------------------------
+return(joined_plant_complexity)
 
+}
 # END
