@@ -1,10 +1,14 @@
 #' This veeeery long and tedious function cleans the data blocks from the 
 #' Annual Survey of Industries (ASI) into a format where variables are called
 #' the same in different years. There is a lot of variable renaming, type-fixing, 
-#' and recoding going on.
+#' and recoding going on. To get around an issue with the 8GB RAM present on my
+#' current machine being overclocked, the cleaned blocks are saved. The function 
+#' instead just returns their location as a list of strings.
 #'
+#' @param asi_files list: filenames of the blocks of all the ASI files.
+#' @return list of the files names written out.
 #' @export
-# TODO: Figure out returns in the function
+
 # Author: Søren Post
 
 # Structure:
@@ -19,7 +23,7 @@
 # TODO: Inkludér wages
 # TODO: Inkludér Gross sale val
 
-clean_asi_blocks <- function() {
+clean_asi_blocks <- function(asi_files) {
 
 ##################################################################
 ##             0: Define function and lookup tables             ##
@@ -981,14 +985,6 @@ block_variable_list <- list(
 
 print("Reading files.")
 
-# Get a list of all files from the ASI
-asi_files <- list.files(
-  here("data/external/asi/extracted"),
-  recursive = TRUE,
-  pattern = ".dta",
-  full.names = TRUE
-)
-
 # Read all the ASI files into a list of data frames ("data")
 # (takes a little time: 264 data blocks, 2GB)
 # For now, I limit myself to the samples after 1997
@@ -1042,6 +1038,7 @@ asi_nest <- asi_nest %>%
 ## ---------------------------------------------------------------
 ##                  2.2: Select block variables                 -
 ## ---------------------------------------------------------------
+print("Selecting block variables.")
 
 # I now select the proper variables for each block.
 # This is done by applying the select_block_vars function that
@@ -1059,7 +1056,38 @@ asi_nest <- asi_nest %>%
     )
   )
 
-return(asi_nest)
+##################################################################
+##                        3: Write files                        ##
+##################################################################
+
+print("Writing files to disk.")
+
+# Bind all years of the respective blocks together and write
+# to file.
+
+for (i in seq_along(unique(asi_nest$block))) {
+  current_block <- unique(asi_nest$block)[i]
+
+  block_tbl <- asi_nest %>%
+    filter(block == current_block) %>%
+    select(data) %>%
+    unnest(data)
+
+  write_fst(
+    x = block_tbl,
+    path = here(paste0("data/interim/asi/asi_block_", current_block, "_cleaned.fst"))
+  )
+
+  rm(block_tbl)
+}
+
+cleaned_files_ls <- list.files(
+	path = here("data/interim/asi"),
+	pattern = "cleaned",
+	full.names = TRUE
+	)
+
+return(cleaned_files_ls)
 
 } 
 
