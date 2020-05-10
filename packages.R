@@ -3,6 +3,7 @@ library(conflicted)
 library(dotenv)
 library(drake)
 
+library(fst)
 library(tidyverse)
 library(magrittr)
 library(here)

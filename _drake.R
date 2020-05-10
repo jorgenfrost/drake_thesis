@@ -1,4 +1,3 @@
-# Load your packages, e.g. library(drake).
 source("./packages.R")
 
 ## Load your R files
@@ -12,5 +11,3 @@ drake_config(the_plan,
              lock_envir = FALSE)
 
 drake::make(the_plan)
-
-
