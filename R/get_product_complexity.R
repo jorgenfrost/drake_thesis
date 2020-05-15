@@ -3,7 +3,7 @@
 #' the script is a joined data frame of country-fitness and product 
 #' complexity values.
 #' 
-#' @param data data frame: country-product-year RCA/RpcA data, binary 
+#' @param df data frame: country-product-year RCA/RpcA data, binary 
 #' for normal version, actual value for weighted.
 #' @param its integer: the number of iterarations to run the algorithm over.
 #' @param mean_value logical: whether the input data frame sans over several 

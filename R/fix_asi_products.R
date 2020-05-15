@@ -6,7 +6,7 @@
 #' the re-joined output and input parts into HS07 and evaluate the loss
 #' of output and obsevations under the "strict" and the "lenient" approach.
 #'
-#' @param output_data data frame: the cleaned productt output block (J) 
+#' @param output_data data frame: the cleaned product output block (J) 
 #' from the ASI data.
 #' @param return character: a string to choose what the function returns. 
 #' Possible values are "main", "verbose", and "summary". 
@@ -16,6 +16,8 @@
 #' (useful for debugging)
 #' - "summary" is a list of data frames that evaluate the loss of output- and observations 
 #' coverting between the product-classifications.
+#' @ plant_data data frame: the cleaned plant block from the base sample list. Used
+#' for evaluating observations losses by states and assigning weights.
 #' @param cpc2_path charatcter: path to table with codes and names
 #' of CPC-2 classification. From UNSD.
 #' 
@@ -27,10 +29,8 @@
 
 # TODO: Hvor i svinget er det at der ryger nogle observationer?
 
-fix_asi_products <- function(
-  output_data,
-  return = "main",
-  cpc2_path = here::here("data/external/concord_tables/product_codes/CPC_Ver_2_english_structure.txt")
+fix_asi_products <- function(output_data, plant_data = NULL, return = "main",
+  cpc2_path = here("data/external/concord_tables/product_codes/CPC_Ver_2_english_structure.txt")
 ) {
   
   # check inputs
@@ -52,6 +52,7 @@ fix_asi_products <- function(
   asicc_to_cpc2_tbl <- get_asicc_cpc2_concordance()
   cpc2_to_hs07_tbl <- get_cpc2_hs07_concordance()
   hs07_to_hs96_tbl <- get_hs07_hs96_concordance()
+
   
   # Separate observation by classification ------------------------
   
@@ -223,12 +224,19 @@ fix_asi_products <- function(
   ) 
   
   if (return == "summary") {
+	  	
     ##################################################################
     ##           4: Evaluate loss of output, observations           ##
     ##################################################################
     
     # How many observations are lost when converting products? --------
     
+   # Add state name and id to output tbl
+	  plant_tbl <- plant_data %>% 
+		  select(year, dsl, new_state_code, state_name, multiplier)
+
+	  output_tbl <- output_tbl %>% 
+		  left_join(plant_tbl, by = c("year", "dsl"))
     # Across years
     year_obs_sum_tbl <- output_tbl %>%
       group_by(year) %>%
@@ -351,6 +359,7 @@ fix_asi_products <- function(
         group = year,
         classification = lenient_hs96
       )
+
     # Join to summary table
     year_output_sum_tbl <- year_output_strict_cpc2 %>%
       left_join(year_output_lenient_cpc2) %>%
@@ -416,7 +425,7 @@ fix_asi_products <- function(
     summary_list <- list(
       "year_obs_sum_tbl" = year_obs_sum_tbl,
       "state_obs_sum_tbl" = state_obs_sum_tbl,
-      "year_output_sum_tlb" = year_output_sum_tbl,
+      "year_output_sum_tbl" = year_output_sum_tbl,
       "state_output_sum_tbl" = state_output_sum_tbl
     )
     
@@ -447,4 +456,4 @@ fix_asi_products <- function(
     
   }
   # END 
-} 
+}

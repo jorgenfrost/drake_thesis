@@ -4,9 +4,11 @@ the_plan <-
     ## Plan targets in here.
     
     ## Complexity: preferred specification
-    pop_tbl = clean_pop_data(min_year = 1999),
-    hs96_export_raw_tbl = vroom::vroom(
-      file = here::here("data/external/international_trade/year_origin_hs96_4.tsv"),
+    pop_tbl = clean_pop_data(
+      min_year = 1999
+    ),
+    hs96_export_raw_tbl = vroom(
+      file = file_in("./data/external/international_trade/year_origin_hs96_4.tsv"),
       delim = "\t"
     ),
     hs96_export_cleaned_tbl = clean_export_data(
@@ -19,7 +21,7 @@ the_plan <-
       metric = "RpcA",
       mean_val = FALSE
     ),
-    hs96_product_complexity_tbl = get_product_complexity(
+    hs96_complexity_tbl = get_product_complexity(
       df = hs96_rpca_tbl,
       its = 50,
       mean_value = FALSE
@@ -42,45 +44,117 @@ the_plan <-
       return = "main"
     ),
     plant_complexity_tbl = get_plant_complexity(
-      product_complexity_data = hs96_product_complexity_tbl,
+      product_complexity_data = hs96_complexity_tbl,
       plant_output_data = output_hs96_tbl
     ),
-    plant_input_concentration = placeholder_fun(),
-    plant_input_share = placeholder_fun(),
-    
+    plant_labour_input_tbl = get_labour_input_share(
+						    plant_tbl = asi_base_sample_ls$plant_tbl
+						    ),
+	plant_int_input_tbl = get_int_input_share(
+						    plant_tbl = asi_base_sample_ls$plant_tbl,
+						    input_tbl = asi_base_sample_ls$input_tbl
+						    ),
     # Energy data: preferred
     energy_shortages_tbl = clean_energy_shortages(
       new_cea_files <- list.files(
         here("data/external/power_supply_india/csv/"),
         pattern = "*.csv",
         full.names = TRUE
-	),
-	min_year = 1999,
-	old_avg_raw = read_csv(
-		file_in("./data/external/allcott_energy_data_india/india_energy_data/allcott_EnergyRequirement.csv")
-		),
-	old_peak_raw = read_csv(
-		file_in("./data/external/allcott_energy_data_india/india_energy_data/allcott_PeakDemand.csv")
-		),
-	avg_2003_data = read_csv(
-		file_in("./data/external/allcott_energy_data_india/india_energy_data/energy_requirement_2003_data.csv")
-		),
-	peak_2003_data = read_csv(
-		file_in("./data/external/allcott_energy_data_india/india_energy_data/peak_demand_2003_data.csv")
-		)
-	),
-
-    # Clean IHDS data
-    ihds_tbl = placeholder_fun(),
-
-    # Clean enterprise surveys 
-    es14_tbl = placeholder_fun(),
-    es??_tbl = placeholder_fun(),
-
-    # Energy reliability
-    ihds_energy_reliability = placeholder_fun(),
-    es14_energy_reliability = placeholder_fun()
+      ),
+      min_year = 1999,
+      old_avg_raw = read_csv(
+        file_in("./data/external/allcott_energy_data_india/india_energy_data/allcott_EnergyRequirement.csv")
+      ),
+      old_peak_raw = read_csv(
+        file_in("./data/external/allcott_energy_data_india/india_energy_data/allcott_PeakDemand.csv")
+      ),
+      avg_2003_data = read_csv(
+        file_in("./data/external/allcott_energy_data_india/india_energy_data/energy_requirement_2003_data.csv")
+      ),
+      peak_2003_data = read_csv(
+        file_in("./data/external/allcott_energy_data_india/india_energy_data/peak_demand_2003_data.csv")
+      )
+    ),
     
+    # Clean IHDS data
+    ihds_tbl = clean_ihds(
+      ihds05hh_path = file_in("./data/external/ihds/ihds_2005/ICPSR_22626/DS0002/22626-0002-Data.dta"),
+      ihds12hh_path = file_in("./data/external/ihds/ihds_2012/ICPSR_36151/DS0002/36151-0002-Data.dta")
+    ),
+    
+    # Clean enterprise surveys 
+    es14_tbl = clean_es14(
+			  es14_path = file_in("./data/external/es_india/India-2014-full data-.dta/India-2014-full-data-.dta"),
+			  state_conc_path = file_in("./data/external/concord_tables/es_state_codes/esi14_to_asi_state_codes.csv")
+			  ),
+		    es05_tbl = clean_es05(
+					  es05_path <- file_in("./data/external/es_india/India-2005--full data-.dta/India-2005--full-data-.dta"),
+					  state_conc_path <- file_in("./data/external/concord_tables/es_state_codes/es05_to_asi_state_codes.csv")
+					  ),
+    es_int_ls = clean_es_international(
+      es_file = file_in("./data/external/es_international/enterprise_surveys_int.xlsx")
+    ),
+    
+    # Energy reliability
+		    #     ihds_energy_reliability = placeholder_fun(), # TODO:
+		    #     es14_energy_reliability = placeholder_fun(), # TODO:
+    
+    # GDP data
+    gdp_cap_tbl = clean_gdp_cap(
+				gdp_cap_path = file_in("./data/external/gpd_cap_international/gdp_cap_ppp_constant_2011_int_dollars.csv"),
+				min_year = 1999
+				),
+		resource_rents_tbl = clean_resource_rents(
+							  path = file_in("./data/external/resource_rents/natural_resource_rents.csv"),
+							  min_year = 1999
+							  ),
+		    gdp_tbl = clean_gdp(
+					gdp_path = file_in("./data/external/gdp_international/gdp_ppp_constant_2011_int_dollars.csv"),
+					min_year = 1999
+					),
+
+
+    # Plots
+   disruption_plot = plot_disruptions(
+				      es_ls = es_int_ls,
+				      fit = hs96_complexity_tbl,
+				      gdp_cap = gdp_cap_tbl,
+				      write_to = file_out("./doc/figures/introduction_disruption_plot.pdf")
+				      ),
+		    gdp_cap_fitness_plot = plot_gdp_cap_fitness(
+				      fit = hs96_complexity_tbl,
+				      gdp_cap = gdp_cap_tbl,
+				      ref_year = 2010,
+				      resource_rents = resource_rents_tbl,
+				      write_to = file_out("./doc/figures/introduction_gdp_cap_fitness_plot.pdf")
+				      ),
+		    richest_poorest_exporters_plot = plot_richest_poorest_exporters(
+					complexity = hs96_complexity_tbl,
+					gdp_cap = gdp_cap_tbl,
+					rpca = hs96_rpca_tbl,
+					ref_year = 2010,
+					write_to = file_out("./doc/figures/framework_richest_poorest_exporters.pdf")
+					),
+		    
+		    # Evaluation functions
+		    export_filter_eval = evaluate_export_filter(
+								tbl_clean = hs96_export_cleaned_tbl,
+								tbl_raw = hs96_export_raw_tbl,
+								pop_tbl = pop_tbl,
+								gdp_tbl = gdp_tbl,
+								ref_year = 2017
+								)
+		    #                     product_concordance_eval = evaluate_product_concordance( # has to be non-concorded output tbl
+		    #                                                                             output_tbl = asi_base_sample_ls$output_tbl,
+		    #                                                                             plant_tbl = asi_base_sample_ls$plant_tbl
+		    #                                                                             )
+
+
+
+
+
+
+
 
     #     asi_base_sample = placeholder_fun(),
     #     asi_plant_complexity = placeholder_fun(),
