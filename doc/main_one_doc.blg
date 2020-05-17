@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_one_doc.aux
+The style file: apalike.bst
+A level-1 auxiliary file: setup/temp_title.aux
+A level-1 auxiliary file: setup/listofcontents.aux
+Database file #1: setup/collection.bib
+Warning--empty journal in adam_economic_2019
+You've used 32 entries,
+            1935 wiz_defined-function locations,
+            660 strings with 9216 characters,
+and the built_in function-call counts, 12047 in all, are:
+= -- 1196
+> -- 481
+< -- 18
++ -- 177
+- -- 158
+* -- 1047
+:= -- 2141
+add.period$ -- 94
+call.type$ -- 32
+change.case$ -- 238
+chr.to.int$ -- 31
+cite$ -- 33
+duplicate$ -- 424
+empty$ -- 827
+format.name$ -- 204
+if$ -- 2287
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 27
+newline$ -- 160
+num.names$ -- 97
+pop$ -- 175
+preamble$ -- 1
+purify$ -- 239
+quote$ -- 0
+skip$ -- 324
+stack$ -- 0
+substring$ -- 911
+swap$ -- 25
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 188
+warning$ -- 1
+while$ -- 105
+width$ -- 0
+write$ -- 404
+(There was 1 warning)

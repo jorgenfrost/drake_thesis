@@ -20,7 +20,6 @@
 # extract the name of the block and put in the list
 # change variable types
 
-# TODO: Inkludér wages
 # TODO: Inkludér Gross sale val
 
 clean_asi_blocks <- function(asi_files) {
@@ -147,6 +146,12 @@ clean_asi_blocks <- function(asi_files) {
             total_production_cost = NA # 1999 sample does not contain this var
           )
         # end block A
+      } else if (current_block == "B") {
+	      x <- x %>% 
+		      rename(
+			     initial_production = b_itm5
+			     )
+	# end block B
       } else if (current_block == "E") {
         x <- x %>%
           rename(
@@ -171,16 +176,24 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = h_itm1,
             item_code = h_itm3,
+	    qty_cons = h_itm5,
             purchase_val = h_itm6
-          )
+          ) %>%
+      mutate(
+	     unit_code = NA # 1999 sample does not contain this var
+	     )
         # end block H
       } else if (current_block == "I") {
         x <- x %>%
           rename(
             sno = i_itm1,
             item_code = i_itm3,
+	    qty_cons = i_itm5,
             purchase_val = i_itm6
-          )
+          ) %>%
+      mutate(
+	     unit_code = NA # 1999 sample does not contain this var
+	     )
         # end block I
       } else if (current_block == "J") {
         x <- x %>%
@@ -188,8 +201,12 @@ clean_asi_blocks <- function(asi_files) {
             sno = j_itm1,
             item_code = j_itm2,
             qty_sold = j_itm4,
+	    gross_sale_val = j_itm5,
             net_sale_val = j_itm10
-          )
+          ) %>%
+      mutate(
+	     unit_code = NA # 1999 sample does not contain this var
+	     )
         # end block J
       }
     }
@@ -209,6 +226,12 @@ clean_asi_blocks <- function(asi_files) {
             total_production_cost = e_itm11
           )
         # end block A
+      } else if (current_block == "B") {
+	      x <- x %>% 
+		      rename(
+			     initial_production = b_itm5
+			     )
+	# end block B
       } else if (current_block == "E") {
         x <- x %>%
           rename(
@@ -231,6 +254,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = h_itm1,
             item_code = h_itm3,
+	    unit_code = h_itm4,
+	    qty_cons = h_itm5,
             purchase_val = h_itm6
           )
         # end block H
@@ -239,6 +264,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = i_itm1,
             item_code = i_itm3,
+	    unit_code = i_itm4,
+	    qty_cons = i_itm5,
             purchase_val = i_itm6
           )
         # end block I
@@ -247,7 +274,9 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = j_itm1,
             item_code = j_itm3,
+	    unit_code = j_itm4,
             qty_sold = j_itm6,
+	    gross_sale_val = j_itm7,
             net_sale_val = j_itm12
           )
         # end block J
@@ -269,6 +298,12 @@ clean_asi_blocks <- function(asi_files) {
             total_production_cost = e_itm_12
           )
         # end block A
+      } else if (current_block == "B") {
+	      x <- x %>% 
+		      rename(
+			     initial_production = b_itm_6
+			     )
+	# end block B
       } else if (current_block == "E") {
         x <- x %>%
           rename(
@@ -291,6 +326,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = h_itm1,
             item_code = h_itm3,
+	    unit_code = h_itm4,
+	    qty_cons = h_itm5,
             purchase_val = h_itm6
           )
         # end block H
@@ -299,6 +336,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = i_itm1,
             item_code = i_itm3,
+	    unit_code = i_itm4,
+	    qty_cons = i_itm5,
             purchase_val = i_itm6
           )
         # end block I
@@ -307,7 +346,9 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = j_itm1,
             item_code = j_itm3,
+	    unit_code = j_itm4,
             qty_sold = j_itm6,
+	    gross_sale_val = j_itm7,
             net_sale_val = j_itm12
           )
         # end block J
@@ -329,6 +370,12 @@ clean_asi_blocks <- function(asi_files) {
             total_production_cost = e_itm12
           )
         # end block A
+      } else if (current_block == "B") {
+	      x <- x %>% 
+		      rename(
+			     initial_production = b_itm6
+			     )
+	# end block B
       } else if (current_block == "E") {
         x <- x %>%
           rename(
@@ -351,6 +398,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = h_itm1,
             item_code = h_itm3,
+	    unit_code = h_itm4,
+	    qty_cons = h_itm5,
             purchase_val = h_itm6
           )
         # end block H
@@ -359,6 +408,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = i_itm1,
             item_code = i_itm3,
+	    unit_code = i_itm4,
+	    qty_cons = i_itm5,
             purchase_val = i_itm6
           )
         # end block I
@@ -367,7 +418,9 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = j_itm1,
             item_code = j_itm3,
+	    unit_code = j_itm4,
             qty_sold = j_itm6,
+	    gross_sale_val = j_itm7,
             net_sale_val = j_itm12
           )
         # end block J
@@ -389,6 +442,12 @@ clean_asi_blocks <- function(asi_files) {
             total_production_cost = e_itm12
           )
         # end block A
+      } else if (current_block == "B") {
+	      x <- x %>% 
+		      rename(
+			     initial_production = b_itm6
+			     )
+	# end block B
       } else if (current_block == "E") {
         x <- x %>%
           rename(
@@ -411,6 +470,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = h_itm1,
             item_code = h_itm3,
+	    unit_code = h_itm4, 
+	    qty_cons = h_itm5,
             purchase_val = h_itm6
           )
         # end block H
@@ -419,6 +480,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = i_itm1,
             item_code = i_itm3,
+	    unit_code = i_itm4, 
+	    qty_cons = i_itm5,
             purchase_val = i_itm6
           )
         # end block I
@@ -427,7 +490,9 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = j_itm1,
             item_code = j_itm3,
+	    unit_code = j_itm4,
             qty_sold = j_itm6,
+	    gross_sale_val = j_itm7,
             net_sale_val = j_itm12
           )
         # end block J
@@ -449,6 +514,12 @@ clean_asi_blocks <- function(asi_files) {
             total_production_cost = e_itm_12
           )
         # end block A
+      } else if (current_block == "B") {
+	      x <- x %>% 
+		      rename(
+			     initial_production = b_itm6
+			     )
+	# end block B
       } else if (current_block == "E") {
         x <- x %>%
           rename(
@@ -470,6 +541,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = h_itm1,
             item_code = h_itm3,
+	    unit_code = h_itm4,
+	    qty_cons = h_itm5,
             purchase_val = h_itm6
           )
         # end block H
@@ -478,6 +551,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = i_itm1,
             item_code = i_itm3,
+	    unit_code = i_itm4,
+	    qty_cons = i_itm5,
             purchase_val = i_itm6
           )
         # end block I
@@ -486,7 +561,9 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = j_itm1,
             item_code = j_itm3,
+	    unit_code = j_itm4,
             qty_sold = j_itm6,
+	    gross_sale_val = j_itm7,
             net_sale_val = j_itm12
           )
         # end block J
@@ -508,6 +585,12 @@ clean_asi_blocks <- function(asi_files) {
             total_production_cost = e_itm12
           )
         # end block A
+      } else if (current_block == "B") {
+	      x <- x %>% 
+		      rename(
+			     initial_production = b_itm6
+			     )
+	# end block B
       } else if (current_block == "E") {
         x <- x %>%
           rename(
@@ -530,6 +613,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = h_itm1,
             item_code = h_itm3,
+	    unit_code = h_itm4,
+	    qty_cons = h_itm5,
             purchase_val = h_itm6
           )
         # end block H
@@ -538,6 +623,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = i_itm1,
             item_code = i_itm3,
+	    unit_code = i_itm4,
+	    qty_cons = i_itm5,
             purchase_val = i_itm6
           )
         # end block I
@@ -546,7 +633,9 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = j_itm1,
             item_code = j_itm3,
+	    unit_code = j_itm4,
             qty_sold = j_itm6,
+	    gross_sale_val = j_itm7,
             net_sale_val = j_itm12
           )
         # end block J
@@ -568,6 +657,12 @@ clean_asi_blocks <- function(asi_files) {
             total_production_cost = e_itm14
           )
         # end block A
+      } else if (current_block == "B") {
+	      x <- x %>% 
+		      rename(
+			     initial_production = b_itm7
+			     )
+	# end block B
       } else if (current_block == "E") {
         x <- x %>%
           rename(
@@ -590,6 +685,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = h_itm1,
             item_code = h_itm3,
+	    unit_code = h_itm4,
+	    qty_cons = h_itm5,
             purchase_val = h_itm6
           )
         # end block H
@@ -598,6 +695,8 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = i_itm1,
             item_code = i_itm3,
+	    unit_code = i_itm4,
+	    qty_cons = i_itm5,
             purchase_val = i_itm6
           )
         # end block I
@@ -606,7 +705,9 @@ clean_asi_blocks <- function(asi_files) {
           rename(
             sno = j_itm1,
             item_code = j_itm3,
+	    unit_code = j_itm4,
             qty_sold = j_itm6,
+	    gross_sale_val = j_itm7,
             net_sale_val = j_itm12
           )
         # end block J
@@ -792,10 +893,6 @@ clean_asi_blocks <- function(asi_files) {
       "value_elec_generat_sold", # val_elec_gen_sold
       "var_stok_sem_fin_goods", # var_st_sem_fin
       "var_instock_ofsemi_finished_goods", # var_st_sem_fin #
-      "rateper_unit", # rate_per_unit
-      "unitcode", # unit_code
-      "unit_of_qty", # unit_code
-      "unit_quantity_code", # unit_code
       "pur_val", # purchase_val
       "purchase_value", # purchase_val
       "qty_consumed", # qty_cons
@@ -820,7 +917,6 @@ clean_asi_blocks <- function(asi_files) {
       "val_elect_gen", # val_elec_gen_sold
       "var_semi_fin", # var_st_semi_fin
       "item",
-      "uom",
       "per_unit_net_sal",
       "manday_manu",
       "avg_pers_work",
@@ -837,7 +933,19 @@ clean_asi_blocks <- function(asi_files) {
       "prod_cost", # see above
       "wages_sal", # wages
       "wagessalaries_rs", # wages
-      "wages_salary" # wages
+      "wages_salary", # wages
+      "uom", #unit_code
+      "unitcode", # unit_code
+      "qtycons", # qty_cons
+      "unit_qty", # unit_code
+      "gross_sal_val",
+      "grosssalval",
+      "gross_salevalue",
+      "init_prod", # initial production
+      "inti_prod", # initial production
+      "yearof_in_prod",
+      "yr_initial_production",
+      "unit_quantity_code"
     )
   ) %>%
     mutate(
@@ -914,6 +1022,18 @@ clean_asi_blocks <- function(asi_files) {
         bad_var == "wages_sal" ~ "wages",
         bad_var == "wagessalaries_rs" ~ "wages",
         bad_var == "wages_salary" ~ "wages",
+	bad_var == "uom" ~ "unit_code",
+	bad_var == "unitcode" ~ "unit_code",
+	bad_var == "qtycons" ~ "qty_cons",
+	bad_var == "unit_qty" ~ "unit_code",
+	bad_var == "gross_sal_val" ~ "gross_sale_val",
+	bad_var == "grosssalval" ~ "gross_sale_val",
+	bad_var == "gross_salevalue" ~ "gross_sale_val",
+	bad_var == "init_prod" ~ "initial_production",
+	bad_var == "inti_prod" ~ "initial_production",
+	bad_var == "yearof_in_prod" ~ "initial_production",
+	bad_var == "yr_initial_production" ~ "initial_production",
+	bad_var == "unit_quantity_code" ~ "unit_code",
         TRUE ~ NA_character_
       )
     )
@@ -937,6 +1057,12 @@ clean_asi_blocks <- function(asi_files) {
       "total_production_cost", # total cost of production
       "multiplier" # sample weight
     ),
+    B = c(
+	  "year",
+	  "blk",
+	  "dsl",
+	  "initial_production"
+	  ),
     E = c(
       "year",
       "blk",
@@ -959,6 +1085,8 @@ clean_asi_blocks <- function(asi_files) {
       "dsl",
       "sno", # serial no
       "item_code", # NPCMS-11 code / ASICC code
+      "unit_code", # unit 
+      "qty_cons", # qty consumed
       "purchase_val" # purchase value
     ),
     I = c(
@@ -967,6 +1095,8 @@ clean_asi_blocks <- function(asi_files) {
       "dsl",
       "sno", # serial no
       "item_code", # NPCMS-11 code / ASICC code
+      "unit_code", # unit 
+      "qty_cons", # qty consumed
       "purchase_val" # purchase value at delivery
     ),
     J = c(
@@ -974,8 +1104,10 @@ clean_asi_blocks <- function(asi_files) {
       "blk",
       "dsl",
       "item_code",
+      "unit_code",
       "qty_sold",
-      "net_sale_val"
+      "net_sale_val",
+      "gross_sale_val"
     )
   )
   
@@ -999,7 +1131,7 @@ clean_asi_blocks <- function(asi_files) {
         pattern = "[0-9]{4}"
       ) %>% as.numeric(),
     ) %>%
-    filter(survey_start > 1997)
+    filter(survey_start > 1998)
   
   ## ---------------------------------------------------------------
   

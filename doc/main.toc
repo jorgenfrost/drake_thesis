@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Introduction and background}{1}%
+\contentsline {section}{\numberline {2}Conceptual framework}{3}%
+\contentsline {subsection}{\numberline {2.1}Product complexity}{3}%
+\contentsline {subsection}{\numberline {2.2}Production networks and economic complexity}{4}%
+\contentsline {section}{\numberline {3}Research design}{9}%
+\contentsline {subsection}{\numberline {3.1}Research hypotheses}{9}%
+\contentsline {subsection}{\numberline {3.2}Methods}{9}%
+\contentsline {subsubsection}{\numberline {3.2.1}Key variables}{9}%
+\contentsline {subsection}{\numberline {3.3}Limitations}{11}%
+\contentsline {subsubsection}{\numberline {3.3.1}Endogeneity}{11}%
+\contentsline {subsubsection}{\numberline {3.3.2}Modifiable Area Unit Problem}{12}%
+\contentsline {subsubsection}{\numberline {3.3.3}Attenuation bias}{12}%
+\contentsline {section}{\numberline {2}Data}{3}%
+\contentsline {subsection}{\numberline {2.1}International trade}{3}%
+\contentsline {subsection}{\numberline {2.2}Annual Survey of Industries (ASI)}{3}%
+\contentsline {subsection}{\numberline {2.3}Energy descriptives}{6}%
+\contentsline {section}{\numberline {A}RCA and RpcA}{15}%
+\contentsline {subsection}{\numberline {A.1}Distribution of comparative advantage}{16}%
+\contentsline {subsection}{\numberline {A.2}Significance for complexity metrics}{18}%
+\contentsline {section}{\numberline {B}Which algorithm? Fitness-Complexity and Hausmann-Hidalgo}{21}%
+\contentsline {subsection}{\numberline {.1}Cleaning international trade data}{8}%
+\contentsline {subsection}{\numberline {.2}Cleaning Annual Survey of Industries (ASI)}{8}%
+\contentsline {subsection}{\numberline {.3}Product concordance for ASI}{8}%

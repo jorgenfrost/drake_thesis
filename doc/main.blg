@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: apalike.bst
+A level-1 auxiliary file: setup/temp_title.aux
+A level-1 auxiliary file: setup/listofcontents.aux
+A level-1 auxiliary file: introduction/introduction.aux
+A level-1 auxiliary file: framework/framework.aux
+A level-1 auxiliary file: methods/methods.aux
+A level-1 auxiliary file: data/data.aux
+A level-1 auxiliary file: analysis/analysis.aux
+A level-1 auxiliary file: appendix/rca.aux
+A level-1 auxiliary file: appendix/fc_vs_hh_algorithm.aux
+A level-1 auxiliary file: appendix/data_cleaning.aux
+Database file #1: setup/collection.bib
+Warning--empty journal in adam_economic_2019
+You've used 33 entries,
+            1935 wiz_defined-function locations,
+            673 strings with 9477 characters,
+and the built_in function-call counts, 12311 in all, are:
+= -- 1225
+> -- 482
+< -- 19
++ -- 177
+- -- 158
+* -- 1059
+:= -- 2193
+add.period$ -- 100
+call.type$ -- 33
+change.case$ -- 242
+chr.to.int$ -- 32
+cite$ -- 34
+duplicate$ -- 438
+empty$ -- 850
+format.name$ -- 203
+if$ -- 2341
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 29
+newline$ -- 167
+num.names$ -- 100
+pop$ -- 178
+preamble$ -- 1
+purify$ -- 244
+quote$ -- 0
+skip$ -- 334
+stack$ -- 0
+substring$ -- 923
+swap$ -- 26
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 192
+warning$ -- 1
+while$ -- 107
+width$ -- 0
+write$ -- 421
+(There was 1 warning)

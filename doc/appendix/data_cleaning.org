@@ -1,0 +1,46 @@
+#+TITLE: data_cleaning
+
+* Products
+
+The annual survey of industries uses two distinct schemes to classifying products. Before 2010 the ASI lists all products in Annual Survey of Industry Classification Codes (ASICC). Since 2010-11 the National Product Classification for Manufacturing Sector (NPCMS-2011) has been used to classify products. The NPCMS is directly related to the Central Product Classification v. 2 (CPCv2) scheme, which is an internationally accepted standard for classifying industrial products (see https://unstats.un.org/unsd/classifications/Family/Detail/1074). UNSTATS publishes concordence tables between the CPCv2 and the Harmonized systems
+
+
+For the partial matches, I use the exploit the subset of the plants that are observed in multiple years. By using those plants that are observed in the ASICC-years and in the NPCMS-years I map the ASICC products that are not perfectly mapped in by the offical concordence.
+
+* TODO
+- [ ] Find Alcott et al filtering.
+- [ ] Download IDHS data 1, 2 and link.
+- [ ]
+
+* Electricity
+
+** Indian Human Development Survey
+The India Human Development Survey (IHDS) is a nationally representative, multi-topic panel survey of 41,554 households in 1503 villages and 971 urban neighborhoods across India. The first round of interviews were completed in 2004-5; data are publicly available through ICPSR. A second round of IHDS reinterviewed most of these households in 2011-12 (N=42,152) and data for same can be found here.
+
+** Enterprise Surveys
+
+The India enterprise survey is stratified at three levels: industry (2 digit NIC), estamblishment size(small = 5-19 empl; medium = 20-99 empl; large > 99 empl), and region (23 states; delhi is its own state, some of the smallest are not including and som are aggreagted).
+
+Important variables:
+  - Variable a3x indicates the actual location of the establishment. There may be divergences between the location in the sampling frame and the actual location, as establishments may be listed in one place but the actual physical location is in another place.
+  - Variable 11, 16, and 18 are more accurate size indicators than the stratification variable.
+
+
+* TODO IHDS linking surveys
+* TODO IHDS Electricity by districts, and states
+* TODO India nightlights: download village data and aggregate to state
+* DONE Download india enterprise survey data
+* TODO Get overview on the enterprise survey data (are they representetative on state level?); what variables exists?
+* TODO Alcott et al filter
+* TODO Extend Alcott et al series using the downloaded CEA reports
+
+* DATA OVERVIEW
+| Source                     | Purp                 | Process                                                      |
+|----------------------------+----------------------+--------------------------------------------------------------|
+| CEA                        | extend energy series |                                                              |
+| IHDS                       | eval energy data     |                                                              |
+| Nightlights                | eval energy data     |                                                              |
+| Estimated demand shortages | main energy variable |                                                              |
+| Enterprise survey          | eval energy data     |                                                              |
+| International trade data   | complexity           |                                                              |
+| ASI                        | products             | Match products + use panel data to match un-matched products |
