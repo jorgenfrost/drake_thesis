@@ -1,0 +1,37 @@
+\subsection{Cleaning international trade data}%l
+\label{sub:cleaning_international_trade_data}
+
+The data in international trade comes the BACI database maintained by CEPII (build on raw data from UN COMTRADE). CEPII cleans the data using the their own methodology. They exploit that a trade flow is usally reported by both the importer and the exporter. This makes it possible to assign a reliability ranking to each reporter, which can be used to give weights to different soruces of information, giving better export observations \citep{gualier_baci_2010}. 
+
+To minimize the year-to-year noise, I remove city-sized economies and the smallest exporters. To be included in the final sample, an economy must have a population of at least 1 million in 2005 and export for at least 1 billion current USD in 2005. As for the choice of reference year, the prerable year would have been the sample mid-year, around 2008, but the financial crash leaves exports unrepresentative. The sample is not very sensitive to changing the reference year.
+
+In addition, I remove a few countries that supply highly unreliable trade information (Iraq, Afghanistan, and Chad) and a few products that are not being exported at all during the sample (9704 \footnote{"Stamps, postage or revenue; stamp-postmarks, first-day covers, postal stationery (stamped paper) and like, used, or if unused not of current or new issue in the country to which they are destined"}, 2527 \footnote{"Natural cryolite; natural chiolite"}, 1403 \footnote{"Vegetable materials of a kind used primarily in brooms or brushes; (eg broomcorn, piassava, couch-grass and istle), whether or not in hanks or bundles"}). All products that are exported by a country for less than 1000 dollars in a given year are set to 0. 
+
+The original export data covers 221 countries and "country-like" regions. After cleaning, 120 countries remains. These remaining countries covers 92 percent of the total export in the raw data, 94 percent of population in the original data, and 98 percent of the GDP in the original data. 
+
+\subsection{Cleaning Annual Survey of Industries (ASI)}%
+\label{sub:cleaning_annual_survey_of_industries_asi}
+
+The ASI is distributed by the Ministry of Statistics and Programme Implementation, Government of India, (MOSPI) as ten blocks for every year. These blocks require substantial cleaning and harmonization of variables. 
+
+TODO: 
+- I remove non-open factories
+- I remove observations from ... states.
+- ? 
+
+\subsection{Product concordance for ASI}%
+\label{sub:product_concordance_asi}
+
+As mentioned in the data-section, the ASI lists products according to two different classification methods. In earlier years (before 2010) the ASICC classification is used, whereas later years lists product by their NPCMS-2011 code. The standard nomenclature for internationa trade, however, is the Harmonized System classification (HS). Since I assign complexity to plants by their the products they produce, and since I calculate the complexity of products by their position in the internatinal trade network, I need to map the HS system to the codes used in the ASI.
+
+This is rather round-about process. The reason behind the shift from ASICC to NPCMS-2011 is that the early scheme was severely flawed (see --- cite, for discussion). This means that the mapping between ASICC and NPCMS-2011 is imperfect. The NPCMS-2011 mapping is based directly on the international standard Central Product Classification, which again is different from the Harmonized System used in trade-accounting. I first match all products from the ASICC years to the NPCMS-2011 classification with the concordance table provided by MOSPI \footnote{http://www.csoisw.gov.in/CMS/En/1027-npcms-national-product-classification-for-manufacturing-sector.aspx}. I then turn the NPCMS-2011 codes into the CPC-2 classification by removing the last two digits (which are India specific). I use the conocordance table supplied by UNSD to map the CPC-2 codes to HS-2007. Finally, I use turn the HS-2007 codes into HS-1996 to match the trade data. 
+
+Often, one product code from the source classification maps to two different codes in the destination classifications. There is no way to solve this issue completely. Instead, I create two mappings: a "strict" and a "lenient" match. The "strict" match uses only products that have a non-partial match and leaves other products as missing. The "lenient" appraoch assigns the first of the partial mappings as a match. Since the difference is usually quite small between partially mapped products, is is usually feasible to purposely "missassign" the products to a mapping that exists, rather than drop it altogether. For instance, the ASICC listings of "Lobsters, processed/frozen" (11329), "Prawns, processed/frozen" (11331), "Shrimps, processed/frozen" (11332) all map to two different NPCMS-2011 codes: "Crustaceans, frozen" (212500) and "Crustaceans, otherwise prepared" (212700). Similarly, "Butter" (11411) maps to three different kinds of butter (based on cattle-milk, buffalo-milk, or other milk) in the NPCMS-2011 system. While not particularly rigourous, very little information should be lost on the complexity of the production output between these three mappings. Indeed, many such categories will be clubbed together anyhow when converting NPCMS-2011 to Harmonized System codes. It is worth noting that I use the "strict"/"lenient" approach troughout the concordance chain. This means a substantial product loss in the "strict" approach: products that might be together in the final Harmonized System code can be dropped because they map to two different NPCMS-2011 codes (that are seven digits vs the four I use in the HS-code). 
+
+\input{tables/appendix_data_cleaning_year_obs}
+
+\input{tables/appendix_data_cleaning_state_obs}
+
+\input{tables/appendix_data_cleaning_year_output}
+
+\input{tables/appendix_data_cleaning_state_output}

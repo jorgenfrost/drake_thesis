@@ -1,0 +1,110 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % figures
+\usepackage{caption}
+\usepackage{subcaption} % for subfigs
+\usepackage{amsmath} % math
+\usepackage{amssymb} % more symbols
+\usepackage[font={small,it}]{caption} % captions are different kind of text
+\usepackage{longtable} % long-ass tables
+% \usepackage{hyperref} % make references to links
+\usepackage{natbib} % citations and bibliography
+\usepackage{appendix} % creates special appendix style sections
+\bibliographystyle{apalike} % format citations
+\setlength{\parskip}{1em} % set spaces between paragraphs to 1 character
+\setlength{\parindent}{0em} % set indents for new paragraphs to 0
+
+% KABLE PACKAGES
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+% \usepackage{threeparttablex}
+% \usepackage[normalem]{ulem}
+% \usepackage{makecell}
+% \usepackage{xcolor}
+
+
+\includeonly{
+ % setup/temp_title,
+  % setup/titlepage,
+  setup/listofcontents,
+  introduction/introduction,
+ % framework,
+ % methods/methods,
+ data/data,
+  analysis/analysis,
+%  results/results,
+%  figures-temp/figures-temp,
+%  appendix/rca,
+%  appendix/fc_vs_hh_algorithm
+  appendix/data_cleaning
+}
+
+\begin{document}
+
+% \include{setup/titlepage}
+
+\include{setup/temp_title}
+
+\include{setup/listofcontents}
+
+% Introduction
+% - Aim and research questions
+% - Limitations, scope
+% - Structure
+
+
+% Literature review
+% - Economic complexity
+% - Electricity in India
+
+% Conceptual framework
+
+% Methods
+% - Variables
+% - Data
+
+% Analysis and results
+% - Descriptive stats on data
+%
+
+
+
+\include{introduction/introduction}
+
+\include{framework/framework}
+
+\include{methods/methods}
+
+\include{data/data}
+
+\include{analysis/analysis}
+
+% \include{sections/results/results}
+
+% \include{sections/figures-temp/figures-temp}
+
+\begin{appendices}
+
+\include{appendix/rca}
+
+\include{appendix/fc_vs_hh_algorithm}
+
+\include{appendix/data_cleaning}
+
+\end{appendices}
+
+\newpage
+
+\bibliography{setup/collection}
+
+\end{document}

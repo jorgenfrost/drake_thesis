@@ -1,0 +1,41 @@
+\section{Data}\label{sec:data}
+
+\subsection{International trade}%
+\label{sub:international_trade}
+
+I use data on international trade to construct the index of product complexity. The raw trade data is collected by UN COMTRADE and provided and cleaned by CEPII through the BACI data set. I use the Harmonized System 1996 (HS96) classification, which covers bilateral trade flows for approximately 5000 products between 1996 and 2017. The bilateral flows are aggregated into product-level exports for each country, for each year, at the 4-digit level (approximately 1200 products). 
+
+
+Energy data
+
+My main source of data on electricity shortages comes from India's Central Electricity Authority (CEA). The main feature of the dataset is a measure of shortages based on the difference between the observed consumption of electricity and the estimated counterfactual demand. I extract the energy data from the Power Supply Position of States section of the annual Load Generation Balance Reports published by the CEA. Digital versions are only available from 2009-10 at the earliest. For earlier years (1999-2009) I use the dataset constructed by \cite{allcott_how_2016} who worked in collaboration with the CEA to collect, digitize, and clean earlier reports. I then perform an extra step of cleaning up inconsistencies in the early-years set of observations. 
+
+At the end of each year, the CEA and the Regional Power Committees estimate the monthly counterfactual quantity that would have been demanded in each state if there were no shortages. This annual figure, listed in current prices, is the assessed demand (\(A\)). The sum of electricity available from power plants and net imports is the energy available. The measure of shortages (\(S\)) is then defined as the percent of demand in state \(s\) in year \(t\) that is not met:
+\[
+S_{st} = \frac{A_{st} - E_{st} }{A_{st}}
+\]
+
+In addition, the CEA reports a measure of the power shortages during peak hours (\(S^p\)). This ``peak shortage'' is defined analogously to \(S\) but using only peak assessed demand} (\(A^{p}\)) and peak energy available (\(E^p\)):
+
+\[
+S^{p}_{st} = \frac{A^{p}_{st} - E^{p}_{st}}{A^{p}_{st}}
+\]
+
+The shortage observations depend on an official estimation of the non-shortage demand and is likely to be affected by measurement error. 
+
+The data, however, is well correlated with "ground thruthed" microdata on the experience of manufacturing firms and on individual households. 
+
+\input{tables/data_energy_validation_ihds}
+
+
+
+
+
+
+MÅSKE: 
+As a second source of data on electricity, I use the novel data-set constructed by \cite{min_whose_2017-2}. The dataset is based on high-frequency nightlight data for 600,000 thousand villages covering all of India between 1993 and 2013. By monitoring fluctuations in light emissions, it is possible to create a reliability index of the power supply. In contrast to usual approaches in nightlight based data indices, which use a yearly composite of light-images, the data set utilize nightly variations to quantify the reliability. The district-level data is aggregated into an annual power-reliability index on both a district- and state-level.
+
+
+Indian input output-network\label{sec:org99cb299}
+In constructing my measure of supply-chain quality I need information on the relationship between economic activities in India. To this end, I use the supply- and use-tables made available by the Indian Ministry of Statistics and Programme Implementation \citep{mospi_supply_2020}. Input-output tables are not constructed every year, so I use the 2008-version and take the assumptions that it is a good proxy for the period of study. I use the commodity-commodity I-O table covering 130 goods.
+

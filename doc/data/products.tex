@@ -1,0 +1,12 @@
+The annual Survey of Industries uses two different systems of classifying products. Before 2010, the ASI specific Annual survey of Industries Classification Code system was used. This is an India specific classification system. From 2010 and on, products are listed according the National Product Classification for Manufacturing Sector (NPCMS-2011). The first five digits of NPCMS-2011 maps perfectly to the international Central Product Classification system, while the two last digits are India specific. The concordance between the ASICC and NPCMS-2011 is imperfect and some products are only partially matched. In earlier (confidential) versions of the ASI data it was påossible to identify firms that are matched across years by their serial number. This allowed a mapping of some partial products. This information has been scrubbed from the datasets available currently. There are therefor two approaches left. First, we can drop all observations that map one ASICC product to multiple NPCMS-2011 products. This is the "strict" approach. 
+As mentioned, NPCMS maps perfectly to CPCv2 on the five digit level. International trade data is reported in the Harmonized System (HS) or the Standard International Trade Classification (STIC). Since HS is reported with higher granularity in products, I convert the NPCMS-2011 classification to HS07.
+
+
+
+For the years before the introduction of the NPCMS-2011 scheme, MOSPI offers a concordance table between ASICC and NPCMS for all valid products. This leads to a substantial "product" drop. If the drop is significant enough or should the drop affect a certain type of product class more (like more or less complex products) this could bias the results. To ensure robustness of the results I therefor aslo compute a metric based on industrial classification (NIC). Each plant can have multiple products but only one industrial classification. This makes it possible to calculate plant compexity based on the NPCMS and then take the average complexity of plants within each NIC classification. This "industrial complexity" can then be used as a proxy of plant complexity.
+
+
+Product concordance:
+Table.. shows..
+
+

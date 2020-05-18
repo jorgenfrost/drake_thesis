@@ -1,0 +1,82 @@
+\section{Conceptual framework}
+\label{sec:framework}
+\subsection{Product complexity}
+\label{sec:frame-product-complexity}
+
+Since Adam Smith it has been a truism that wealth comes from the economic efficiency of division of labor. The greater the market available, the deeper its participants can specialize and the greater the benefit. This suggests that economic wealth is connected to the increasing number of activities and complexity of interactions in the economy \citep{romer_endogenous_1990}.
+
+If the size of the market limits the specialization of firms and workers, the globalization of labor- and input-markets should facilitate broad economic wealth creation. When all countries can exploit the global markets, why then have national differences in the gross domestic product (GDP) per capita skyrocketed during the last two hundred years \citep{pritchett_divergence_1997}? Despite 50 years of unprecedented international connectivity, international trade, and globalisation (and some notable growth spurts), the data show that developing countries (as a group) are not catching up to more advanced economies \citep{johnson_what_2020}.
+
+The literature on economic complexity provides one possible answer. If some spill-over effects from the individual activities that arise from  specialization - like property rights, tacit know-how, infrastructure, regulation - cannot be imported, they need to be present in the local economy. The productivity of a country then lies in these non-tradable ``economic capabilities'', and the differences between countries owe (partly) to their number, the complimentarity, and the interactions of these capabilities \citep{hidalgo_product_2007,hausmann_atlas_2013}.
+
+While competing methods exist \citep{tacchella_new_2012,hidalgo_building_2009,inoua_simple_2016}, approaches to quantifying these capabilities share a common conceptual grounding. Given the difficulties in defining and measuring discrete capabilities, researchers have taken an agnostic approach to specific nature of capabilities. The basic intuition is simple. Say that a set of capabilities are required to effectively produce a product. We can assume that a country that effectively makes the given product posses the necessary capability base. It follows then that products that are produced by many countries requires less rare- or non-tradeable capabilities, while rarer products require more complex capabilities. Some products, however, will happen to be present in only a few places for reasons unrelated to the abilities of the economy (diamonds, ostrich eggs). This is solved by implementing an iterative algorithm that repeatedly weighs the complexity of products by the complexity of the countries that export them. See the methods section for a definition of the algorithm used in this paper.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/framework/framework_complexity_model_bw}
+	\caption{the tripartite graph (left) represents the theoretical model: countries (c) can make the products (p) their capabilities (a) allows them to. the bipartite graph (right) is what we observe in the trade data: countries export a set of products, and from this set of products, we infer their capabilities. for example, every country can produce product three. this suggests that the capabilities required to produce it are ubiquitous. in addition, we can see that the only product country three can make is the one every country produces. this suggest that country three does not have a sophisticated capability-base. in contrast, country one can produce all products including product one, which it is the only one that can produce. here, country one and product one would the most complex.}
+	\label{fig:complexity-model}
+\end{figure}
+
+This framework has proven to be a strong predictor of economic performance. Figure \ref{fig:framework-eci-gdp} shows the robust relationship between country-level economic complexity and GDP per capita (PPP). Since natural resources are a product of geographical luck rather than productive know-how, I separate economies with more a larger than 10\% of resource rents as share of total GDP. \cite{hausmann_atlas_2013} shows how the deviations the observed economic complexity of economies and their GDP/cap is a strong predictor of economic growth, suggesting that they converge to the sophistication of their capabilities (that is, countries below the trend line growth fast, while countries above slows down). Not only does aggregate complexity matter: economies moving into more complex products are more egalitarian \citep{hartmann_linking_2017-1}, are less carbon-intensive \citep{can_impact_2017}, and have less volatile job-markets \citep{adam_economic_2019}.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/framework/framework_rpca_fitness_gdp_cap}
+	\caption{Simple linear best fits on ln(GDP/cap) (ppp, 2011 intl \$) by ln(fitness). $R^{2}$ for all observations together is 0.68. Data on resource rents is from \cite{the_world_bank_world_2020}, GDP/cap is from \cite{the_world_bank_world_2020-1}, and country fitness is constructed by the author. Observations are from 2010.}
+	\label{fig:framework-eci-gdp}
+\end{figure}
+
+The aggregate-level economic complexity is the outcome of a myriad of micro-level decisions, historical conditions, firm decisions. These foundations of economic sophistication are not very well understood, and have seen very little empirical study.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/framework/framework_product_complexity_by_richest_poorest_exporters}
+	\caption{For each product observations are the average ln(GDP/cap) of the five richest (red) and five poorest (blue) significant exporters (countries). The triangular shape suggests an important facet of the distrubtion of products: while richer countries tend to export all kinds of products, poorer countries seem to face some threshold to compete in more complex products. To be a significant exporter, a country must export the product with a revealed per capita advantage \(\geq\) 1. GDP/cap is from \cite{the_world_bank_world_2020-1}, product complexity is constructed by the author. Observations are from 2010.}%
+	\label{fig:framework-least-most}
+\end{figure}
+
+\subsection{Production networks and economic complexity}
+\label{sec:production_networks}
+I now turn the relationship between my main dependent variable, the complexity of products at the plant level, and my main independent variable, unreliable electricity. Throughout this section I use plant, factory, and firm interchangeable. I won't go into any specifics on the definition of wages and rents, I just assume that for plant owners, workers, and investors more output is better.
+
+To understand the role of disruptions on products, it is helpful to look at a simple model of production. Disruptions to a plant can happen in two ways: at the level of plant itself, or somewhere in the production chain. I start from the production setup in \cite{acemoglu_network_2012} used in much of the recent literature on shocks in aggregate production networks. For now, I take one plant to be representative of the production in a given sector, where each plant makes a unique product that can either be sold to consumers or used as intermediate input in the production of a different product. We can then model a multi-sector production by
+
+$$
+x_i =  (z_i l_i)^{\alpha}(\prod^{n}_{j = 1} x_{ij}^{w_{ij}})^{1 - \alpha}
+$$
+
+where \(l_i\) is the amount of labor hired by plant \(i\) and \(\alpha \in (0, 1)\) is the share of labor in production. \(z_i\) models some risk of production failure (or delay) due to exogenous factors (e.g. fire, theft, power outages, corruption). More accurately, \(z_i\) is 1 - the risk of failure. \(x_{ij}\) is amount of the output by plant \(j\) that used as intermediate input in the production of \(x_i\). \(w_{ij} \geq 0\) is the share of good \(j\) in the total intermediate input used in the production of good \(i\), and thus represents a sort of production recipe for plant \(i\). I also take \(\sum_j w_{ij} = 1\), i.e. there are constant returns to scale. If we stack the collection of  these \(w\)'s, we have the economy's input-output matrix.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/framework/framework_io_model}
+	\caption{Three stylized input-output configurations in a four sector economy. Each note represents a plant or an economic sector. Arrows show supply relationship. The left-most model thus have one plant (4) needing inputs from three other plants (1, 2, 3).}%
+	\label{fig:framework-io-model}
+\end{figure}
+
+At the individual plant \(i\), \(z_i\) is the only source of production failure in this model. However, each individual intermediate input (\(x_{ij}\) for \(j = 1, 2, ..., n\)) needed for production is also made at a plant, with its own risk of failure. The left-most graph in figure \ref{fig:framework-io-model} shows this relationship: should plant one fail to deliver, this impacts the productivity of sector 4. The importance of a failure on one of a plants' suppliers depends on how substitutable intermediate inputs are. If the elasticity of the intermediate inputs are close to 0, the expected output of a factory declines rapidly when \(n\) increases. In the simple case that the output of a factory is just the value of the intermediate inputs and the distribution of \(z\) is equal across factories, the relationship between expected output and the number of inputs \(n\) can be written as \(n*(z^{n})\) and is identical to the O-ring problem in \cite{kremer_o-ring_1993}\footnote{Here it is assumed that failure in a production ruins the whole production for that period. That is, a fire cannot burn only half the production and electricity shortages cannot last just half the period. These assumptions are only relevant for the example, not the general argument.} (see figure \ref{fig:framework-z}).
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/framework/framework_z}
+	\caption{Expected plant output by risk and number of inputs: (A) for very small increases in risk we see massive drops in expected output (in the example \(n = 10\)): when going from \(z = .95\) (dashed) to \(z = .90\) (dotted) - a decrease of 5.26\% - expected output falls more than 40 \%; (B) as complexity of production increases, the drop from potential output driven by marginal decreases in quality skyrockets. In terms of production, this suggest that small changes in the risk of failure disproportionately punishes higher complexity producers.}%
+	\label{fig:framework-z}
+\end{figure}
+
+The ability to substitute varies naturally between inputs, and specific elasticities is an ongoing research area \citep{brummitt_contagious_2017,carvalho_micro_2014}. Much of the recent research on the propagation of shocks through production networks suggest that, at least in the short term, declines in input availability has a large effect in output for the consuming sector. For instance, using a 2011 earthquake in Japan as an exogenous shock, \cite{boehm_input_2019-1} finds evidence of a near 1-to-1 ratio between input and output losses. This suggests that the elasticity of intermediate inputs in manufacturing is near 0.
+
+This effect is supported by \cite{barrot_input_2016} who find that firm-specific shocks propagate through production-networks for specific inputs. If more complex productions require a larger number of intermediate inputs or more specific (less substitutable) inputs, disruptions will punish the output of complex products more. Intuitively this makes sense: more parts goes into a medical imaging equipment than baked goods. Similarly, lenses and microchips are highly specific, while cane sugar could feasibly replace beet sugar.
+
+A second effect is modeled in the middle graph in figure \ref{fig:framework-io-model}. Here, supply-relationships depend completely on the output of the node at one stage earlier in the production process. This suggests two mechanisms. First, if a plant is dependent on the output of a plant, which is again dependent on intermediate inputs, and so on for \(n\) stages, then risks multiply in production chains. The effect of losses in the source sector has (decreasing) knock-on effects throughout the production chain \citep{carvalho_micro_2014}. In addition, for each production stage outputs increase in value (otherwise, what's the point?). This means that failures in later stages are more expensive than earlier ones. This suggests that a) if more complex products have longer production chains, they are punished harder by supply-chain unreliability, and b) that longer production chains will tend to have their later stages in more reliable environments. We would then expect to see more primary production in more disruptive environments (like in figure \ref{fig:disruption-fig}). Similarly, since risks propagate through production inputs, the marginal returns to increases in primary inputs (like labor) are higher in high-disruption environments. Since the risks an individual plant faces scales with increases in the share of intermediate inputs (\(1 - \alpha\)) but not with increases in share of labor (\(\alpha\)). For instance, the extreme case of \(\alpha = 1\) no intermediate inputs are used and the risk to a plant \(i\)'s production is fully contained in \(z_i\). In reality, input-output configurations are rarely completely vertical, but mirrors more the right-most graph in figure \ref{fig:framework-io-model}. Here both the input-diversity and the production chain effects are in play.
+
+
+A key result in \cite{kremer_o-ring_1993} is that under certain conditions (quality is not a substitute for quantity and a production function mirroring the one outline above) an economy will have a larger aggregate output by matching quality, Kremer's version of the \(z\) used here, in production.\footnote{If we return to the simple example from figure
+  \ref{fig:framework-z} we can see why. Say that two firms make one product each
+  with same simple output function as before, \(n(z^n)\). Each product is
+  similar in its use of inputs, and there are four suppliers available, two
+  highly reliable \(z_{h}\) and two less so \(z_{l}\). These can be matched or mixed in production. We thus have two ways or organizing the production: \(2(z_h^2) + 2(z_l^2)\) or \(2(z_l z_h) + 2(z_l z_h)\). If \(z_h = 1\) and \(z_l = 0.5\), the matched output is 2.5 and the mixed is 2; using the same plants and the same number of inputs we get a 25\% higher outcome by matching. For a proof that this is always true, we can follow Kremer: \((z_h - z_l)^2 > 0; z_h^2 + z_l^2 - 2z_h z_l > 0; z_h^2 + z_l^2 > 2z_h z_1 \)}. In terms of production, this would entail that production chains are matched by their risk of interruption. Since even a few weak links have large output penalties to the total productivity, producers place their their production chains with plants with a similar risk.
+
+The large output penalty to even a few weak links in a production suggests that regions could need to reach a certain threshold of production reliability to enter into production of more complex goods. This interpretation is a possible explanation for the pattern seen in figure \ref{fig:framework-least-most}. This effect in turn opens the possibility of an S-curve style effect (see \cite{brummitt_contagious_2017} for a dynamic model of such an effect): as long as a certain threshold of reliability is met in the aggregate economy, even a few weak links limits the incentive for investments in more complex productions. This then increases the relative marginal returns on producing more primary and simpler goods, which limits the necessity for fixing disruptions.
+
+A potentially important caveat is the ability of plants to invest in buffers against disruptions by purchasing a generator. However, generator electricity is more expensive and depreciate over time. This means that substituting away from the central electricity imposes a kind of input-tax on the production. \cite{abeberese_electricity_2017} finds that higher electricity prices leads to self-selection into the less machine heavy and low-growth activities, suggesting another pathway between economic complexity and electricity quality.

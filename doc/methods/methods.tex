@@ -1,0 +1,116 @@
+\section{Research design}\label{sec:research-design}
+
+\subsection{Research hypotheses}\label{sec:research-hypotheses}
+
+Based on the discussion in the previous section, I construct two testable hypotheses:
+
+\begin{itemize}
+\renewcommand\labelitemi{--}
+\item \(H_1\): Plant-level complexity is positively associated with reliability of the electricity supply.
+
+\item \(H_2\): Plant-level complexity is positively associated with aggregate reliability of the supply chain.
+\end{itemize}
+
+If the complexity of products are associated with either the number of stages in production or the diversity of intermediate inputs needed in the production process, I expect plants that produce more complex products to be located in regions with a higher quality of electrical supply. Similarly, I expect plants that produce higher complexity products to be embedded in more reliable supply-networks as measured in the Indian input-output-network.
+
+\subsection{Methods}\label{sec:methods}
+
+In this section I outline the regression design used to test the research hypotheses written above. I first discuss the main dependent and independent variables necessary to run such a test. I then briefly turn to how each of the key variables are operationalized.
+
+To test the first hypothesis \(H_1\) I use a fixed-effects regression model. My main dependent variable is here a plant-level measure of product complexity. My main independent variable is of two specifications of electricity quality (to be defined below). To adjust for state- or year specific trends, I include a vector of dummy-controls. Additionally, I include a vector of socio-economic controls (population density, state-wide gross product per capita, etc). Similarly, I test the second hypothesis \(H_2\) with a regression model, but using a network-weighted measure of electricity quality. See the section on supply chain quality for details.
+
+My sample consists of approx 500,000 plant-by-year observations covered in the Annual Survey of Industries (ASI) from 1995 to 2010. I run each analysis using every combination of my electrical quality and product complexity measure.
+
+\subsubsection{Key variables}\label{sec:key-variables}
+As already described, the theory of EC assumes that countries are linked to the capabilities with which they are endowed, and that these capabilities are linked in turn to the products that require them in production. Put in network lingo: countries, capabilities, and products are connected in a tripartite network as visualized in Figure 4. Yet the capabilities in the tripartite country-capability-product network are ‘hidden’—it is only possible to observe a bipartite network linking countries to the products they produce. The econometric challenge is to extract information about the hidden capabilities from this bipartite network in order to infer the complexity of countries and products.
+
+
+Product complexity:
+
+    I use the Fitness-Complexity (FC) algorithm \citep{tacchella_new_2012} to find the complexity of products. For a discussion of the benefits of the FC algorithm over the  Hausmann-Hidalgo (HH) algorithm \citep{hidalgo_building_2009}, see appendix \ref{sec:appendix-algorithm}. As outlined earlier, countries, capabilities and products are connected in a tripartite network. The capabilities in this network, however, is hidden.
+
+    I first find the revealed per capita advantage (RpcA) of each country in each of the approx. 1200 products in the HS92 series. For a discussion of why RpcA is an improvement over the more often used revealed comparative advantage (RCA, \citealp{balassa_trade_1965}) see appendix \ref{sec:rca}. RpcA normalizes a country's per capita export of a product by the global per capita export of the product. Hence, RpcA of country \(c\) in product \(p\):
+
+\[
+	RpcA_{cp} = \frac{X_{cp}}{POP_{c}} \bigg / \frac{\sum_c X_{cp}}{\sum_c POP_c}
+\]
+
+where \(X_{cp}\) is the export value of country \(c\) in product \(p\) and \(POP_{c}\) is the population of country \(p\). I then define a binary RpcA matrix \(M_{cp}\) with countries in rows as products in columns as:
+
+\[
+M_{cp} = \begin{cases}
+ 1 & \text{if } RpcA_{cp} \geq 1 \\
+ 0 & \text{if } RpcA_{cp} < 1
+\end{cases}
+\]
+
+    [TODO about the FC algorithm]
+
+    The fitness of a country, \(F_{c}\) is the sum of all the products it exports, weighted by their complexity, \(Q_{p}\). For each iteration there are two steps. First I find the temporary variables \(\hat{F}^{(n)}_{c}\) and \(\hat{Q}^{(n)}_{p}\), next they are normalized by the average value of the iteration. This normalization procedure means that after enough iterations, \(F_{c}\) and \(Q_{p}\) converges to a fixed point (see figure TODO), meaning that the initial conditions are not important. I set them to 1 for all \(\hat{F}^{(0)}_{c}\) and \(\hat{Q}^{(0)}_{p}\).
+
+ \[
+	 \begin{split}
+		 \hat{F}^{(n)}_{c} &= \sum_p M_{cp} Q^{(n-1)}_{p} \Rightarrow F^{(n)}_{c} = \frac{\hat{F}^{(n)}_{c}}{\bigg < \hat{F}^{(n)}_c \bigg > _c} \\
+		 \hat{Q}^{(n)}_{p} &= \frac{1}{\sum_c M_{cp} \frac{1}{F^{(n-1)}_c}} \Rightarrow Q^{(n)}_{p} = \frac{\hat{Q}^{(n)}_{p}}{\bigg < \hat{Q}^{(n)}_p \bigg > _p }
+	 \end{split}
+\]
+
+
+Plant complexity:
+
+For each plant, I quantify the complexity of its production output as the weighted average the complexity-values for each product it produces. I assign weights based on the value of the production. That is, the complexity for factory \(f\) at time \(t\), \(C_{ft}\), is defined as:
+
+$$
+C_{ft} = \sum_p PCI_{pt} \frac{O_{fpt}}{\sum_p O_{fpt}}
+$$
+
+where \(PCI_{pt}\) is the product complexity of product \(p\) at time \(t\) and \(O_{fpt}\) is the output (in current prices) of factory \(f\) in product \(p\) at time \(t\). The value of the production output is calculated as the net unit sale value of a given product times the amount of units sold. 
+
+This definition potentially underestimates the complexity of multi-product factories that produce complex products, but happen to sell a lot of their low-complex ones. I therefor also include a stricter measure of plant complexity, \(C^{\text{max}}_{ft}\), that uses only the most complex product in a factory's product-portfolio, regardless of the output volume.
+
+$$
+C^{\text{max}}_{ft} = max \{ PCI_{1t} I_{1ft}, \text{ ... }, PCI_{pt} I_{pt} \}
+$$
+
+where
+
+\[
+I_{pft} = \begin{cases}
+ 1 & \text{if } O_{fpt} \geq 0 \\
+ 0 & \text{if } O_{fpt} = 0
+\end{cases}
+\]
+
+\item Local electricity quality:
+\label{sec:org0aa7f42}
+
+I construct the local electricity quality on a state level. I aggregate estimated demand shortages and the district level night-light data to state-wide averages and assign them to plants based on their location.
+
+\item Supply chain quality:
+\label{sec:orga865b2c}
+
+I measure the disruption in the supply network of a plant in three steps. First I assign each plant to a sector in the I/O network based on their sector classification in the ASI data.
+
+I then create a sector-level disruption variable by taking the weighted average of plant-level disruption values, where weights are the output share of a plant in the sectors total output. I now have an input-output network where each of the 130 sectors has a disruption value. The input-output network shows the average share of different sectors' output that is used as intermediate input in a given sectors production, as well its' suppliers' suppliers, and so on.
+
+I represent each sector as a node in a network and their supply-relationship as the strength of their link. Each node is then valued as the disruption value assign above. I can then calculate the eigenvector centrality for each sector. Each plant based in a sector then inherits it supply-network disruption value. The eigenvector centrality is basically an iterative algorithm that takes the disruption value in a nodes neighbors weighted by the nodes links to it, then takes the value of their neighbors weighted by their links, and so on. This catches the decreasing knock-on effects discussed in relation to the middle graph in figure \ref{fig:framework-io-model}.
+
+This plant-level value is my measure of supply-chain quality in when testing hypothesis \(H_2\).
+\end{enumerate}
+
+\subsection{Limitations}
+\label{sec:org979560b}
+
+\subsubsection{Endogeneity}
+\label{sec:orgd4457e7}
+There are a couple of reasons the effect of electricity disruptions on economic activities are diffult to study empirically. First, the relationship is likely to have a significant endogenous component. More complex production could be related to a more intensely developed economy, which could also be related to more stabile electricity supply. On the other hand, a more developed economy could have a more complex production, but would also have a higher electricity demand which could lead to shortages.
+
+I therefor intend follow \cite{allcott_how_2016} in constructing an instrumental variable based on hydeo-electricity generation. A valid instrument must affect the supply of electricity, but impact only the manufactoring plants through shortages. Hydro plants have a very low marginal cost of generating electricity, and the yearly generation of electricity is therefor primarily dependent on water availbility. This water availability is determined by rain- and snowfall at higher elevations. However, at the time of writing, I had not finished the instrument. This would allow an isolation of the marginal differences in electricity supply on a year-to-year basis. However, the risk of endogeneity in long-run effects persists.
+
+\subsubsection{Modifiable Area Unit Problem}
+\label{sec:org4e3cc26}
+My tests rely on ``ground down'' state-wide variables on electricity reliability to individual plants. As with much of research in geography, this runs into the issue of artificial boundaries. For instance, states might not be appropriate scale of measurement, or be homogenous in its distribution of reliable electricity. However, the use of the district-level nightlights should reveal if there are large differences within states.
+
+\subsubsection{Attenuation bias}
+\label{sec:orge917ac0}
+My main electricity variables are either estimations or approximations. This very likely introduces some measurement error in my independent variable. Should this error be large enough, I risk that any result drowns in attenuation bias. The instrumental variable could potentially redeem this issue significantly.

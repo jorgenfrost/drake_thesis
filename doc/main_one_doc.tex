@@ -1,0 +1,673 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % figures
+\usepackage{caption}
+\usepackage{subcaption} % for subfigs
+\usepackage{amsmath} % math
+\usepackage{amssymb} % more symbols
+\usepackage[font={small,it}]{caption} % captions are different kind of text
+\usepackage{longtable} % long-ass tables
+% \usepackage{hyperref} % make references to links
+\usepackage{natbib} % citations and bibliography
+\usepackage{appendix} % creates special appendix style sections
+\bibliographystyle{apalike} % format citations
+\setlength{\parskip}{1em} % set spaces between paragraphs to 1 character
+\setlength{\parindent}{0em} % set indents for new paragraphs to 0
+
+% KABLE PACKAGES
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+% \usepackage{threeparttablex}
+% \usepackage[normalem]{ulem}
+% \usepackage{makecell}
+% \usepackage{xcolor}
+
+\begin{document}
+
+% \include{setup/titlepage}
+
+\include{setup/temp_title}
+
+\include{setup/listofcontents}
+
+% Introduction
+% - Aim and research questions
+% - Limitations, scope
+% - Structure
+
+\section{Introduction}\label{sec:introduction}
+
+TODO: Restructure introduction
+
+TODO: Write up research aims/questions
+
+TODO: Underline why economic complexity is important in development context.
+
+TODO: Update structure of thesis
+
+TODO: Use phrase like: using methods from network science and ...
+
+The products produced in rich countries are very different from the products produced in poor countries. Why? Empirical evidence show that the difference between countries' economic sophistication large variation in GDP per capita (see figure \ref{fig:framework-eci-gdp}) and growth rates \citep{tacchella_dynamical_2018}. Despite this, little empirical evidence examines the micro-foundations behind these differences. 
+
+This paper examines the ability of electricity interruptions in the production environment to explain the complexity of products made at the plant level in India between 1999 and 2017. The mechanism is simple. If more complex products require more intermediate inputs or more steps in production, interruptions or failures in production processes punish them harder than simpler ones. If these disruption-costs are punitive enough, investors will put their money elsewhere and producers will choose less complex products. Given that electricity is an important input in manufacturing -  most factories cannot produce anything without running lights, machines, and motors - an unreliably supply could significantly reduce the productivity of a plant.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/introduction_disruption_plot}
+	\caption{Production disruptions tend to have a higher frequence in poorer, less complex economies. The color of points are country fitness values, where blue is more complexi. Gray crosses has a missing fitness value. Lines are SLR fits to ln(GDP/cap). Disruption data is from \cite{world_bank_enterprise_2020} and fitness is constructed as outlined in section \ref{sec:methods}. Countries are not surveyed the same years, so fitness and GDP/cap values have been matched to the newest survey year for each country before 2017. No country has more than one observation\footnote{This figure was inspired by \cite{brummitt_contagious_2017}.}}
+	\label{fig:disruption-fig}
+\end{figure}
+
+The role electricity in production inefficiencies have recently drawn the attention of researchers. Two India-specific patterns are worth highlighting: the importance of the quality of electricity, rather than just electricity alone, and the evidence on output-costs of electricity shortages. \cite{samad_benefits_2016} and \cite{chakravorty_does_2014} both find improvements in incomes from access to electricity, but much larger income gains from access to quality electricity (from 9.6\% to 17\% and from 9\% to 28.6\%)\footnote{The latter study only non-agricultural incomes.}. \cite{abeberese_electricity_2017} finds that increases in electricity prices reduces the electricity- and machine-intensity of activities, leading to smaller growth in production output. Finally, \cite{allcott_how_2016} finds a 5\% - 10\% reduction in plant-level profits from shortages in electricity, with a lower productivity-penalty due to generator substitution. The approach taken in this paper proposes a way to unify these observations. Unreliable electricity punishes more complex plants and improvements in quality have positive externalities on the local production, and a more complex manufacturing sector has positive effects on local incomes. Similarly, the relatively small output-penalty observed by \cite{allcott_how_2016} could mask production choices into simpler and lower-complexity products.
+
+The approach taken in this paper is primarily related to three strands of literature. First, the literature of economic complexity and the sophistication of an economy's capability base  (\citealp{frenken_related_2007,hausmann_atlas_2013,tacchella_new_2012}). In addition, to develop the relation between production disruptions and product complexity, I draw on O-ring-type effects as modeled in \cite{kremer_o-ring_1993} and \cite{jones_intermediate_2011}, and the recent literature on volatility in production networks \citep{acemoglu_network_2012}. While the latter is mainly concerned with aggregate effect of sectoral shocks, the importance of input-output linkages are equally relevant at the plant level.
+
+\subsection{Aim and research questions}%
+\label{sub:aim_and_research_questions}
+
+\subsection{Structure of thesis}%
+\label{sub:structure_of_thesis}
+
+The rest of the paper proceeds as follows. I first develop the conceptual framework that underpins the work here: why should we care about economic complexity (\ref{sec:frame-product-complexity}) and how are electricity shortages related to whether factories produce more or less complex products (\ref{sec:production_networks})? From the conceptual framework I draw out two testable hypotheses on the proposed relationship. Building from these hypotheses, I turn to the research design, my empirical strategy, and the use of data. [The rest is TODO]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Background}%
+\label{sec:background}
+
+TODO: Development and background of electricity shortages in India
+
+TODO: underinvestment, prices, inefficience, source: Zhang (Out of the Darkness), Allcott et all, Alam (2013)
+
+TODO: plot most populous states by avg shortage and peak shortage
+
+TODO: Development of complexity/fitness in India + plot change in complexity against change in GDP/cap
+
+% Literature review
+% - Economic complexity
+% - Electricity in India
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Theoretical framework}%
+\label{sec:framework}
+
+TODO: Make less technical and more to the point.
+
+TODO: Highlight the predictions of the relationship betweein interruptions and complexity
+
+TODO: Drop the very explicity O-ring framework (maybe move to appendix). Use conclusion of framework instead.
+
+TODO: Reduce product complexity "introduction"-like quality, make more to point instead.
+
+TODO: Highlight why "threshold" (richest/poorest exporters) graph is important.
+
+\subsection{Product complexity}
+\label{sec:frame-product-complexity}
+
+Since Adam Smith it has been a truism that wealth comes from the economic efficiency of division of labor. The greater the market available, the deeper its participants can specialize and the greater the benefit. This suggests that economic wealth is connected to the increasing number of activities and complexity of interactions in the economy \citep{romer_endogenous_1990}.
+
+If the size of the market limits the specialization of firms and workers, the globalization of labor- and input-markets should facilitate broad economic wealth creation. When all countries can exploit the global markets, why then have national differences in the gross domestic product (GDP) per capita skyrocketed during the last two hundred years \citep{pritchett_divergence_1997}? Despite 50 years of unprecedented international connectivity, international trade, and globalisation (and some notable growth spurts), the data show that developing countries (as a group) are not catching up to more advanced economies \citep{johnson_what_2020}.
+
+The literature on economic complexity provides one possible answer. If some spill-over effects from the individual activities that arise from  specialization - like property rights, tacit know-how, infrastructure, regulation - cannot be imported, they need to be present in the local economy. The productivity of a country then lies in these non-tradable ``economic capabilities'', and the differences between countries owe (partly) to their number, the complimentarity, and the interactions of these capabilities \citep{hidalgo_product_2007,hausmann_atlas_2013}.
+
+While competing methods exist \citep{tacchella_new_2012,hidalgo_building_2009,inoua_simple_2016}, approaches to quantifying these capabilities share a common conceptual grounding. Given the difficulties in defining and measuring discrete capabilities, researchers have taken an agnostic approach to specific nature of capabilities. The basic intuition is simple. Say that a set of capabilities are required to effectively produce a product. We can assume that a country that effectively makes the given product posses the necessary capability base. It follows then that products that are produced by many countries requires less rare- or non-tradeable capabilities, while rarer products require more complex capabilities. Some products, however, will happen to be present in only a few places for reasons unrelated to the abilities of the economy (diamonds, ostrich eggs). This is solved by implementing an iterative algorithm that repeatedly weighs the complexity of products by the complexity of the countries that export them. See the methods section for a definition of the algorithm used in this paper.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/framework/framework_complexity_model_bw}
+	\caption{The tripartite graph (left) represents the theoretical model: countries (C) can make the products (P) their capabilities (A) allows them to. The bipartite graph (right) is what we observe in the trade data: countries export a set of products, and from this set of products, we infer their capabilities. for example, every country can produce product three. This suggests that the capabilities required to produce it are ubiquitous. In addition, we can see that the only product country three can make is the one every country produces. this suggest that country three does not have a sophisticated capability-base. In contrast, country one can produce all products including product one, which it is the only one that can produce. Here, country one and product one would the most complex.}
+	\label{fig:complexity-model}
+\end{figure}
+
+This framework has proven to be a strong predictor of economic performance. Figure \ref{fig:framework-eci-gdp} shows the robust relationship between country-level economic complexity and GDP per capita (PPP). Since natural resources are a product of geographical luck rather than productive know-how, I separate economies with more a larger than 10\% of resource rents as share of total GDP. \cite{hausmann_atlas_2013} shows how the deviations the observed economic complexity of economies and their GDP/cap is a strong predictor of economic growth, suggesting that they converge to the sophistication of their capabilities (that is, countries below the trend line growth fast, while countries above slows down). Not only does aggregate complexity matter: economies moving into more complex products are more egalitarian \citep{hartmann_linking_2017-1}, are less carbon-intensive \citep{can_impact_2017}, and have less volatile job-markets \citep{adam_economic_2019}.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/framework/framework_rpca_fitness_gdp_cap}
+	\caption{Simple linear best fits on ln(GDP/cap) (ppp, 2011 intl \$) by ln(fitness). Data on resource rents is from \cite{world_bank_world_2020}, GDP/cap is from \cite{world_bank_world_2020-1}, and country fitness is constructed by the author. Observations are from 2010.}
+	\label{fig:framework-eci-gdp}
+\end{figure}
+
+The aggregate-level economic complexity is the outcome of a myriad of micro-level decisions, historical conditions, firm decisions. These foundations of economic sophistication are not very well understood, and have seen very little empirical study.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/framework/framework_product_complexity_by_richest_poorest_exporters}
+	\caption{For each product observations are the average ln(GDP/cap) of the five richest (red) and five poorest (blue) significant exporters (countries). The triangular shape suggests an important facet of the distrubtion of products: while richer countries tend to export all kinds of products, poorer countries seem to face some threshold to compete in more complex products. To be a significant exporter, a country must export the product with a revealed per capita advantage \(\geq\) 1. GDP/cap is from \cite{world_bank_world_2020-1}, product complexity is constructed by the author. Observations are from 2010.}%
+	\label{fig:framework-least-most}
+\end{figure}
+
+\subsection{Production networks and economic complexity}
+\label{sec:production_networks}
+I now turn the relationship between my main dependent variable, the complexity of products at the plant level, and my main independent variable, unreliable electricity. Throughout this section I use plant, factory, and firm interchangeable. I won't go into any specifics on the definition of wages and rents, I just assume that for plant owners, workers, and investors more output is better.
+
+To understand the role of disruptions on products, it is helpful to look at a simple model of production. Disruptions to a plant can happen in two ways: at the level of plant itself, or somewhere in the production chain. I start from the production setup in \cite{acemoglu_network_2012} used in much of the recent literature on shocks in aggregate production networks. For now, I take one plant to be representative of the production in a given sector, where each plant makes a unique product that can either be sold to consumers or used as intermediate input in the production of a different product. We can then model a multi-sector production by
+
+\[
+x_i =  (z_i l_i)^{\alpha}(\prod^{n}_{j = 1} x_{ij}^{w_{ij}})^{1 - \alpha}
+\]
+
+where \(l_i\) is the amount of labor hired by plant \(i\) and \(\alpha \in (0, 1)\) is the share of labor in production. \(z_i\) models some risk of production failure (or delay) due to exogenous factors (e.g. fire, theft, power outages, corruption). More accurately, \(z_i\) is 1 - the risk of failure. \(x_{ij}\) is amount of the output by plant \(j\) that used as intermediate input in the production of \(x_i\). \(w_{ij} \geq 0\) is the share of good \(j\) in the total intermediate input used in the production of good \(i\), and thus represents a sort of production recipe for plant \(i\). I also take \(\sum_j w_{ij} = 1\), i.e. there are constant returns to scale. If we stack the collection of  these \(w\)'s, we have the economy's input-output matrix.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/framework/framework_io_model}
+	\caption{Three stylized input-output configurations in a four sector economy. Each note represents a plant or an economic sector. Arrows show supply relationship. The left-most model thus have one plant (4) needing inputs from three other plants (1, 2, 3).}%
+	\label{fig:framework-io-model}
+\end{figure}
+
+At the individual plant \(i\), \(z_i\) is the only source of production failure in this model. However, each individual intermediate input (\(x_{ij}\) for \(j = 1, 2, ..., n\)) needed for production is also made at a plant, with its own risk of failure. The left-most graph in figure \ref{fig:framework-io-model} shows this relationship: should plant one fail to deliver, this impacts the productivity of sector 4. The importance of a failure on one of a plants' suppliers depends on how substitutable intermediate inputs are. If the elasticity of the intermediate inputs are close to 0, the expected output of a factory declines rapidly when \(n\) increases. In the simple case that the output of a factory is just the value of the intermediate inputs and the distribution of \(z\) is equal across factories, the relationship between expected output and the number of inputs \(n\) can be written as \(n*(z^{n})\) and is identical to the O-ring problem in \cite{kremer_o-ring_1993}\footnote{Here it is assumed that failure in a production ruins the whole production for that period. That is, a fire cannot burn only half the production and electricity shortages cannot last just half the period. These assumptions are only relevant for the example, not the general argument.} (see figure \ref{fig:framework-z}).
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/framework/framework_z}
+	\caption{Expected plant output by risk and number of inputs: (A) for very small increases in risk we see massive drops in expected output (in the example \(n = 10\)): when going from \(z = .95\) (dashed) to \(z = .90\) (dotted) - a decrease of 5.26\% - expected output falls more than 40 \%; (B) as complexity of production increases, the drop from potential output driven by marginal decreases in quality skyrockets. In terms of production, this suggest that small changes in the risk of failure disproportionately punishes higher complexity producers.}%
+	\label{fig:framework-z}
+\end{figure}
+
+The ability to substitute varies naturally between inputs, and specific elasticities is an ongoing research area \citep{brummitt_contagious_2017,carvalho_micro_2014}. Much of the recent research on the propagation of shocks through production networks suggest that, at least in the short term, declines in input availability has a large effect in output for the consuming sector. For instance, using a 2011 earthquake in Japan as an exogenous shock, \cite{boehm_input_2019-1} finds evidence of a near 1-to-1 ratio between input and output losses. This suggests that the elasticity of intermediate inputs in manufacturing is near 0.
+
+This effect is supported by \cite{barrot_input_2016} who find that firm-specific shocks propagate through production-networks for specific inputs. If more complex productions require a larger number of intermediate inputs or more specific (less substitutable) inputs, disruptions will punish the output of complex products more. Intuitively this makes sense: more parts goes into a medical imaging equipment than baked goods. Similarly, lenses and microchips are highly specific, while cane sugar could feasibly replace beet sugar.
+
+A second effect is modeled in the middle graph in figure \ref{fig:framework-io-model}. Here, supply-relationships depend completely on the output of the node at one stage earlier in the production process. This suggests two mechanisms. First, if a plant is dependent on the output of a plant, which is again dependent on intermediate inputs, and so on for \(n\) stages, then risks multiply in production chains. The effect of losses in the source sector has (decreasing) knock-on effects throughout the production chain \citep{carvalho_micro_2014}. In addition, for each production stage outputs increase in value (otherwise, what's the point?). This means that failures in later stages are more expensive than earlier ones. This suggests that a) if more complex products have longer production chains, they are punished harder by supply-chain unreliability, and b) that longer production chains will tend to have their later stages in more reliable environments. We would then expect to see more primary production in more disruptive environments (like in figure \ref{fig:disruption-fig}). Similarly, since risks propagate through production inputs, the marginal returns to increases in primary inputs (like labor) are higher in high-disruption environments. Since the risks an individual plant faces scales with increases in the share of intermediate inputs (\(1 - \alpha\)) but not with increases in share of labor (\(\alpha\)). For instance, the extreme case of \(\alpha = 1\) no intermediate inputs are used and the risk to a plant \(i\)'s production is fully contained in \(z_i\). In reality, input-output configurations are rarely completely vertical, but mirrors more the right-most graph in figure \ref{fig:framework-io-model}. Here both the input-diversity and the production chain effects are in play.
+
+A key result in \cite{kremer_o-ring_1993} is that under certain conditions (quality is not a substitute for quantity and a production function mirroring the one outline above) an economy will have a larger aggregate output by matching quality, Kremer's version of the \(z\) used here, in production.\footnote{If we return to the simple example from figure
+  \ref{fig:framework-z} we can see why. Say that two firms make one product each
+  with same simple output function as before, \(n(z^n)\). Each product is
+  similar in its use of inputs, and there are four suppliers available, two
+  highly reliable \(z_{h}\) and two less so \(z_{l}\). These can be matched or mixed in production. We thus have two ways or organizing the production: \(2(z_h^2) + 2(z_l^2)\) or \(2(z_l z_h) + 2(z_l z_h)\). If \(z_h = 1\) and \(z_l = 0.5\), the matched output is 2.5 and the mixed is 2; using the same plants and the same number of inputs we get a 25\% higher outcome by matching. For a proof that this is always true, we can follow Kremer: \((z_h - z_l)^2 > 0; z_h^2 + z_l^2 - 2z_h z_l > 0; z_h^2 + z_l^2 > 2z_h z_1 \)}. In terms of production, this would entail that production chains are matched by their risk of interruption. Since even a few weak links have large output penalties to the total productivity, producers place their their production chains with plants with a similar risk.
+
+The large output penalty to even a few weak links in a production suggests that regions could need to reach a certain threshold of production reliability to enter into production of more complex goods. This interpretation is a possible explanation for the pattern seen in figure \ref{fig:framework-least-most}. This effect in turn opens the possibility of an S-curve style effect (see \cite{brummitt_contagious_2017} for a dynamic model of such an effect): as long as a certain threshold of reliability is met in the aggregate economy, even a few weak links limits the incentive for investments in more complex productions. This then increases the relative marginal returns on producing more primary and simpler goods, which limits the necessity for fixing disruptions.
+
+A potentially important caveat is the ability of plants to invest in buffers against disruptions by purchasing a generator. However, generator electricity is more expensive and depreciate over time. This means that substituting away from the central electricity imposes a kind of input-tax on the production. \cite{abeberese_electricity_2017} finds that higher electricity prices leads to self-selection into the less machine heavy and low-growth activities, suggesting another pathway between economic complexity and electricity quality.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{Methodology}%
+\label{sub:methodology}
+
+- TODO: Much of this is no longer correct. Need to update.
+
+- TODO: Restructure to make more clear what concerns data, creation of variables, research design
+
+\subsection{Methods}\label{sec:methods}
+
+In this section I outline the regression design used to test the research hypotheses written above. I first discuss the main dependent and independent variables necessary to run such a test. I then briefly turn to how each of the key variables are operationalized.
+
+To test the first hypothesis \(H_1\) I use a fixed-effects regression model. My main dependent variable is here a plant-level measure of product complexity. My main independent variable is of two specifications of electricity quality (to be defined below). To adjust for state- or year specific trends, I include a vector of dummy-controls. Additionally, I include a vector of socio-economic controls (population density, state-wide gross product per capita, etc). Similarly, I test the second hypothesis \(H_2\) with a regression model, but using a network-weighted measure of electricity quality. See the section on supply chain quality for details.
+
+\subsubsection{Key variables}\label{sec:key-variables}
+As already described, the theory of EC assumes that countries are linked to the capabilities with which they are endowed, and that these capabilities are linked in turn to the products that require them in production. Put in network lingo: countries, capabilities, and products are connected in a tripartite network as visualized in Figure 4. Yet the capabilities in the tripartite country-capability-product network are ‘hidden’—it is only possible to observe a bipartite network linking countries to the products they produce. The econometric challenge is to extract information about the hidden capabilities from this bipartite network in order to infer the complexity of countries and products.
+
+Economic complexity:
+
+    I use the Fitness-Complexity (FC) algorithm \citep{tacchella_new_2012} to find the complexity of products. For a discussion of the benefits of the FC algorithm over the  Hausmann-Hidalgo (HH) algorithm \citep{hidalgo_building_2009}, see appendix \ref{sec:appendix-algorithm}. As outlined earlier, countries, capabilities and products are connected in a tripartite network. The capabilities in this network, however, is hidden.
+
+I first find the revealed per capita advantage (RpcA) of each country in each of the approx. 1200 products in the HS92 series. For a discussion of why RpcA is an improvement over the more often used revealed comparative advantage (RCA, \citealp{balassa_trade_1965}) see appendix \ref{sec:rca}. RpcA normalizes a country's per capita export of a product by the global per capita export of the product. Hence, RpcA of country \(c\) in product \(p\):
+
+\[
+	RpcA_{cp} = \frac{X_{cp}}{POP_{c}} \bigg / \frac{\sum_c X_{cp}}{\sum_c POP_c}
+\]
+
+where \(X_{cp}\) is the export value of country \(c\) in product \(p\) and \(POP_{c}\) is the population of country \(p\). I then define a binary RpcA matrix \(M_{cp}\) with countries in rows as products in columns as:
+
+\[
+M_{cp} = \begin{cases}
+ 1 & \text{if } RpcA_{cp} \geq 1 \\
+ 0 & \text{if } RpcA_{cp} < 1
+\end{cases}
+\]
+
+This \(M_{cp}\) matrix can be interpreted as a bipartite network where countries are connected to the products they export competatively. This is the observed model in figure \ref{fig:complexity-model}. 
+
+TODO about the FC algorithm 
+
+The fitness of a country, \(F_{c}\) is the sum of all the products it exports, weighted by their complexity, \(Q_{p}\). For each iteration there are two steps. First I find the temporary variables \(\hat{F}^{(n)}_{c}\) and \(\hat{Q}^{(n)}_{p}\), next they are normalized by the average value of the iteration. This normalization procedure means that after enough iterations, \(F_{c}\) and \(Q_{p}\) converges to a fixed point (see figure \ref{fig:fc_conv}), meaning that the initial conditions are not important. I set them to 1 for all \(\hat{F}^{(0)}_{c}\) and \(\hat{Q}^{(0)}_{p}\).
+
+ \[
+	 \begin{split}
+		 \hat{F}^{(n)}_{c} &= \sum_p M_{cp} Q^{(n-1)}_{p} \Rightarrow F^{(n)}_{c} = \frac{\hat{F}^{(n)}_{c}}{\bigg < \hat{F}^{(n)}_c \bigg > _c} \\
+		 \hat{Q}^{(n)}_{p} &= \frac{1}{\sum_c M_{cp} \frac{1}{F^{(n-1)}_c}} \Rightarrow Q^{(n)}_{p} = \frac{\hat{Q}^{(n)}_{p}}{\bigg < \hat{Q}^{(n)}_p \bigg > _p }
+	 \end{split}
+\]
+
+Plant complexity:
+
+For each plant, I quantify the complexity of its production output as the weighted average the complexity-values for each product it produces. I assign weights based on the value of the production. That is, the complexity for factory \(f\) at time \(t\), \(C_{ft}\), is defined as:
+
+$$
+C_{ft} = \sum_p PCI_{pt} \frac{O_{fpt}}{\sum_p O_{fpt}}
+$$
+
+where \(PCI_{pt}\) is the product complexity of product \(p\) at time \(t\) and \(O_{fpt}\) is the output (in current prices) of factory \(f\) in product \(p\) at time \(t\). The value of the production output is calculated as the net unit sale value of a given product times the amount of units sold. 
+
+This definition potentially underestimates the complexity of multi-product factories that produce complex products, but happen to sell a lot of their low-complex ones. I therefor also include a stricter measure of plant complexity, \(C^{\text{max}}_{ft}\), that uses only the most complex product in a factory's product-portfolio, regardless of the output volume.
+
+$$
+C^{\text{max}}_{ft} = max \{ PCI_{1t} I_{1ft}, \text{ ... }, PCI_{pt} I_{pt} \}
+$$
+
+where
+
+\[
+I_{pft} = \begin{cases}
+ 1 & \text{if } O_{fpt} \geq 0 \\
+ 0 & \text{if } O_{fpt} = 0
+\end{cases}
+\]
+
+- Supply chain quality:
+
+I measure the disruption in the supply network of a plant in three steps. First I assign each plant to a sector in the I/O network based on their sector classification in the ASI data.
+
+I then create a sector-level disruption variable by taking the weighted average of plant-level disruption values, where weights are the output share of a plant in the sectors total output. I now have an input-output network where each of the 130 sectors has a disruption value. The input-output network shows the average share of different sectors' output that is used as intermediate input in a given sectors production, as well its' suppliers' suppliers, and so on.
+
+I represent each sector as a node in a network and their supply-relationship as the strength of their link. Each node is then valued as the disruption value assign above. I can then calculate the eigenvector centrality for each sector. Each plant based in a sector then inherits it supply-network disruption value. The eigenvector centrality is basically an iterative algorithm that takes the disruption value in a nodes neighbors weighted by the nodes links to it, then takes the value of their neighbors weighted by their links, and so on. This catches the decreasing knock-on effects discussed in relation to the middle graph in figure \ref{fig:framework-io-model}.
+
+This plant-level value is my measure of supply-chain quality in when testing hypothesis \(H_2\).
+
+\subsection{Limitations}
+\label{sec:org979560b}
+
+\subsubsection{Endogeneity}
+\label{sec:orgd4457e7}
+There are a couple of reasons the effect of electricity disruptions on economic activities are diffult to study empirically. First, the relationship is likely to have a significant endogenous component. More complex production could be related to a more intensely developed economy, which could also be related to more stabile electricity supply. On the other hand, a more developed economy could have a more complex production, but would also have a higher electricity demand which could lead to shortages.
+
+\subsubsection{Modifiable Area Unit Problem}
+\label{sec:org4e3cc26}
+My tests rely on ``ground down'' state-wide variables on electricity reliability to individual plants. As with much of research in geography, this runs into the issue of artificial boundaries. For instance, states might not be appropriate scale of measurement, or be homogenous in its distribution of reliable electricity. However, the use of the district-level nightlights should reveal if there are large differences within states.
+
+\subsubsection{Attenuation bias}
+\label{sec:orge917ac0}
+My main electricity variables are either estimations or approximations. This very likely introduces some measurement error in my independent variable. Should this error be large enough, I risk that any result drowns in attenuation bias. The instrumental variable could potentially redeem this issue significantly.
+
+\subsubsection{The problem with instrumental approaches}
+\label{sec:orge917ac0}
+
+TODO: The instruments in the literature either instrument for short-term changes in electricity supply or one industry against the other. Neither can really target the "cooling" effect of NOT going into more complex products.
+
+TODO: Most instruments - like Allcott et al - instrument year-to-year variation of shortages. This has potential for estimating the elasticity between electricity supply and complexity and output. Roundabout way of getting a result: if more complex factories tend to be more harmed on output by the shortage instrument and the supply-chain weighted shortage, we can say that electricity disruptions dissuade investment in more complex goods. This is strictly not an observed effect, but a corrolary of the observed effect.
+
+% Methods
+% - Variables
+% - Data
+\subsection{Data}%
+\label{sub:data}
+
+\subsubsection{International trade data}%
+\label{sub:international_trade_data}
+
+
+
+\subsubsection{Electricity data}%
+\label{sub:energy_data}
+
+My main source of data on electricity shortages comes from India's Central Electricity Authority (CEA). The main feature of the dataset is a measure of shortages based on the difference between the observed consumption of electricity and the estimated counterfactual demand. I extract the energy data from the Power Supply Position of States section of the annual Load Generation Balance Reports published by the CEA (TODO cite reports). Digital versions are only available from 2009-10 at the earliest. For earlier years (1999-2009) I use the dataset constructed by \cite{allcott_how_2016} who worked in collaboration with the CEA to collect, digitize, and clean earlier reports. I then perform an extra step of cleaning up inconsistencies in the early-years set of observations. 
+
+At the end of each year, the CEA and the Regional Power Committees estimate the monthly counterfactual quantity that would have been demanded in each state if there were no shortages. This annual figure, listed in current prices, is the assessed demand (\(A\)). The sum of electricity available from power plants and net imports is the energy available. The measure of shortages (\(S\)) is then defined as the percent of demand in state \(s\) in year \(t\) that is not met:
+\[
+S_{st} = \frac{A_{st} - E_{st} }{A_{st}}
+\]
+
+In addition, the CEA reports a measure of the power shortages during peak hours (\(S^p\)). This ``peak shortage'' is defined analogously to \(S\) but using only peak assessed demand (\(A^{p}\)) and peak energy available (\(E^p\)):
+
+\[
+S^{p}_{st} = \frac{A^{p}_{st} - E^{p}_{st}}{A^{p}_{st}}
+\]
+The final sample consists of state-year observations of average- and peak shortage from 1999-2017.
+
+\subsubsection{Annual Survey of Industries (ASI)}%
+\label{sub:annual_survey_of_industries_asi}
+
+- TODO: CLEAN THIS UP 
+
+I use plant level data from the Annual Survey of Industries (ASI). The ASI is the primary source of information on industry in India and is collected annually by the Indian Ministry of Statistics and Programme Implementation (MOSPI). The ASI covers the manufacturing units in the registered sector. All registered factories with more than 100 employees (the ``census scheme'') is surveyed every year. Smaller factories are randomly sampled every year, stratified by industry and state. For the years 1997-2003, the census scheme covered factories with more than 200 workers. Until 2004 the sampling scheme covered around 1/3 of all registered factories. Since, it has covered around 1/5. For each plant, the ASI provides comprehensive information relating to input, output, value added, employment, and assets, Importantly, the ASI is a unique source of product-level output. 
+
+In the earlier years of my sample, products are listed according to their 5-digit ASI Commodity Classification (ASICC) codes, whereas later years are listed in NPCMS-2011 codes. This is a non-trivial change in classification system. Given a different classification structure, products can both change in complexity and importance in output-volume. For all statistical tests, I therefor include an indicator on which classification-part of the sample the observation comes from. To assign complexity values to plant's production, I convert the product classifiction into Harmonized System 1996 (HS96) codes through a series of concordances. For an overview, see appendix \ref{sec:appendix_data_cleaning}.
+
+The are a couple of important shortcomings when using ASI data. First, while the census schemes covers all factories with more than 100 (or 200) workers and the sampling scheme is a representative sample of smaller factories, they apply only to registered factories. \cite{nagaraj_how_2002} shows that only around 48\% and 43\% of the manufacturing establishments covered in the economic census for 1980 and 1990 appear in the ASI for the given year. Additionally, there is a possibility of underreporting a plants value-added for tax-avoidance purposes. However, as the non-included factories or the underreported value-added are not strongly related to electricity shortages or to product complexity, the results should not be influenced. 
+
+- TODO: Define dase sample: Factories can be observed in the survey even if they have closed down. I remove TODO factories that either did not respond to the survey or are reported as closed. I drop TODO observations without state-code and observations from TODO as they are from states not included in the electricity variables. I drop TODO observations reporting an industry code that is not a manufactoring industry by the NIC-2008 classification. Finally, I remove entries that are exact duplicates (presumably because they are entry mistakes). 
+
+- TODO: Outline electricity-use data flags.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{Analysis and results}%
+\label{sec:analysis_and_results}
+
+- TODO: Deflate based on year-industry values
+
+- TODO: All of it
+
+- TOOD: Should values be deflated are year-fixed effects enough?
+
+
+The main difficulty in testing the predictions from the framework is in controlling from the other factors that co-move with power quality and plant complexity. In other words: how can I separate an unreliable power supply from other factors influencing the sophistication of plants. 
+
+A few of the strategies used in other papers ...  \cite{allcott_how_2016} instrument for shortages by changes in rainfall and the effect it has on total power supply through hydrogeneration. However, as they note themselves, this is short-run effect and cannot be used to instrument in long term structural change.  \cite{alam_coping_2013} instead measures the impact of power outages by taking the difference between observations of plants in two industries that are have high- and low electricity intensity (steel mills vs brick-makers). Again, almost by definition, comparating two industries is unfeasible for studying changes in product-based complexity.
+
+\subsection{Validity of electricity variable}%
+\label{sub:validity_of_electricity_variable}
+
+The shortage observations depend on an official estimation of the non-shortage demand and is likely to be affected by measurement error. To confirm that the energy data is meaninful, I run a series of simple regression tests to "ground thruthed" microdata on the experience of manufacturing firms and on individual households. 
+
+The World Bank periodically conducts enterprise surveys in a range of countries. These surveys cover a broad variety of indicators on the production environment of firms, including perceived challenges and quality of public service provision. Survey data is available for India from 2005 and 2014 \citep{the_world_bank_enterprise_2020-1,the_world_bank_enterprise_2020-2}\footnote{The 2005 and 2014 sample covers 2,286 and 7,365 firms, respectively. The 2005 survey does not employ sample weights. For the 2014 survey, I use the strict weighting scheme.}. As shown in table TODO, the shortage variable is a significant predictor (at the p < 0.05 level) of the reported quality of the electricity supply (2005), the severity of electricity quality as a barrier to doing business (2014), the share of electricity generated by firms' own generator (2005, 2014), and whether the manager names electricity supply as the main obstacle to growth (2005, 2012)\footnote{The reason some of the variables are listed for both years is that the questionnaire have been updated, not because they were insignificant.}.
+
+The Indian Human Development Survey (IHDS) is a nationally representative panel survey of around 42,000 households covering a wide range of topics, including detailed information on electricity quality \citep{desai_india_2018-1,desai_india_2018}. The first and second round were completed in 2004-5 and 2011-12, respectively. I run two tests. The first is a simple regression the state-wide average shortage (\(S_{st}\)) on the average daily hours of electricity available to individual households. The second predicts the change in individual households quality of electricity (access in hours) from the change in state-wide average shortage between the two periods (2005 to 2012). As with the enterprise survey data, the shortage variable is a highly significant predictor at for both outcomes\footnote{I limit both regressions to the sample of households that were interviewed in both rounds. For split households, I use the household from the first round. This leaves 40,018 households in each sample. For the regression, I further filter to only the households that have access to electricity. This leaves 28.944 households in each sample. As recommended by the official documentation, I use the original panel weights.}.
+
+In sum, while there is likely to be some measure of attenuation bias in the shortage variable, it is a significant predictor of electricity quality on both the firm- and the household level. In addition, Alam (2013) use a measure based on nightlight composites to identify blackouts and shows that it is highly correlated with the peak shortage variable. This suggests that the shortage variable carries meaningful information on the electricity reliability at the the state level.
+
+TODO: FIND A WAY TO OUTPUT REGRESSION TABLES TO .TEX EASILY
+
+\subsection{Regressions}%
+\label{sub:regressions}
+
+
+TODO: Effect of shortage on the entry of plants
+
+The ASI also asks plants when the first year of production is. This allows us to date the entry of the plant. While the productive capital in the manufacturing sector, like plant machinery, is presumably  relatively static and specific, there is no guarantee that they produce the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry. Instead, we can limit the sample of "new" plants to a given time-interval after their inaugural production. Essentially, this analysis asks: how are the complexity plants observed in, say 2005 (t), that had their first year of production in 2003 (t-3, or t-1, or any t < t-1) affected by the average shortage in the two/three years preceding their entry (2001-2003)? I run the analysis with ... as robustness)
+
+The regression equations then takes the form:
+
+\[
+	Y_{st} = \bar{S}_{st} + 
+\]
+
+where Y is some variable, complexity being the main outcome I'm interested in, of plants that report year \(t\) to be their first year of production, \(\bar{S_{st}}\) is the average shortage in the state \(s\) in year \(t\) and two years before\footnote{I also run the analysis with only the smoothing over previous and current year.}. 
+
+
+TODO: IF TIME PERMITS: interaction between shortage and complexity on revenues - requires: shortage or the IV
+ - requires: deflation of revenues
+ - requires: deflation of materials
+ - requires: deflation of electricity
+ - requires: deflation of labor
+
+
+
+
+
+\subsection{Descriptives}%
+\label{sub:descriptives}
+
+As a first step, we can create the raw comparison between product complexity and state shortage.
+
+1) Distribution of plant complexity by state
+2) Distribution of shortages by state
+3) Mean plan panel variables.
+
+\subsection{Production technology}%
+\label{sub:production_technology}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{Discussion}%
+\label{sec:discussion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{Conclusion}%
+\label{sec:conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\bibliography{setup/collection}
+
+\begin{appendices}
+
+\newpage
+
+\section{Appendix: Data cleaning}%
+\label{sec:appendix_data_cleaning}
+
+\subsection{Cleaning international trade data}%l
+\label{sub:cleaning_international_trade_data}
+
+The data in international trade comes the BACI database maintained by CEPII (build on raw data from UN COMTRADE). CEPII cleans the data using the their own methodology. They exploit that a trade flow is usally reported by both the importer and the exporter. This makes it possible to assign a reliability ranking to each reporter, which can be used to give weights to different soruces of information, giving better export observations \citep{gualier_baci_2010}. 
+
+To minimize the year-to-year noise, I remove city-sized economies and the smallest exporters. To be included in the final sample, an economy must have a population of at least 1 million in 2005 and export for at least 1 billion current USD in 2005. As for the choice of reference year, the prerable year would have been the sample mid-year, around 2008, but the financial crash leaves exports unrepresentative. The sample is not very sensitive to changing the reference year. 
+
+In addition, I remove a few countries that supply highly unreliable trade information (Iraq, Afghanistan, and Chad) and a few products that are not being exported at all during the sample (9704 \footnote{"Stamps, postage or revenue; stamp-postmarks, first-day covers, postal stationery (stamped paper) and like, used, or if unused not of current or new issue in the country to which they are destined"}, 2527 \footnote{"Natural cryolite; natural chiolite"}, 1403 \footnote{"Vegetable materials of a kind used primarily in brooms or brushes; (eg broomcorn, piassava, couch-grass and istle), whether or not in hanks or bundles"}). All products that are exported by a country for less than 1000 dollars in a given year are set to 0. 
+
+The original export data covers 221 countries and "country-like" regions. After cleaning, 120 countries remains. These remaining countries covers 92 percent of the total export in the raw data, 94 percent of population in the original data, and 98 percent of the GDP in the original data. 
+
+\subsection{Cleaning Annual Survey of Industries (ASI)}%
+\label{sub:cleaning_annual_survey_of_industries_asi}
+
+The ASI is distributed by the Ministry of Statistics and Programme Implementation, Government of India, (MOSPI) as ten blocks for every year. These blocks require substantial cleaning and harmonization of variables. Here I outline the filtering procedure.
+
+I first create the base sample. Plants can be included in the survey, even if they are reported to be closed or are missing. I drop all observations not listed as open. I also drop all factories that are not listed as in a manufacturing sector and observations that don't report revenues (defined as the total gross sale value of all production output). Finally, I drop all observations that are exact copies of other observations.
+
+After the initial filtering process, there can still be observations that have misreported values of specific variables. When analysing these variables, I further limit the sample using a "flagging"-system\footnote{This method was inspired by \cite{allcott_how_2016}.}. 
+
+I assign observations an "input-revenue" flag if their labour or material-costs is more than two times their revenues or if their fuel and electricity costs are greater than revenues. Similarly, I can also observe the quantity of electricity consumed. I multiply the amount of electricity consumed by the state-year median price paid (current Rs/kWh). If the amount is higher than the revenue, I assign a flag. For evey time I run an analysis involving any of these variables as an outcome, I exclude observations that are flagged. I drop all the observations that have two or more flags. If an observation reports 0 electricity consumption, I set all electricity variables as missing for the observation.
+
+\subsection{Product concordance for ASI}%
+\label{sub:product_concordance_asi}
+
+As mentioned in the data-section, the ASI lists products according to two different classification methods. In earlier years (before 2010) the ASICC classification is used, whereas later years lists product by their NPCMS-2011 code. The standard nomenclature for internationa trade, however, is the Harmonized System classification (HS). Since I assign complexity to plants by their the products they produce, and since I calculate the complexity of products by their position in the internatinal trade network, I need to map the HS system to the codes used in the ASI.
+
+This is rather round-about process. The reason behind the shift from ASICC to NPCMS-2011 is that the early scheme was severely flawed in the grouping-classification and was poorly suited to international comparison. This means that the mapping between ASICC and NPCMS-2011 is imperfect. The NPCMS-2011 mapping is based directly on the international standard Central Product Classification, which again is different from the Harmonized System used in trade-accounting. I first match all products from the ASICC years to the NPCMS-2011 classification with the concordance table provided by MOSPI \footnote{http://www.csoisw.gov.in/CMS/En/1027-npcms-national-product-classification-for-manufacturing-sector.aspx}. I then turn the NPCMS-2011 codes into the CPC-2 classification by removing the last two digits (which are India specific). I use the conocordance table supplied by UNSD to map the CPC-2 codes to HS-2007. Finally, I use turn the HS-2007 codes into HS-1996 to match the trade data. 
+
+Often, one product code from the source classification maps to two different codes in the destination classifications. There is no way to solve this issue completely. Instead, I create two mappings: a "strict" and a "lenient" match. The "strict" match uses only products that have a non-partial match and leaves other products as missing. The "lenient" appraoch assigns the first of the partial mappings as a match. Since the difference is usually quite small between partially mapped products, is is usually feasible to purposely "missassign" the products to a mapping that exists, rather than drop it altogether. For instance, the ASICC listings of "Lobsters, processed/frozen" (11329), "Prawns, processed/frozen" (11331), "Shrimps, processed/frozen" (11332) all map to two different NPCMS-2011 codes: "Crustaceans, frozen" (212500) and "Crustaceans, otherwise prepared" (212700). Similarly, "Butter" (11411) maps to three different kinds of butter (based on cattle-milk, buffalo-milk, or other milk) in the NPCMS-2011 system. While not particularly rigourous, very little information should be lost on the complexity of the production output between these three mappings. Indeed, many such categories will be clubbed together anyhow when converting NPCMS-2011 to Harmonized System codes. It is worth noting that I use the "strict"/"lenient" approach troughout the concordance chain. This means a substantial product loss in the "strict" approach: products from the ASICC classification (five digits) that might be together in the final Harmonized System code can be dropped because they map to two different NPCMS-2011 codes (that are seven digits vs the four I use in the HS-code).
+
+\input{tables/appendix_data_cleaning_year_obs}
+
+\input{tables/appendix_data_cleaning_state_obs}
+
+\input{tables/appendix_data_cleaning_year_output}
+
+\input{tables/appendix_data_cleaning_state_output}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage 
+
+\section{Appendix: RCA and RpcA}%
+\label{sec:rca}
+Most of the early papers in economic complexity (e.g \citealp{tacchella_new_2012,hidalgo_building_2009}) used the revealed comparative advantage \citep{balassa_trade_1965} to normalize trade data. Revealed comparative advantage is defined as
+
+\[
+	RCA_{cp} = \frac{X_{cp}}{\sum_p X_{cp}} \bigg / \frac{\sum_c X_{cp}}{\sum_{cp} X_{cp}}
+\]
+
+where $X_{cp}$ is the export value of country $c$'s export of product $p$.
+
+There are three main drawbacks of using RCA:
+
+\begin{enumerate}
+\item While in practice used to confer an idea of what countries are good at, RCA in fact measures the relative intensity of countries' exports. For instance, consider if a country is very poor at all types of production. This means its total exports will be low. If the country is just a little bit less hapless at one product, this product will have a very high RCA, since other countries will have less of a gulf between their export basket and this one given product. This, despite it being less proficient in producing the product than other countries.
+\item Secondly, if a country exports a lot of something very valuable - like oil - and it dwarfs the contribution of other products to the value of the country's total exports, this product will dominate the first term in the RCA formula ($X_{cp} / \sum_p X_{cp}$). Even if the country is very good at producing other products, their RCA will be artificially lowered by the valuable commodity.
+\item Finally, the RCA of a product is connected to the prices of other products. This means that should a country export three products, and the price of one of them falls sharply, the RCA in the two other products rises for the country. Should a second country be equally proficient in exporting the two products but their third product's price stay put, they will now seem worse a exporting the two products.
+\end{enumerate}
+
+A different metric, used in a few of the newer papers \citep{hausmann_implied_2019}, instead measures the per-capita export in a product normalized by global (total) per capita export in the product. The "revealed per capita advantage" (RpcA) for country $c$ in $p$ is then simply defined as:
+
+\[
+	RpcA_{cp} = \frac{X_{cp}}{POP_{c}} \bigg / \frac{\sum_c X_{cp}}{\sum_c POP_c}
+\]
+
+where $POP_c$ is the population of country $c$.
+
+By not including the total export basket of country $c$ in the normalization we avoid the three issues outlined above, and catch a more "absolute" skill based measure of the economy's capabilities. 
+
+\subsection{Distribution of comparative advantage}
+\label{subsec:dist}
+
+Changing from RCA to RpcA has some distinct impacts on the distribution of comparative advantage, both in terms of the total distribution and in which countries are more ``significant exporters''. Figure \ref{fig:rca_rpca_hist} shows the distribution of countries by the number of products they are significant exporters of by RCA (\ref{fig:rca_hist}) and RpcA (\ref{fig:rpca_hist}). Using RpcA results in a much more right-skewed distribution, with some countries exporting almost all available products.
+
+% FIGURE: rca vs rpca histograms
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_histogram_rca}
+         \caption{RCA}
+         \label{fig:rca_hist}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_histogram_rpca}
+         \caption{RpcA}
+         \label{fig:rpca_hist}
+     \end{subfigure}
+        \caption{Distribution of countries by number of products with
+		  comparative advantage (across sample years).}
+        \label{fig:rca_rpca_hist}
+\end{figure}
+
+One of the most interesting changes when shifting to RpcA is in the relationship to total population. When using RpcA the correlation between population and the number of products exported by a country disappears completely. Figure \ref{fig:rca_rpca_by_pop} shows the relationship across the sample years. It can be a bit hard to see what is going on, so the histogram in figure \ref{fig:p_val_hist_pop} shows the distribution of p-values for the population term in a simple linear regression on country fitness by the natural log of population. Population is not significant for any year using RpcA but for every year using RCA. Next to it, figure \ref{fig:stand_diff_fit_pop} shows the relationship between the difference in fitness values based on RCA and RpcA and population. Differences are taken by first standardizing fitness values to \(F^{z}_{c}\) by
+
+\[
+ F^{z}_{c} = \frac{F_{c} - <F_{c}>}{sd(F_{c})}
+\]
+
+where \(F_{c}\) is the fitness of country \(c\) in the given year, and then subtracting the \(F^{z}_{c}\) based on RpcA from the one based on RCA. That is, a negative difference means that fitness for a given county is higher using fitness calculated from RpcA. The result, which are especially driven by China and India, shows that countries that have a larger population tend to have their fitness reduced more by changing the trade-normalization metric. The result is not driven by penalizing large populations, but by removing the positive relationship between comparative advantage and population.
+
+% FIGURE: rca, rpca by pop all years
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_rca_by_pop}
+         \caption{RCA by population, ln}
+         \label{fig:rca_by_pop}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_rpca_by_pop}
+         \caption{RpcA by population, ln}
+         \label{fig:rpca_by_pop}
+     \end{subfigure}
+	 \caption{Relationship between ln(population) and the number of products
+	   with comparative advantage in a country (across sample years).}
+        \label{fig:rca_rpca_by_pop}
+\end{figure}
+
+% FIGURE: P-val hist and stand diff 2010 by pop
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_p_val_hist_rca_rpca_by_pop}
+         \caption{p-values of ln(pop) term on fitness}
+         \label{fig:p_val_hist_pop}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+       \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_difference_by_pop_2010}
+         \caption{difference in fitness by ln(pop) (2010), spearman correlation and SLR}
+         \label{fig:stand_diff_fit_pop}
+     \end{subfigure}
+	 \caption{Relationship between ln(population) and the number of products with comparative advantage in a country (across sample years).}
+        \label{fig:population_difference}
+\end{figure}
+
+\subsection{Significance for complexity metrics}
+\label{subsec:significance_for_complexity}
+
+The change in comparative advantage clearly changes the $M$ matrix used in the fitness algorithm. This means that the fitness of countries change as well. Figure \ref{fig:bar_plot_diff} show the change in standardized fitness when using RCA and RpcA in 2010. The figure shows a similar picture to \ref{fig:stand_diff_fit_pop}: more populous countries tend to be less fit using RpcA. Figure \ref{fig:rca_rpca_fit_hist} shows the distribution of fitness values across the sample years. Unsurprisingly, they are similar to the distribution of comparative advantage in figure \ref{fig:rca_rpca_hist}: RpcA-based fitness are more right-skewed.
+
+TODO: Volatility. Given that population of countries are less volatile over time than commodity prices, we would expect that product complexity values are more stable from year to year using RCA than RpcA.
+% FIGURE: difference 2010 bar
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_difference_bar}
+  \caption{Difference in country fitness when changing normalization metric from RCA to RpcA (2010-data). Negative values have a higher fitness value when using RpcA than RCA as normalization metric.}
+  \label{fig:bar_plot_diff}
+\end{figure}
+
+% FIGURE: rca vs rpca histograms
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_rca_histogram}
+         \caption{RCA-based fitness}
+         \label{fig:rca_fit_hist}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_rpca_histogram}
+         \caption{RpcA-based fitness}
+         \label{fig:rpca_fit_hist}
+     \end{subfigure}
+        \caption{Distribution of countries by fitness values (across sample years).}
+        \label{fig:rca_rpca_fit_hist}
+\end{figure}
+
+% Importance for oveall distribution of fitness
+% Importance for population
+% Importance for resource rents
+% biggest losers, winners
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{Appendix: Which algorithm? Fitness-Complexity and Hausmann-Hidalgo}
+\label{sec:appendix-algorithm}
+
+% FIGURE: convergence of fitness, complexity
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_convergence_plot}
+	 \caption{Convergence of fitness values}
+         \label{fig:fit_conv}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_complexity_convergence_plot}
+         \caption{Convergence of complexity values}
+         \label{fig:comp_conv}
+     \end{subfigure}
+     \caption{Each line represents a country or a product in 2010. For most of the countries or products the FC algorithm reaches its fixed point after relatively few iterations. Note that lines are colored by the actual value, not the natural log.}
+        \label{fig:fc_conv}
+\end{figure}
+
+
+TODO
+
+\end{appendices}
+
+\newpage
+
+
+\end{document}
