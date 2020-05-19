@@ -8,7 +8,8 @@ get_labour_input_share <- function(plant_tbl) {
 
 labour_tbl <- plant_tbl %>%
 	mutate(
-	       wage_share = ifelse(wages == 0 | total_production_cost == 0, NA, wages / total_production_cost)
+	       wage_share_costs = ifelse(wages == 0 | total_production_cost == 0, NA, wages / total_production_cost),
+	       wage_share_revenue = ifelse(wages == 0 | revenue == 0, NA, wages / revenue)
 	       ) %>%
 select(dsl, year, total_production_cost, wages, wage_share)
 

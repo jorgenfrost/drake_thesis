@@ -51,7 +51,8 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data) {
       group_by(year, dsl) %>%
       summarize(
         total_plant_output = sum(qty_sold * net_sale_val) 
-      )
+      ) %>%
+      ungroup()
     
     # B) Add table total output values to product observations 
     tbl <- left_join(tbl, total_output_tbl) 
@@ -61,14 +62,16 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data) {
       group_by(year, dsl) %>% 
       summarize(
         w_avg_complexity = sum(((qty_sold * net_sale_val) / total_plant_output) * product_complexity, na.rm = TRUE)
-      )
+      ) %>%
+      ungroup()
     
     # Calculate top-line complexity of plants ------------------------
     plant_max_complexity_tbl <- tbl %>%
       group_by(year, dsl) %>%
       summarize(
         max_complexity = max(product_complexity, na.rm = TRUE)
-      )
+      ) %>%
+      ungroup()
     
     plant_complexity_tbl <- full_join(plant_avg_complexity_tbl, plant_max_complexity_tbl)
     

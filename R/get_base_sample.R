@@ -47,7 +47,7 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
       distinct() # remove any duplicate values
   }
   
-  blk_a <- read_block("A")
+  blk_a <- read_block("A")  
   blk_b <- read_block("B")
   blk_e <- read_block("E")
   blk_h <- read_block("H")
@@ -74,6 +74,7 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
   id_tbl <- blk_a %>%
     select(year, dsl, scheme, state_code, district_code, nic5digit, multiplier, rural_urban, total_production_cost)
   
+
   # In block A (now plant_tbl), state codes are not classified to the same system
   # across all years. I use two external tables to fix this. First I use a
   # concordance table with the coresponding codes (old and new). Second I use a
@@ -167,7 +168,8 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
     group_by(year, dsl) %>%
     summarize(
       total_fuel_purchase_val = sum(purchase_val)
-    )
+    ) %>%
+    ungroup()
   
   # Total materials (inputs) purchased --------------------------------
   # BLK H: ASICC
@@ -188,7 +190,8 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
       total_non_basic_items_val = sum(purchase_val[item_code == 99920 | item_code == 9992000]), # energy and other
       total_inputs_val = sum(purchase_val[item_code == 99930 | item_code == 9993000 | item_code == 99940 | item_code == 9994000]), # all of it
       total_inputs_no_imports_val = sum(purchase_val[item_code == 99930 | item_code == 9993000]) # all of it
-    )
+    ) %>% 
+    ungroup()
   
   # Get labor information --------------------------------------------
   
@@ -231,6 +234,13 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
     left_join(labor_tbl, by = c("year", "dsl")) %>%
     left_join(revenue_tbl, by = c("year", "dsl")) 
   
+  id_tbl %>%
+    left_join(blk_b %>% select(-blk), by = c("year", "dsl")) %>%
+    left_join(electricity_tbl, by = c("year", "dsl")) 
+    left_join(fuel_tbl, by = c("year", "dsl")) %>%
+    left_join(total_materials_tbl, by = c("year", "dsl")) %>%
+    left_join(labor_tbl, by = c("year", "dsl")) %>%
+    left_join(revenue_tbl, by = c("year", "dsl")) 
   ##################################################################
   ##                      3: GET BASE SAMPLE                      ##
   ##################################################################
@@ -314,8 +324,7 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
     semi_join(revenue_na_ft, by = c("year", "dsl")) %>%
     semi_join(emp_ft, by = c("year", "dsl")) %>%
     anti_join(flag_ft, by = c("year", "dsl")) %>%
-    left_join(flag_tbl, by = c("year", "dsl")) %>%
-    distinct()
+    left_join(flag_tbl, by = c("year", "dsl")) 
  
   ##################################################################
   ##                      4: GET OUTPUT                           ##
