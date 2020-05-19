@@ -241,15 +241,6 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
     filter(status_of_unit == 1) %>%
     select(year, dsl)
   
-  # Get "manufacturing" filter
-  
-  # Filter NIC codes that are not manufactoring (that is, not under head 0-4).
-  # headings are the first digit, so I just filter for less than 50000
-  
-  manufacturing_ft <- blk_a %>%
-	  filter(nic5digit < 50000) %>%
-	  select(dsl, year)
-
   # Unrealistically many employees -------------------------------------
   # (just 1 plant - t_man_data and wages doesn't match avg_total_emp)
   emp_ft <- labor_tbl %>% 
@@ -320,11 +311,11 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
   # Apply filters -----------------------------------------------------
   plant_base_tbl <- plant_tbl %>%
     semi_join(open_ft, by = c("year", "dsl")) %>%
-    semi_join(manufacturing_ft, by = c("year", "dsl")) %>%
     semi_join(revenue_na_ft, by = c("year", "dsl")) %>%
     semi_join(emp_ft, by = c("year", "dsl")) %>%
     anti_join(flag_ft, by = c("year", "dsl")) %>%
-    left_join(flag_tbl, by = c("year", "dsl"))
+    left_join(flag_tbl, by = c("year", "dsl")) %>%
+    distinct()
  
   ##################################################################
   ##                      4: GET OUTPUT                           ##

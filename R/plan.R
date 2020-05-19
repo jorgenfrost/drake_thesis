@@ -52,6 +52,9 @@ the_plan <-
       plant_tbl = asi_base_sample_ls$plant_tbl,
       input_tbl = asi_base_sample_ls$input_tbl
     ),
+		    plant_nic98_tbl = get_industries(
+						     asi_base_sample_ls$plant_tbl
+						     ),
 
     # Energy data: preferred
     energy_shortages_tbl = clean_energy_shortages(
@@ -85,7 +88,11 @@ the_plan <-
 	 rural_pop = file_in("./data/external/rbi/changed_manually/population_in_rural_area.xlsx"),
 	 urban_pop = file_in("./data/external/rbi/changed_manually/population_in_urban_area.xlsx"),
 	 total_pop = file_in("./data/external/rbi/changed_manually/total_population.xlsx"),
-	 state_codes = file_in("./data/external/concord_tables/rbi_state_codes/rbi_to_asi_state_codes.csv")
+	 state_codes = file_in("./data/external/concord_tables/rbi_state_codes/rbi_to_asi_state_codes.csv"),
+	 imp_pop_density = file_in("./data/external/rbi/changed_manually/density_of_population_imputed.xlsx"),
+	 imp_rural_pop = file_in("./data/external/rbi/changed_manually/population_in_rural_area_imputed.xlsx"),
+	 imp_urban_pop = file_in("./data/external/rbi/changed_manually/population_in_urban_area_imputed.xlsx"),
+	 imp_total_pop = file_in("./data/external/rbi/changed_manually/total_population_imputed.xlsx")
 	 ),
     
     # Clean IHDS data
