@@ -29,6 +29,11 @@
 
 # TODO: Hvor i svinget er det at der ryger nogle observationer?
 
+output_data <- readd("asi_base_sample_ls")$output_tbl
+
+output_data
+
+
 fix_asi_products <- function(output_data, plant_data = NULL, return = "main",
   cpc2_path = here("data/external/concord_tables/product_codes/CPC_Ver_2_english_structure.txt")
 ) {
@@ -49,7 +54,8 @@ fix_asi_products <- function(output_data, plant_data = NULL, return = "main",
   } 
   
   # get concordance tables
-  asicc_to_cpc2_tbl <- get_asicc_cpc2_concordance()
+  asicc_to_cpc2_tbl <- get_asicc_cpc2_concordance() %>%
+	  mutate(asicc_code = as.numeric(asicc_code))
   cpc2_to_hs07_tbl <- get_cpc2_hs07_concordance()
   hs07_to_hs96_tbl <- get_hs07_hs96_concordance()
 

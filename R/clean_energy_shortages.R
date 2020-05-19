@@ -13,10 +13,10 @@ clean_energy_shortages <- function(
     full.names = TRUE
   ),
   min_year = 1999,
-  old_avg_raw = read_csv(file_in("./data/external/allcott_energy_data_india/india_energy_data/allcott_EnergyRequirement.csv")),
-  old_peak_raw = read_csv(file_in("./data/external/allcott_energy_data_india/india_energy_data/allcott_PeakDemand.csv")),
-  avg_2003_data = read_csv(file_in("./data/external/allcott_energy_data_india/india_energy_data/energy_requirement_2003_data.csv")),
-  peak_2003_data = read_csv(file_in("./data/external/allcott_energy_data_india/india_energy_data/peak_demand_2003_data.csv"))
+  old_avg_raw = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/allcott_EnergyRequirement.csv")),
+  old_peak_raw = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/allcott_PeakDemand.csv")),
+  avg_2003_data = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/energy_requirement_2003_data.csv")),
+  peak_2003_data = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/peak_demand_2003_data.csv"))
   
 ) {
   # old cea data
@@ -30,8 +30,6 @@ clean_energy_shortages <- function(
   old_peak_tbl <- old_peak_raw %>% 
     clean_names(case = "snake") %>%
     select(year, state, peak_demand_mw, peak_met_mw) # exclude any empty cols
-  
-  
   
   # newer cea data
   # separate
@@ -127,7 +125,10 @@ clean_energy_shortages <- function(
       avg_shortage = (requirement_mu - availability_mu) / requirement_mu,
       peak_shortage = (peak_demand_mw - peak_met_mw) / peak_demand_mw
     )
+
+  # Add lagged shortage values ---------------------------------
+
+
   
   return(full_tbl)
 }
-# END 

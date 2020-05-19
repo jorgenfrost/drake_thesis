@@ -92,6 +92,8 @@ TODO: underinvestment, prices, inefficience, source: Zhang (Out of the Darkness)
 
 TODO: plot most populous states by avg shortage and peak shortage
 
+TODO: Why should we care about complexity?
+
 TODO: Development of complexity/fitness in India + plot change in complexity against change in GDP/cap
 
 % Literature review
@@ -310,6 +312,15 @@ TODO: Most instruments - like Allcott et al - instrument year-to-year variation 
 \subsection{Data}%
 \label{sub:data}
 
+\subsubsection{State-wise variables}%
+\label{sub:state_wise_variables}
+Net GDP, GDP/cap = From RBI. There are often multiple base-years available. When there are observations for the same year using different base-years, I use the newest. The choice of base isn't a completely trivial issue, since there are often substantial differences for estimates for the same year measured against two different base-years. For instance, after rebasing GDP in 1999-2000, the total net domestic gross product increases by almost 65\% compared to the same year (1999-2000) measured using 1993-94 as a base. To minimise the noise introduced by these base-year changes, I use a three-year moving average (meaning that the value of 1999-2000 is the average GDP between 1998-99, 1999-2000, 2000-01). As an alternative specification, I also run the tests using state-year dummy variables.
+
+
+
+Population density. Data from 2001 and 2011. I impute the rest of the values. (Plot them first)
+
+
 \subsubsection{International trade data}%
 \label{sub:international_trade_data}
 
@@ -330,6 +341,9 @@ In addition, the CEA reports a measure of the power shortages during peak hours 
 \[
 S^{p}_{st} = \frac{A^{p}_{st} - E^{p}_{st}}{A^{p}_{st}}
 \]
+
+I exclude a few of the regions from my sample due to 
+
 The final sample consists of state-year observations of average- and peak shortage from 1999-2017.
 
 \subsubsection{Annual Survey of Industries (ASI)}%
@@ -382,21 +396,33 @@ TODO: FIND A WAY TO OUTPUT REGRESSION TABLES TO .TEX EASILY
 \subsection{Regressions}%
 \label{sub:regressions}
 
+TODO: The effect I'm interested in is primarily 
+Some researchers have used rainfalls and tempereature controls in their specification. While variation in precipitation levels can act as economic shocks on a yearly basis, it is not likely to influence ... 
+temperature- and rainfall controls from my regression specification.
+
+TODO: 
 
 TODO: Effect of shortage on the entry of plants
 
-The ASI also asks plants when the first year of production is. This allows us to date the entry of the plant. While the productive capital in the manufacturing sector, like plant machinery, is presumably  relatively static and specific, there is no guarantee that they produce the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry. Instead, we can limit the sample of "new" plants to a given time-interval after their inaugural production. Essentially, this analysis asks: how are the complexity plants observed in, say 2005 (t), that had their first year of production in 2003 (t-3, or t-1, or any t < t-1) affected by the average shortage in the two/three years preceding their entry (2001-2003)? I run the analysis with ... as robustness)
+The ASI also asks plants when the first year of production is. This allows us to date the entry of the plant. While the productive capital in the manufacturing sector, like plant machinery, is presumably  relatively static and product specific, there is no guarantee that a plant produce the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry. Instead, we can limit the sample of "new" plants to a given time-interval after their inaugural production. Essentially, this analysis asks: how are the complexity plants observed in, say 2005 (t), that had their first year of production in 2003 (t-3, or t-1, or any t < t-1) affected by the average shortage in the two/three years preceding their entry (2001-2003)?
 
-The regression equations then takes the form:
+Let $Y_{ist}$ be some variable of a plant with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. Plant complexity is my main variable of interest here. Define then $\bar{S}_{st}$ as the average shortage in the year of entry and the two years prior in state $s$. I also include several state-level variables: population density, share of rural population, and 
+$R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{it}$ represents industry-year indicators. I include industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages). This reduces the risk that some unobserved event within an industry drives the the outcome (like complexity) but is not related to shortages.
+
+The regression equation then takes the form:
 
 \[
-	Y_{st} = \bar{S}_{st} + 
+	Y_{ist} = \bar{S}_{st} + R_{s} + T_{t} + I_{it} 
 \]
 
-where Y is some variable, complexity being the main outcome I'm interested in, of plants that report year \(t\) to be their first year of production, \(\bar{S_{st}}\) is the average shortage in the state \(s\) in year \(t\) and two years before\footnote{I also run the analysis with only the smoothing over previous and current year.}. 
 
 
-TODO: IF TIME PERMITS: interaction between shortage and complexity on revenues - requires: shortage or the IV
+TODO: ABOVE, but with electricity intensity
+TODO: ABOVE, but with self-generation share
+TODO: 
+ - TODO: Add to discussion
+
+TODOa: IF TIME PERMITS: interaction between shortage and complexity on revenues - requires: shortage or the IV
  - requires: deflation of revenues
  - requires: deflation of materials
  - requires: deflation of electricity

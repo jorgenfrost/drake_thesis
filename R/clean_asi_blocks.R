@@ -131,85 +131,85 @@ clean_asi_blocks <- function(asi_files) {
     # other, what can you do?
     
     # fix 1998-99
-    if (current_year == 1999) {
-      if (current_block == "A") {
-        x <- x %>%
-          select(-a_itm7) %>%
-          rename(
-            nic5digit = ind_cd,
-            district_code = a_itm8,
-            rural_urban = a_itm10,
-            no_of_units = a_itm11,
-            unit_status = a_itm12
-          ) %>%
-          mutate(
-            total_production_cost = NA # 1999 sample does not contain this var
-          )
-        # end block A
-      } else if (current_block == "B") {
-	      x <- x %>% 
-		      rename(
-			     initial_production = b_itm5
-			     )
-	# end block B
-      } else if (current_block == "E") {
-        x <- x %>%
-          rename(
-            sno = e_itm1,
-            t_man_day = e_itm4,
-            avg_person_work = e_itm7
-          ) %>%
-          mutate(
-            wages = NA # 1999 sample does not contain this var
-          )
-        
-        # end block E
-      } else if (current_block == "G") {
-        x <- x %>%
-          rename(
-            var_st_semi_fin = g_itm2,
-            val_elec_gen_sold = g_itm3,
-          )
-        # end block G
-      } else if (current_block == "H") {
-        x <- x %>%
-          rename(
-            sno = h_itm1,
-            item_code = h_itm3,
-	    qty_cons = h_itm5,
-            purchase_val = h_itm6
-          ) %>%
-      mutate(
-	     unit_code = NA # 1999 sample does not contain this var
-	     )
-        # end block H
-      } else if (current_block == "I") {
-        x <- x %>%
-          rename(
-            sno = i_itm1,
-            item_code = i_itm3,
-	    qty_cons = i_itm5,
-            purchase_val = i_itm6
-          ) %>%
-      mutate(
-	     unit_code = NA # 1999 sample does not contain this var
-	     )
-        # end block I
-      } else if (current_block == "J") {
-        x <- x %>%
-          rename(
-            sno = j_itm1,
-            item_code = j_itm2,
-            qty_sold = j_itm4,
-	    gross_sale_val = j_itm5,
-            net_sale_val = j_itm10
-          ) %>%
-      mutate(
-	     unit_code = NA # 1999 sample does not contain this var
-	     )
-        # end block J
-      }
-    }
+    #     if (current_year == 1999) {
+    #       if (current_block == "A") {
+    #         x <- x %>%
+    #           select(-a_itm7) %>%
+    #           rename(
+    #             nic5digit = ind_cd,
+    #             district_code = a_itm8,
+    #             rural_urban = a_itm10,
+    #             no_of_units = a_itm11,
+    #             unit_status = a_itm12
+    #           ) %>%
+    #           mutate(
+    #             total_production_cost = NA # 1999 sample does not contain this var
+    #           )
+    #     end block A
+    #       } else if (current_block == "B") {
+    #               x <- x %>% 
+    #                       rename(
+    #                              initial_production = b_itm5
+    #                              )
+    #     end block B
+    #       } else if (current_block == "E") {
+    #         x <- x %>%
+    #           rename(
+    #             sno = e_itm1,
+    #             t_man_day = e_itm4,
+    #             avg_person_work = e_itm7
+    #           ) %>%
+    #           mutate(
+    #             wages = NA # 1999 sample does not contain this var
+    #           )
+    #         
+    #     end block E
+    #       } else if (current_block == "G") {
+    #         x <- x %>%
+    #           rename(
+    #             var_st_semi_fin = g_itm2,
+    #             val_elec_gen_sold = g_itm3,
+    #           )
+    #     end block G
+    #       } else if (current_block == "H") {
+    #         x <- x %>%
+    #           rename(
+    #             sno = h_itm1,
+    #             item_code = h_itm3,
+    #             qty_cons = h_itm5,
+    #             purchase_val = h_itm6
+    #           ) %>%
+    #       mutate(
+    #              unit_code = NA # 1999 sample does not contain this var
+    #              )
+    #     end block H
+    #       } else if (current_block == "I") {
+    #         x <- x %>%
+    #           rename(
+    #             sno = i_itm1,
+    #             item_code = i_itm3,
+    #             qty_cons = i_itm5,
+    #             purchase_val = i_itm6
+    #           ) %>%
+    #       mutate(
+    #              unit_code = NA # 1999 sample does not contain this var
+    #              )
+    #     end block I
+    #       } else if (current_block == "J") {
+    #         x <- x %>%
+    #           rename(
+    #             sno = j_itm1,
+    #             item_code = j_itm2,
+    #             qty_sold = j_itm4,
+    #             gross_sale_val = j_itm5,
+    #             net_sale_val = j_itm10
+    #           ) %>%
+    #       mutate(
+    #              unit_code = NA # 1999 sample does not contain this var
+    #              )
+    #     end block J
+    #       }
+    #     }
     
     # fix 1999-00
     if (current_year == 2000) {
@@ -814,14 +814,6 @@ clean_asi_blocks <- function(asi_files) {
     
     # By mapping unto the x-tibble, the function is applied columnwise.
     df <- df %>% map_dfc(correct_types_fun)
-    
-    # Finally, since the nic5digit variable contains some letters in year 1998-99
-    # but only numbers in the other years, the above method does not work. I
-    # therefor coerce all nic5digit variables to character type.
-    
-    if ("nic5digit" %in% names(df)) {
-      df$nic5digit <- as.character(df$nic5digit)
-    }
     
     return(df)
   }

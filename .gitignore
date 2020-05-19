@@ -1,5 +1,15 @@
 data/*
 *.pdf
 *.png
-*.tex
 .drake/*
+
+# tex output
+*.aux
+*.bbl
+*.blg
+*.log
+*.toc
+*.fls
+*.fdb_latexmk
+
+

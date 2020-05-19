@@ -376,3 +376,66 @@ plot_richest_poorest_exporters <- function(complexity, ref_year, gdp_cap, rpca, 
   # END 
   return(out_plot)
 }
+
+#' Function that creates and saves the convergence plots for the fitness
+#' algorithm.
+#' 
+#' @param fit_tbl the data frame containing fitness and complexity values
+#' @param year year to plot
+#' @param its number of iterations to plot
+#' @param write_to string that gives the destination of final
+#' @param gradient_cols Vector of length 3 with colors to make gradient (hex code)
+#' @export
+
+# TODO: Make nicer.
+
+plot_fitness_conv <- function(fit_tbl, ref_year = 2010, its = 40, write_to, gradient_cols = c("#a50f15", "#ffffbf", "#253494")) {
+
+fit_tbl <- fit_tbl %>% 
+	filter(metric == "fitness") %>%
+	filter(year == ref_year) %>%
+	filter(iteration <=its) %>%
+	mutate(ln_fit = log(val))
+
+fit_plot <- ggplot(fit_tbl, aes(x = iteration, y = ln_fit, group = id, color = val)) +
+geom_line() +
+theme_pubr() +
+scale_color_gradientn(colours = gradient_cols, na.value = "gray") +
+labs(colour = "Fitness", y = "Fitness, ln", x = "iteration") +
+guides(color = FALSE)
+
+ggsave(plot = fit_plot, filename = here(write_to))
+return(fit_plot)
+
+}
+
+#' Function that creates and saves the convergence plots for the complexity
+#' algorithm.
+#' 
+#' @param fit_tbl the data frame containing fitness and complexity values
+#' @param year year to plot
+#' @param its number of iterations to plot
+#' @param write_to string that gives the destination of final
+#' @param gradient_cols Vector of length 3 with colors to make gradient (hex code)
+#' @export
+
+plot_complexity_conv <- function(fit_tbl, ref_year = 2010, its = 40, write_to, gradient_cols = c("#a50f15", "#ffffbf", "#253494")) {
+
+comp_tbl <- fit_tbl %>% 
+	filter(metric == "complexity") %>%
+	filter(year == ref_year) %>%
+	filter(iteration <=its) %>%
+	mutate(ln_comp = log(val))
+
+comp_plot <- ggplot(comp_tbl, aes(x = iteration, y = ln_comp, group = id, color = val)) +
+geom_line() +
+theme_pubr() +
+scale_color_gradientn(colours = gradient_cols, na.value = "gray") +
+labs(colour = "Complexity", y = "Complexity, ln", x = "iteration") +
+guides(color = FALSE)
+
+ggsave(plot = comp_plot, filename = here(write_to))
+
+return(comp_plot)
+
+}

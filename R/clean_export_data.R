@@ -18,7 +18,7 @@ clean_export_data <- function(
   ref_year = 2005,
   min_pop = 1000000,
   min_total_export = 1000000000,
-  min_year = 1999,
+  min_year = 2000,
   unreliable_countries = c("IRQ", "AFG", "TCD"),
   removed_prods = c(
       "9999", # unspecified products

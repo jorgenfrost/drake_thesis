@@ -15,6 +15,11 @@ Acemoglu, D., Carvalho, V.~M., Ozdaglar, A., and Tahbaz-Salehi, A. (2012).
 Adam, A., Garas, A., and Lapatinas, A. (2019).
 \newblock Economic complexity and jobs: An empirical analysis.
 
+\bibitem[Alam, 2013]{alam_coping_2013}
+Alam, M. (2013).
+\newblock Coping with blackouts: {{Power}} outages and firm choices.
+\newblock {\em Department of Economics, Yale University}.
+
 \bibitem[Allcott et~al., 2016]{allcott_how_2016}
 Allcott, H., {Collard-Wexler}, A., and O'Connell, S.~D. (2016).
 \newblock How do electricity shortages affect industry? {{Evidence}} from
@@ -132,6 +137,11 @@ Kremer, M. (1993).
 \newblock The {{O}}-{{Ring Theory}} of {{Economic Development}}.
 \newblock {\em The Quarterly Journal of Economics}, 108(3):551--575.
 
+\bibitem[Nagaraj, 2002]{nagaraj_how_2002}
+Nagaraj, R. (2002).
+\newblock How to improve {{India}}'s industrial statistics.
+\newblock {\em Economic and Political Weekly}, pages 966--970.
+
 \bibitem[Pritchett, 1997]{pritchett_divergence_1997}
 Pritchett, L. (1997).
 \newblock Divergence, big time.
@@ -159,19 +169,19 @@ Tacchella, A., Mazzilli, D., and Pietronero, L. (2018).
 \newblock A dynamical systems approach to gross domestic product forecasting.
 \newblock {\em Nature Physics}, 14(8):861--865.
 
-\bibitem[{The World Bank}, 2019]{the_world_bank_enterprise_2019}
-{The World Bank} (2019).
+\bibitem[{World Bank}, 2020a]{world_bank_enterprise_2020}
+{World Bank} (2020a).
 \newblock Enterprise {{Surveys Indicators Data}}.
 \newblock https://www.enterprisesurveys.org/en/data.
 
-\bibitem[{The World Bank}, 2020a]{the_world_bank_world_2020-1}
-{The World Bank} (2020a).
+\bibitem[{World Bank}, 2020b]{world_bank_world_2020-1}
+{World Bank} (2020b).
 \newblock World {{Development Indicators}}: {{GDP}} per capita, {{PPP}}
   (constant 2011 international \$).
 \newblock https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD.
 
-\bibitem[{The World Bank}, 2020b]{the_world_bank_world_2020}
-{The World Bank} (2020b).
+\bibitem[{World Bank}, 2020c]{world_bank_world_2020}
+{World Bank} (2020c).
 \newblock World {{Development Indicators}}: {{Total}} natural resources rents
   (\% of {{GDP}}).
 \newblock https://data.worldbank.org/indicator/NY.GDP.TOTL.RT.ZS.
