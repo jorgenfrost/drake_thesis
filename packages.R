@@ -1,6 +1,6 @@
 ## library() calls go here
 library(conflicted) # explicitly control overlapping function names
-library(dotenv) # not sure, something with the env params used in drake
+# library(dotenv) # not sure, something with the env params used in drake
 library(drake) # better, make-like project management
 
 library(tidyverse) # 
@@ -19,6 +19,8 @@ library(kableExtra) # better tables
 library(sandwich) # robust standard errors
 library(lmtest) # more adv regression stuff
 library(igraph) # working with networks and network graphs
+library(estimatr)
+library(stargazer)
 
 conflicted::conflict_prefer("filter", "dplyr")
 conflicted::conflict_prefer("gather", "tidyr")

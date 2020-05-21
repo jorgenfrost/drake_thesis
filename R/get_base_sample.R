@@ -57,12 +57,12 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
   input_tbl <- bind_rows(blk_i, blk_h) %>%
     mutate(
       classification = ifelse(year >= 2011, "NPCMS11", "ASICC")
-    ) 
-  
+    )
+
   output_tbl <- blk_j %>%
     mutate(
       classification = ifelse(year >= 2011, "NPCMS11", "ASICC")
-    ) 
+    )
 
 
   ##################################################################
@@ -236,7 +236,7 @@ get_base_sample <- function(block_paths, state_concordance_path = here("data/ext
   
   id_tbl %>%
     left_join(blk_b %>% select(-blk), by = c("year", "dsl")) %>%
-    left_join(electricity_tbl, by = c("year", "dsl")) 
+    left_join(electricity_tbl, by = c("year", "dsl")) %>%
     left_join(fuel_tbl, by = c("year", "dsl")) %>%
     left_join(total_materials_tbl, by = c("year", "dsl")) %>%
     left_join(labor_tbl, by = c("year", "dsl")) %>%

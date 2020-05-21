@@ -1,5 +1,18 @@
 #' Function that cleans and joins the state-level variables from RBI.
 
+
+#       pop_density = "./data/external/rbi/changed_manually/density_of_population.xlsx"
+#       net_domestic_product = "./data/external/rbi/changed_manually/net_state_domestic_product_constant_prices.xlsx"
+#       per_cap_net_domestic_product = "./data/external/rbi/changed_manually/per_capita_net_domestic_product_constant_prices.xlsx"
+#       rural_pop = "./data/external/rbi/changed_manually/population_in_rural_area.xlsx"
+#       urban_pop = "./data/external/rbi/changed_manually/population_in_urban_area.xlsx"
+#       total_pop = "./data/external/rbi/changed_manually/total_population.xlsx"
+#       state_codes = "./data/external/concord_tables/rbi_state_codes/rbi_to_asi_state_codes.csv"
+#       imp_pop_density = "./data/external/rbi/changed_manually/density_of_population_imputed.xlsx"
+#       imp_rural_pop = "./data/external/rbi/changed_manually/population_in_rural_area_imputed.xlsx"
+#       imp_urban_pop = "./data/external/rbi/changed_manually/population_in_urban_area_imputed.xlsx"
+#       imp_total_pop = "./data/external/rbi/changed_manually/total_population_imputed.xlsx"
+
 clean_rbi <- function(pop_density, net_domestic_product, per_cap_net_domestic_product, rural_pop, urban_pop, total_pop, state_codes, imp_pop_density, imp_rural_pop, imp_urban_pop, imp_total_pop) {
 
 #################################################################

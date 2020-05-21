@@ -8,45 +8,45 @@ Database file #1: setup/collection.bib
 Warning--I didn't find a database entry for "the_world_bank_enterprise_2020-1"
 Warning--I didn't find a database entry for "the_world_bank_enterprise_2020-2"
 Warning--empty journal in adam_economic_2019
-You've used 34 entries,
+You've used 35 entries,
             1935 wiz_defined-function locations,
-            674 strings with 9528 characters,
-and the built_in function-call counts, 12771 in all, are:
-= -- 1272
-> -- 495
+            681 strings with 9718 characters,
+and the built_in function-call counts, 13200 in all, are:
+= -- 1315
+> -- 513
 < -- 21
-+ -- 182
-- -- 162
-* -- 1092
-:= -- 2260
-add.period$ -- 100
-call.type$ -- 34
-change.case$ -- 250
-chr.to.int$ -- 32
-cite$ -- 35
-duplicate$ -- 460
-empty$ -- 882
-format.name$ -- 210
-if$ -- 2438
++ -- 188
+- -- 168
+* -- 1133
+:= -- 2334
+add.period$ -- 103
+call.type$ -- 35
+change.case$ -- 258
+chr.to.int$ -- 33
+cite$ -- 36
+duplicate$ -- 474
+empty$ -- 912
+format.name$ -- 217
+if$ -- 2520
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 29
-newline$ -- 170
-num.names$ -- 103
-pop$ -- 185
+missing$ -- 30
+newline$ -- 175
+num.names$ -- 106
+pop$ -- 191
 preamble$ -- 1
-purify$ -- 251
+purify$ -- 259
 quote$ -- 0
-skip$ -- 358
+skip$ -- 368
 stack$ -- 0
-substring$ -- 967
-swap$ -- 36
+substring$ -- 1004
+swap$ -- 37
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 200
+type$ -- 206
 warning$ -- 1
-while$ -- 112
+while$ -- 116
 width$ -- 0
-write$ -- 429
+write$ -- 442
 (There were 3 warnings)

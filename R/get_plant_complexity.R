@@ -10,9 +10,7 @@
 #' @return data frame with plant-year observations of the average complexity and 
 #' maximum complexity.
 
-# TODO: Add fixed complexity vals (where value is the same for a product across years).
-
-get_plant_complexity <- function(product_complexity_data, plant_output_data) {
+get_plant_complexity <- function(product_complexity_data, plant_output_data, mean_vals = FALSE) {
   
   # check inputs
   if (!is.data.frame(product_complexity_data)) {
@@ -24,7 +22,7 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data) {
   }
   
   # Prep data data --------------------------------------------
-  
+ if(mean_vals == FALSE) { 
   product_complexity_tbl <- product_complexity_data %>%
     filter(type == "product" & iteration == max(iteration)) %>%
     select(
@@ -32,6 +30,15 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data) {
       hs96_code = id,
       product_complexity = val
     )
+ } else if (mean_vals == TRUE) {
+  product_complexity_tbl <- product_complexity_data %>%
+    filter(type == "product" & iteration == max(iteration)) %>%
+    select(
+      hs96_code = id,
+      product_complexity = val
+    )
+
+ }
   # non-final iterations are for debugging.
   
   output_tbl <- plant_output_data
@@ -83,8 +90,11 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data) {
   ## Since there are no non-na values where strict_hs96 != lenient_hs96, I use
   ## lenient as the joiner. For calculating the plant complexity, I first filter
   ## for NA values in lenient or strict HS96 codes
+  if (mean_vals == FALSE) {
   output_tbl <- left_join(output_tbl, product_complexity_tbl, by = c("year" = "year", "lenient_hs96" = "hs96_code"))
-  
+  } else if (mean_vals == TRUE) {
+  output_tbl <- left_join(output_tbl, product_complexity_tbl, by = c("lenient_hs96" = "hs96_code"))
+  }
   # Calculate strict and lenient plant complexity ---------------------
   
   strict_plant_complexity_tbl <- filter(output_tbl, !is.na(strict_hs96)) %>%

@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx} % figures
 \usepackage{caption}
+
 \usepackage{subcaption} % for subfigs
 \usepackage{amsmath} % math
 \usepackage{amssymb} % more symbols
@@ -18,7 +19,9 @@
 
 % KABLE PACKAGES
 \usepackage{booktabs}
+\usepackage{rotating}
 \usepackage{longtable}
+\usepackage{dcolumn}
 \usepackage{array}
 \usepackage{multirow}
 \usepackage{wrapfig}
@@ -51,6 +54,7 @@ TODO: Restructure introduction
 
 TODO: Write up research aims/questions
 
+sd 
 TODO: Underline why economic complexity is important in development context.
 
 TODO: Update structure of thesis
@@ -64,7 +68,7 @@ This paper examines the ability of electricity interruptions in the production e
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/introduction_disruption_plot}
-	\caption{Production disruptions tend to have a higher frequence in poorer, less complex economies. The color of points are country fitness values, where blue is more complexi. Gray crosses has a missing fitness value. Lines are SLR fits to ln(GDP/cap). Disruption data is from \cite{world_bank_enterprise_2020} and fitness is constructed as outlined in section \ref{sec:methods}. Countries are not surveyed the same years, so fitness and GDP/cap values have been matched to the newest survey year for each country before 2017. No country has more than one observation\footnote{This figure was inspired by \cite{brummitt_contagious_2017}.}}
+	\caption{Production disruptions tend to have a higher frequence in poorer, less complex economies. The color of points are country fitness values, where blue is more complexi. Gray crosses has a missing fitness value. Lines are SLR fits to ln(GDP/cap). Disruption data is from \cite{world_bank_enterprise_2020} and fitness is constructed as outlined in section \ref{sec:methods}. Countries are not surveyed the same years, so fitness and GDP/cap values have been matched to the newest survey year for each country before 2017. No country has more than one observation.}
 	\label{fig:disruption-fig}
 \end{figure}
 
@@ -87,10 +91,11 @@ The rest of the paper proceeds as follows. I first develop the conceptual framew
 \label{sec:background}
 
 TODO: Development and background of electricity shortages in India
-
 TODO: underinvestment, prices, inefficience, source: Zhang (Out of the Darkness), Allcott et all, Alam (2013)
 
 TODO: plot most populous states by avg shortage and peak shortage
+TODO: above plot but related to economic growth (sep. by base years) (if no obvoius cor. might appear uncorrelated, but lots of ways it can work together)
+TODO: India over time: complexity, growth in GDP, population.
 
 TODO: Why should we care about complexity?
 
@@ -249,6 +254,12 @@ The fitness of a country, \(F_{c}\) is the sum of all the products it exports, w
 	 \end{split}
 \]
 
+TODO: One of the issues...
+
+TODO: On section on HS96 four digit products, give example of how specific products are.
+TODO: Lav sanity check if antallet af forskellige producter hvert år i orignal listing og antallet af forskellige producter i hvert år efter concordance.
+
+
 Plant complexity:
 
 For each plant, I quantify the complexity of its production output as the weighted average the complexity-values for each product it produces. I assign weights based on the value of the production. That is, the complexity for factory \(f\) at time \(t\), \(C_{ft}\), is defined as:
@@ -371,16 +382,17 @@ The are a couple of important shortcomings when using ASI data. First, while the
 \section{Analysis and results}%
 \label{sec:analysis_and_results}
 
-- TODO: Deflate based on year-industry values
+I now turn to my analysis and results. I discuss them in section TODO. I first ask some preliminary questions - how vaible is my measure of shortages? How is plant complexity related to production choices? - before turning to the main analysis on if electricity shortages harm complex plants disproportionately. 
 
-- TODO: All of it
+DESCRIPTIVES:
 
-- TOOD: Should values be deflated are year-fixed effects enough?
+Indian complexity over time
 
 
-The main difficulty in testing the predictions from the framework is in controlling from the other factors that co-move with power quality and plant complexity. In other words: how can I separate an unreliable power supply from other factors influencing the sophistication of plants. 
 
-A few of the strategies used in other papers ...  \cite{allcott_how_2016} instrument for shortages by changes in rainfall and the effect it has on total power supply through hydrogeneration. However, as they note themselves, this is short-run effect and cannot be used to instrument in long term structural change.  \cite{alam_coping_2013} instead measures the impact of power outages by taking the difference between observations of plants in two industries that are have high- and low electricity intensity (steel mills vs brick-makers). Again, almost by definition, comparating two industries is unfeasible for studying changes in product-based complexity.
+Indian 
+
+
 
 \subsection{Validity of electricity variable}%
 \label{sub:validity_of_electricity_variable}
@@ -389,20 +401,54 @@ The shortage observations depend on an official estimation of the non-shortage d
 
 The World Bank periodically conducts enterprise surveys in a range of countries. These surveys cover a broad variety of indicators on the production environment of firms, including perceived challenges and quality of public service provision. Survey data is available for India from 2005 and 2014 \citep{the_world_bank_enterprise_2020-1,the_world_bank_enterprise_2020-2}\footnote{The 2005 and 2014 sample covers 2,286 and 7,365 firms, respectively. The 2005 survey does not employ sample weights. For the 2014 survey, I use the strict weighting scheme.}. As shown in table TODO, the shortage variable is a significant predictor (at the p < 0.05 level) of the reported quality of the electricity supply (2005), the severity of electricity quality as a barrier to doing business (2014), the share of electricity generated by firms' own generator (2005, 2014), and whether the manager names electricity supply as the main obstacle to growth (2005, 2012)\footnote{The reason some of the variables are listed for both years is that the questionnaire have been updated, not because they were insignificant.}.
 
+
+Tilføj noter: 
+
+\input{tables/energy_validity/wbes}
+
+% \input{tables/energy_validity/wbes_nf}
+
+
+% \input{tables/energy_validity/ihds_diff}
+
+OVERVEJ AT SLETTE - USIKKER PÅ PANEL DATA METODE
+
 The Indian Human Development Survey (IHDS) is a nationally representative panel survey of around 42,000 households covering a wide range of topics, including detailed information on electricity quality \citep{desai_india_2018-1,desai_india_2018}. The first and second round were completed in 2004-5 and 2011-12, respectively. I run two tests. The first is a simple regression the state-wide average shortage (\(S_{st}\)) on the average daily hours of electricity available to individual households. The second predicts the change in individual households quality of electricity (access in hours) from the change in state-wide average shortage between the two periods (2005 to 2012). As with the enterprise survey data, the shortage variable is a highly significant predictor at for both outcomes\footnote{I limit both regressions to the sample of households that were interviewed in both rounds. For split households, I use the household from the first round. This leaves 40,018 households in each sample. For the regression, I further filter to only the households that have access to electricity. This leaves 28.944 households in each sample. As recommended by the official documentation, I use the original panel weights.}.
 
 In sum, while there is likely to be some measure of attenuation bias in the shortage variable, it is a significant predictor of electricity quality on both the firm- and the household level. In addition, Alam (2013) use a measure based on nightlight composites to identify blackouts and shows that it is highly correlated with the peak shortage variable. This suggests that the shortage variable carries meaningful information on the electricity reliability at the the state level.
 
-TODO: FIND A WAY TO OUTPUT REGRESSION TABLES TO .TEX EASILY
+The main difficulty in testing the predictions from the framework is in controlling from the other factors that co-move with power quality and plant complexity. In other words: how can I separate an unreliable power supply from other factors influencing the sophistication of plants. 
 
-\subsection{Regressions}%
+A few of the strategies used in other papers ...  \cite{allcott_how_2016} instrument for shortages by changes in rainfall and the effect it has on total power supply through hydrogeneration. However, as they note themselves, this is short-run effect and cannot be used to instrument in long term structural change.  \cite{alam_coping_2013} instead measures the impact of power outages by taking the difference between observations of plants in two industries that are have high- and low electricity intensity (steel mills vs brick-makers). Again, almost by definition, comparating two industries is unfeasible for studying changes in product-based complexity.
+
+- Is complexity related to: total cost of production, input share, electricity 
+
+- SE ABERASI FOR "ESTIMATED EXTRA COST OF SELF GENERATING ELECTRICITY"
+
+- Lav summary statistics over electricity use for plants.
+\subsection{Interaction between shortages and complexity}%
 \label{sub:regressions}
+
+
+\subsection{Does shortages discourage the entry of complex plants?}%
+\label{sub:regressions}
+TODO: The question I'm interested in is essentially whether as disuptive environment can affect the complexity of production. Since there is a quite substantial variation within states oacross different years, a regression on all ... Because factories are unlikely to fluidly move between state and not appear and dissappear on a yearly basis, a straight forward comparison of yearly shortage and plant-complexity is unlikely to capture the information I'm after.
+
+TODO: Since my shortage variable is applied at the level of states in different years, I cluster by state-years (so that "Jammu and Kashmir in 2009" is one cluster and "Jammu and Kashmir in 2010" is another). To account for the concerns about downward biased standard errors due to serial correlation discussed in \cite{bertrand_how_2004} (that is, if something effect "contained" the shortage outcomes carries over to other years), I also cluster by state as a robustness check.
+
+TODO: I conduct three anaylses. First, I examine the relationshiop between the performance of a plant, its complexity, and yearly variation in shortages. In a similar manner, I examine the relationship between the shortage contained in the plant's supply-chain (measured at the industry level). Finally, I look at how the characteristics of plants vary with the previous (two, three) years shortage at the state level. For the analysis using deflated revenues, I use a limited sample of 2000-2011.\footnote{Which is within the range of years all population-wide variables are observed.} 
+
+ - IMPORTANT - deflate revenues. Check if controlling for size, industry, etc, put interaction term between complexity and shortage.
+ - IMPORTANT - Create supply: two ways: input-output tables or inputs. 
+ - IMPORTANT - 
 
 TODO: The effect I'm interested in is primarily 
 Some researchers have used rainfalls and tempereature controls in their specification. While variation in precipitation levels can act as economic shocks on a yearly basis, it is not likely to influence ... 
 temperature- and rainfall controls from my regression specification.
 
 TODO: It is worth noting that I define the lagged shortage as the average value of the $S_{st}$ variable across the years, not the ratio between the average peak and average demand over the period (since, presumably, producers won't be intersted in overall power capacity, only the amount they are short).
+
+TODO: While the sample of factories greatly increase when increasing the interval between entry and observation (to allow for oberving a factory up to five years after its reported entry) that lack of across-year plant indicators means that there is a risk of observing the same factories again and again. This opens up to the risk of results being driven by factories correlating with themselves. I therefor limit the analysis to observing factories either 1, 2, or 3 years after their reported entry.
 
 TODO: Effect of shortage on the entry of plants
 
@@ -692,10 +738,9 @@ TODO: Volatility. Given that population of countries are less volatile over time
 
 
 TODO
-
 \end{appendices}
 
 \newpage
-
-
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Wed, May 20, 2020 - 19:41:52
 \end{document}
