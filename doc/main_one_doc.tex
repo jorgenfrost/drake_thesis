@@ -72,7 +72,7 @@ This paper examines the ability of electricity interruptions in the production e
 	\label{fig:disruption-fig}
 \end{figure}
 
-The role electricity in production inefficiencies have recently drawn the attention of researchers. Two India-specific patterns are worth highlighting: the importance of the quality of electricity, rather than just electricity alone, and the evidence on output-costs of electricity shortages. \cite{samad_benefits_2016} and \cite{chakravorty_does_2014} both find improvements in incomes from access to electricity, but much larger income gains from access to quality electricity (from 9.6\% to 17\% and from 9\% to 28.6\%)\footnote{The latter study only non-agricultural incomes.}. \cite{abeberese_electricity_2017} finds that increases in electricity prices reduces the electricity- and machine-intensity of activities, leading to smaller growth in production output. Finally, \cite{allcott_how_2016} finds a 5\% - 10\% reduction in plant-level profits from shortages in electricity, with a lower productivity-penalty due to generator substitution. The approach taken in this paper proposes a way to unify these observations. Unreliable electricity punishes more complex plants and improvements in quality have positive externalities on the local production, and a more complex manufacturing sector has positive effects on local incomes. Similarly, the relatively small output-penalty observed by \cite{allcott_how_2016} could mask production choices into simpler and lower-complexity products.
+The role of electricity in production inefficiencies have recently drawn the attention of researchers. Two India-specific patterns are worth highlighting: the importance of the quality of electricity, rather than just electricity alone, and the evidence on output-costs of electricity shortages. \cite{samad_benefits_2016} and \cite{chakravorty_does_2014} both find improvements in incomes from access to electricity, but much larger income gains from access to quality electricity (from 9.6\% to 17\% and from 9\% to 28.6\%)\footnote{The latter study only non-agricultural incomes.}. \cite{abeberese_electricity_2017} finds that increases in electricity prices reduces the electricity- and machine-intensity of activities, leading to smaller growth in production output. Finally, \cite{allcott_how_2016} finds a 5\% - 10\% reduction in plant-level profits from shortages in electricity, with a lower productivity-penalty due to generator substitution. The approach taken in this paper proposes a way to unify these observations. Unreliable electricity punishes more complex plants and improvements in quality have positive externalities on the local production, and a more complex manufacturing sector has positive effects on local incomes. Similarly, the relatively small output-penalty observed by \cite{allcott_how_2016} could mask production choices into simpler and lower-complexity products.
 
 The approach taken in this paper is primarily related to three strands of literature. First, the literature of economic complexity and the sophistication of an economy's capability base  (\citealp{frenken_related_2007,hausmann_atlas_2013,tacchella_new_2012}). In addition, to develop the relation between production disruptions and product complexity, I draw on O-ring-type effects as modeled in \cite{kremer_o-ring_1993} and \cite{jones_intermediate_2011}, and the recent literature on volatility in production networks \citep{acemoglu_network_2012}. While the latter is mainly concerned with aggregate effect of sectoral shocks, the importance of input-output linkages are equally relevant at the plant level.
 
@@ -82,7 +82,7 @@ The approach taken in this paper is primarily related to three strands of litera
 \subsection{Structure of thesis}%
 \label{sub:structure_of_thesis}
 
-The rest of the paper proceeds as follows. I first develop the conceptual framework that underpins the work here: why should we care about economic complexity (\ref{sec:frame-product-complexity}) and how are electricity shortages related to whether factories produce more or less complex products (\ref{sec:production_networks})? From the conceptual framework I draw out two testable hypotheses on the proposed relationship. Building from these hypotheses, I turn to the research design, my empirical strategy, and the use of data. [The rest is TODO]
+The rest of the paper proceeds as follows. I first develop the conceptual framework that underpins the work here: why should we care about economic complexity (\ref{sec:frame-product-complexity}) and how are electricity shortages related to whether factories produce more or less complex products (\ref{sec:production_networks})? From the conceptual framework I draw out two testable hypotheses on the proposed relationship. TODO
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,8 +90,35 @@ The rest of the paper proceeds as follows. I first develop the conceptual framew
 \section{Background}%
 \label{sec:background}
 
+Some introduction.
+
+
 TODO: Development and background of electricity shortages in India
+
+
 TODO: underinvestment, prices, inefficience, source: Zhang (Out of the Darkness), Allcott et all, Alam (2013)
+
+- Current situation:
+IHDS paper (xxx million of people..)
+
+
+
+According to Allcott:
+- Infrastructure and subsidy trap (McRae 2015)
+- Secibd reason: underinvestment in the new generation capacity- After 1991 liberation, sigened undertadning of agreeing to build 50 GW pr Gen Cap. Of 71 targetd between 1997 and 2007 only half was buld (CEA paper).
+- Between 1994 and 2009, Indian coal power planrs were offline about 28 \% pfo time due to forced outages, planned maintenance, scoal shortages, other factors. 
+
+According to Abeberese:
+
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/background_wbes}
+	\caption{Electricity remains a an important concern for firms in India. Top figures: while the share of managers that list electricity quality as the main constraint to their success has fallen between 2005 and 2014, it remains high. Bottom figures: the share of firms that name electricity as a major obstacle, or worse, to their current operations is still around 30 \%. Source: World Bank enterprise surveys in India: 2005 and 2014 \citep{world_bank_enterprise_2020-2,world_bank_enterprise_2020-1}. Vertical axis is firm counts for 2005 and weighted counts for 2014.}
+	\label{fig:biggest_obstacle}
+\end{figure}
+
+
 
 TODO: plot most populous states by avg shortage and peak shortage
 TODO: above plot but related to economic growth (sep. by base years) (if no obvoius cor. might appear uncorrelated, but lots of ways it can work together)
@@ -120,6 +147,11 @@ TODO: Drop the very explicity O-ring framework (maybe move to appendix). Use con
 TODO: Reduce product complexity "introduction"-like quality, make more to point instead.
 
 TODO: Highlight why "threshold" (richest/poorest exporters) graph is important.
+
+
+TODO LITERATURE REVIEW:
+- Rud 2012: finder at en udviddelse i electricity netowrk øger manufacturing outpuit
+- Fisher-Vanden viser at firmaer skrifter til at købe deres inputs. 
 
 \subsection{Product complexity}
 \label{sec:frame-product-complexity}
@@ -219,10 +251,13 @@ In this section I outline the regression design used to test the research hypoth
 
 To test the first hypothesis \(H_1\) I use a fixed-effects regression model. My main dependent variable is here a plant-level measure of product complexity. My main independent variable is of two specifications of electricity quality (to be defined below). To adjust for state- or year specific trends, I include a vector of dummy-controls. Additionally, I include a vector of socio-economic controls (population density, state-wide gross product per capita, etc). Similarly, I test the second hypothesis \(H_2\) with a regression model, but using a network-weighted measure of electricity quality. See the section on supply chain quality for details.
 
-\subsubsection{Key variables}\label{sec:key-variables}
+ - Key variables
+
 As already described, the theory of EC assumes that countries are linked to the capabilities with which they are endowed, and that these capabilities are linked in turn to the products that require them in production. Put in network lingo: countries, capabilities, and products are connected in a tripartite network as visualized in Figure 4. Yet the capabilities in the tripartite country-capability-product network are ‘hidden’—it is only possible to observe a bipartite network linking countries to the products they produce. The econometric challenge is to extract information about the hidden capabilities from this bipartite network in order to infer the complexity of countries and products.
 
-Economic complexity:
+
+\subsubsection{Economic complexity}%
+\label{sub:economic_complexity}
 
     I use the Fitness-Complexity (FC) algorithm \citep{tacchella_new_2012} to find the complexity of products. For a discussion of the benefits of the FC algorithm over the  Hausmann-Hidalgo (HH) algorithm \citep{hidalgo_building_2009}, see appendix \ref{sec:appendix-algorithm}. As outlined earlier, countries, capabilities and products are connected in a tripartite network. The capabilities in this network, however, is hidden.
 
@@ -259,8 +294,8 @@ TODO: One of the issues...
 TODO: On section on HS96 four digit products, give example of how specific products are.
 TODO: Lav sanity check if antallet af forskellige producter hvert år i orignal listing og antallet af forskellige producter i hvert år efter concordance.
 
-
-Plant complexity:
+\subsubsection{Plant complexity}%
+\label{sub:plant_complexity}
 
 For each plant, I quantify the complexity of its production output as the weighted average the complexity-values for each product it produces. I assign weights based on the value of the production. That is, the complexity for factory \(f\) at time \(t\), \(C_{ft}\), is defined as:
 
@@ -285,11 +320,30 @@ I_{pft} = \begin{cases}
 \end{cases}
 \]
 
-- Supply chain quality:
+\subsubsection{Supply chain quality}%
+\label{sub:supply_chain_quality}
 
-I measure the disruption in the supply network of a plant in three steps. First I assign each plant to a sector in the I/O network based on their sector classification in the ASI data.
+In order to construct my measure of supply-chain quality, I need to connect three different sets of information. First, I have the disruption-variable, Shortage, on the state-level. Next, I know which industries are connected to each other in the supply network through the Input-Ouput tables. Finally, I know how much plants in different industries in different states produce.
 
-I then create a sector-level disruption variable by taking the weighted average of plant-level disruption values, where weights are the output share of a plant in the sectors total output. I now have an input-output network where each of the 130 sectors has a disruption value. The input-output network shows the average share of different sectors' output that is used as intermediate input in a given sectors production, as well its' suppliers' suppliers, and so on.
+I connect them in three steps. First, for each year I find the share of a plants' output in the total industry-wide output. Since I know wich plants are in which states, I can now find the share each state contributes to each industry's yearly output. This allows me to assign a shortage variable to each industry based on how much large the share of industry-output each state accounts for. I now have a vector of industries that all have a weighted Shortage value. Call this value $D_{i,t}$ for industry $i$ in year $t$.
+
+Next, I need to connect industries to each other. The input-output network essentially tells us how much of each industries output is TODO what does it acutally show?? output elasiticity or total input? 
+
+In this network, each node is an industry and each link denotes the relationship between sectors. A link going from sector $i$ to sector $j$ is the share of input used by sector $j$ that comes from the output of sector $i$. In other words, some links are strong, some links are less so. Each node also has a value, which is the $D_{i,t}$ from before. 
+
+Finally, I need to capture the electrticity shortage present in each industry's supply-network. For each node, I then calculate the average path between it and each other individual node, where each link is the input share between nodes. This average path length is then weighted by the industry-shortage variable ($D_{i,t}$).
+ 
+This method solves two problems. First, if we just weight the supply chain vulnurability by direct relationships, important second degree effects are missed. For instance, say thatindustry $A$ is extremely prone to disruptions. If sector $A$ delivers the major part of sector $B$s total input, but does not deliver anything to sector $C$. Secotr $C$ on the other hand, only gets input from $B$. If I just calculate the supply quality by taking weighing the $D$ variable with the links between sectors, the $C$ will only be affected by whatever $D$ value $B$ has and how much supply it provides. But in reality, since $B$ gets almost all of its inputs from $A$, the shortages in $A$ will affect the output of $B$ which will affect $C$. By taking the average path length between $A$ and $C$ instead, we account for this: now the distanct between $A$ and $C$ is shorter the stronger the link from $A$ to $B$ and $B$ to $C$. 
+
+It is important to note that this method does not take into account any spatial relationships. If the supply-linkages is strongly conditioned on geographical closeness this approach will misassign the importance of shortages in industries. That is, I take the implicit assumption that industry-wide output is distributed evenly geographically. Since the ASI does not carry information of where plants source their inputs from, I can't account for this effect.
+
+
+- TODO: Account not only for the first input, but the second degree as well. - something like: In this network, each
+
+
+I then create industry-level disruption variable by taking the weighted average of plant-level disruption values, where weights are the output share of a plant in the sectors total output. 
+
+I now have an input-output network where each of the 130 sectors has a disruption value. The input-output network shows the average share of different sectors' output that is used as intermediate input in a given sectors production, as well its' suppliers' suppliers, and so on.
 
 I represent each sector as a node in a network and their supply-relationship as the strength of their link. Each node is then valued as the disruption value assign above. I can then calculate the eigenvector centrality for each sector. Each plant based in a sector then inherits it supply-network disruption value. The eigenvector centrality is basically an iterative algorithm that takes the disruption value in a nodes neighbors weighted by the nodes links to it, then takes the value of their neighbors weighted by their links, and so on. This catches the decreasing knock-on effects discussed in relation to the middle graph in figure \ref{fig:framework-io-model}.
 
@@ -320,27 +374,29 @@ TODO: Most instruments - like Allcott et al - instrument year-to-year variation 
 % Methods
 % - Variables
 % - Data
-\subsection{Data}%
+\section{Data}%
 \label{sub:data}
 
-\subsubsection{State-wise variables}%
+\subsection{State-wise variables}%
 \label{sub:state_wise_variables}
-Net GDP, GDP/cap = From RBI. There are often multiple base-years available. When there are observations for the same year using different base-years, I use the newest. The choice of base isn't a completely trivial issue, since there are often substantial differences for estimates for the same year measured against two different base-years. For instance, after rebasing GDP in 1999-2000, the total net domestic gross product increases by almost 65\% compared to the same year (1999-2000) measured using 1993-94 as a base. To minimise the noise introduced by these base-year changes, I use a three-year moving average (meaning that the value of 1999-2000 is the average GDP between 1998-99, 1999-2000, 2000-01). As an alternative specification, I also run the tests using state-year dummy variables.
 
-Population variables: A) ratio of urban to rural population <- problem (0-1, 1+ problem) - brug heller urban divided by total, B) population density, C) 
+I get data on state-wise net domestic product, both total and per capita, from the Reserve Bank of India (RBI). While both series are in constant prices, there are often multiple base-years available. When there are observations for the same year using different base-years, I use the newest. The choice of base isn't a completely trivial issue, since there are often substantial differences for estimates for the same year measured against two different base-years. For instance, after rebasing GDP in 1999-2000, the total net domestic gross product increases by almost 65\% compared to the same year (1999-2000) measured using 1993-94 as a base. To minimise the noise introduced by these base-year changes, I use a three-year moving average (meaning that the value of 1999-2000 is the average GDP between 1998-2001). As an alternative, I also use the original series, but with dummy variables indicating which base year is used.
 
+From the RBI I also collect data on the total population in each state, the share of population that lives in urban and rural areas and the population density. These values are only available at the 10-year census intervals (1991-2001-2011). For years I between I create a simple imputation of difference evenly spaced out on years. For any analysis using population controls, I exclude years after 2011.
 
-\subsubsection{International trade data}%
+I also collect microdata from the Indian National Sample Surveys. TODO I aggregate observations to state-level observations of the share of people in each state between 15-60 and the share of the population with at least secondary education finished.
+
+\subsection{International trade data}%
 \label{sub:international_trade_data}
 
 
 
-\subsubsection{Electricity data}%
+\subsection{Electricity data}%
 \label{sub:energy_data}
 
-My main source of data on electricity shortages comes from India's Central Electricity Authority (CEA). The main feature of the dataset is a measure of shortages based on the difference between the observed consumption of electricity and the estimated counterfactual demand. I extract the energy data from the Power Supply Position of States section of the annual Load Generation Balance Reports published by the CEA (TODO cite reports). Digital versions are only available from 2009-10 at the earliest. For earlier years (1999-2009) I use the dataset constructed by \cite{allcott_how_2016} who worked in collaboration with the CEA to collect, digitize, and clean earlier reports. I then perform an extra step of cleaning up inconsistencies in the early-years set of observations. 
+My main source of data on electricity shortages comes from India's Central Electricity Authority (CEA). The main feature of the dataset is a measure of shortages based on the difference between the observed consumption of electricity and the estimated counterfactual demand. I extract the energy data from the Power Supply Position of States section of the annual Load Generation Balance Reports published by the CEA (TODO cite reports). Digital versions are only available from 2009-10 at the earliest. For earlier years (1998-2009) I use the dataset constructed by \cite{allcott_how_2016} who worked in collaboration with the CEA to collect, digitize, and clean earlier reports. I then perform an extra step of cleaning up inconsistencies in the early-years set of observations.
 
-At the end of each year, the CEA and the Regional Power Committees estimate the monthly counterfactual quantity that would have been demanded in each state if there were no shortages. This annual figure, listed in current prices, is the assessed demand (\(A\)). The sum of electricity available from power plants and net imports is the energy available. The measure of shortages (\(S\)) is then defined as the percent of demand in state \(s\) in year \(t\) that is not met:
+At the end of each year, the CEA and the Regional Power Committees estimate the monthly counterfactual quantity that would have been demanded in each state if there were no shortages. This annual figure, listed in current prices, is the assessed demand (\(A\)). The sum of electricity available from power plants and net imports is the energy available ($E$). The measure of shortages (\(S\)) is then defined as the percent of demand in state \(s\) in year \(t\) that is not met:
 \[
 S_{st} = \frac{A_{st} - E_{st} }{A_{st}}
 \]
@@ -355,7 +411,7 @@ I exclude a few of the regions from my sample due to
 
 The final sample consists of state-year observations of average- and peak shortage from 1999-2017.
 
-\subsubsection{Annual Survey of Industries (ASI)}%
+\subsection{Annual Survey of Industries (ASI)}%
 \label{sub:annual_survey_of_industries_asi}
 
 - TODO: CLEAN THIS UP 
@@ -388,23 +444,28 @@ DESCRIPTIVES:
 
 Indian complexity over time
 
-
-
-Indian 
-
-
+Distribution of xx in 2010. 
 
 \subsection{Validity of electricity variable}%
 \label{sub:validity_of_electricity_variable}
 
 The shortage observations depend on an official estimation of the non-shortage demand and is likely to be affected by measurement error. To confirm that the energy data is meaninful, I run a series of simple regression tests to "ground thruthed" microdata on the experience of manufacturing firms and on individual households. 
 
-The World Bank periodically conducts enterprise surveys in a range of countries. These surveys cover a broad variety of indicators on the production environment of firms, including perceived challenges and quality of public service provision. Survey data is available for India from 2005 and 2014 \citep{the_world_bank_enterprise_2020-1,the_world_bank_enterprise_2020-2}\footnote{The 2005 and 2014 sample covers 2,286 and 7,365 firms, respectively. The 2005 survey does not employ sample weights. For the 2014 survey, I use the strict weighting scheme.}. As shown in table TODO, the shortage variable is a significant predictor (at the p < 0.05 level) of the reported quality of the electricity supply (2005), the severity of electricity quality as a barrier to doing business (2014), the share of electricity generated by firms' own generator (2005, 2014), and whether the manager names electricity supply as the main obstacle to growth (2005, 2012)\footnote{The reason some of the variables are listed for both years is that the questionnaire have been updated, not because they were insignificant.}.
+The World Bank periodically conducts enterprise surveys in a range of countries. These surveys cover a broad variety of indicators on the production environment of firms, including perceived challenges and quality of public service provision. Survey data is available for India from 2005 and 2014 \citep{world_bank_enterprise_2020-1,world_bank_enterprise_2020-2}\footnote{The 2005 and 2014 sample covers 2,286 and 7,365 firms, respectively. The 2005 survey does not employ sample weights. For the 2014 survey, I use the strict weighting scheme.}. As shown in table TODO, the shortage variable is a significant predictor (at the p < 0.05 level) of the reported quality of the electricity supply (2005), the severity of electricity quality as a barrier to doing business (2014), the share of electricity generated by firms' own generator (2005, 2014), and whether the manager names electricity supply as the main obstacle to growth (2005, 2012)\footnote{The reason some of the variables are listed for both years is that the questionnaire have been updated, not because they were insignificant.}.
 
-
-Tilføj noter: 
-
-\input{tables/energy_validity/wbes}
+\begin{table}
+    \caption{World Bank Enterprise Surveys and the Shortage variable}
+    \label{tab:wbes}
+    \begin{minipage}{0.95\textwidth} 
+\input{tables/energy_validity/wbes_nonfloat}
+    \\
+    { \footnotesize \textit{Notes:} Column one, two, and three are based on the WBES in India in 2005. Column four and five are from the WBES in India in 2014. Dependent variable in column (1) and (4) is the reported share of self-generated electricity. Column (2) and (5) are the degree to which electricity is an obstacle to the firms operation (from 0: "No obstacle" to 4: "Very severe obstacle"). Column (3) only exists for the 2005-survey and is the reported quality of the power grid (from 1: "Extremely bad" to 10: "Excellent"). All columns use industry-fixed effects. Standard errors are robust and clustered by state. \\
+***Significant at the 1 percent level. \\
+**Significant at the 5 percent level. \\
+*Significant at the 10 percent level. \\
+\par}
+    \end{minipage}
+\end{table}   
 
 % \input{tables/energy_validity/wbes_nf}
 
@@ -426,35 +487,29 @@ A few of the strategies used in other papers ...  \cite{allcott_how_2016} instru
 - SE ABERASI FOR "ESTIMATED EXTRA COST OF SELF GENERATING ELECTRICITY"
 
 - Lav summary statistics over electricity use for plants.
+TODO: I conduct three anaylses. First, I examine the relationshiop between the performance of a plant, its complexity, and yearly variation in shortages. In a similar manner, I examine the relationship between the shortage contained in the plant's supply-chain (measured at the industry level). Finally, I look at how the characteristics of plants vary with the previous (two, three) years shortage at the state level. For the analysis using deflated revenues, I use a limited sample of 2000-2011.\footnote{Which is within the range of years all population-wide variables are observed.} 
 \subsection{Interaction between shortages and complexity}%
 \label{sub:regressions}
 
 
 \subsection{Does shortages discourage the entry of complex plants?}%
-\label{sub:regressions}
-TODO: The question I'm interested in is essentially whether as disuptive environment can affect the complexity of production. Since there is a quite substantial variation within states oacross different years, a regression on all ... Because factories are unlikely to fluidly move between state and not appear and dissappear on a yearly basis, a straight forward comparison of yearly shortage and plant-complexity is unlikely to capture the information I'm after.
+\label{sub:longterm}
 
-TODO: Since my shortage variable is applied at the level of states in different years, I cluster by state-years (so that "Jammu and Kashmir in 2009" is one cluster and "Jammu and Kashmir in 2010" is another). To account for the concerns about downward biased standard errors due to serial correlation discussed in \cite{bertrand_how_2004} (that is, if something effect "contained" the shortage outcomes carries over to other years), I also cluster by state as a robustness check.
+% ------------ WRITING ------------ 
+Are plants with a more complex production output less likely to be constructed in states that have unreliable electricity?
 
-TODO: I conduct three anaylses. First, I examine the relationshiop between the performance of a plant, its complexity, and yearly variation in shortages. In a similar manner, I examine the relationship between the shortage contained in the plant's supply-chain (measured at the industry level). Finally, I look at how the characteristics of plants vary with the previous (two, three) years shortage at the state level. For the analysis using deflated revenues, I use a limited sample of 2000-2011.\footnote{Which is within the range of years all population-wide variables are observed.} 
+The ASI asks plants when the first year of production is. This makes it possible to date the entry of the plant, and match it with the Shortage variable. While the productive capital in the manufacturing sector, like factory machinery, is presumably relatively static and product specific, there is no guarantee that a plant produces the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry.
 
- - IMPORTANT - deflate revenues. Check if controlling for size, industry, etc, put interaction term between complexity and shortage.
- - IMPORTANT - Create supply: two ways: input-output tables or inputs. 
- - IMPORTANT - 
+While the sample of factories greatly increase when increasing the interval between entry and observation (to allow for oberving a factory up to five years after its reported entry) that lack of across-year plant indicators means that there is a risk of observing the same factories again and again. This means that it is possible that any results is being driven by factories correlating with themselves. I therefor limit the analysis to observing factories either 1, 2, or 3 years after their reported inaugural production. Essentially, this analysis asks: how is the complexity of plants observed in, say 2005 ($t$), that had their first year of production in 2003 ($t-3$, or $t-1$, or any $t < t-1$) affected by the average shortage in the two- or three years preceding their entry (2001-2003)? 
 
-TODO: The effect I'm interested in is primarily 
-Some researchers have used rainfalls and tempereature controls in their specification. While variation in precipitation levels can act as economic shocks on a yearly basis, it is not likely to influence ... 
-temperature- and rainfall controls from my regression specification.
+TODO: Since my shortage variable is applied at the level of states in different years, I cluster by state-years (so that "Jammu and Kashmir in 2009" is one cluster and "Jammu and Kashmir in 2010" is another). To account for the concerns about downward biased standard errors due to serial correlation discussed in \cite{bertrand_how_2004} (that is, if some effect "contained" the shortage outcomes carries over to other years), I also cluster by state as a robustness check.
 
-TODO: It is worth noting that I define the lagged shortage as the average value of the $S_{st}$ variable across the years, not the ratio between the average peak and average demand over the period (since, presumably, producers won't be intersted in overall power capacity, only the amount they are short).
+It is worth noting that I define the lagged shortage as the average value of the $S_{st}$ variable across the years, not the ratio between the average availability and demand over the period (since, presumably, producers won't be interested in overall power capacity, only the amount they are short).
 
-TODO: While the sample of factories greatly increase when increasing the interval between entry and observation (to allow for oberving a factory up to five years after its reported entry) that lack of across-year plant indicators means that there is a risk of observing the same factories again and again. This opens up to the risk of results being driven by factories correlating with themselves. I therefor limit the analysis to observing factories either 1, 2, or 3 years after their reported entry.
+Let $Y_{ist}$ be the value of some variable of a plant with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. Plant complexity is my main variable of interest here. I then define $\bar{S}_{st}$ as the average shortage in the year of entry and the two years prior in state $s$. 
 
-TODO: Effect of shortage on the entry of plants
+I also include several state-level variables: population density, share of rural population, and 
 
-The ASI also asks plants when the first year of production is. This allows us to date the entry of the plant. While the productive capital in the manufacturing sector, like plant machinery, is presumably  relatively static and product specific, there is no guarantee that a plant produce the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry. Instead, we can limit the sample of "new" plants to a given time-interval after their inaugural production. Essentially, this analysis asks: how are the complexity plants observed in, say 2005 (t), that had their first year of production in 2003 (t-3, or t-1, or any t < t-1) affected by the average shortage in the two/three years preceding their entry (2001-2003)?
-
-Let $Y_{ist}$ be some variable of a plant with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. Plant complexity is my main variable of interest here. Define then $\bar{S}_{st}$ as the average shortage in the year of entry and the two years prior in state $s$. I also include several state-level variables: population density, share of rural population, and 
 $R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{it}$ represents industry-year indicators. I include industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages). This reduces the risk that some unobserved event within an industry drives the the outcome (like complexity) but is not related to shortages.
 
 The regression equation then takes the form:
@@ -462,6 +517,25 @@ The regression equation then takes the form:
 \[
 	Y_{ist} = \bar{S}_{st} + R_{s} + T_{t} + I_{it} 
 \]
+
+
+% ----------- NOTES ---------------
+
+TODO: The effect I'm interested in is primarily 
+Some researchers have used rainfalls and tempereature controls in their specification. While variation in precipitation levels can act as economic shocks on a yearly basis, it is not likely to influence ... 
+temperature- and rainfall controls from my regression specification.
+
+
+TODO: On use of clusters. 
+
+ - IMPORTANT - deflate revenues. Check if controlling for size, industry, etc, put interaction term between complexity and shortage.
+ - IMPORTANT - Create supply: two ways: input-output tables or inputs. 
+ - IMPORTANT - 
+
+- TODO: ... This question is similar in spirit to the work in \cite{allcott_how_2016} and \cite{abeberese_electricity_2017}. Both studies use some instrument for electricity (outages and prices) to meausre the choice of production technology. While also using a more recent set of plants and different controls, the main advantage of the approach in this paper is that I examine the sophistication of the output of production processes instead of the aggreagate measures used in those papers. For instance, while \cite{abeberese_electricity_2017} uses the machinery-to-labor ratio to measure how plants change in response to prices on electricity, there are many way such a change can express itself. 
+
+TODO: The question I'm interested in is essentially whether a disuptive environment can affect the complexity of production. Since there is a quite substantial variation within states oacross different years, a regression on all ... Because factories are unlikely to fluidly move between state and not appear and dissappear on a yearly basis, a straight forward comparison of yearly shortage and plant-complexity is unlikely to capture the information I'm after.
+
 
 
 
@@ -542,7 +616,7 @@ I first create the base sample. Plants can be included in the survey, even if th
 
 After the initial filtering process, there can still be observations that have misreported values of specific variables. When analysing these variables, I further limit the sample using a "flagging"-system\footnote{This method was inspired by \cite{allcott_how_2016}.}. 
 
-I assign observations an "input-revenue" flag if their labour or material-costs is more than two times their revenues or if their fuel and electricity costs are greater than revenues. Similarly, I can also observe the quantity of electricity consumed. I multiply the amount of electricity consumed by the state-year median price paid (current Rs/kWh). If the amount is higher than the revenue, I assign a flag. For evey time I run an analysis involving any of these variables as an outcome, I exclude observations that are flagged. I drop all the observations that have two or more flags. If an observation reports 0 electricity consumption, I set all electricity variables as missing for the observation.
+I assign observations an "input-revenue" flag if their labour or material-costs is more than two times their revenues or if their fuel and electricity costs are greater than revenues. Similarly, I can also observe the quantity of electricity consumed. I multiply the amount of electricity consumed by the state-year median price paid (current Rs/kWh). If the amount is higher than the revenue, I assign a flag. For evey time I run an analysis involving any of these variables as an outcome, I exclude observations that are flagged. I drop all the observations that have two or more flags completely. If an observation reports 0 electricity consumption, I set all electricity variables as missing for the observation.
 
 \subsection{Product concordance for ASI}%
 \label{sub:product_concordance_asi}
@@ -551,7 +625,16 @@ As mentioned in the data-section, the ASI lists products according to two differ
 
 This is rather round-about process. The reason behind the shift from ASICC to NPCMS-2011 is that the early scheme was severely flawed in the grouping-classification and was poorly suited to international comparison. This means that the mapping between ASICC and NPCMS-2011 is imperfect. The NPCMS-2011 mapping is based directly on the international standard Central Product Classification, which again is different from the Harmonized System used in trade-accounting. I first match all products from the ASICC years to the NPCMS-2011 classification with the concordance table provided by MOSPI \footnote{http://www.csoisw.gov.in/CMS/En/1027-npcms-national-product-classification-for-manufacturing-sector.aspx}. I then turn the NPCMS-2011 codes into the CPC-2 classification by removing the last two digits (which are India specific). I use the conocordance table supplied by UNSD to map the CPC-2 codes to HS-2007. Finally, I use turn the HS-2007 codes into HS-1996 to match the trade data. 
 
-Often, one product code from the source classification maps to two different codes in the destination classifications. There is no way to solve this issue completely. Instead, I create two mappings: a "strict" and a "lenient" match. The "strict" match uses only products that have a non-partial match and leaves other products as missing. The "lenient" appraoch assigns the first of the partial mappings as a match. Since the difference is usually quite small between partially mapped products, is is usually feasible to purposely "missassign" the products to a mapping that exists, rather than drop it altogether. For instance, the ASICC listings of "Lobsters, processed/frozen" (11329), "Prawns, processed/frozen" (11331), "Shrimps, processed/frozen" (11332) all map to two different NPCMS-2011 codes: "Crustaceans, frozen" (212500) and "Crustaceans, otherwise prepared" (212700). Similarly, "Butter" (11411) maps to three different kinds of butter (based on cattle-milk, buffalo-milk, or other milk) in the NPCMS-2011 system. While not particularly rigourous, very little information should be lost on the complexity of the production output between these three mappings. Indeed, many such categories will be clubbed together anyhow when converting NPCMS-2011 to Harmonized System codes. It is worth noting that I use the "strict"/"lenient" approach troughout the concordance chain. This means a substantial product loss in the "strict" approach: products from the ASICC classification (five digits) that might be together in the final Harmonized System code can be dropped because they map to two different NPCMS-2011 codes (that are seven digits vs the four I use in the HS-code).
+Often, one product code from the source classification maps to two different codes in the destination classifications. There is no way to solve this issue completely. Instead, I create two mappings: a "strict" and a "lenient" match. The "strict" match uses only products that have a non-partial match and leaves other products as missing. The "lenient" appraoch assigns the first of the partial mappings as a match. Since the difference is usually quite small between partially mapped products, is is usually feasible to purposely "missassign" the products to a mapping that exists, rather than drop it altogether. For instance, the ASICC listings of "Lobsters, processed/frozen" (11329), "Prawns, processed/frozen" (11331), "Shrimps, processed/frozen" (11332) all map to two different NPCMS-2011 codes: "Crustaceans, frozen" (212500) and "Crustaceans, otherwise prepared" (212700). Similarly, "Butter" (11411) maps to three different kinds of butter (based on cattle-milk, buffalo-milk, or other milk) in the NPCMS-2011 system. While not particularly rigourous, very little information should be lost on the complexity of the production output between these three mappings. Indeed, many such categories will be clubbed together anyhow when converting NPCMS-2011 to Harmonized System codes. It is worth noting that I use the "strict"/"lenient" approach troughout the concordance chain. This means a substantial product loss in the "strict" approach: products from the ASICC classification (five digits) that might be together in the final Harmonized System code can be dropped because they map to two different NPCMS-2011 codes (that are seven digits vs the four I use in the HS-code). At any rate, while the observations are substantially reduced in some states, the distribution of plant complexity changes very little (see figure \ref{fig:density_product_match}). I therefor use the lenient approach in my main analysis.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/appendix/appendix_density_product_match}
+	\caption{State-wise density of plant complexity by using only strict or lenient matches. All years are pooled. Gaussian kernel.}%
+	\label{fig:density_product_match}
+\end{figure}
+
+TODO: Insert one of the plots that compares distribution between strict and lenient products.
 
 \input{tables/appendix_data_cleaning_year_obs}
 

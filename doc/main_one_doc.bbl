@@ -174,19 +174,29 @@ Tacchella, A., Mazzilli, D., and Pietronero, L. (2018).
 \newblock A dynamical systems approach to gross domestic product forecasting.
 \newblock {\em Nature Physics}, 14(8):861--865.
 
-\bibitem[{World Bank}, 2020a]{world_bank_enterprise_2020}
+\bibitem[{World Bank}, 2020a]{world_bank_enterprise_2020-1}
 {World Bank} (2020a).
+\newblock Enterprise {{Surveys}}: {{Firm}}-level data on {{India}} (2005).
+\newblock https://www.enterprisesurveys.org/en/data.
+
+\bibitem[{World Bank}, 2020b]{world_bank_enterprise_2020-2}
+{World Bank} (2020b).
+\newblock Enterprise {{Surveys}}: {{Firm}}-level data on {{India}} (2014).
+\newblock https://www.enterprisesurveys.org/en/data.
+
+\bibitem[{World Bank}, 2020c]{world_bank_enterprise_2020}
+{World Bank} (2020c).
 \newblock Enterprise {{Surveys Indicators Data}}.
 \newblock https://www.enterprisesurveys.org/en/data.
 
-\bibitem[{World Bank}, 2020b]{world_bank_world_2020-1}
-{World Bank} (2020b).
+\bibitem[{World Bank}, 2020d]{world_bank_world_2020-1}
+{World Bank} (2020d).
 \newblock World {{Development Indicators}}: {{GDP}} per capita, {{PPP}}
   (constant 2011 international \$).
 \newblock https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD.
 
-\bibitem[{World Bank}, 2020c]{world_bank_world_2020}
-{World Bank} (2020c).
+\bibitem[{World Bank}, 2020e]{world_bank_world_2020}
+{World Bank} (2020e).
 \newblock World {{Development Indicators}}: {{Total}} natural resources rents
   (\% of {{GDP}}).
 \newblock https://data.worldbank.org/indicator/NY.GDP.TOTL.RT.ZS.

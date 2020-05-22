@@ -3,34 +3,36 @@
 \contentsline {subsection}{\numberline {1.2}Structure of thesis}{3}%
 \contentsline {section}{\numberline {2}Background}{4}%
 \contentsline {section}{\numberline {3}Theoretical framework}{4}%
-\contentsline {subsection}{\numberline {3.1}Product complexity}{4}%
-\contentsline {subsection}{\numberline {3.2}Production networks and economic complexity}{6}%
-\contentsline {section}{\numberline {4}Methodology}{10}%
-\contentsline {subsection}{\numberline {4.1}Methods}{10}%
-\contentsline {subsubsection}{\numberline {4.1.1}Key variables}{10}%
-\contentsline {subsection}{\numberline {4.2}Limitations}{12}%
-\contentsline {subsubsection}{\numberline {4.2.1}Endogeneity}{12}%
-\contentsline {subsubsection}{\numberline {4.2.2}Modifiable Area Unit Problem}{13}%
-\contentsline {subsubsection}{\numberline {4.2.3}Attenuation bias}{13}%
-\contentsline {subsubsection}{\numberline {4.2.4}The problem with instrumental approaches}{13}%
-\contentsline {subsection}{\numberline {4.3}Data}{13}%
-\contentsline {subsubsection}{\numberline {4.3.1}State-wise variables}{13}%
-\contentsline {subsubsection}{\numberline {4.3.2}International trade data}{14}%
-\contentsline {subsubsection}{\numberline {4.3.3}Electricity data}{14}%
-\contentsline {subsubsection}{\numberline {4.3.4}Annual Survey of Industries (ASI)}{14}%
-\contentsline {section}{\numberline {5}Analysis and results}{16}%
-\contentsline {subsection}{\numberline {5.1}Validity of electricity variable}{16}%
-\contentsline {subsection}{\numberline {5.2}Interaction between shortages and complexity}{17}%
-\contentsline {subsection}{\numberline {5.3}Does shortages discourage the entry of complex plants?}{17}%
-\contentsline {subsection}{\numberline {5.4}Descriptives}{19}%
-\contentsline {subsection}{\numberline {5.5}Production technology}{19}%
-\contentsline {section}{\numberline {6}Discussion}{20}%
-\contentsline {section}{\numberline {7}Conclusion}{21}%
-\contentsline {section}{\numberline {A}Appendix: Data cleaning}{24}%
-\contentsline {subsection}{\numberline {A.1}Cleaning international trade data}{24}%
-\contentsline {subsection}{\numberline {A.2}Cleaning Annual Survey of Industries (ASI)}{24}%
-\contentsline {subsection}{\numberline {A.3}Product concordance for ASI}{25}%
-\contentsline {section}{\numberline {B}Appendix: RCA and RpcA}{28}%
-\contentsline {subsection}{\numberline {B.1}Distribution of comparative advantage}{30}%
-\contentsline {subsection}{\numberline {B.2}Significance for complexity metrics}{31}%
-\contentsline {section}{\numberline {C}Appendix: Which algorithm? Fitness-Complexity and Hausmann-Hidalgo}{33}%
+\contentsline {subsection}{\numberline {3.1}Product complexity}{6}%
+\contentsline {subsection}{\numberline {3.2}Production networks and economic complexity}{8}%
+\contentsline {section}{\numberline {4}Methodology}{12}%
+\contentsline {subsection}{\numberline {4.1}Methods}{12}%
+\contentsline {subsubsection}{\numberline {4.1.1}Economic complexity}{12}%
+\contentsline {subsubsection}{\numberline {4.1.2}Plant complexity}{13}%
+\contentsline {subsubsection}{\numberline {4.1.3}Supply chain quality}{14}%
+\contentsline {subsection}{\numberline {4.2}Limitations}{15}%
+\contentsline {subsubsection}{\numberline {4.2.1}Endogeneity}{15}%
+\contentsline {subsubsection}{\numberline {4.2.2}Modifiable Area Unit Problem}{15}%
+\contentsline {subsubsection}{\numberline {4.2.3}Attenuation bias}{16}%
+\contentsline {subsubsection}{\numberline {4.2.4}The problem with instrumental approaches}{16}%
+\contentsline {section}{\numberline {5}Data}{16}%
+\contentsline {subsection}{\numberline {5.1}State-wise variables}{16}%
+\contentsline {subsection}{\numberline {5.2}International trade data}{17}%
+\contentsline {subsection}{\numberline {5.3}Electricity data}{17}%
+\contentsline {subsection}{\numberline {5.4}Annual Survey of Industries (ASI)}{17}%
+\contentsline {section}{\numberline {6}Analysis and results}{19}%
+\contentsline {subsection}{\numberline {6.1}Validity of electricity variable}{19}%
+\contentsline {subsection}{\numberline {6.2}Interaction between shortages and complexity}{21}%
+\contentsline {subsection}{\numberline {6.3}Does shortages discourage the entry of complex plants?}{21}%
+\contentsline {subsection}{\numberline {6.4}Descriptives}{22}%
+\contentsline {subsection}{\numberline {6.5}Production technology}{23}%
+\contentsline {section}{\numberline {7}Discussion}{24}%
+\contentsline {section}{\numberline {8}Conclusion}{25}%
+\contentsline {section}{\numberline {A}Appendix: Data cleaning}{28}%
+\contentsline {subsection}{\numberline {A.1}Cleaning international trade data}{28}%
+\contentsline {subsection}{\numberline {A.2}Cleaning Annual Survey of Industries (ASI)}{28}%
+\contentsline {subsection}{\numberline {A.3}Product concordance for ASI}{29}%
+\contentsline {section}{\numberline {B}Appendix: RCA and RpcA}{31}%
+\contentsline {subsection}{\numberline {B.1}Distribution of comparative advantage}{33}%
+\contentsline {subsection}{\numberline {B.2}Significance for complexity metrics}{35}%
+\contentsline {section}{\numberline {C}Appendix: Which algorithm? Fitness-Complexity and Hausmann-Hidalgo}{38}%

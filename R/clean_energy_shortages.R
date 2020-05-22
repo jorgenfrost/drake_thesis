@@ -124,7 +124,10 @@ clean_energy_shortages <- function(
     mutate(
       avg_shortage = (requirement_mu - availability_mu) / requirement_mu,
       peak_shortage = (peak_demand_mw - peak_met_mw) / peak_demand_mw
-    )
+    ) %>%
+	mutate(
+	       state = ifelse(state == "West Bengal + Sikkim", "West Bengal", state)
+	       )
 
   # Add lagged shortage values ---------------------------------
 

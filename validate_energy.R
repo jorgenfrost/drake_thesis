@@ -140,32 +140,10 @@ obstacle14_model <- lm(
 # Get robust, clustered standard errors
 obstacle14_robust <- coeftest(obstacle14_model, vcov. = vcovCL, cluster = es14_obstacle$asi_state_name)
 
-stargazer(
-  selfgen05_robust, obstacle05_robust, quality05_robust, selfgen14_robust, obstacle14_robust,
- style = "aer",
- title = "World Bank Enterprise Surveys and the Shortage variable",
- dep.var.caption = "",
- dep.var.labels.include = FALSE,
-  type = "latex",
-  #align = TRUE,
-  column.labels = c("Self-gen share", "Obstacle", "Power quality", "Self-gen share", "Obstacle"),
-  covariate.labels = c("Shortage"),
-  omit = c("industry"),
-  omit.labels = c("Industry FE"),
- #column.sep.width = "1pt",
- font.size = "small",
-  add.lines = list(
-    c("Obervations:", paste0(nrow(es05_selfgen)), paste0(nrow(es05_obstacle)), paste0(nrow(es05_quality)), paste0(nrow(es14_selfgen)), paste0(nrow(es14_obstacle))),
-    c("WBES:", "2005", "2005", "2005", "2014", "2014")
-  ),
-    omit.table.layout = "n"
-) %>%
-  write(here("doc/tables/energy_validity/wbes.tex"))
+# CREATE TABLE -----------
 
-# same but not float
-stargazer(
+wbes_star <- stargazer(
   selfgen05_robust, obstacle05_robust, quality05_robust, selfgen14_robust, obstacle14_robust,
- style = "aer",
  title = "World Bank Enterprise Surveys and the Shortage variable",
  dep.var.caption = "",
  dep.var.labels.include = FALSE,
@@ -175,16 +153,19 @@ stargazer(
   covariate.labels = c("Shortage"),
   omit = c("industry"),
   omit.labels = c("Industry FE"),
+  label = "tab:wbes_validity",
+  float = FALSE,
  #column.sep.width = "1pt",
- float = FALSE,
  font.size = "small",
   add.lines = list(
     c("Obervations:", paste0(nrow(es05_selfgen)), paste0(nrow(es05_obstacle)), paste0(nrow(es05_quality)), paste0(nrow(es14_selfgen)), paste0(nrow(es14_obstacle))),
     c("WBES:", "2005", "2005", "2005", "2014", "2014")
   ),
-    omit.table.layout = "n"
-) %>%
-  write(here("doc/tables/energy_validity/wbes_nf.tex"))
+		       omit.table.layout = "n",
+          style = "aer", notes.append = FALSE, notes.align = "l"
+	  )
+
+  write(wbes_star, here("doc/tables/energy_validity/wbes_nonfloat.tex"))
 
 # IHDS difference ----------------------------------------------------------
 
@@ -245,8 +226,6 @@ hours_robust <- coeftest(hours_model, vcov = vcovCL, cluster= ihds_joined_tbl$st
 coeftest(hours_model, vcov = vcovCL, cluster = ihds_joined_tbl$stateid)
 
 library(plm)
-
-?plm
 
 stargazer(
  hours_robust,

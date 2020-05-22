@@ -439,3 +439,158 @@ ggsave(plot = comp_plot, filename = here(write_to))
 return(comp_plot)
 
 }
+
+#' Creates the bar plots showing that India still struggles with electricity according to
+#' the WBEs.
+#'
+#' @export
+
+plot_wbes_bars <- function(es05_in,
+			   es14_in,
+			   write_to = "./doc/figures/background_wbes.pdf") {
+
+# CREATE BIGGEST OBSTACLE -------------------------------
+
+es05_tbl <- es05_in %>%
+	select(idstd, obstacle = obstacle_electricity, big_obstacle = biggest_obstacle) %>%
+	filter(big_obstacle %in% LETTERS) %>%
+	mutate(
+	       big_obstacle_og = big_obstacle,
+	       dmy = case_when(
+			       big_obstacle == "B" ~ "Electricity",
+			       big_obstacle == "E" ~ "High taxes", 
+			       big_obstacle == "O" ~ "Corruption",
+			       TRUE ~ "Other"
+			       )
+	       ) %>%
+	arrange(big_obstacle) %>%
+	mutate(big_obstacle = zap_labels(big_obstacle),
+	       big_obstacle = as_factor(big_obstacle) %>% as.numeric() %>% as_factor(),
+	       big_obstacle = fct_inseq(big_obstacle)
+	       ) 
+
+big05_p <- 
+	ggplot(es05_tbl, aes(x = big_obstacle, fill = dmy)) +
+	geom_bar(color = "black", width = 0.7) +
+	theme_hc() +
+	annotate("text",  x=Inf, y = Inf, label = "WBES 2005", vjust=1, hjust=1) +
+	xlab("") +
+	ylab("") +
+	scale_fill_manual(name = "", values = c(
+						"#636363",
+						"#a50f15",
+						"#969696",
+						"#bdbdbd")
+	) +
+	theme(
+	      axis.title.x=element_blank(),
+	      axis.text.x=element_blank(),
+	      axis.ticks.x=element_blank()
+	      )
+
+
+es14_tbl <- es14_in %>%
+	select(idstd, obstacle = degree_electricity_obstacle, big_obstacle = biggest_obstacle, wstrict) %>%
+	mutate(
+	       dmy = case_when(
+			       big_obstacle == 8 ~ "Electricity",
+			       big_obstacle == 4 ~ "Corruption", 
+			       big_obstacle == 14 ~ "High taxes",
+			       TRUE ~ "Other"
+			       ),
+	       big_obstacle = as.numeric(big_obstacle),
+	       big_obstacle = as_factor(big_obstacle),
+	       big_obstacle = fct_inseq(big_obstacle),
+	       ) %>%
+	filter(!big_obstacle %in% c("-9", "-7"))
+
+big14_p <- 
+	ggplot(es14_tbl, aes(x = big_obstacle, fill = dmy)) +
+	geom_bar(aes(weight = wstrict), color = "black", width = 0.7) +
+	theme_hc() +
+	annotate("text",  x=Inf, y = Inf, label = "WBES 2014", vjust=1, hjust=1) +
+	xlab("") +
+	ylab("") +
+	scale_fill_manual(name = "", values = c(
+						"#636363",
+						"#a50f15",
+						"#969696",
+						"#bdbdbd")
+	) + 
+	theme(
+	      axis.title.x=element_blank(),
+	      axis.text.x=element_blank(),
+	      axis.ticks.x=element_blank()
+	      )
+
+# CREATE ELECTRICITY OBSTACLE -------------------------------
+
+es05_tbl <- es05_tbl %>%
+	arrange(obstacle) %>%
+	mutate(
+	       obstacle2 = as_factor(obstacle) %>% as.character(obstacle),
+	       ) %>% filter(obstacle > -1) %>%
+arrange(obstacle) %>%
+mutate(obstacle2 = Hmisc::capitalize(obstacle2))
+
+obs05_p <- ggplot(es05_tbl, aes(x = factor(obstacle), fill = obstacle2)) +
+	geom_bar(color = "black", width = 0.7) +
+	xlab("") +
+	ylab("") +
+	theme_hc() +
+	annotate("text",  x=Inf, y = Inf, label = "WBES 2005", vjust=1, hjust=1) +
+	scale_fill_grey(breaks = c("No obstacle", "Minor obstacle","Minor obstacle", "Moderate obstacle", "Major obstacle", "Very severe obstacle"), name = "")
+
+es14_tbl <- es14_tbl %>%
+	mutate(
+	       obstacle2 = as_factor(obstacle) %>% as.character(obstacle),
+	       ) %>%
+filter(obstacle > -1) %>%
+arrange(obstacle)
+
+obs14_p <- ggplot(es14_tbl, aes(x = factor(obstacle), fill = obstacle2)) +
+	geom_bar(aes(weight = wstrict), color = "black", width = 0.7) +
+	xlab("") +
+	ylab("") +
+	theme_hc() +
+	annotate("text",  x=Inf, y = Inf, label = "WBES 2014", vjust=1, hjust=1) +
+	scale_fill_grey(breaks = c("No obstacle", "Minor obstacle","Minor obstacle", "Moderate obstacle", "Major obstacle", "Very severe obstacle"), name = "")
+
+big_obstacle_plot <- ggarrange(big05_p, big14_p, nrow = 1, common.legend = TRUE)
+
+obstacle_plot <- ggarrange(obs05_p, obs14_p, ncol = 2, nrow = 1, legend = "bottom", common.legend = TRUE, font.label = list(size = 20, color = "black", face = "bold", family = NULL))
+
+
+ggsave(
+       plot = ggarrange(big_obstacle_plot, obstacle_plot, nrow = 2),
+       filename =  here(write_to))
+}
+
+
+#' Create the plot used to compare the plant complexity in states after matching
+#' 
+#' @export
+
+plot_complexity_density_after_match <- function(plant_qp_tbl, plant_tbl, write_to = "./doc/figures/appendix/appendix_density_product_match.pdf") {
+
+id_tbl <- plant_tbl %>%
+	select(year, dsl, multiplier, state_name)
+
+# ADD SAMPLE WEIGHTS (MULTIPLIER) ------------------------------------
+plant_qp_tbl <- plant_qp_tbl %>%
+	inner_join(id_tbl)
+
+# Remove something like 4 outlier plants that scew the visuals
+test_tbl <- plant_qp_tbl %>%
+	filter(w_avg_complexity < 8)
+
+outplot_match <- ggplot(test_tbl, aes(x = log(max_complexity), color = match)) +
+	geom_density(aes(weight = multiplier)) +
+	facet_wrap(~state_name) +
+	xlab("Plant complexity (max), ln") +
+	theme_pubr() +
+	scale_color_manual(values = c("#a50f15", "#253494"), name = "")
+
+ggsave(plot = outplot_match, filename = here(write_to))
+# end
+}

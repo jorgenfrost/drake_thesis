@@ -38,6 +38,8 @@ the_plan <-
       its = 50,
       mean_value = FALSE
     ),
+   pci_tbl = get_pci(),
+   eci_tbl = get_eci(),
     
     ## ASI data: preferred specification
     cleaned_blocks_ls = clean_asi_blocks(
@@ -58,7 +60,14 @@ the_plan <-
     plant_complexity_tbl = get_plant_complexity(
       product_complexity_data = hs96_complexity_tbl,
       plant_output_data = output_hs96_tbl,
-      mean_vals = FALSE
+      mean_vals = FALSE,
+      pci = FALSE
+    ),
+    plant_pci_tbl = get_plant_complexity(
+      product_complexity_data = pci_tbl,
+      plant_output_data = output_hs96_tbl,
+      mean_vals = FALSE,
+      pci = TRUE
     ),
     plant_int_input_tbl = get_int_input_share(
       plant_tbl = asi_base_sample_ls$plant_tbl,
@@ -172,6 +181,15 @@ the_plan <-
     
     
     # Plots
+		    match_density_plot = plot_complexity_density_after_match(
+									     plant_qp_tbl = plant_complexity_tbl,
+									     plant_tbl = analysis_sample_ls$plant_tbl,
+									     write_to = file_in("./doc/figures/appendix/appendix_density_product_match.pdf")
+									     ),
+		    wbes_bar_plot = plot_wbes_bars(
+						   es05_in = es05_tbl,
+						   es14_in = es14_tbl,
+						   write_to = file_out("./doc/figures/background_wbes.pdf")),
     disruption_plot = plot_disruptions(
       es_ls = es_int_ls,
       fit = hs96_complexity_tbl,

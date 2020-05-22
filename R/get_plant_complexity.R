@@ -10,7 +10,13 @@
 #' @return data frame with plant-year observations of the average complexity and 
 #' maximum complexity.
 
-get_plant_complexity <- function(product_complexity_data, plant_output_data, mean_vals = FALSE) {
+# For test
+# product_complexity_data <- readd("pci_tbl")
+# plant_output_data <- readd("output_hs96_tbl")
+# mean_vals <- FALSE
+# pci <- TRUE
+
+get_plant_complexity <- function(product_complexity_data, plant_output_data, mean_vals = FALSE, pci = FALSE) {
   
   # check inputs
   if (!is.data.frame(product_complexity_data)) {
@@ -22,7 +28,7 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data, mea
   }
   
   # Prep data data --------------------------------------------
- if(mean_vals == FALSE) { 
+ if(mean_vals == FALSE & pci == FALSE) { 
   product_complexity_tbl <- product_complexity_data %>%
     filter(type == "product" & iteration == max(iteration)) %>%
     select(
@@ -30,7 +36,7 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data, mea
       hs96_code = id,
       product_complexity = val
     )
- } else if (mean_vals == TRUE) {
+ } else if (mean_vals == TRUE & pci == FALSE) {
   product_complexity_tbl <- product_complexity_data %>%
     filter(type == "product" & iteration == max(iteration)) %>%
     select(
@@ -38,10 +44,19 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data, mea
       product_complexity = val
     )
 
+ } else if (pci == TRUE) {
+ product_complexity_tbl <- product_complexity_data %>%
+	 filter(!is.na(pci)) %>%
+	 select(
+		year,
+		hs96_code,
+		product_complexity = pci
+		)
+	
  }
   # non-final iterations are for debugging.
   
-  output_tbl <- plant_output_data
+  output_tbl <- plant_output_data 
   
   # Define function to add complexity values to products ------------
   
@@ -57,7 +72,7 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data, mea
     total_output_tbl <- tbl %>%
       group_by(year, dsl) %>%
       summarize(
-        total_plant_output = sum(qty_sold * net_sale_val) 
+        total_plant_output = sum(qty_sold * net_sale_val, na.rm = TRUE) 
       ) %>%
       ungroup()
     
@@ -68,7 +83,7 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data, mea
     plant_avg_complexity_tbl <- tbl %>%
       group_by(year, dsl) %>% 
       summarize(
-        w_avg_complexity = sum(((qty_sold * net_sale_val) / total_plant_output) * product_complexity, na.rm = TRUE)
+        w_avg_complexity = sum(((qty_sold * net_sale_val) / total_plant_output) * product_complexity, na.rm = TRUE) 
       ) %>%
       ungroup()
     
@@ -80,7 +95,8 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data, mea
       ) %>%
       ungroup()
     
-    plant_complexity_tbl <- full_join(plant_avg_complexity_tbl, plant_max_complexity_tbl)
+    plant_complexity_tbl <- full_join(plant_avg_complexity_tbl, plant_max_complexity_tbl) %>%
+	    filter(!max_complexity == -Inf) # Introduced by NA values in PCI data
     
     return(plant_complexity_tbl)
     
@@ -102,13 +118,17 @@ get_plant_complexity <- function(product_complexity_data, plant_output_data, mea
     mutate(
       match = "strict"
     ) 
+
   lenient_plant_complexity_tbl <- filter(output_tbl, !is.na(lenient_hs96)) %>%
     calculate_plant_complexity() %>%
     mutate(
       match = "lenient"
     )
   
-  joined_plant_complexity_tbl <- bind_rows(lenient_plant_complexity_tbl, strict_plant_complexity_tbl)
+  joined_plant_complexity_tbl <- bind_rows(lenient_plant_complexity_tbl, strict_plant_complexity_tbl) 
+
+  joined_plant_complexity_tbl %>%
+	  filter(max_complexity == -Inf)
   
   # Return file ---------------------------------------------------------------
   return(joined_plant_complexity_tbl)
