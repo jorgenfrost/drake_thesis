@@ -56,7 +56,6 @@ TODO: Restructure introduction
 
 TODO: Write up research aims/questions
 
-sd 
 TODO: Underline why economic complexity is important in development context.
 
 TODO: Update structure of thesis
@@ -331,6 +330,7 @@ I_{pft} = \begin{cases}
 - CONSTRUCTING THE INDUSTRY-INDUSTRY NETWORK
 
 % ------------
+TODO: This measure only takes into account downstream effects. Should there also be an effect where factories that has to stoop their work becasue shortages buys less input, it should have an effect on supplying industries. Unless more complex factories are more likely to be situated as a supplier to other factories, it is hard to see how this downstream link would effect plant-complexity.
 
 In addition to information on output, the ASI also list the intermediate inputs each plant uses at the product level.
 
@@ -374,7 +374,8 @@ This plant-level value is my measure of supply-chain quality in when testing hyp
 \subsection{Limitations}
 \label{sec:org979560b}
 
-LARGE LIMITATION: Scrubbing of plant identifiers from the sample.
+LIMITATION: It is important to note that this works exploratroy in nature. Many regs were tried, and as such, the p-values reported potentially overstates the significance of the findings. That said, the main results were robust to a range of controls.
+LARGE LIMITATION: Scrubbing of plant identifiers from the sample. - se min telefonnote
 
 \subsubsection{Endogeneity}
 \label{sec:orgd4457e7}
@@ -546,26 +547,73 @@ The regression equation then takes the form:
 
 The lagged average shortage is 
 
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/analysis_entry_sample_year_histograms}
+	 \caption{Factories by year}
+         \label{fig:entry_by_year}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/analysis_entry_sample_state_histograms}
+	 \caption{Factories by state}
+         \label{fig:entry_by_state}
+     \end{subfigure}
+     \caption{Distribution of factories in the plant-entry sample (2-year after entry). Some states only have a few factories that are observed after their initial production. However, all results hold after rerunning the tests without the least represented states. The vertical axis is the (unweighted) count of factories with the given $C^{max}_{f}$ in the state/year.}
+        \label{fig:new_entry_sample}
+\end{figure}
 
-\begin{table}
-    \caption{Association between complexity of new plants and shortages}
-    \label{tab:plant_entry_pci}
-    \begin{minipage}{0.95\textwidth} 
-\input{tables/plant_entry/pci_nonfloat}
-    \\
-    { \footnotesize \textit{Notes:} \\
-\par}
-    \end{minipage}
+To make sure that results are not driven by India getting more 
+
+Remains significant under: 
+ - changing the control from industry-year to industry as a whole,
+ - changing the clustering
+ - Adding a predictor on the mean or median complexity in all plants entering in the given year (to control plants not just all getting more complex over time)
+In column 3 and 4 in table \ref{tab:plant_entry_pci} I change the dependent variable to median plant complexity within a given industry. In the table, industry values are calculated using all plants across all years. When chacning 
+Setting instead the explained variable as the average complexity within the industry (among all plants). If this is significant, that would mean that more plants of a specific industry entered.
+
+- om industry: If I change the industry-median to industry-by-year the effec...
+
+\begin{table} 
+	\begin{center}
+		\begin{threeparttable}
+			\caption{Association between complexity of new plants and shortages}
+			\label{tab:plant_entry_pci}
+			\input{tables/plant_entry/pci_nonfloat}
+			\begin{tablenotes} \footnotesize
+			\item[1] $\bar{S}$ is the two-year average state shortage at the time of entry. Column (1) is the the complexity of the most complex product a plant produces. Column (2) is the weighted average complexity of the products it produces. Column (3) and (4) are the median $C^{max}$ and $C$ of plants in an industry (2-digit level). Standard errors are robust and clustered by state-year.
+		\item[2] $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01 \\
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{center}
 \end{table}   
+
+
+
+\begin{table} 
+	\begin{center}
+		\begin{threeparttable}
+			\caption{Association between the electricity use of new plants and shortages}
+			\label{tab:plant_entry_electricity}
+			\input{tables/plant_entry/electricity_nonfloat}
+			\begin{tablenotes} \footnotesize
+			\item[1] $\bar{S}$ is the two-year average state shortage at the time of entry. Column (1) is the linear probability of a plant generating its own electricity. Column (2) is the adjusted revenue of a plant divided by its total electricity use (kWh). Standard errors are robust and clustered by state-year. 
+
+       	\item[2] $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01 \\
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{center}
+\end{table}   
+
 
 
 
 TODO: Remember finding about the impact of industries.
 
 I also include several state-level variables: population density, share of rural population, and 
-
-
-
 
 
 % ----------- NOTES ---------------

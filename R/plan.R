@@ -228,6 +228,15 @@ the_plan <-
       its = 40,
       write_to = file_out("./doc/figures/appendix/appendix_complexity_convergence_plot.pdf")
     ),
+
+		    # ANALYSE
+		    plant_entry_analysis = analyse_plant_entry(
+					plant_tbl = analysis_sample_ls$plant_tbl,
+					pci_table_path = file_out("doc/tables/plant_entry/pci_nonfloat.tex"),
+					electricity_table_path = file_out("doc/tables/plant_entry/electricity_nonfloat.tex"),
+					sample_histogram_year_out = file_in("doc/figures/analysis_entry_sample_year_histograms.pdf"),
+					sample_histogram_state_out = file_in("doc/figures/analysis_entry_sample_state_histograms.pdf")
+					),
     
     # Evaluation functions
     export_filter_eval = evaluate_export_filter(

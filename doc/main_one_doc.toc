@@ -24,15 +24,15 @@
 \contentsline {subsection}{\numberline {6.1}Validity of electricity variable}{20}%
 \contentsline {subsection}{\numberline {6.2}Interaction between shortages and complexity}{22}%
 \contentsline {subsection}{\numberline {6.3}Does shortages discourage the entry of complex plants?}{22}%
-\contentsline {subsection}{\numberline {6.4}Descriptives}{24}%
-\contentsline {subsection}{\numberline {6.5}Production technology}{24}%
-\contentsline {section}{\numberline {7}Discussion}{25}%
-\contentsline {section}{\numberline {8}Conclusion}{26}%
-\contentsline {section}{\numberline {A}Appendix: Data cleaning}{29}%
-\contentsline {subsection}{\numberline {A.1}Cleaning international trade data}{29}%
-\contentsline {subsection}{\numberline {A.2}Cleaning Annual Survey of Industries (ASI)}{29}%
-\contentsline {subsection}{\numberline {A.3}Product concordance for ASI}{30}%
-\contentsline {section}{\numberline {B}Appendix: RCA and RpcA}{32}%
-\contentsline {subsection}{\numberline {B.1}Distribution of comparative advantage}{34}%
-\contentsline {subsection}{\numberline {B.2}Significance for complexity metrics}{36}%
-\contentsline {section}{\numberline {C}Appendix: Which algorithm? Fitness-Complexity and Hausmann-Hidalgo}{39}%
+\contentsline {subsection}{\numberline {6.4}Descriptives}{25}%
+\contentsline {subsection}{\numberline {6.5}Production technology}{26}%
+\contentsline {section}{\numberline {7}Discussion}{27}%
+\contentsline {section}{\numberline {8}Conclusion}{28}%
+\contentsline {section}{\numberline {A}Appendix: Data cleaning}{31}%
+\contentsline {subsection}{\numberline {A.1}Cleaning international trade data}{31}%
+\contentsline {subsection}{\numberline {A.2}Cleaning Annual Survey of Industries (ASI)}{31}%
+\contentsline {subsection}{\numberline {A.3}Product concordance for ASI}{32}%
+\contentsline {section}{\numberline {B}Appendix: RCA and RpcA}{34}%
+\contentsline {subsection}{\numberline {B.1}Distribution of comparative advantage}{36}%
+\contentsline {subsection}{\numberline {B.2}Significance for complexity metrics}{38}%
+\contentsline {section}{\numberline {C}Appendix: Which algorithm? Fitness-Complexity and Hausmann-Hidalgo}{41}%

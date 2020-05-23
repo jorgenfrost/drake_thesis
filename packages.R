@@ -2,7 +2,7 @@
 library(conflicted) # explicitly control overlapping function names
 # library(dotenv) # not sure, something with the env params used in drake
 library(drake) # better, make-like project management
-
+library(latex2exp)
 library(tidyverse) # 
 library(fst) # very fast read/write ops
 library(magrittr) # le pibe
