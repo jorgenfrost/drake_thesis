@@ -63,6 +63,12 @@ the_plan <-
       mean_vals = FALSE,
       pci = FALSE
     ),
+    plant_complexity_rca_tbl = get_plant_complexity(
+      product_complexity_data = hs96_rca_complexity_tbl,
+      plant_output_data = output_hs96_tbl,
+      mean_vals = FALSE,
+      pci = FALSE
+    ),
     plant_pci_tbl = get_plant_complexity(
       product_complexity_data = pci_tbl,
       plant_output_data = output_hs96_tbl,
@@ -87,7 +93,7 @@ the_plan <-
         pattern = "*.csv",
         full.names = TRUE
       ),
-      min_year = 2000,
+      min_year = 1998,
       old_avg_raw = read_csv(
         file_in("./data/external/allcott_energy_data_india/india_energy_data/allcott_EnergyRequirement.csv")
       ),

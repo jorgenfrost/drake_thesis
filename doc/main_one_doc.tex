@@ -50,6 +50,8 @@
 
 \section{Introduction}\label{sec:introduction}
 
+TODO: HIGHLIGHT: It is to my knowledge the first time the role of supply networks have been used to study the impact of electricity shortages.
+
 TODO: Restructure introduction
 
 TODO: Write up research aims/questions
@@ -259,6 +261,9 @@ As already described, the theory of EC assumes that countries are linked to the 
 \subsubsection{Economic complexity}%
 \label{sub:economic_complexity}
 
+TODO: BRUG PCI istedet
+
+
     I use the Fitness-Complexity (FC) algorithm \citep{tacchella_new_2012} to find the complexity of products. For a discussion of the benefits of the FC algorithm over the  Hausmann-Hidalgo (HH) algorithm \citep{hidalgo_building_2009}, see appendix \ref{sec:appendix-algorithm}. As outlined earlier, countries, capabilities and products are connected in a tripartite network. The capabilities in this network, however, is hidden.
 
 I first find the revealed per capita advantage (RpcA) of each country in each of the approx. 1200 products in the HS92 series. For a discussion of why RpcA is an improvement over the more often used revealed comparative advantage (RCA, \citealp{balassa_trade_1965}) see appendix \ref{sec:rca}. RpcA normalizes a country's per capita export of a product by the global per capita export of the product. Hence, RpcA of country \(c\) in product \(p\):
@@ -300,15 +305,15 @@ TODO: Lav sanity check if antallet af forskellige producter hvert år i orignal 
 For each plant, I quantify the complexity of its production output as the weighted average the complexity-values for each product it produces. I assign weights based on the value of the production. That is, the complexity for factory \(f\) at time \(t\), \(C_{ft}\), is defined as:
 
 $$
-C_{ft} = \sum_p PCI_{pt} \frac{O_{fpt}}{\sum_p O_{fpt}}
+C_{ft} = \sum_p Q_{pt} \frac{O_{fpt}}{\sum_p O_{fpt}}
 $$
 
-where \(PCI_{pt}\) is the product complexity of product \(p\) at time \(t\) and \(O_{fpt}\) is the output (in current prices) of factory \(f\) in product \(p\) at time \(t\). The value of the production output is calculated as the net unit sale value of a given product times the amount of units sold. 
+where \(Q_{pt}\) is the product complexity of product \(p\) at time \(t\) and \(O_{fpt}\) is the output (in current prices) of factory \(f\) in product \(p\) at time \(t\). The value of the production output is calculated as the net unit sale value of a given product times the amount of units sold. 
 
 This definition potentially underestimates the complexity of multi-product factories that produce complex products, but happen to sell a lot of their low-complex ones. I therefor also include a stricter measure of plant complexity, \(C^{\text{max}}_{ft}\), that uses only the most complex product in a factory's product-portfolio, regardless of the output volume.
 
 $$
-C^{\text{max}}_{ft} = max \{ PCI_{1t} I_{1ft}, \text{ ... }, PCI_{pt} I_{pt} \}
+C^{\text{max}}_{ft} = max \{ Q_{1t} I_{1ft}, \text{ ... }, Q_{pt} I_{pt} \}
 $$
 
 where
@@ -322,6 +327,23 @@ I_{pft} = \begin{cases}
 
 \subsubsection{Supply chain quality}%
 \label{sub:supply_chain_quality}
+
+- CONSTRUCTING THE INDUSTRY-INDUSTRY NETWORK
+
+% ------------
+
+In addition to information on output, the ASI also list the intermediate inputs each plant uses at the product level.
+
+
+
+
+By taking the shre of a plants total revenue is accounted for by each input, I get a measure of the relative importance of the inputs for each plant. 
+
+To minimise noise introduced by year-to-year sampling differences in the non-census sample, I take the average rolling average.(?)
+
+It is important to note that this is not say anything about the elasticity of input-to-output relationships. However, the share of inputs used by different industries is a meaningful measure and is available at a much higher granularity than is otherwise available in the officially disseminated input-output tables. 
+
+% ------------
 
 In order to construct my measure of supply-chain quality, I need to connect three different sets of information. First, I have the disruption-variable, Shortage, on the state-level. Next, I know which industries are connected to each other in the supply network through the Input-Ouput tables. Finally, I know how much plants in different industries in different states produce.
 
@@ -351,6 +373,8 @@ This plant-level value is my measure of supply-chain quality in when testing hyp
 
 \subsection{Limitations}
 \label{sec:org979560b}
+
+LARGE LIMITATION: Scrubbing of plant identifiers from the sample.
 
 \subsubsection{Endogeneity}
 \label{sec:orgd4457e7}
@@ -460,9 +484,6 @@ The World Bank periodically conducts enterprise surveys in a range of countries.
 \input{tables/energy_validity/wbes_nonfloat}
     \\
     { \footnotesize \textit{Notes:} Column one, two, and three are based on the WBES in India in 2005. Column four and five are from the WBES in India in 2014. Dependent variable in column (1) and (4) is the reported share of self-generated electricity. Column (2) and (5) are the degree to which electricity is an obstacle to the firms operation (from 0: "No obstacle" to 4: "Very severe obstacle"). Column (3) only exists for the 2005-survey and is the reported quality of the power grid (from 1: "Extremely bad" to 10: "Excellent"). All columns use industry-fixed effects. Standard errors are robust and clustered by state. \\
-***Significant at the 1 percent level. \\
-**Significant at the 5 percent level. \\
-*Significant at the 10 percent level. \\
 \par}
     \end{minipage}
 \end{table}   
@@ -496,19 +517,21 @@ TODO: I conduct three anaylses. First, I examine the relationshiop between the p
 \label{sub:longterm}
 
 % ------------ WRITING ------------ 
-Are plants with a more complex production output less likely to be constructed in states that have unreliable electricity?
+I know turn to the effect of longer-run shortages on the distribution of factories. Are plants with a more complex production output less likely to be constructed in states that have unreliable electricity? 
 
 The ASI asks plants when the first year of production is. This makes it possible to date the entry of the plant, and match it with the Shortage variable. While the productive capital in the manufacturing sector, like factory machinery, is presumably relatively static and product specific, there is no guarantee that a plant produces the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry.
 
-While the sample of factories greatly increase when increasing the interval between entry and observation (to allow for oberving a factory up to five years after its reported entry) that lack of across-year plant indicators means that there is a risk of observing the same factories again and again. This means that it is possible that any results is being driven by factories correlating with themselves. I therefor limit the analysis to observing factories either 1, 2, or 3 years after their reported inaugural production. Essentially, this analysis asks: how is the complexity of plants observed in, say 2005 ($t$), that had their first year of production in 2003 ($t-3$, or $t-1$, or any $t < t-1$) affected by the average shortage in the two- or three years preceding their entry (2001-2003)? 
+While the sample of factories greatly increase when increasing the interval between entry and observation (to allow for oberving a factory up to five years after its reported entry) that lack of across-year plant indicators means that there is a risk of observing the same factories again and again. This means that it is possible that any results is being driven by factories correlating with themselves. I therefor limit the analysis to observing factories either 1, 2, or 3 years after their reported inaugural production. 
 
-TODO: Since my shortage variable is applied at the level of states in different years, I cluster by state-years (so that "Jammu and Kashmir in 2009" is one cluster and "Jammu and Kashmir in 2010" is another). To account for the concerns about downward biased standard errors due to serial correlation discussed in \cite{bertrand_how_2004} (that is, if some effect "contained" the shortage outcomes carries over to other years), I also cluster by state as a robustness check.
+Essentially, this analysis asks: how is the complexity of plants observed two years after their initial year of production (reported, but not observed) related to the average electricity shortage in the year of their initial production and the year before? For instance, if a plant observed in Assam in 2005 reports that it had its first commercial production in 2003, I assign the average shortage of 2001-2003 in as Assam to this observation.
+
+Since my shortage variable is applied at the level of states in different years, plants that are observed in the same year and state have potentially correlated errors. To adjust for this I cluster by state-years (so that "Jammu and Kashmir in 2009" is one cluster and "Jammu and Kashmir in 2010" is another). To account for the concerns about downward biased standard errors due to serial correlation discussed in \cite{bertrand_how_2004} (that is, if some effect "contained" the shortage outcomes carries over to other years), I also cluster by state as a robustness check.
 
 It is worth noting that I define the lagged shortage as the average value of the $S_{st}$ variable across the years, not the ratio between the average availability and demand over the period (since, presumably, producers won't be interested in overall power capacity, only the amount they are short).
 
-Let $Y_{ist}$ be the value of some variable of a plant with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. Plant complexity is my main variable of interest here. I then define $\bar{S}_{st}$ as the average shortage in the year of entry and the two years prior in state $s$. 
+I run two tests: a minimal and an expanded model. 
 
-I also include several state-level variables: population density, share of rural population, and 
+Let $Y_{fist}$ be the value of some variable of a plant $f$ with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. Here, I'm mainly interested in the complexity of a plant ($C_{fist}$). I then define $\bar{S}_{st}$ as the average shortage in the year of entry and the two years prior in state $s$. 
 
 $R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{it}$ represents industry-year indicators. I include industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages). This reduces the risk that some unobserved event within an industry drives the the outcome (like complexity) but is not related to shortages.
 
@@ -519,7 +542,38 @@ The regression equation then takes the form:
 \]
 
 
+- RESULTS:
+
+The lagged average shortage is 
+
+
+\begin{table}
+    \caption{Association between complexity of new plants and shortages}
+    \label{tab:plant_entry_pci}
+    \begin{minipage}{0.95\textwidth} 
+\input{tables/plant_entry/pci_nonfloat}
+    \\
+    { \footnotesize \textit{Notes:} \\
+\par}
+    \end{minipage}
+\end{table}   
+
+
+
+TODO: Remember finding about the impact of industries.
+
+I also include several state-level variables: population density, share of rural population, and 
+
+
+
+
+
 % ----------- NOTES ---------------
+RESULTS: One of the issues is that the industry a plant belongs to explains a ton of the variance in complexity (see column 1). This entails that whether or not complexity ...
+
+For this reason I present both the minimal and maximal model with and without including the industry fixed-effects.
+
+TODO: Få styr på regressionerne. Først skal Der laves en tabel med plants der er blevet observeret to og tre år efter de havde initial production.
 
 TODO: The effect I'm interested in is primarily 
 Some researchers have used rainfalls and tempereature controls in their specification. While variation in precipitation levels can act as economic shocks on a yearly basis, it is not likely to influence ... 
@@ -633,8 +687,6 @@ Often, one product code from the source classification maps to two different cod
 	\caption{State-wise density of plant complexity by using only strict or lenient matches. All years are pooled. Gaussian kernel.}%
 	\label{fig:density_product_match}
 \end{figure}
-
-TODO: Insert one of the plots that compares distribution between strict and lenient products.
 
 \input{tables/appendix_data_cleaning_year_obs}
 

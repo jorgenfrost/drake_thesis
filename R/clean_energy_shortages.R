@@ -5,14 +5,27 @@
 # from Alcott et al (1993 - 2010) and the analogous energy data I've collected
 # from the CEA website. I also do some cleaning.
 
-# get list of all the .csv files
+# For testing
+#   min_year = 1999
+#   old_avg_raw = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/allcott_EnergyRequirement.csv"))
+#   old_peak_raw = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/allcott_PeakDemand.csv"))
+#   avg_2003_data = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/energy_requirement_2003_data.csv"))
+#   peak_2003_data = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/peak_demand_2003_data.csv"))
+# 
+#   new_cea_files = list.files(
+#     here("data/external/power_supply_india/csv/"),
+#     pattern = "*.csv",
+#     full.names = TRUE
+#   )
+# 
+
 clean_energy_shortages <- function(
   new_cea_files = list.files(
     here("data/external/power_supply_india/csv/"),
     pattern = "*.csv",
     full.names = TRUE
   ),
-  min_year = 1999,
+  min_year = 1998,
   old_avg_raw = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/allcott_EnergyRequirement.csv")),
   old_peak_raw = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/allcott_PeakDemand.csv")),
   avg_2003_data = read_csv(here("./data/external/allcott_energy_data_india/india_energy_data/energy_requirement_2003_data.csv")),
