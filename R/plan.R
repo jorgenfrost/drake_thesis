@@ -85,6 +85,7 @@ the_plan <-
     nic_ls = get_industries(
       asi_base_sample_ls$plant_tbl
     ),
+	plant_input_shortage_tbl = get_plant_input_shortage(),
     
     # Energy data: preferred
     energy_shortages_tbl = clean_energy_shortages(
@@ -202,6 +203,11 @@ the_plan <-
       gdp_cap = gdp_cap_tbl,
       write_to = file_out("./doc/figures/introduction_disruption_plot.pdf")
     ),
+	shortage_dist_plots = plot_shortages(
+			write_to_bp = file_out("./doc/figures/shortage_bp.pdf"),
+			write_to_ln = file_ou("./doc/figures/shortage_ln.pdf")
+			
+			),
     gdp_cap_fitness_plot = plot_gdp_cap_fitness(
       fit = hs96_complexity_tbl,
       gdp_cap = gdp_cap_tbl,

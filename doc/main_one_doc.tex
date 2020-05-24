@@ -347,7 +347,8 @@ It is important to note that this is not say anything about the elasticity of in
 
 In order to construct my measure of supply-chain quality, I need to connect three different sets of information. First, I have the disruption-variable, Shortage, on the state-level. Next, I know which plants produce which products, how much of them each contributes, and in which states they are located. Finally, I also have information on what kinds of inputs plants use.
 
-I connect them in three steps. First, for each year, I find how much of each product is produced in each state. I can construct a weighted "production" shortage-average to each product (where plants that contribute more the total output of a product contribute their states shortage-value more than smaller plants). Second, for each plant I find the importance of each input. I define this as the purchase-value of the input-product as a share of the plants total revenue. Finally, for each plant in each year, I attach the "production"-shortage value to each individual product they use as input. I then just take average production-shortage value of inputs weighted by how important they are to each plant (the revenue-share described earlier).
+I connect them in three steps. First, for each year, I find how much of each product is produced in each state. I can construct a weighted "production" shortage-average to each product (where plants that contribute more the total output of a product contribute their states shortage-value more than smaller plants). Second, for each plant I find the importance of each input. I define this as the purchase-value of the input-product as a share of the plants total revenue. Finally, for each plant in each year, I attach the "product"-shortage value. I then multply this value by the products share of plant revenues and sum the result for all products for each plant. This has two advantages: first, it means that products are given importance relative to the importance to the plant, and second it means that the supply-shortage is more important for plants that use more intermediate inputs (because the supply uncertainty is less important for plants that hardly use any inputs).
+
 
 This is essentially as network that connects plants to each other by their input-output relationship, but on a much finer scaler than is usually possible.  
 
@@ -355,6 +356,7 @@ It is important to note that this method does not take into account any spatial 
 
 
 - TODO: Account not only for the first input, but the second degree as well. - something like: In this network, each
+
 
 This plant-level value is my measure of supply-chain quality in when testing hypothesis \(H_2\).
 
@@ -392,9 +394,9 @@ TODO: Most instruments - like Allcott et al - instrument year-to-year variation 
 \subsection{State-wise variables}%
 \label{sub:state_wise_variables}
 
-I get data on state-wise net domestic product, both total and per capita, from the Reserve Bank of India (RBI). While both series are in constant prices, there are often multiple base-years available. When there are observations for the same year using different base-years, I use the newest. The choice of base isn't a completely trivial issue, since there are often substantial differences for estimates for the same year measured against two different base-years. For instance, after rebasing GDP in 1999-2000, the total net domestic gross product increases by almost 65\% compared to the same year (1999-2000) measured using 1993-94 as a base. To minimise the noise introduced by these base-year changes, I use a three-year moving average (meaning that the value of 1999-2000 is the average GDP between 1998-2001). As an alternative, I also use the original series, but with dummy variables indicating which base year is used.
+I get data on state-wise net domestic product, both total and per capita, from the Reserve Bank of India (RBI). While both series are in constant prices, there are often multiple base-years available. When there are observations for the same year using different base-years, I use the newest. The choice of base isn't a completely trivial issue, since there are often substantial differences for estimates for the same year measured against two different base-years. For instance, after rebasing GDP in 1999-2000, the total net domestic gross product increases by almost 65\% compared to the same year (1999-2000) measured using 1993-94 as a base. To minimise the noise introduced by these base-year changes, I use a dummy variable indicating which base year is used.
 
-From the RBI I also collect data on the total population in each state, the share of population that lives in urban and rural areas and the population density. These values are only available at the 10-year census intervals (1991-2001-2011). For years I between I create a simple imputation of difference evenly spaced out on years. For any analysis using population controls, I exclude years after 2011.
+From the RBI I also collect data on the total population in each state, the share of population that lives in urban and rural areas and the population density. These values are only available at the 10-year census intervals (1991-2001-2011). For years in between I create a simple imputation of change between observations evenly spaced out on years. For any analysis using population controls, I exclude years after 2011 (last available census).
 
 I also collect microdata from the Indian National Sample Surveys. TODO I aggregate observations to state-level observations of the share of people in each state between 15-60 and the share of the population with at least secondary education finished.
 
@@ -449,6 +451,7 @@ The are a couple of important shortcomings when using ASI data. First, while the
 
 \section{Analysis and results}%
 \label{sec:analysis_and_results}
+Supply chain quality = both max (to test for the threshold-idea) and mean.
 
 I now turn to my analysis and results. I discuss them in section TODO. I first ask some preliminary questions - how vaible is my measure of shortages? How is plant complexity related to production choices? - before turning to the main analysis on if electricity shortages harm complex plants disproportionately. 
 
@@ -500,6 +503,31 @@ TODO: I conduct three anaylses. First, I examine the relationshiop between the p
 \subsection{Interaction between shortages and complexity}%
 \label{sub:regressions}
 
+I now turn the analysis on the relationship between state-wide shortages of electricity and the complexity of manufacturing plants. I'm interested in whether a disuptive environment can affect the complexity of production.
+
+The fact that states have a substantial within-state variation in the shortages means that an analysis of pooling all
+
+Since there is a quite substantial variation within states oacross different years, a regression on all ...
+
+Because factories are unlikely to fluidly move between states as shortages change, and do appear and dissappear on a yearly basis, a straight forward comparison of yearly shortage and plant-complexity is unlikely to capture the information I'm after. 
+
+I instead focus on the relationship between revenues, plant complexity, and electricity shortages. If complex production processes are punished most severely by interruptions, as outline in the theoretical framework, I would expect the interaction term between complexity and electricity shortages to be significant. 
+
+
+
+- First analysis: adjusted plant revenue by complexity, controlled for A) wage share, labor, state, year, trends, net gdp, industry, industry-year, input share,
+
+
+
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=1\linewidth]{figures/shortage_p_dl}
+	\caption{While there is a significant variation between the shortage of states in a given year, for some states the within-state variation is much larger. This has implications for how to analyse the association between shortages and plant sophistication. On the left is the yearly average shortage in the five most populous states in 2001. The dotted line is period average for each state. On the right is the distribution of yearly shortages for all states.}%
+	\label{fig:shortage_dist}
+\end{figure}
+
+Since the plants that are present in a state at a given time is unlikely to very
 
 \subsection{Does shortages discourage the entry of complex plants?}%
 \label{sub:longterm}
@@ -556,15 +584,15 @@ The lagged average shortage is
 To make sure that results are not driven by India getting more complex .. (DONE, not important)
 
 
-\begin{table}
-	\begin{center}
-		\begin{threeparttable}
-			\caption{Association between complexity of new plants and shortages}
-			\label{tab:plant_entry_larger_max}
-			\input{tables/plant_entry/pci_max_larger}
-		\end{threeparttable}
-	\end{center}
-\end{table}   
+%\begin{table}
+%	\begin{center}
+%		\begin{threeparttable}
+%			\caption{Association between complexity of new plants and shortages}
+%			\label{tab:plant_entry_larger_max}
+%			\input{tables/plant_entry/pci_max_larger}
+%		\end{threeparttable}
+%	\end{center}
+%\end{table}   
 
 
 
@@ -636,7 +664,6 @@ TODO: On use of clusters.
 
 - TODO: ... This question is similar in spirit to the work in \cite{allcott_how_2016} and \cite{abeberese_electricity_2017}. Both studies use some instrument for electricity (outages and prices) to meausre the choice of production technology. While also using a more recent set of plants and different controls, the main advantage of the approach in this paper is that I examine the sophistication of the output of production processes instead of the aggreagate measures used in those papers. For instance, while \cite{abeberese_electricity_2017} uses the machinery-to-labor ratio to measure how plants change in response to prices on electricity, there are many way such a change can express itself. 
 
-TODO: The question I'm interested in is essentially whether a disuptive environment can affect the complexity of production. Since there is a quite substantial variation within states oacross different years, a regression on all ... Because factories are unlikely to fluidly move between state and not appear and dissappear on a yearly basis, a straight forward comparison of yearly shortage and plant-complexity is unlikely to capture the information I'm after.
 
 
 
@@ -676,6 +703,9 @@ As a first step, we can create the raw comparison between product complexity and
 \section{Discussion}%
 \label{sec:discussion}
 
+- TODO: (on only measureing first order in the supply quality var). However, there is no reason why it should not be possible to construct a network of the ~ 30,000 plants observed each year and the repeatedly weigh their relationship be the production- and supply-weighted shortaged. Essentially, this would be taking the approach I do above, but after the steps I conduct, repeat them using the adjusted production-shortage variable. This would be equvilant to going "one step" back in the supply-chain each time. At the first iteration a plant's (plant A) supply chain quality is only weighted by its suppliers' state-shortage. Next their suppliers' state-shortage is included (through their supply-chain quality value from the first iteration) and discounted by the importance of their relationship to the plant (A). Then the suppliers suppliers influence is included, an so on. Because each step is "filtered" by the relative importance of the supply-relationship (the share of revenue), each additional step would include more plants, but their importance would be (exponentially) smaller for each time you move "up" in the supply chain. 
+
+As an additional benefit, this plant-plant network could provide valuable information on which products are the most central in the production network - and where they are located - which could be important in guiding government investment in infrastructure. A lower shortage in central products would be markedly more effective in increasing firm performance than less central products \footnote{Although, the granularity of the "shortage" variable (which is now the state-level) would probably need to be finer.}. Unfortunately, it was not possible to finish these calculation within the timeframe of the thesis project.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
