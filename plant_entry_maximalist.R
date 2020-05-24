@@ -1,7 +1,11 @@
+larger_entry_max_path = "doc/tables/plant_entry/pci_max_larger.tex"
+larger_entry_mean_path = "doc/tables/plant_entry/pci_mean_larger.tex"
+
 ##################################################################
 ##                         PREPARE DATA                         ##
 ##################################################################
 # READ DATA ----------------------------------------------------------
+source("packages.R")
 plant_tbl <- readd("analysis_sample_ls")$plant_tbl
 state_tbl <- readd("analysis_sample_ls")$state_tbl %>%
 	mutate(
@@ -141,9 +145,10 @@ add_vars <- function(df) {
 	       nic98_2year = paste0(nic98_2d, initial_production),
 	       nic87year = paste0(nic87, initial_production)
 	       ) %>%
-	left_join(mean_pci_tbl, by = c("year", "state_name")) %>%
-	left_join(ind_pci_tbl, by = c("year", "nic98_2d")) %>%
-	left_join(state_variables, by = c("initial_production" = "year", "state_name"))
+	left_join(state_variables, by = c("initial_production" = "year", "state_name")) %>%
+	mutate(
+	       asicc = ifelse(year > 2011, 1, 0)
+	       )
 
 
 
@@ -161,15 +166,14 @@ add_vars <- function(df) {
 
 entry_2y_final <- entry_2y_sample %>% add_vars()
 entry_3y_final <- entry_3y_sample %>% add_vars()
-entry_4y_final <- entry_4y_sample %>% add_vars()
 
 ##################################################################
 ##                MAX AND AVG PCI ON SHORTAGE DATA              ##
 ##################################################################
 
-# Er sign
+# Er sign - men ret sensitiv overfor sample size.
 lm_robust(
-	  max_pci ~ avg_shortage_2y + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy),
+	  avg_pci ~ avg_shortage_2y + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy),
 	  weights = multiplier,
 	  fixed_effects = ~ as.factor(state_name) + as.factor(initial_production),
 	  clusters = stateyear,
@@ -177,14 +181,157 @@ lm_robust(
 	  data = entry_2y_final
 	  )
 	
-	  
-lm_robust(
-	  max_pci ~ avg_shortage_2y + share_15_60 + share_finished_secondary + net_gdp_cap_growth + net_gdp,
-	  weights = multiplier,
-	  fixed_effects = ~ as.factor(state_name) + as.factor(initial_production),
-	  clusters = stateyear,
-	  se_type = "stata",
-	  data = entry_2y_final
-	  )
+# First model: 
+# 
+# ###### MAX PCI ################ TODO: 
+# From above: 
+lm1 <-lm(max_pci ~ avg_shortage_2y + share_finished_secondary + share_15_60 + net_gdp_cap_growth + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+   weights = multiplier,
+   data = entry_2y_final
+   )
 
+se1 <- coeftest(lm1, vcov = vcovCL, cluster = entry_2y_final$stateyear)
 
+lm2 <- lm(
+   max_pci ~ avg_shortage_2y + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se2 <- coeftest(lm2, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+# Including controls on economy size, around .05 level. Changes with net_gdp_cap
+lm3 <- lm(
+   max_pci ~ avg_shortage_2y + share_15_60 + net_gdp + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se3 <- coeftest(lm3, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+# Add remove trend - significance goes below
+lm4 <- lm(
+   max_pci ~ avg_shortage_2y + share_15_60 + net_gdp + share_finished_secondary + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se4 <- coeftest(lm4, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+# Add industry fixed
+lm5 <- lm(
+	  max_pci ~ avg_shortage_2y + share_15_60 + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy) + as.factor(nic98_2d) + as.factor(initial_production), 
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se5 <- coeftest(lm5, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+lm6 <- lm(
+   max_pci ~ avg_shortage_2y + as.factor(initial_production) + as.factor(nic98_2d), 
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se6 <- coeftest(lm6, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+# CREATE REGRESSION TABLE
+larger_max_star <- stargazer(
+		se1, se2, se3, se4, se5, se6,
+		dep.var.labels = "$C^{max}_{f}$",
+		dep.var.labels.include = TRUE,
+		type = "latex",
+		omit = c("base_year_dmy", "state_name", "initial_production", "nic98_2d"),
+		omit.labels = c("GDP base dmy", "State effects", "Entry year effects", "nic98_2d"),
+		float = FALSE,
+		#column.sep.width = "1pt",
+		font.size = "small",
+	#	add.lines = list(
+	#			 c("Observations:", nobs(lm1), nobs(lm2), nobs(lm3), nobs(lm4), nobs(lm5), nobs(lm6))
+	#			 ),
+	#	omit.table.layout = "n",
+		style = "aer"
+	#	notes.append = FALSE,
+	#	notes.align = "l"
+		)
+
+write(larger_max_star, here(larger_entry_max_path))
+
+########################################################
+#### AVG PCI
+##########################################
+lm1 <-lm(
+   avg_pci ~ avg_shortage_2y + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+   weights = multiplier,
+   data = entry_2y_final
+   )
+
+se1 <- coeftest(lm1, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+# Add share of working age pop
+lm2 <- lm(
+   avg_pci ~ avg_shortage_2y + share_15_60 + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se2 <- coeftest(lm2, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+se2.1 <- coeftest(lm2, vcov = vcovCL, cluster = entry_2y_final$state_name)
+
+# Including controls on economy size, around .05 level. Changes with net_gdp_cap
+lm3 <- lm(
+   avg_pci ~ avg_shortage_2y + share_15_60 + net_gdp + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se3 <- coeftest(lm3, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+se3.1 <- coeftest(lm3, vcov = vcovCL, cluster = entry_2y_final$state_name)
+
+# Add remove trend - significance goes below
+lm4 <- lm(
+   avg_pci ~ avg_shortage_2y + share_15_60 + net_gdp + share_finished_secondary + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se4 <- coeftest(lm4, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+# Add industry fixed
+lm5 <- lm(
+   avg_pci ~ avg_shortage_2y + share_15_60 + net_gdp + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d), 
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se5 <- coeftest(lm5, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+lm5.1 <- lm(
+   avg_pci ~ avg_shortage_2y + share_15_60 + net_gdp + share_finished_secondary + net_gdp_cap_growth + as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d), 
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se5.1 <- coeftest(lm5, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+lm6 <- lm(
+   avg_pci ~ avg_shortage_2y + as.factor(initial_production) + as.factor(nic98_2d), 
+   weights = multiplier,
+   data = entry_2y_final
+   )
+se6 <- coeftest(lm6, vcov = vcovCL, cluster = entry_2y_final$stateyear)
+
+## CREATE TABLE FOR AVG COMPLEXITY
+		# covariate.labels = c("$\\bar{S_{s}}$ at initial production", "Pop share between 15-60", "Net state product", "Sec. education share", "Net state product/cap growth"),
+
+larger_mean_star <- stargazer(
+		se1, se2, se3, se4, se5, se6,
+		dep.var.labels = "$C_{f}$",
+		dep.var.labels.include = TRUE,
+		type = "latex",
+		#align = TRUE,
+		omit = c("base_year_dmy", "state_name", "initial_production", "nic98_2d"),
+	#	omit.labels = c("GDP base dummy", "State effects", "Entry year effects", "Industry effects"),
+		float = FALSE,
+		#column.sep.width = "1pt",
+		font.size = "small",
+		add.lines = list(
+				 c("Observations:", nobs(lm1), nobs(lm2), nobs(lm3), nobs(lm4), nobs(lm5), nobs(lm6))
+				 ),
+		omit.table.layout = "n",
+		style = "aer", 
+		notes.append = FALSE,
+		notes.align = "l"
+		)
+
+write(larger_mean_star, here(larger_entry_mean_path))

@@ -345,29 +345,16 @@ It is important to note that this is not say anything about the elasticity of in
 
 % ------------
 
-In order to construct my measure of supply-chain quality, I need to connect three different sets of information. First, I have the disruption-variable, Shortage, on the state-level. Next, I know which industries are connected to each other in the supply network through the Input-Ouput tables. Finally, I know how much plants in different industries in different states produce.
+In order to construct my measure of supply-chain quality, I need to connect three different sets of information. First, I have the disruption-variable, Shortage, on the state-level. Next, I know which plants produce which products, how much of them each contributes, and in which states they are located. Finally, I also have information on what kinds of inputs plants use.
 
-I connect them in three steps. First, for each year I find the share of a plants' output in the total industry-wide output. Since I know wich plants are in which states, I can now find the share each state contributes to each industry's yearly output. This allows me to assign a shortage variable to each industry based on how much large the share of industry-output each state accounts for. I now have a vector of industries that all have a weighted Shortage value. Call this value $D_{i,t}$ for industry $i$ in year $t$.
+I connect them in three steps. First, for each year, I find how much of each product is produced in each state. I can construct a weighted "production" shortage-average to each product (where plants that contribute more the total output of a product contribute their states shortage-value more than smaller plants). Second, for each plant I find the importance of each input. I define this as the purchase-value of the input-product as a share of the plants total revenue. Finally, for each plant in each year, I attach the "production"-shortage value to each individual product they use as input. I then just take average production-shortage value of inputs weighted by how important they are to each plant (the revenue-share described earlier).
 
-Next, I need to connect industries to each other. The input-output network essentially tells us how much of each industries output is TODO what does it acutally show?? output elasiticity or total input? 
-
-In this network, each node is an industry and each link denotes the relationship between sectors. A link going from sector $i$ to sector $j$ is the share of input used by sector $j$ that comes from the output of sector $i$. In other words, some links are strong, some links are less so. Each node also has a value, which is the $D_{i,t}$ from before. 
-
-Finally, I need to capture the electrticity shortage present in each industry's supply-network. For each node, I then calculate the average path between it and each other individual node, where each link is the input share between nodes. This average path length is then weighted by the industry-shortage variable ($D_{i,t}$).
- 
-This method solves two problems. First, if we just weight the supply chain vulnurability by direct relationships, important second degree effects are missed. For instance, say thatindustry $A$ is extremely prone to disruptions. If sector $A$ delivers the major part of sector $B$s total input, but does not deliver anything to sector $C$. Secotr $C$ on the other hand, only gets input from $B$. If I just calculate the supply quality by taking weighing the $D$ variable with the links between sectors, the $C$ will only be affected by whatever $D$ value $B$ has and how much supply it provides. But in reality, since $B$ gets almost all of its inputs from $A$, the shortages in $A$ will affect the output of $B$ which will affect $C$. By taking the average path length between $A$ and $C$ instead, we account for this: now the distanct between $A$ and $C$ is shorter the stronger the link from $A$ to $B$ and $B$ to $C$. 
+This is essentially as network that connects plants to each other by their input-output relationship, but on a much finer scaler than is usually possible.  
 
 It is important to note that this method does not take into account any spatial relationships. If the supply-linkages is strongly conditioned on geographical closeness this approach will misassign the importance of shortages in industries. That is, I take the implicit assumption that industry-wide output is distributed evenly geographically. Since the ASI does not carry information of where plants source their inputs from, I can't account for this effect.
 
 
 - TODO: Account not only for the first input, but the second degree as well. - something like: In this network, each
-
-
-I then create industry-level disruption variable by taking the weighted average of plant-level disruption values, where weights are the output share of a plant in the sectors total output. 
-
-I now have an input-output network where each of the 130 sectors has a disruption value. The input-output network shows the average share of different sectors' output that is used as intermediate input in a given sectors production, as well its' suppliers' suppliers, and so on.
-
-I represent each sector as a node in a network and their supply-relationship as the strength of their link. Each node is then valued as the disruption value assign above. I can then calculate the eigenvector centrality for each sector. Each plant based in a sector then inherits it supply-network disruption value. The eigenvector centrality is basically an iterative algorithm that takes the disruption value in a nodes neighbors weighted by the nodes links to it, then takes the value of their neighbors weighted by their links, and so on. This catches the decreasing knock-on effects discussed in relation to the middle graph in figure \ref{fig:framework-io-model}.
 
 This plant-level value is my measure of supply-chain quality in when testing hypothesis \(H_2\).
 
@@ -566,7 +553,20 @@ The lagged average shortage is
         \label{fig:new_entry_sample}
 \end{figure}
 
-To make sure that results are not driven by India getting more 
+To make sure that results are not driven by India getting more complex .. (DONE, not important)
+
+
+\begin{table}
+	\begin{center}
+		\begin{threeparttable}
+			\caption{Association between complexity of new plants and shortages}
+			\label{tab:plant_entry_larger_max}
+			\input{tables/plant_entry/pci_max_larger}
+		\end{threeparttable}
+	\end{center}
+\end{table}   
+
+
 
 Remains significant under: 
  - changing the control from industry-year to industry as a whole,
@@ -631,7 +631,7 @@ temperature- and rainfall controls from my regression specification.
 TODO: On use of clusters. 
 
  - IMPORTANT - deflate revenues. Check if controlling for size, industry, etc, put interaction term between complexity and shortage.
- - IMPORTANT - Create supply: two ways: input-output tables or inputs. 
+ - IMPORTANT - Create supply: two ways: input-output tables or inputs. (Remember: ...secondly, the is no accounting the elecgtricity use of the supplying industry)
  - IMPORTANT - 
 
 - TODO: ... This question is similar in spirit to the work in \cite{allcott_how_2016} and \cite{abeberese_electricity_2017}. Both studies use some instrument for electricity (outages and prices) to meausre the choice of production technology. While also using a more recent set of plants and different controls, the main advantage of the approach in this paper is that I examine the sophistication of the output of production processes instead of the aggreagate measures used in those papers. For instance, while \cite{abeberese_electricity_2017} uses the machinery-to-labor ratio to measure how plants change in response to prices on electricity, there are many way such a change can express itself. 
