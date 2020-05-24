@@ -5,6 +5,7 @@
 \usepackage{graphicx} % figures
 \usepackage{caption}
 
+
 \usepackage{subcaption} % for subfigs
 \usepackage{amsmath} % math
 \usepackage{amssymb} % more symbols
@@ -47,6 +48,13 @@
 % - Aim and research questions
 % - Limitations, scope
 % - Structure
+
+ - FINDINGS INDTIL VIDERE:
+ - Significant interaction between input shortages and revenues for complex factories. 
+ - Significant finding in the relationship between the average shortages 2 and 3 years earlier and the the complexity of new plants 
+
+ THE NEGATIVE EFFECT suggest that in high disruption enviroments more complex production can be LESS profitable. This could essentially act as "attractor" towards non-complex industry in the same vein as a poverty trap.
+
 
 \section{Introduction}\label{sec:introduction}
 
@@ -500,29 +508,107 @@ A few of the strategies used in other papers ...  \cite{allcott_how_2016} instru
 
 - Lav summary statistics over electricity use for plants.
 TODO: I conduct three anaylses. First, I examine the relationshiop between the performance of a plant, its complexity, and yearly variation in shortages. In a similar manner, I examine the relationship between the shortage contained in the plant's supply-chain (measured at the industry level). Finally, I look at how the characteristics of plants vary with the previous (two, three) years shortage at the state level. For the analysis using deflated revenues, I use a limited sample of 2000-2011.\footnote{Which is within the range of years all population-wide variables are observed.} 
+
 \subsection{Interaction between shortages and complexity}%
 \label{sub:regressions}
 
-I now turn the analysis on the relationship between state-wide shortages of electricity and the complexity of manufacturing plants. I'm interested in whether a disuptive environment can affect the complexity of production.
+I now turn my main analysis: how are states' electricity shortages related to the sophistication of production in the state? 
 
-The fact that states have a substantial within-state variation in the shortages means that an analysis of pooling all
+While there is substantial variation the electricity deficits that different states run, we can observe a significant variation within states across different years as well. The question I'm interested in is on how interruptions in the production-environment are associated with the distribution of sophisticated plants. Since factories are unlikely to fluidly move between states as shortages change, and do not appear and dissappear on a yearly basis, a straight forward comparison of yearly shortage and plant-complexity is unlikely to capture the information I'm after. 
 
-Since there is a quite substantial variation within states oacross different years, a regression on all ...
+Instead a take a different approach. If, as discussed in the theoretical framework, more sophisticated productions require longer supply chains 
 
-Because factories are unlikely to fluidly move between states as shortages change, and do appear and dissappear on a yearly basis, a straight forward comparison of yearly shortage and plant-complexity is unlikely to capture the information I'm after. 
+I instead focus on the relationship between revenues, plant complexity, and electricity shortages.
 
-I instead focus on the relationship between revenues, plant complexity, and electricity shortages. If complex production processes are punished most severely by interruptions, as outline in the theoretical framework, I would expect the interaction term between complexity and electricity shortages to be significant. 
+Let $O^{g}_{f,t}$ be the (natural log of) revenue (total gross sales) of a plant $f$ in year $t$ expressed in 2005 constant Rs. This my dependent variable. I add controls for the number of workers employeed by each plant (averaged over a year) $E_{f,t}$, the prosperity in the state (net domestic product per capita, constant prices) $N_{s,t}$, and the share of revenue paid as wages $W_{s,t}$. To make sure revenues are not just driven by large turnovers, I also control for the plant's position in the distribution of total production costs in the year I observe the plant. I use the distribution instead of the actual monetary value because I don't have a reliable deflator for the total production costs\footnote{In contrary to only adjusting prices of plant output, this was unfeasible because it would involve deflating wages, energy inputs, intermediate inputs, etc, seperately.}. I take the Z-score of the total production costs of the plant by by subtracting the average value of observed plants in the same year, and dividing by the standard deviation. I denote this value as $X^{z}_{f,t,i}$. I then add fixed effect controls for state $R_{s}$, year $T_{t}$, two-digit industry $I_i$. Finally, I add plant complexity $C_{f,t}$ and the two disruption variables, Shortage ($S_{s,t}$) and Supply shortage ($D_{f,t}$)\footnote{I also run a number of different variations using intermediate input share of revenues, electricity intensity (revenue/kWh), and log-forms of the predictors. The main result is not sensitive to any of these alternatives.}]. I also present results using the most complex product produced in a plant, $C^{max}_{f,t}$, as an alternative to the weighted complexity $C_{f,t}$. Indexing plants by $f$, years by $t$, states by $s$ and industries by $i$ this gives me the equation:
+
+\[
+	O^{g}_{f,t,i} = C_{f,t} + S_{s,t} + D_{f,t} + E_{f,t} + N_{s,t} + R_{s} + T_{t} + I_{i}
+\]
+
+I only have a good industry-specific (3-digit) deflator of gross sales up to 2010, meaning that I limit my sample to the plants observed between 2000 and 2010 for the main analysis. I further restrict it by removing the observations that are flagged by the procedure described in appendix \ref{sub:cleaning_annual_survey_of_industries_asi}. This leaves me with some 266000 observations of plants from 2000 to 2010. Since my shortage variable is applied at the level of states in different years, plants that are observed in the same year and state have potentially correlated errors. To adjust for this I cluster by state-years (so that "Jammu and Kashmir in 2009" is one cluster and "Jammu and Kashmir in 2010" is another). 
+
+
+
+
+If complex production processes are punished more severely by interruptions, we would expect that electricity shortages in their supply chain would be more costly to the revenue of plants as you move up in the complexity distribution. A way to test this is by specifying a model of plants' revenues, and adding an interaction between the complexity of plants and the effect of shortages on revenues. Here, the significance test on the coefficient is doubles 
+
+
+We can further investigate this effect by looking a the other predictions of the discussion in the framework. First, given that state-shortages act at the plant-level and supply-chain shortages act at the input-level, a higher wage-revenue share should act dampening on the effect of Supply shortages on plant revenues. Table \ref{tab:interaction_wage_input} ows the relationship betweem ...
+I only report the results $C^{max}$, but the results from the weighted average were statistically essentially identical.
+
+politi
+
+As we can see... The respectively positive and negative coefficient of  .. 
+This means that, in this model and on this data, as supply chain shortages increases the more negative the effect of complexity becomes on revenues.
+
+
+This an important
+
+IMPORTANTLY: B3 = Coefficient, X1 = PCI, X2 = SUPPLY CHAIN SHORTAGE.
+Conversely, if B3 is negative, then the more positive X2 is, the more negative the effect of X1 on Y becomes (or alternatively, the more negative X2 is, the more positive effect of X1 on Y becomes). 
+
+Med andre ord: Når interaction koefficientent er negative, så desto højere supply chain shortages er, desto mere negativ er effekten af PCI on revenues
+
+
+This is in line with the predictions of 
+
+
+
 
 
 I'm interested in the effect of complexity on revenue and its interaction with my two variables on shortages, supply and local. 
 I first specify a base model of controls, and then I add ...
 
-I control for the prosperity of the state the plant is in, the year-average number of employees it has, the wage-revenue share. I also include fixed effects on state, year, and 2-digit industry (22 different industries).
+I control for the prosperity of the state the plant is in, the year-average number of employees it has, the wage-revenue share, and its position in the yearly distribution of total production cost. I also include fixed effects on state, year, and 2-digit industry (22 different industries). This base model explans a large 
 
 One of the main concerns here, is that I don't have plant identifiers. Without 
 
-- First analysis: adjusted plant revenue by complexity, controlled for A) wage share, labor, state, year, trends, net gdp, industry, industry-year, input share,
+\begin{sidewaystable}
+	\begin{center}
+		\begin{threeparttable}
+		\caption{Association between the complexity ($C^{max}_{f}$) of plants, shortages, and revenues.}
+			\label{tab:interaction_max_pci}
+			\input{tables/analysis_interaction_max_pci}
+			\begin{tablenotes} \footnotesize
+			\item[1] This table presents the result of the regression analysis in section \ref{sub:regressions} on the interaction between plant complexity, energy shortages, and plant revenue. The dependent variable in all columns is the natural log of yearly total plant revenue (constant 2005 Rs). Independent variables are in order: wages paid as a share of revenue, an indicator for whether or not the plant owns a generator, the plants' total number of yearly employees (avg), the total cost of production standardized per year, the net domestic product in each state per capita, complexity of the most complex product a plant produces, shortage in the sttate, interaction between complexity and shortage, the supply shortage value of the plant, and and interaction between complexity and supply shortage. Each column includes state-, two-digit industry-, and year fixed effects. I also include a dummy for the base-year of the state NDP/cap. Standard errors are robust and clustered by state-year.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{center}
+\end{sidewaystable}
 
+\begin{sidewaystable}
+	\begin{center}
+		\begin{threeparttable}
+		\caption{Association between complexity ($C_{f}$) of plants, shortages, and revenues.}
+			\label{tab:interaction_avg_pci}
+			\input{tables/analysis_interaction_avg_pci}
+			\begin{tablenotes} \footnotesize
+			\item[1] This table presents the result of the regression analysis in section \ref{sub:regressions} on the interaction between plant complexity, energy shortages, and plant revenue. The dependent variable in all columns is the natural log of yearly total plant revenue (constant 2005 Rs). Indepedent variables are in order: wages paid as a share of revenue, an indicator for whether or not the plant owns a generator, the total cost of production standardized per yer, the plants' total number of yearly employees (avg), the net domestic product in each state per capita, the weighted average complexity the plant, shortage in the state, interaction between complexity and shortage, the supply shortage value of the plant, and and interaction between complexity and supply shortage. Each column includes state-, two-digit industry-, and year fixed effects. I also include a dummy for the base-year of the state NDP/cap. Standard errors are robust and clustered by state-year.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{center}
+\end{sidewaystable}
+
+\begin{table}
+	\begin{center}
+		\begin{threeparttable}
+		\caption{Association between Supply shortages, wage-share, intermediate input share, and revenues.}
+			\label{tab:interaction_wage_input}
+			\input{tables/analysis_interaction_wage_input}
+			\begin{tablenotes} \footnotesize
+			\item[1] This table presents are modified version of the equation in \ref{sub:regressions}, here with focus on the interaction between wage/revenue share, intermediate intput/share (products), shortages and plant revenu. The dependent variable in all columns is the natural log of yearly total plant revenue (constant 2005 Rs). Independent variables are the same as in table \ref{tab:interaction_max_pci} except for the inclusion of Int. input/rev share, which is the purchase value of intermediate input products as a share of revenues (the given plant in the given year). Each column includes state-, two-digit industry-, and year fixed effects. I also include a dummy for the base-year of the state NDP/cap. Standard errors are robust and clustered by state-year.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{center}
+\end{table}
+
+
+FaINDINGS!!!!!
+
+- Der er ingen effect kun af shortages. Der er dog effekt af hhv PCI og input shortages or interaction effects mellem PCI og input shortages, og det er det vigtigeste.
+
+- The result is robust to both the centered and uncenterd interaction.
 
 
 
@@ -543,27 +629,27 @@ I know turn to the effect of longer-run shortages on the distribution of factori
 
 The ASI asks plants when the first year of production is. This makes it possible to date the entry of the plant, and match it with the Shortage variable. While the productive capital in the manufacturing sector, like factory machinery, is presumably relatively static and product specific, there is no guarantee that a plant produces the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry.
 
-While the sample of factories greatly increase when increasing the interval between entry and observation (to allow for oberving a factory up to five years after its reported entry) that lack of across-year plant indicators means that there is a risk of observing the same factories again and again. This means that it is possible that any results is being driven by factories correlating with themselves. I therefor limit the analysis to observing factories either 1, 2, or 3 years after their reported inaugural production. 
+While the sample of factories greatly increase when increasing the interval between entry and observation (to allow for oberving a factory up to five years after its reported entry) that lack of across-year plant indicators means that there is a risk of observing the same factories again and again. This means that it is possible that any results is being driven by factories correlating with themselves. I therefor limit the analysis to observing factories either exactly 2 or 3 years after their reported inaugural production (no overlap). 
 
 Essentially, this analysis asks: how is the complexity of plants observed two years after their initial year of production (reported, but not observed) related to the average electricity shortage in the year of their initial production and the year before? For instance, if a plant observed in Assam in 2005 reports that it had its first commercial production in 2003, I assign the average shortage of 2001-2003 in as Assam to this observation.
 
-Since my shortage variable is applied at the level of states in different years, plants that are observed in the same year and state have potentially correlated errors. To adjust for this I cluster by state-years (so that "Jammu and Kashmir in 2009" is one cluster and "Jammu and Kashmir in 2010" is another). To account for the concerns about downward biased standard errors due to serial correlation discussed in \cite{bertrand_how_2004} (that is, if some effect "contained" the shortage outcomes carries over to other years), I also cluster by state as a robustness check.
+As before, I use robust standard errors and cluster by state-years. To account for the concerns about downward biased standard errors due to serial correlation discussed in \cite{bertrand_how_2004} (that is, if some effect "contained" the shortage outcomes carries over to other years), I also cluster by state as a robustness check.
 
-It is worth noting that I define the lagged shortage as the average value of the $S_{st}$ variable across the years, not the ratio between the average availability and demand over the period (since, presumably, producers won't be interested in overall power capacity, only the amount they are short).
+It is worth noting that I define the lagged shortage as the average value of the $S_{s,t}$ variable across the years, not the ratio between the average availability and demand over the period (since, presumably, producers won't be interested in overall power capacity, only the amount they are short).
 
-I run two tests: a minimal and an expanded model. 
-
-Let $Y_{fist}$ be the value of some variable of a plant $f$ with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. Here, I'm mainly interested in the complexity of a plant ($C_{fist}$). I then define $\bar{S}_{st}$ as the average shortage in the year of entry and the two years prior in state $s$. 
-
-$R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{it}$ represents industry-year indicators. I include industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages). This reduces the risk that some unobserved event within an industry drives the the outcome (like complexity) but is not related to shortages.
+I run two tests: a minimal and an expanded model. As before, let $C_{f,i,s,t}$ be the complexity of a plant $f$ with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. I repeat all of the following analyses using $C^{max}$ as well. I then define $\bar{S}_{st}$ as the average shortage in the year of entry and the two years prior in state $s$. $R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{it}$ represents industry-year indicators. I include industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages). This reduces the risk that some unobserved event within an industry drives the the outcome (like complexity) but is not related to shortages.
 
 The regression equation then takes the form:
 
 \[
-	Y_{ist} = \bar{S}_{st} + R_{s} + T_{t} + I_{it} 
+	C_{f,i,s,t} = \bar{S}_{s,t} + R_{s} + T_{t} + I_{i,t} 
 \]
 
+Limiting the analysis to only plants observed a set amount of time af their initial production naturally limits the sample size - from just below 500,000 to around 20,000\footnote{Since I don't use the adjusted revenues in this analysis, I can include my full sample of factories.}. As is visible in figure \ref{fig:new_entry_sample}, some states are reduced to very few observations. While I run my analysis with the full sample plants from all states, I  repeated all the findings when using a restricted sample without the least represent states.
 
+
+Here, the $\bar{S}_{s,t}$ takes on the role of possible producers knowledge or expectation of $z$ in the theoretical model discussed earlier. That is, are they willing to start up a factory, if they believe the electrical infrastructure is poor?
+ 
 - RESULTS:
 
 The lagged average shortage is 
@@ -599,8 +685,6 @@ To make sure that results are not driven by India getting more complex .. (DONE,
 %		\end{threeparttable}
 %	\end{center}
 %\end{table}   
-
-
 
 Remains significant under: 
  - changing the control from industry-year to industry as a whole,
@@ -712,7 +796,11 @@ As a first step, we can create the raw comparison between product complexity and
 - TODO: (on only measureing first order in the supply quality var). However, there is no reason why it should not be possible to construct a network of the ~ 30,000 plants observed each year and the repeatedly weigh their relationship be the production- and supply-weighted shortaged. Essentially, this would be taking the approach I do above, but after the steps I conduct, repeat them using the adjusted production-shortage variable. This would be equvilant to going "one step" back in the supply-chain each time. At the first iteration a plant's (plant A) supply chain quality is only weighted by its suppliers' state-shortage. Next their suppliers' state-shortage is included (through their supply-chain quality value from the first iteration) and discounted by the importance of their relationship to the plant (A). Then the suppliers suppliers influence is included, an so on. Because each step is "filtered" by the relative importance of the supply-relationship (the share of revenue), each additional step would include more plants, but their importance would be (exponentially) smaller for each time you move "up" in the supply chain. 
 
 As an additional benefit, this plant-plant network could provide valuable information on which products are the most central in the production network - and where they are located - which could be important in guiding government investment in infrastructure. A lower shortage in central products would be markedly more effective in increasing firm performance than less central products \footnote{Although, the granularity of the "shortage" variable (which is now the state-level) would probably need to be finer.}. Unfortunately, it was not possible to finish these calculation within the timeframe of the thesis project.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Re-write, but good point:
+While the effect size is rather small and noisy, a rsult like this could help us undertand why the introduction new productiuon knowledge is such a gradual process. If there is is not a threshold of "relability" being met, producers who "jump to far" in the production space will be punished harder than others on. THis can essentially act as an attractor or a cooling effect on longer jumps.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%k
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
@@ -784,182 +872,5 @@ Often, one product code from the source classification maps to two different cod
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage 
-
-\section{Appendix: RCA and RpcA}%
-\label{sec:rca}
-Most of the early papers in economic complexity (e.g \citealp{tacchella_new_2012,hidalgo_building_2009}) used the revealed comparative advantage \citep{balassa_trade_1965} to normalize trade data. Revealed comparative advantage is defined as
-
-\[
-	RCA_{cp} = \frac{X_{cp}}{\sum_p X_{cp}} \bigg / \frac{\sum_c X_{cp}}{\sum_{cp} X_{cp}}
-\]
-
-where $X_{cp}$ is the export value of country $c$'s export of product $p$.
-
-There are three main drawbacks of using RCA:
-
-\begin{enumerate}
-\item While in practice used to confer an idea of what countries are good at, RCA in fact measures the relative intensity of countries' exports. For instance, consider if a country is very poor at all types of production. This means its total exports will be low. If the country is just a little bit less hapless at one product, this product will have a very high RCA, since other countries will have less of a gulf between their export basket and this one given product. This, despite it being less proficient in producing the product than other countries.
-\item Secondly, if a country exports a lot of something very valuable - like oil - and it dwarfs the contribution of other products to the value of the country's total exports, this product will dominate the first term in the RCA formula ($X_{cp} / \sum_p X_{cp}$). Even if the country is very good at producing other products, their RCA will be artificially lowered by the valuable commodity.
-\item Finally, the RCA of a product is connected to the prices of other products. This means that should a country export three products, and the price of one of them falls sharply, the RCA in the two other products rises for the country. Should a second country be equally proficient in exporting the two products but their third product's price stay put, they will now seem worse a exporting the two products.
-\end{enumerate}
-
-A different metric, used in a few of the newer papers \citep{hausmann_implied_2019}, instead measures the per-capita export in a product normalized by global (total) per capita export in the product. The "revealed per capita advantage" (RpcA) for country $c$ in $p$ is then simply defined as:
-
-\[
-	RpcA_{cp} = \frac{X_{cp}}{POP_{c}} \bigg / \frac{\sum_c X_{cp}}{\sum_c POP_c}
-\]
-
-where $POP_c$ is the population of country $c$.
-
-By not including the total export basket of country $c$ in the normalization we avoid the three issues outlined above, and catch a more "absolute" skill based measure of the economy's capabilities. 
-
-\subsection{Distribution of comparative advantage}
-\label{subsec:dist}
-
-Changing from RCA to RpcA has some distinct impacts on the distribution of comparative advantage, both in terms of the total distribution and in which countries are more ``significant exporters''. Figure \ref{fig:rca_rpca_hist} shows the distribution of countries by the number of products they are significant exporters of by RCA (\ref{fig:rca_hist}) and RpcA (\ref{fig:rpca_hist}). Using RpcA results in a much more right-skewed distribution, with some countries exporting almost all available products.
-
-% FIGURE: rca vs rpca histograms
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_histogram_rca}
-         \caption{RCA}
-         \label{fig:rca_hist}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_histogram_rpca}
-         \caption{RpcA}
-         \label{fig:rpca_hist}
-     \end{subfigure}
-        \caption{Distribution of countries by number of products with
-		  comparative advantage (across sample years).}
-        \label{fig:rca_rpca_hist}
-\end{figure}
-
-One of the most interesting changes when shifting to RpcA is in the relationship to total population. When using RpcA the correlation between population and the number of products exported by a country disappears completely. Figure \ref{fig:rca_rpca_by_pop} shows the relationship across the sample years. It can be a bit hard to see what is going on, so the histogram in figure \ref{fig:p_val_hist_pop} shows the distribution of p-values for the population term in a simple linear regression on country fitness by the natural log of population. Population is not significant for any year using RpcA but for every year using RCA. Next to it, figure \ref{fig:stand_diff_fit_pop} shows the relationship between the difference in fitness values based on RCA and RpcA and population. Differences are taken by first standardizing fitness values to \(F^{z}_{c}\) by
-
-\[
- F^{z}_{c} = \frac{F_{c} - <F_{c}>}{sd(F_{c})}
-\]
-
-where \(F_{c}\) is the fitness of country \(c\) in the given year, and then subtracting the \(F^{z}_{c}\) based on RpcA from the one based on RCA. That is, a negative difference means that fitness for a given county is higher using fitness calculated from RpcA. The result, which are especially driven by China and India, shows that countries that have a larger population tend to have their fitness reduced more by changing the trade-normalization metric. The result is not driven by penalizing large populations, but by removing the positive relationship between comparative advantage and population.
-
-% FIGURE: rca, rpca by pop all years
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_rca_by_pop}
-         \caption{RCA by population, ln}
-         \label{fig:rca_by_pop}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_rpca_by_pop}
-         \caption{RpcA by population, ln}
-         \label{fig:rpca_by_pop}
-     \end{subfigure}
-	 \caption{Relationship between ln(population) and the number of products
-	   with comparative advantage in a country (across sample years).}
-        \label{fig:rca_rpca_by_pop}
-\end{figure}
-
-% FIGURE: P-val hist and stand diff 2010 by pop
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_p_val_hist_rca_rpca_by_pop}
-         \caption{p-values of ln(pop) term on fitness}
-         \label{fig:p_val_hist_pop}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-       \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_difference_by_pop_2010}
-         \caption{difference in fitness by ln(pop) (2010), spearman correlation and SLR}
-         \label{fig:stand_diff_fit_pop}
-     \end{subfigure}
-	 \caption{Relationship between ln(population) and the number of products with comparative advantage in a country (across sample years).}
-        \label{fig:population_difference}
-\end{figure}
-
-\subsection{Significance for complexity metrics}
-\label{subsec:significance_for_complexity}
-
-The change in comparative advantage clearly changes the $M$ matrix used in the fitness algorithm. This means that the fitness of countries change as well. Figure \ref{fig:bar_plot_diff} show the change in standardized fitness when using RCA and RpcA in 2010. The figure shows a similar picture to \ref{fig:stand_diff_fit_pop}: more populous countries tend to be less fit using RpcA. Figure \ref{fig:rca_rpca_fit_hist} shows the distribution of fitness values across the sample years. Unsurprisingly, they are similar to the distribution of comparative advantage in figure \ref{fig:rca_rpca_hist}: RpcA-based fitness are more right-skewed.
-
-TODO: Volatility. Given that population of countries are less volatile over time than commodity prices, we would expect that product complexity values are more stable from year to year using RCA than RpcA.
-% FIGURE: difference 2010 bar
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_difference_bar}
-  \caption{Difference in country fitness when changing normalization metric from RCA to RpcA (2010-data). Negative values have a higher fitness value when using RpcA than RCA as normalization metric.}
-  \label{fig:bar_plot_diff}
-\end{figure}
-
-% FIGURE: rca vs rpca histograms
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_rca_histogram}
-         \caption{RCA-based fitness}
-         \label{fig:rca_fit_hist}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_rpca_histogram}
-         \caption{RpcA-based fitness}
-         \label{fig:rpca_fit_hist}
-     \end{subfigure}
-        \caption{Distribution of countries by fitness values (across sample years).}
-        \label{fig:rca_rpca_fit_hist}
-\end{figure}
-
-% Importance for oveall distribution of fitness
-% Importance for population
-% Importance for resource rents
-% biggest losers, winners
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newpage
-
-\section{Appendix: Which algorithm? Fitness-Complexity and Hausmann-Hidalgo}
-\label{sec:appendix-algorithm}
-
-% FIGURE: convergence of fitness, complexity
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_convergence_plot}
-	 \caption{Convergence of fitness values}
-         \label{fig:fit_conv}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/appendix/appendix_complexity_convergence_plot}
-         \caption{Convergence of complexity values}
-         \label{fig:comp_conv}
-     \end{subfigure}
-     \caption{Each line represents a country or a product in 2010. For most of the countries or products the FC algorithm reaches its fixed point after relatively few iterations. Note that lines are colored by the actual value, not the natural log.}
-        \label{fig:fc_conv}
-\end{figure}
-
-
-TODO
 \end{appendices}
-
-\newpage
-% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Wed, May 20, 2020 - 19:41:52
 \end{document}

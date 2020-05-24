@@ -1,0 +1,177 @@
+\section{Appendix: RCA and RpcA}%
+\label{sec:rca}
+Most of the early papers in economic complexity (e.g \citealp{tacchella_new_2012,hidalgo_building_2009}) used the revealed comparative advantage \citep{balassa_trade_1965} to normalize trade data. Revealed comparative advantage is defined as
+
+\[
+	RCA_{cp} = \frac{X_{cp}}{\sum_p X_{cp}} \bigg / \frac{\sum_c X_{cp}}{\sum_{cp} X_{cp}}
+\]
+
+where $X_{cp}$ is the export value of country $c$'s export of product $p$.
+
+There are three main drawbacks of using RCA:
+
+\begin{enumerate}
+\item While in practice used to confer an idea of what countries are good at, RCA in fact measures the relative intensity of countries' exports. For instance, consider if a country is very poor at all types of production. This means its total exports will be low. If the country is just a little bit less hapless at one product, this product will have a very high RCA, since other countries will have less of a gulf between their export basket and this one given product. This, despite it being less proficient in producing the product than other countries.
+\item Secondly, if a country exports a lot of something very valuable - like oil - and it dwarfs the contribution of other products to the value of the country's total exports, this product will dominate the first term in the RCA formula ($X_{cp} / \sum_p X_{cp}$). Even if the country is very good at producing other products, their RCA will be artificially lowered by the valuable commodity.
+\item Finally, the RCA of a product is connected to the prices of other products. This means that should a country export three products, and the price of one of them falls sharply, the RCA in the two other products rises for the country. Should a second country be equally proficient in exporting the two products but their third product's price stay put, they will now seem worse a exporting the two products.
+\end{enumerate}
+
+A different metric, used in a few of the newer papers \citep{hausmann_implied_2019}, instead measures the per-capita export in a product normalized by global (total) per capita export in the product. The "revealed per capita advantage" (RpcA) for country $c$ in $p$ is then simply defined as:
+
+\[
+	RpcA_{cp} = \frac{X_{cp}}{POP_{c}} \bigg / \frac{\sum_c X_{cp}}{\sum_c POP_c}
+\]
+
+where $POP_c$ is the population of country $c$.
+
+By not including the total export basket of country $c$ in the normalization we avoid the three issues outlined above, and catch a more "absolute" skill based measure of the economy's capabilities. 
+
+\subsection{Distribution of comparative advantage}
+\label{subsec:dist}
+
+Changing from RCA to RpcA has some distinct impacts on the distribution of comparative advantage, both in terms of the total distribution and in which countries are more ``significant exporters''. Figure \ref{fig:rca_rpca_hist} shows the distribution of countries by the number of products they are significant exporters of by RCA (\ref{fig:rca_hist}) and RpcA (\ref{fig:rpca_hist}). Using RpcA results in a much more right-skewed distribution, with some countries exporting almost all available products.
+
+% FIGURE: rca vs rpca histograms
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_histogram_rca}
+         \caption{RCA}
+         \label{fig:rca_hist}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_histogram_rpca}
+         \caption{RpcA}
+         \label{fig:rpca_hist}
+     \end{subfigure}
+        \caption{Distribution of countries by number of products with
+		  comparative advantage (across sample years).}
+        \label{fig:rca_rpca_hist}
+\end{figure}
+
+One of the most interesting changes when shifting to RpcA is in the relationship to total population. When using RpcA the correlation between population and the number of products exported by a country disappears completely. Figure \ref{fig:rca_rpca_by_pop} shows the relationship across the sample years. It can be a bit hard to see what is going on, so the histogram in figure \ref{fig:p_val_hist_pop} shows the distribution of p-values for the population term in a simple linear regression on country fitness by the natural log of population. Population is not significant for any year using RpcA but for every year using RCA. Next to it, figure \ref{fig:stand_diff_fit_pop} shows the relationship between the difference in fitness values based on RCA and RpcA and population. Differences are taken by first standardizing fitness values to \(F^{z}_{c}\) by
+
+\[
+ F^{z}_{c} = \frac{F_{c} - <F_{c}>}{sd(F_{c})}
+\]
+
+where \(F_{c}\) is the fitness of country \(c\) in the given year, and then subtracting the \(F^{z}_{c}\) based on RpcA from the one based on RCA. That is, a negative difference means that fitness for a given county is higher using fitness calculated from RpcA. The result, which are especially driven by China and India, shows that countries that have a larger population tend to have their fitness reduced more by changing the trade-normalization metric. The result is not driven by penalizing large populations, but by removing the positive relationship between comparative advantage and population.
+
+% FIGURE: rca, rpca by pop all years
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_rca_by_pop}
+         \caption{RCA by population, ln}
+         \label{fig:rca_by_pop}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_rpca_by_pop}
+         \caption{RpcA by population, ln}
+         \label{fig:rpca_by_pop}
+     \end{subfigure}
+	 \caption{Relationship between ln(population) and the number of products
+	   with comparative advantage in a country (across sample years).}
+        \label{fig:rca_rpca_by_pop}
+\end{figure}
+
+% FIGURE: P-val hist and stand diff 2010 by pop
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_p_val_hist_rca_rpca_by_pop}
+         \caption{p-values of ln(pop) term on fitness}
+         \label{fig:p_val_hist_pop}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+       \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_difference_by_pop_2010}
+         \caption{difference in fitness by ln(pop) (2010), spearman correlation and SLR}
+         \label{fig:stand_diff_fit_pop}
+     \end{subfigure}
+	 \caption{Relationship between ln(population) and the number of products with comparative advantage in a country (across sample years).}
+        \label{fig:population_difference}
+\end{figure}
+
+\subsection{Significance for complexity metrics}
+\label{subsec:significance_for_complexity}
+
+The change in comparative advantage clearly changes the $M$ matrix used in the fitness algorithm. This means that the fitness of countries change as well. Figure \ref{fig:bar_plot_diff} show the change in standardized fitness when using RCA and RpcA in 2010. The figure shows a similar picture to \ref{fig:stand_diff_fit_pop}: more populous countries tend to be less fit using RpcA. Figure \ref{fig:rca_rpca_fit_hist} shows the distribution of fitness values across the sample years. Unsurprisingly, they are similar to the distribution of comparative advantage in figure \ref{fig:rca_rpca_hist}: RpcA-based fitness are more right-skewed.
+
+TODO: Volatility. Given that population of countries are less volatile over time than commodity prices, we would expect that product complexity values are more stable from year to year using RCA than RpcA.
+% FIGURE: difference 2010 bar
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_difference_bar}
+  \caption{Difference in country fitness when changing normalization metric from RCA to RpcA (2010-data). Negative values have a higher fitness value when using RpcA than RCA as normalization metric.}
+  \label{fig:bar_plot_diff}
+\end{figure}
+
+% FIGURE: rca vs rpca histograms
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_rca_histogram}
+         \caption{RCA-based fitness}
+         \label{fig:rca_fit_hist}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_rpca_histogram}
+         \caption{RpcA-based fitness}
+         \label{fig:rpca_fit_hist}
+     \end{subfigure}
+        \caption{Distribution of countries by fitness values (across sample years).}
+        \label{fig:rca_rpca_fit_hist}
+\end{figure}
+
+% Importance for oveall distribution of fitness
+% Importance for population
+% Importance for resource rents
+% biggest losers, winners
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{Appendix: Which algorithm? Fitness-Complexity and Hausmann-Hidalgo}
+\label{sec:appendix-algorithm}
+
+% FIGURE: convergence of fitness, complexity
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_fitness_convergence_plot}
+	 \caption{Convergence of fitness values}
+         \label{fig:fit_conv}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/appendix/appendix_complexity_convergence_plot}
+         \caption{Convergence of complexity values}
+         \label{fig:comp_conv}
+     \end{subfigure}
+     \caption{Each line represents a country or a product in 2010. For most of the countries or products the FC algorithm reaches its fixed point after relatively few iterations. Note that lines are colored by the actual value, not the natural log.}
+        \label{fig:fc_conv}
+\end{figure}
+
+
+TODO
+\end{appendices}
+
+\newpage
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Wed, May 20, 2020 - 19:41:52

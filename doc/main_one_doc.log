@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.18)  24 MAY 2020 12:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.18)  25 MAY 2020 01:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -307,20 +307,20 @@ LaTeX Warning: Label `tab:' multiply defined.
 )
 \openout1 = `main_one_doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -391,12 +391,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-]
-Overfull \hbox (8.9442pt too wide) in paragraph at lines 38--38
- [] []\T1/cmr/bx/n/10.95 Appendix: Which al-go-rithm? Fitness-Complexity and Hausmann-Hidalgo []  
- []
-
-)
+])
 \tf@toc=\write3
 \openout3 = `main_one_doc.toc'.
 
@@ -404,7 +399,7 @@ Overfull \hbox (8.9442pt too wide) in paragraph at lines 38--38
 <figures/introduction_disruption_plot.pdf, id=15, 504.88625pt x 504.88625pt>
 File: figures/introduction_disruption_plot.pdf Graphic file (type pdf)
 <use figures/introduction_disruption_plot.pdf>
-Package pdftex.def Info: figures/introduction_disruption_plot.pdf  used on input line 71.
+Package pdftex.def Info: figures/introduction_disruption_plot.pdf  used on input line 79.
 (pdftex.def)             Requested size: 341.43436pt x 341.43832pt.
  [1
 
@@ -412,103 +407,114 @@ Package pdftex.def Info: figures/introduction_disruption_plot.pdf  used on input
 <figures/background_wbes.pdf, id=37, 504.88625pt x 504.88625pt>
 File: figures/background_wbes.pdf Graphic file (type pdf)
 <use figures/background_wbes.pdf>
-Package pdftex.def Info: figures/background_wbes.pdf  used on input line 117.
+Package pdftex.def Info: figures/background_wbes.pdf  used on input line 125.
 (pdftex.def)             Requested size: 426.79134pt x 426.79791pt.
  [4] [5 <./figures/background_wbes.pdf>]
 <figures/framework/framework_complexity_model_bw.png, id=51, 1207.51125pt x 543.02875pt>
 File: figures/framework/framework_complexity_model_bw.png Graphic file (type png)
 <use figures/framework/framework_complexity_model_bw.png>
-Package pdftex.def Info: figures/framework/framework_complexity_model_bw.png  used on input line 170.
+Package pdftex.def Info: figures/framework/framework_complexity_model_bw.png  used on input line 178.
 (pdftex.def)             Requested size: 341.43436pt x 153.54675pt.
 <figures/framework/framework_rpca_fitness_gdp_cap.pdf, id=53, 797.98125pt x 444.66125pt>
 File: figures/framework/framework_rpca_fitness_gdp_cap.pdf Graphic file (type pdf)
 <use figures/framework/framework_rpca_fitness_gdp_cap.pdf>
-Package pdftex.def Info: figures/framework/framework_rpca_fitness_gdp_cap.pdf  used on input line 179.
+Package pdftex.def Info: figures/framework/framework_rpca_fitness_gdp_cap.pdf  used on input line 187.
 (pdftex.def)             Requested size: 426.79134pt x 237.82018pt.
  [6] [7 <./figures/framework/framework_complexity_model_bw.png> <./figures/framework/framework_rpca_fitness_gdp_cap.pdf>]
 <figures/framework/framework_product_complexity_by_richest_poorest_exporters.pdf, id=69, 797.98125pt x 444.66125pt>
 File: figures/framework/framework_product_complexity_by_richest_poorest_exporters.pdf Graphic file (type pdf)
 <use figures/framework/framework_product_complexity_by_richest_poorest_exporters.pdf>
-Package pdftex.def Info: figures/framework/framework_product_complexity_by_richest_poorest_exporters.pdf  used on input line 188.
+Package pdftex.def Info: figures/framework/framework_product_complexity_by_richest_poorest_exporters.pdf  used on input line 196.
 (pdftex.def)             Requested size: 426.79134pt x 237.82018pt.
  [8 <./figures/framework/framework_product_complexity_by_richest_poorest_exporters.pdf>]
 <figures/framework/framework_io_model.png, id=87, 1138.2525pt x 347.2975pt>
 File: figures/framework/framework_io_model.png Graphic file (type png)
 <use figures/framework/framework_io_model.png>
-Package pdftex.def Info: figures/framework/framework_io_model.png  used on input line 207.
+Package pdftex.def Info: figures/framework/framework_io_model.png  used on input line 215.
 (pdftex.def)             Requested size: 341.43436pt x 104.17415pt.
 <figures/framework/framework_z.pdf, id=88, 522.95375pt x 226.8475pt>
 File: figures/framework/framework_z.pdf Graphic file (type pdf)
 <use figures/framework/framework_z.pdf>
-Package pdftex.def Info: figures/framework/framework_z.pdf  used on input line 216.
+Package pdftex.def Info: figures/framework/framework_z.pdf  used on input line 224.
 (pdftex.def)             Requested size: 341.43436pt x 148.11024pt.
- [9 <./figures/framework/framework_io_model.png>] [10 <./figures/framework/framework_z.pdf>] [11] [12] [13] [14] [15] [16] [17] [18] (./tables/energy_validity/wbes_nonfloat.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 6--478
+ [9 <./figures/framework/framework_io_model.png>] [10 <./figures/framework/framework_z.pdf>] [11]
+
+LaTeX Warning: Reference `sec:appendix-algorithm' on page 12 undefined on input line 274.
+
+
+LaTeX Warning: Reference `sec:rca' on page 12 undefined on input line 276.
+
+[12]
+
+LaTeX Warning: Reference `fig:fc_conv' on page 13 undefined on input line 295.
+
+[13] [14] [15] [16] [17] [18] (./tables/energy_validity/wbes_nonfloat.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 6--486
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6--478
+Underfull \hbox (badness 10000) in paragraph at lines 6--486
 
  []
 
-[19] [20]
-<figures/shortage_p_dl.pdf, id=142, 505.89pt x 505.89pt>
+[19] [20] [21] (./tables/analysis_interaction_max_pci.tex) (./tables/analysis_interaction_avg_pci.tex) (./tables/analysis_interaction_wage_input.tex)
+<figures/shortage_p_dl.pdf, id=145, 505.89pt x 505.89pt>
 File: figures/shortage_p_dl.pdf Graphic file (type pdf)
 <use figures/shortage_p_dl.pdf>
-Package pdftex.def Info: figures/shortage_p_dl.pdf  used on input line 525.
+Package pdftex.def Info: figures/shortage_p_dl.pdf  used on input line 617.
 (pdftex.def)             Requested size: 426.79134pt x 426.7973pt.
- [21] [22 <./figures/shortage_p_dl.pdf>]
-<figures/analysis_entry_sample_year_histograms.pdf, id=156, 505.89pt x 505.89pt>
+ [22] [23] [24] [25] [26 <./figures/shortage_p_dl.pdf>] [27]
+<figures/analysis_entry_sample_year_histograms.pdf, id=173, 505.89pt x 505.89pt>
 File: figures/analysis_entry_sample_year_histograms.pdf Graphic file (type pdf)
 <use figures/analysis_entry_sample_year_histograms.pdf>
-Package pdftex.def Info: figures/analysis_entry_sample_year_histograms.pdf  used on input line 569.
+Package pdftex.def Info: figures/analysis_entry_sample_year_histograms.pdf  used on input line 661.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<figures/analysis_entry_sample_state_histograms.pdf, id=157, 505.89pt x 505.89pt>
+<figures/analysis_entry_sample_state_histograms.pdf, id=174, 505.89pt x 505.89pt>
 File: figures/analysis_entry_sample_state_histograms.pdf Graphic file (type pdf)
 <use figures/analysis_entry_sample_state_histograms.pdf>
-Package pdftex.def Info: figures/analysis_entry_sample_state_histograms.pdf  used on input line 576.
+Package pdftex.def Info: figures/analysis_entry_sample_state_histograms.pdf  used on input line 668.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
  (./tables/plant_entry/pci_nonfloat.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
 
 (./tables/plant_entry/electricity_nonfloat.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 633--634
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
 
  []
 
-[23] [24 <./figures/analysis_entry_sample_year_histograms.pdf> <./figures/analysis_entry_sample_state_histograms.pdf>] [25] [26] [27] [28] (./main_one_doc.bbl [29]
-Underfull \hbox (badness 1852) in paragraph at lines 125--128
+[28 <./figures/analysis_entry_sample_year_histograms.pdf> <./figures/analysis_entry_sample_state_histograms.pdf>] [29] [30] [31] [32] [33] (./main_one_doc.bbl [34]
+Underfull \hbox (badness 1852) in paragraph at lines 120--123
 []\T1/cmr/m/n/10.95 Inoua, S. (2016).  A sim-ple mea-sure of eco-nomic com-plex-ity.  \T1/cmr/m/it/10.95 arXiv preprint
  []
 
 
-Underfull \hbox (badness 3590) in paragraph at lines 178--181
+Underfull \hbox (badness 3590) in paragraph at lines 173--176
 []\T1/cmr/m/n/10.95 World Bank (2020a).  En-ter-prise Sur-veys: Firm-level data on In-dia (2005).
  []
 
 
-Underfull \hbox (badness 3503) in paragraph at lines 183--186
+Underfull \hbox (badness 3503) in paragraph at lines 178--181
 []\T1/cmr/m/n/10.95 World Bank (2020b).  En-ter-prise Sur-veys: Firm-level data on In-dia (2014).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--191
+Underfull \hbox (badness 10000) in paragraph at lines 183--186
 []\T1/cmr/m/n/10.95 World Bank (2020c).  En-ter-prise Sur-veys In-di-ca-tors Data.
  []
 
-) [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 758--758
+) [35] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 852--852
 [][]\T1/cmr/m/n/9 http://www.csoisw.gov.in/CMS/En/1027-npcms-national-product-classification-for-manufacturing-
  []
 
-[32]
-<figures/appendix/appendix_density_product_match.pdf, id=202, 505.89pt x 505.89pt>
+[37]
+<figures/appendix/appendix_density_product_match.pdf, id=219, 505.89pt x 505.89pt>
 File: figures/appendix/appendix_density_product_match.pdf Graphic file (type pdf)
 <use figures/appendix/appendix_density_product_match.pdf>
-Package pdftex.def Info: figures/appendix/appendix_density_product_match.pdf  used on input line 764.
+Package pdftex.def Info: figures/appendix/appendix_density_product_match.pdf  used on input line 858.
 (pdftex.def)             Requested size: 341.43436pt x 341.43785pt.
  (./tables/appendix_data_cleaning_year_obs.tex) (./tables/appendix_data_cleaning_state_obs.tex
 Overfull \hbox (21.99995pt too wide) in paragraph at lines 5--51
@@ -520,86 +526,27 @@ Overfull \hbox (11.27083pt too wide) in paragraph at lines 5--32
  [][] 
  []
 
-) (./tables/appendix_data_cleaning_state_output.tex) [33 <./figures/appendix/appendix_density_product_match.pdf>] [34] [35] [36] [37]
-<figures/appendix/appendix_histogram_rca.pdf, id=224, 955.57pt x 1075.01625pt>
-File: figures/appendix/appendix_histogram_rca.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_histogram_rca.pdf>
-Package pdftex.def Info: figures/appendix/appendix_histogram_rca.pdf  used on input line 820.
-(pdftex.def)             Requested size: 192.0548pt x 216.04926pt.
-<figures/appendix/appendix_histogram_rpca.pdf, id=225, 955.57pt x 1075.01625pt>
-File: figures/appendix/appendix_histogram_rpca.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_histogram_rpca.pdf>
-Package pdftex.def Info: figures/appendix/appendix_histogram_rpca.pdf  used on input line 827.
-(pdftex.def)             Requested size: 192.0548pt x 216.04926pt.
-<figures/appendix/appendix_rca_by_pop.pdf, id=226, 955.57pt x 1075.01625pt>
-File: figures/appendix/appendix_rca_by_pop.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_rca_by_pop.pdf>
-Package pdftex.def Info: figures/appendix/appendix_rca_by_pop.pdf  used on input line 849.
-(pdftex.def)             Requested size: 192.0548pt x 216.04926pt.
-<figures/appendix/appendix_rpca_by_pop.pdf, id=227, 955.57pt x 1075.01625pt>
-File: figures/appendix/appendix_rpca_by_pop.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_rpca_by_pop.pdf>
-Package pdftex.def Info: figures/appendix/appendix_rpca_by_pop.pdf  used on input line 856.
-(pdftex.def)             Requested size: 192.0548pt x 216.04926pt.
-<figures/appendix/appendix_p_val_hist_rca_rpca_by_pop.pdf, id=228, 505.89pt x 505.89pt>
-File: figures/appendix/appendix_p_val_hist_rca_rpca_by_pop.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_p_val_hist_rca_rpca_by_pop.pdf>
-Package pdftex.def Info: figures/appendix/appendix_p_val_hist_rca_rpca_by_pop.pdf  used on input line 870.
-(pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<figures/appendix/appendix_fitness_difference_by_pop_2010.pdf, id=229, 504.88625pt x 504.88625pt>
-File: figures/appendix/appendix_fitness_difference_by_pop_2010.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_fitness_difference_by_pop_2010.pdf>
-Package pdftex.def Info: figures/appendix/appendix_fitness_difference_by_pop_2010.pdf  used on input line 877.
-(pdftex.def)             Requested size: 192.0548pt x 192.05136pt.
- [38 <./figures/appendix/appendix_histogram_rca.pdf> <./figures/appendix/appendix_histogram_rpca.pdf>] [39 <./figures/appendix/appendix_rca_by_pop.pdf> <./figures/appendix/appendix_rpca_by_pop.pdf> <./figures/appendix/appendix_p_val_hist_rca_rpca_by_pop.pdf> <./figures/appendix/appendix_fitness_difference_by_pop_2010.pdf>]
-<figures/appendix/appendix_fitness_difference_bar.pdf, id=299, 823.075pt x 1029.8475pt>
-File: figures/appendix/appendix_fitness_difference_bar.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_fitness_difference_bar.pdf>
-Package pdftex.def Info: figures/appendix/appendix_fitness_difference_bar.pdf  used on input line 894.
-(pdftex.def)             Requested size: 426.79134pt x 534.01523pt.
-<figures/appendix/appendix_fitness_rca_histogram.pdf, id=300, 955.57pt x 1055.945pt>
-File: figures/appendix/appendix_fitness_rca_histogram.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_fitness_rca_histogram.pdf>
-Package pdftex.def Info: figures/appendix/appendix_fitness_rca_histogram.pdf  used on input line 904.
-(pdftex.def)             Requested size: 192.0548pt x 212.21645pt.
-<figures/appendix/appendix_fitness_rpca_histogram.pdf, id=301, 955.57pt x 1055.945pt>
-File: figures/appendix/appendix_fitness_rpca_histogram.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_fitness_rpca_histogram.pdf>
-Package pdftex.def Info: figures/appendix/appendix_fitness_rpca_histogram.pdf  used on input line 911.
-(pdftex.def)             Requested size: 192.0548pt x 212.21645pt.
- [40]
-Overfull \hbox (54.05928pt too wide) in paragraph at lines 929--929
-[]\T1/cmr/bx/n/14.4 Appendix: Which al-go-rithm? Fitness-Complexity and Hausmann-
- []
+) (./tables/appendix_data_cleaning_state_output.tex) [38 <./figures/appendix/appendix_density_product_match.pdf>] [39] [40] [41] [42] (./main_one_doc.aux (./setup/temp_title.aux) (./setup/listofcontents.aux))
 
-<figures/appendix/appendix_fitness_convergence_plot.pdf, id=306, 505.89pt x 505.89pt>
-File: figures/appendix/appendix_fitness_convergence_plot.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_fitness_convergence_plot.pdf>
-Package pdftex.def Info: figures/appendix/appendix_fitness_convergence_plot.pdf  used on input line 937.
-(pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<figures/appendix/appendix_complexity_convergence_plot.pdf, id=307, 505.89pt x 505.89pt>
-File: figures/appendix/appendix_complexity_convergence_plot.pdf Graphic file (type pdf)
-<use figures/appendix/appendix_complexity_convergence_plot.pdf>
-Package pdftex.def Info: figures/appendix/appendix_complexity_convergence_plot.pdf  used on input line 944.
-(pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-[41] [42 <./figures/appendix/appendix_fitness_difference_bar.pdf>] [43 <./figures/appendix/appendix_fitness_rca_histogram.pdf> <./figures/appendix/appendix_fitness_rpca_histogram.pdf> <./figures/appendix/appendix_fitness_convergence_plot.pdf> <./figures/appendix/appendix_complexity_convergence_plot.pdf>] (./main_one_doc.aux (./setup/temp_title.aux) (./setup/listofcontents.aux))
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6178 strings out of 482913
- 95980 string characters out of 5959408
- 370030 words of memory out of 5000000
- 21281 multiletter control sequences out of 15000+600000
+ 6088 strings out of 482913
+ 91788 string characters out of 5959408
+ 375731 words of memory out of 5000000
+ 21193 multiletter control sequences out of 15000+600000
  549984 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,20n,43p,1970b,511s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on main_one_doc.pdf (46 pages, 1143476 bytes).
+ 41i,20n,43p,1970b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on main_one_doc.pdf (45 pages, 673386 bytes).
 PDF statistics:
- 980 PDF objects out of 1000 (max. 8388607)
- 322 compressed objects within 4 object streams
+ 836 PDF objects out of 1000 (max. 8388607)
+ 239 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

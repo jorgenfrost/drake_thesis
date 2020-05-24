@@ -23,16 +23,12 @@
 \contentsline {section}{\numberline {6}Analysis and results}{19}%
 \contentsline {subsection}{\numberline {6.1}Validity of electricity variable}{19}%
 \contentsline {subsection}{\numberline {6.2}Interaction between shortages and complexity}{21}%
-\contentsline {subsection}{\numberline {6.3}Does shortages discourage the entry of complex plants?}{21}%
-\contentsline {subsection}{\numberline {6.4}Descriptives}{26}%
-\contentsline {subsection}{\numberline {6.5}Production technology}{26}%
-\contentsline {section}{\numberline {7}Discussion}{27}%
-\contentsline {section}{\numberline {8}Conclusion}{28}%
-\contentsline {section}{\numberline {A}Appendix: Data cleaning}{31}%
-\contentsline {subsection}{\numberline {A.1}Cleaning international trade data}{31}%
-\contentsline {subsection}{\numberline {A.2}Cleaning Annual Survey of Industries (ASI)}{31}%
-\contentsline {subsection}{\numberline {A.3}Product concordance for ASI}{32}%
-\contentsline {section}{\numberline {B}Appendix: RCA and RpcA}{34}%
-\contentsline {subsection}{\numberline {B.1}Distribution of comparative advantage}{36}%
-\contentsline {subsection}{\numberline {B.2}Significance for complexity metrics}{38}%
-\contentsline {section}{\numberline {C}Appendix: Which algorithm? Fitness-Complexity and Hausmann-Hidalgo}{41}%
+\contentsline {subsection}{\numberline {6.3}Does shortages discourage the entry of complex plants?}{27}%
+\contentsline {subsection}{\numberline {6.4}Descriptives}{30}%
+\contentsline {subsection}{\numberline {6.5}Production technology}{31}%
+\contentsline {section}{\numberline {7}Discussion}{32}%
+\contentsline {section}{\numberline {8}Conclusion}{33}%
+\contentsline {section}{\numberline {A}Appendix: Data cleaning}{36}%
+\contentsline {subsection}{\numberline {A.1}Cleaning international trade data}{36}%
+\contentsline {subsection}{\numberline {A.2}Cleaning Annual Survey of Industries (ASI)}{36}%
+\contentsline {subsection}{\numberline {A.3}Product concordance for ASI}{37}%

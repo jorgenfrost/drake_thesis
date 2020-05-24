@@ -145,7 +145,7 @@ npcms_outputs_tbl <- npcms_outputs_tbl %>%
 ####################################################
 #       INTERMISSION: FLAG UNREASONABLE VALUES     #
 ####################################################
-asicc_flag_tbl <- left_join(asicc_inputs_tbl, plant_tbl) %>%
+asicc_flag_tbl <- left_join(asicc_inputs_tbl, base_plant_tbl) %>%
 	select(year, dsl, revenue, item_code, purchase_val) %>%
 	filter(!is.na(purchase_val)) %>%
 	mutate(item_rev_share = purchase_val / revenue,
@@ -156,7 +156,7 @@ asicc_flag_tbl <- left_join(asicc_inputs_tbl, plant_tbl) %>%
 asicc_flag_2_tbl <- asicc_flag_tbl %>%
 	filter(flag_2 == 1)
 
-npcms_flag_tbl <- left_join(npcms_inputs_tbl, plant_tbl) %>%
+npcms_flag_tbl <- left_join(npcms_inputs_tbl, base_plant_tbl) %>%
 	select(year, dsl, revenue, item_code, purchase_val) %>%
 	filter(!is.na(purchase_val)) %>%
 	mutate(item_rev_share = purchase_val / revenue,
