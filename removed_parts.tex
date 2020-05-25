@@ -175,3 +175,96 @@ TODO
 \newpage
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Wed, May 20, 2020 - 19:41:52
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Cleaning international trade data}%l
+\label{sub:cleaning_international_trade_data}
+
+The data in international trade comes the BACI database maintained by CEPII (build on raw data from UN COMTRADE). CEPII cleans the data using the their own methodology. They exploit that a trade flow is usally reported by both the importer and the exporter. This makes it possible to assign a reliability ranking to each reporter, which can be used to give weights to different soruces of information, giving better export observations \citep{gualier_baci_2010}. 
+
+To minimize the year-to-year noise, I remove city-sized economies and the smallest exporters. To be included in the final sample, an economy must have a population of at least 1 million in 2005 and export for at least 1 billion current USD in 2005. As for the choice of reference year, the prerable year would have been the sample mid-year, around 2008, but the financial crash leaves exports unrepresentative. The sample is not very sensitive to changing the reference year. 
+
+In addition, I remove a few countries that supply highly unreliable trade information (Iraq, Afghanistan, and Chad) and a few products that are not being exported at all during the sample (9704 \footnote{"Stamps, postage or revenue; stamp-postmarks, first-day covers, postal stationery (stamped paper) and like, used, or if unused not of current or new issue in the country to which they are destined"}, 2527 \footnote{"Natural cryolite; natural chiolite"}, 1403 \footnote{"Vegetable materials of a kind used primarily in brooms or brushes; (eg broomcorn, piassava, couch-grass and istle), whether or not in hanks or bundles"}). All products that are exported by a country for less than 1000 dollars in a given year are set to 0. 
+
+The original export data covers 221 countries and "country-like" regions. After cleaning, 120 countries remains. These remaining countries covers 92 percent of the total export in the raw data, 94 percent of population in the original data, and 98 percent of the GDP in the original data. 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+TODO: BRUG PCI istedet
+
+
+    I use the Fitness-Complexity (FC) algorithm \citep{tacchella_new_2012} to find the complexity of products. For a discussion of the benefits of the FC algorithm over the  Hausmann-Hidalgo (HH) algorithm \citep{hidalgo_building_2009}, see appendix \ref{sec:appendix-algorithm}. As outlined earlier, countries, capabilities and products are connected in a tripartite network. The capabilities in this network, however, is hidden.
+
+I first find the revealed per capita advantage (RpcA) of each country in each of the approx. 1200 products in the HS92 series. For a discussion of why RpcA is an improvement over the more often used revealed comparative advantage (RCA, \citealp{balassa_trade_1965}) see appendix \ref{sec:rca}. RpcA normalizes a country's per capita export of a product by the global per capita export of the product. Hence, RpcA of country \(c\) in product \(p\):
+
+\[
+	RpcA_{cp} = \frac{X_{cp}}{POP_{c}} \bigg / \frac{\sum_c X_{cp}}{\sum_c POP_c}
+\]
+
+where \(X_{cp}\) is the export value of country \(c\) in product \(p\) and \(POP_{c}\) is the population of country \(p\). I then define a binary RpcA matrix \(M_{cp}\) with countries in rows as products in columns as:
+
+\[
+M_{cp} = \begin{cases}
+ 1 & \text{if } RpcA_{cp} \geq 1 \\
+ 0 & \text{if } RpcA_{cp} < 1
+\end{cases}
+\]
+
+This \(M_{cp}\) matrix can be interpreted as a bipartite network where countries are connected to the products they export competatively. This is the observed model in figure \ref{fig:complexity-model}. 
+
+TODO about the FC algorithm 
+
+The fitness of a country, \(F_{c}\) is the sum of all the products it exports, weighted by their complexity, \(Q_{p}\). For each iteration there are two steps. First I find the temporary variables \(\hat{F}^{(n)}_{c}\) and \(\hat{Q}^{(n)}_{p}\), next they are normalized by the average value of the iteration. This normalization procedure means that after enough iterations, \(F_{c}\) and \(Q_{p}\) converges to a fixed point (see figure \ref{fig:fc_conv}), meaning that the initial conditions are not important. I set them to 1 for all \(\hat{F}^{(0)}_{c}\) and \(\hat{Q}^{(0)}_{p}\).
+
+ \[
+	 \begin{split}
+		 \hat{F}^{(n)}_{c} &= \sum_p M_{cp} Q^{(n-1)}_{p} \Rightarrow F^{(n)}_{c} = \frac{\hat{F}^{(n)}_{c}}{\bigg < \hat{F}^{(n)}_c \bigg > _c} \\
+		 \hat{Q}^{(n)}_{p} &= \frac{1}{\sum_c M_{cp} \frac{1}{F^{(n-1)}_c}} \Rightarrow Q^{(n)}_{p} = \frac{\hat{Q}^{(n)}_{p}}{\bigg < \hat{Q}^{(n)}_p \bigg > _p }
+	 \end{split}
+\]
+
+TODO: One of the issues...
+
+TODO: On section on HS96 four digit products, give example of how specific products are.
+TODO: Lav sanity check if antallet af forskellige producter hvert år i orignal listing og antallet af forskellige producter i hvert år efter concordance.
+TODO: BRUG PCI istedet
+
+
+    I use the Fitness-Complexity (FC) algorithm \citep{tacchella_new_2012} to find the complexity of products. For a discussion of the benefits of the FC algorithm over the  Hausmann-Hidalgo (HH) algorithm \citep{hidalgo_building_2009}, see appendix \ref{sec:appendix-algorithm}. As outlined earlier, countries, capabilities and products are connected in a tripartite network. The capabilities in this network, however, is hidden.
+
+I first find the revealed per capita advantage (RpcA) of each country in each of the approx. 1200 products in the HS92 series. For a discussion of why RpcA is an improvement over the more often used revealed comparative advantage (RCA, \citealp{balassa_trade_1965}) see appendix \ref{sec:rca}. RpcA normalizes a country's per capita export of a product by the global per capita export of the product. Hence, RpcA of country \(c\) in product \(p\):
+
+\[
+	RpcA_{cp} = \frac{X_{cp}}{POP_{c}} \bigg / \frac{\sum_c X_{cp}}{\sum_c POP_c}
+\]
+
+where \(X_{cp}\) is the export value of country \(c\) in product \(p\) and \(POP_{c}\) is the population of country \(p\). I then define a binary RpcA matrix \(M_{cp}\) with countries in rows as products in columns as:
+
+\[
+M_{cp} = \begin{cases}
+ 1 & \text{if } RpcA_{cp} \geq 1 \\
+ 0 & \text{if } RpcA_{cp} < 1
+\end{cases}
+\]
+
+This \(M_{cp}\) matrix can be interpreted as a bipartite network where countries are connected to the products they export competatively. This is the observed model in figure \ref{fig:complexity-model}. 
+
+TODO about the FC algorithm 
+
+The fitness of a country, \(F_{c}\) is the sum of all the products it exports, weighted by their complexity, \(Q_{p}\). For each iteration there are two steps. First I find the temporary variables \(\hat{F}^{(n)}_{c}\) and \(\hat{Q}^{(n)}_{p}\), next they are normalized by the average value of the iteration. This normalization procedure means that after enough iterations, \(F_{c}\) and \(Q_{p}\) converges to a fixed point (see figure \ref{fig:fc_conv}), meaning that the initial conditions are not important. I set them to 1 for all \(\hat{F}^{(0)}_{c}\) and \(\hat{Q}^{(0)}_{p}\).
+
+ \[
+	 \begin{split}
+		 \hat{F}^{(n)}_{c} &= \sum_p M_{cp} Q^{(n-1)}_{p} \Rightarrow F^{(n)}_{c} = \frac{\hat{F}^{(n)}_{c}}{\bigg < \hat{F}^{(n)}_c \bigg > _c} \\
+		 \hat{Q}^{(n)}_{p} &= \frac{1}{\sum_c M_{cp} \frac{1}{F^{(n-1)}_c}} \Rightarrow Q^{(n)}_{p} = \frac{\hat{Q}^{(n)}_{p}}{\bigg < \hat{Q}^{(n)}_p \bigg > _p }
+	 \end{split}
+\]
+
+TODO: One of the issues...
+
+TODO: On section on HS96 four digit products, give example of how specific products are.
+TODO: Lav sanity check if antallet af forskellige producter hvert år i orignal listing og antallet af forskellige producter i hvert år efter concordance.

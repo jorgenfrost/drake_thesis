@@ -126,7 +126,8 @@ rm(list = ls()[ls() != "analysis_sample"])
 
 # Adjusted revenue is only available for before 2010, so sample shrinks.
 analysis_sample_base <- analysis_sample %>% filter(wage_share_flag == 0) %>% filter(avg_total_employees > 0) %>%
-	mutate(self_gen_dmy = ifelse(self_generated_electricity_kwh > 0, 1, 0)) 
+	mutate(self_gen_dmy = ifelse(self_generated_electricity_kwh > 0, 1, 0)) %>%
+	mutate(input_avg_shortage = ifelse(is.na(input_avg_shortage), 0, input_avg_shortage))
 
 analysis_sample2 <- analysis_sample_base %>%
 	filter(!is.na(adjusted_revenue)) %>%
@@ -345,4 +346,36 @@ texreg(
        use.packages = FALSE
        )
 
+# ---------- EXTRA: analysis withou most extreme values of input shortage
 
+lm_robust_max_pci_input_short <- 
+	lm_robust(
+		formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + max_pci * input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
+		weights = multiplier,
+		data = analysis_sample2 %>% filter(input_avg_shortage < 1),
+		clusters = stateyear,
+		se_type = "stata"
+	    )
+
+lm_robust_avg_pci_input_short <- lm_robust(
+	formula = log(adjusted_revenue) ~ avg_pci + input_avg_shortage + avg_pci * input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
+		weights = multiplier,
+		clusters = stateyear,
+		data = analysis_sample2 %>% filter(input_avg_shortage < 1),
+		se_type = "stata"
+	    )
+
+filtered_shortage_tbl <- here("doc/tables/filtered_input_shortage.tex")
+
+texreg(
+       l = list(lm_robust_max_pci_input_short, lm_robust_avg_pci_input_short),
+        custom.model.names = c("(1)", "(2)"),
+      custom.coef.names = c(NA, "$C^{max}_{f}$", "Supply shortage", "Wage/rev share", "Self-gen (1)", "Number of employees", "Production costs (z)", "State NDP/cap", "$C^{max}_{f}$ $\\times$ Supply shortage", "$C_{f}$", "$C_{f}$ $\\times$ Supply shortage"),
+       omit.coef = "(nic)|(year)|(state)",
+       include.ci = FALSE,
+       booktabs = TRUE,
+       fontsize = "small",
+       file = filtered_shortage_tbl,
+       table = FALSE,
+       use.packages = FALSE
+       )

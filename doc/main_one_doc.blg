@@ -6,45 +6,45 @@ A level-1 auxiliary file: setup/temp_title.aux
 A level-1 auxiliary file: setup/listofcontents.aux
 Database file #1: setup/collection.bib
 Warning--empty journal in adam_economic_2019
-You've used 34 entries,
+You've used 37 entries,
             1935 wiz_defined-function locations,
-            671 strings with 9363 characters,
-and the built_in function-call counts, 12827 in all, are:
-= -- 1285
-> -- 484
-< -- 21
-+ -- 180
-- -- 158
-* -- 1097
-:= -- 2262
-add.period$ -- 103
-call.type$ -- 34
-change.case$ -- 247
-chr.to.int$ -- 30
-cite$ -- 35
-duplicate$ -- 462
-empty$ -- 895
-format.name$ -- 204
-if$ -- 2456
+            687 strings with 9988 characters,
+and the built_in function-call counts, 13627 in all, are:
+= -- 1366
+> -- 505
+< -- 24
++ -- 188
+- -- 164
+* -- 1146
+:= -- 2414
+add.period$ -- 112
+call.type$ -- 37
+change.case$ -- 265
+chr.to.int$ -- 33
+cite$ -- 38
+duplicate$ -- 500
+empty$ -- 954
+format.name$ -- 213
+if$ -- 2609
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 30
-newline$ -- 172
-num.names$ -- 103
-pop$ -- 180
+missing$ -- 31
+newline$ -- 187
+num.names$ -- 112
+pop$ -- 195
 preamble$ -- 1
-purify$ -- 249
+purify$ -- 267
 quote$ -- 0
-skip$ -- 357
+skip$ -- 384
 stack$ -- 0
-substring$ -- 992
-swap$ -- 36
+substring$ -- 1030
+swap$ -- 37
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 198
+type$ -- 216
 warning$ -- 1
-while$ -- 114
+while$ -- 120
 width$ -- 0
-write$ -- 435
+write$ -- 472
 (There was 1 warning)

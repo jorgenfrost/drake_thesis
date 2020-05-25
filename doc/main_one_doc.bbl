@@ -29,7 +29,7 @@ Balassa, B. (1965).
 \bibitem[Barrot and Sauvagnat, 2016]{barrot_input_2016}
 Barrot, J.-N. and Sauvagnat, J. (2016).
 \newblock Input {{Specificity}} and the {{Propagation}} of {{Idiosyncratic
-  Shocks}} in {{Production Networks}}*.
+  Shocks}} in {{Production Networks}}.
 \newblock {\em The Quarterly Journal of Economics}, 131(3):1543--1592.
 
 \bibitem[Bertrand et~al., 2004]{bertrand_how_2004}
@@ -61,6 +61,11 @@ Carvalho, V.~M. (2014).
 \newblock From {{Micro}} to {{Macro}} via {{Production Networks}}.
 \newblock {\em Journal of Economic Perspectives}, 28(4):23--48.
 
+\bibitem[{CEA}, 2017]{cea_load_2009}
+{CEA} (2009:2017).
+\newblock Load {{Generation Balance Report}}.
+\newblock Technical report, {Central Electricity Authority}, {New Delhi}.
+
 \bibitem[Chakravorty et~al., 2014]{chakravorty_does_2014}
 Chakravorty, U., Pelli, M., and Ural~Marchand, B. (2014).
 \newblock Does the quality of electricity matter? {{Evidence}} from rural
@@ -72,11 +77,6 @@ Frenken, K., Van~Oort, F., and Verburg, T. (2007).
 \newblock Related {{Variety}}, {{Unrelated Variety}} and {{Regional Economic
   Growth}}.
 \newblock {\em Regional Studies}, 41(5):685--697.
-
-\bibitem[Gualier and Zignago, 2010]{gualier_baci_2010}
-Gualier, G. and Zignago, S. (2010).
-\newblock {{BACI}}: {{International Trade Database}} at the {{Product}}-level.
-\newblock Technical report, {CEPII Working Paper}.
 
 \bibitem[Hartmann et~al., 2017]{hartmann_linking_2017-1}
 Hartmann, D., Guevara, M.~R., {Jara-Figueroa}, C., Aristaran, M., and Hidalgo,
@@ -129,10 +129,21 @@ Min, B., O'Keeffe, Z., and Zhang, F. (2017).
   Images}} to {{Measure Power Supply Irregularity}}}.
 \newblock Policy {{Research Working Papers}}. {The World Bank}.
 
+\bibitem[{MOSPI}, 2016]{mospi_annual_2000-1}
+{MOSPI} (2000:2016).
+\newblock Annual {{Survey}} of {{Industries}}.
+\newblock http://microdata.gov.in/nada43/index.php/home.
+
 \bibitem[Nagaraj, 2002]{nagaraj_how_2002}
 Nagaraj, R. (2002).
 \newblock How to improve {{India}}'s industrial statistics.
 \newblock {\em Economic and Political Weekly}, pages 966--970.
+
+\bibitem[{NSSO}, 2016]{nsso_national_2000}
+{NSSO} (2000:2016).
+\newblock National {{Sample Survey}} ({{NSS}}) data (unit level): {{Survey}}
+  round: 55, 56, 57, 58, 60, 61, 62, 63, 64, 66, 68, 70, 71, 72.
+\newblock http://microdata.gov.in/nada43/index.php/catalog.
 
 \bibitem[Pritchett, 1997]{pritchett_divergence_1997}
 Pritchett, L. (1997).
@@ -149,6 +160,13 @@ Samad, H. and Zhang, F. (2016).
 \newblock {\em Benefits of {{Electrification}} and the {{Role}} of
   {{Reliability}}: {{Evidence}} from {{India}}}.
 \newblock Policy {{Research Working Papers}}. {The World Bank}.
+
+\bibitem[Simoes and Hidalgo, 2011]{simoes_economic_2011}
+Simoes, A. J.~G. and Hidalgo, C.~A. (2011).
+\newblock The economic complexity observatory: {{An}} analytical tool for
+  understanding the dynamics of economic development.
+\newblock In {\em Workshops at the Twenty-Fifth {{AAAI}} Conference on
+  Artificial Intelligence}.
 
 \bibitem[Tacchella et~al., 2012]{tacchella_new_2012}
 Tacchella, A., Cristelli, M., Caldarelli, G., Gabrielli, A., and Pietronero, L.

@@ -6,30 +6,29 @@
 \contentsline {subsection}{\numberline {3.1}Product complexity}{6}%
 \contentsline {subsection}{\numberline {3.2}What determines economic complexity?}{8}%
 \contentsline {subsection}{\numberline {3.3}Interruptions in production networks and economic complexity}{8}%
-\contentsline {section}{\numberline {4}Methodology}{12}%
-\contentsline {subsection}{\numberline {4.1}Methods}{12}%
-\contentsline {subsubsection}{\numberline {4.1.1}Economic complexity}{12}%
-\contentsline {subsubsection}{\numberline {4.1.2}Plant complexity}{13}%
-\contentsline {subsubsection}{\numberline {4.1.3}Supply chain quality}{14}%
-\contentsline {section}{\numberline {5}Data}{15}%
-\contentsline {subsection}{\numberline {5.1}State-wise variables}{15}%
-\contentsline {subsection}{\numberline {5.2}International trade data}{16}%
-\contentsline {subsection}{\numberline {5.3}Electricity data}{16}%
-\contentsline {subsection}{\numberline {5.4}Annual Survey of Industries (ASI)}{16}%
-\contentsline {section}{\numberline {6}Analysis and results}{18}%
-\contentsline {subsection}{\numberline {6.1}Validity of electricity variable}{18}%
-\contentsline {subsection}{\numberline {6.2}Interaction between shortages and complexity}{19}%
-\contentsline {subsection}{\numberline {6.3}Does shortages discourage the entry of complex plants?}{26}%
-\contentsline {subsection}{\numberline {6.4}Descriptives}{31}%
-\contentsline {subsection}{\numberline {6.5}Production technology}{31}%
-\contentsline {section}{\numberline {7}Discussion}{32}%
-\contentsline {subsection}{\numberline {7.1}Limitations}{32}%
+\contentsline {section}{\numberline {4}Data}{12}%
+\contentsline {subsection}{\numberline {4.1}State-wise variables}{12}%
+\contentsline {subsection}{\numberline {4.2}Economic complexity}{12}%
+\contentsline {subsection}{\numberline {4.3}Electricity shortages}{12}%
+\contentsline {subsection}{\numberline {4.4}Manufacturing plants}{13}%
+\contentsline {section}{\numberline {5}Methodology}{14}%
+\contentsline {subsection}{\numberline {5.1}Methods}{14}%
+\contentsline {subsection}{\numberline {5.2}Key variables}{14}%
+\contentsline {subsubsection}{\numberline {5.2.1}Plant complexity}{14}%
+\contentsline {subsubsection}{\numberline {5.2.2}Shortage}{15}%
+\contentsline {subsubsection}{\numberline {5.2.3}Supply chain shortage}{15}%
+\contentsline {section}{\numberline {6}Analysis and results}{16}%
+\contentsline {subsection}{\numberline {6.1}Validity of electricity variable}{17}%
+\contentsline {subsection}{\numberline {6.2}Interaction between shortages and complexity}{18}%
+\contentsline {subsection}{\numberline {6.3}Does shortages discourage the entry of complex plants?}{21}%
+\contentsline {section}{\numberline {7}Discussion}{31}%
+\contentsline {subsection}{\numberline {7.1}Limitations}{31}%
 \contentsline {subsubsection}{\numberline {7.1.1}Basic research design}{32}%
-\contentsline {subsubsection}{\numberline {7.1.2}Endogeneity and attenuation bias}{33}%
+\contentsline {subsubsection}{\numberline {7.1.2}Endogeneity and attenuation bias}{32}%
 \contentsline {subsubsection}{\numberline {7.1.3}Modifiable Area Unit Problem}{33}%
 \contentsline {section}{\numberline {8}Conclusion}{34}%
-\contentsline {section}{\numberline {A}Appendix: Data cleaning}{37}%
-\contentsline {subsection}{\numberline {A.1}Cleaning international trade data}{37}%
-\contentsline {subsection}{\numberline {A.2}Cleaning Annual Survey of Industries (ASI)}{37}%
-\contentsline {subsection}{\numberline {A.3}Product concordance for ASI}{38}%
-\contentsline {subsection}{\numberline {A.4}Appendix figures}{39}%
+\contentsline {section}{\numberline {A}Appendix: Data cleaning}{38}%
+\contentsline {subsection}{\numberline {A.1}Cleaning Annual Survey of Industries (ASI)}{38}%
+\contentsline {subsection}{\numberline {A.2}Product concordance for ASI}{38}%
+\contentsline {section}{\numberline {B}Calculating product complexity}{41}%
+\contentsline {section}{\numberline {C}Appendix: assorted}{42}%
