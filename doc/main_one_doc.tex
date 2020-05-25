@@ -368,34 +368,6 @@ It is important to note that this method does not take into account any spatial 
 
 This plant-level value is my measure of supply-chain quality in when testing hypothesis \(H_2\).
 
-\subsection{Limitations}
-\label{sec:org979560b}
-
-LIMITATION: It is important to note that this works exploratroy in nature. Many regs were tried, and as such, the p-values reported potentially overstates the significance of the findings. That said, the main results were robust to a range of controls.
-LARGE LIMITATION: Scrubbing of plant identifiers from the sample. - se min telefonnote
-
-\subsubsection{Endogeneity}
-\label{sec:orgd4457e7}
-There are a couple of reasons the effect of electricity disruptions on economic activities are diffult to study empirically. First, the relationship is likely to have a significant endogenous component. More complex production could be related to a more intensely developed economy, which could also be related to more stabile electricity supply. On the other hand, a more developed economy could have a more complex production, but would also have a higher electricity demand which could lead to shortages.
-
-\subsubsection{Modifiable Area Unit Problem}
-\label{sec:org4e3cc26}
-My tests rely on ``ground down'' state-wide variables on electricity reliability to individual plants. As with much of research in geography, this runs into the issue of artificial boundaries. For instance, states might not be appropriate scale of measurement, or be homogenous in its distribution of reliable electricity. However, the use of the district-level nightlights should reveal if there are large differences within states.
-
-\subsubsection{Attenuation bias}
-\label{sec:orge917ac0}
-My main electricity variables are either estimations or approximations. This very likely introduces some measurement error in my independent variable. Should this error be large enough, I risk that any result drowns in attenuation bias. The instrumental variable could potentially redeem this issue significantly.
-
-\subsubsection{The problem with instrumental approaches}
-\label{sec:orge917ac0}
-
-TODO: The instruments in the literature either instrument for short-term changes in electricity supply or one industry against the other. Neither can really target the "cooling" effect of NOT going into more complex products.
-
-TODO: Most instruments - like Allcott et al - instrument year-to-year variation of shortages. This has potential for estimating the elasticity between electricity supply and complexity and output. Roundabout way of getting a result: if more complex factories tend to be more harmed on output by the shortage instrument and the supply-chain weighted shortage, we can say that electricity disruptions dissuade investment in more complex goods. This is strictly not an observed effect, but a corrolary of the observed effect.
-
-% Methods
-% - Variables
-% - Data
 \section{Data}%
 \label{sub:data}
 
@@ -584,7 +556,7 @@ One of the main concerns here, is that I don't have plant identifiers. Without
 			\label{tab:interaction_avg_pci}
 			\input{tables/analysis_interaction_avg_pci}
 			\begin{tablenotes} \footnotesize
-			\item[1] This table presents the result of the regression analysis in section \ref{sub:regressions} on the interaction between plant complexity, energy shortages, and plant revenue. The dependent variable in all columns is the natural log of yearly total plant revenue (constant 2005 Rs). Indepedent variables are in order: wages paid as a share of revenue, an indicator for whether or not the plant owns a generator, the total cost of production standardized per yer, the plants' total number of yearly employees (avg), the net domestic product in each state per capita, the weighted average complexity the plant, shortage in the state, interaction between complexity and shortage, the supply shortage value of the plant, and and interaction between complexity and supply shortage. Each column includes state-, two-digit industry-, and year fixed effects. I also include a dummy for the base-year of the state NDP/cap. Standard errors are robust and clustered by state-year.
+			\item[1] This table presents the result of the regression analysis in section \ref{sub:regressions} on the interaction between plant complexity, energy shortages, and plant revenue. The dependent variable in all columns is the natural log of yearly total plant revenue (constant 2005 Rs). Indepedent variables are in order: wages paid as a share of revenue, an indicator for whether or not the plant owns a generator, the total cost of production standardized per yer, the plants' total number of yearly employees (avg), the net domestic product in each state per capita, the weighted average complexity the plant, shortage in the state, interaction between complexity and shortage, the supply shortage value of the plant, and and interaction between complexity and supply shortage. Each column includes an intercept, state-, two-digit industry-, and year fixed effects. I also include a dummy for the base-year of the state NDP/cap. Standard errors are robust and clustered by state-year.
 			\end{tablenotes}
 		\end{threeparttable}
 	\end{center}
@@ -597,7 +569,7 @@ One of the main concerns here, is that I don't have plant identifiers. Without
 			\label{tab:interaction_wage_input}
 			\input{tables/analysis_interaction_wage_input}
 			\begin{tablenotes} \footnotesize
-			\item[1] This table presents are modified version of the equation in \ref{sub:regressions}, here with focus on the interaction between wage/revenue share, intermediate intput/share (products), shortages and plant revenu. The dependent variable in all columns is the natural log of yearly total plant revenue (constant 2005 Rs). Independent variables are the same as in table \ref{tab:interaction_max_pci} except for the inclusion of Int. input/rev share, which is the purchase value of intermediate input products as a share of revenues (the given plant in the given year). Each column includes state-, two-digit industry-, and year fixed effects. I also include a dummy for the base-year of the state NDP/cap. Standard errors are robust and clustered by state-year.
+			\item[1] This table presents are modified version of the equation in \ref{sub:regressions}, here with focus on the interaction between wage/revenue share, intermediate intput/share (products), shortages and plant revenu. The dependent variable in all columns is the natural log of yearly total plant revenue (constant 2005 Rs). Independent variables are the same as in table \ref{tab:interaction_max_pci} except for the inclusion of Int. input/rev share, which is the purchase value of intermediate input products as a share of revenues (the given plant in the given year). Each column includes an intercept, state-, two-digit industry-, and year fixed effects. I also include a dummy for the base-year of the state NDP/cap. Standard errors are robust and clustered by state-year.
 			\end{tablenotes}
 		\end{threeparttable}
 	\end{center}
@@ -609,8 +581,6 @@ FaINDINGS!!!!!
 - Der er ingen effect kun af shortages. Der er dog effekt af hhv PCI og input shortages or interaction effects mellem PCI og input shortages, og det er det vigtigeste.
 
 - The result is robust to both the centered and uncenterd interaction.
-
-
 
 \begin{figure}[htpb]
 	\centering
@@ -637,19 +607,27 @@ As before, I use robust standard errors and cluster by state-years. To account f
 
 It is worth noting that I define the lagged shortage as the average value of the $S_{s,t}$ variable across the years, not the ratio between the average availability and demand over the period (since, presumably, producers won't be interested in overall power capacity, only the amount they are short).
 
-I run two tests: a minimal and an expanded model. As before, let $C_{f,i,s,t}$ be the complexity of a plant $f$ with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. I repeat all of the following analyses using $C^{max}$ as well. I then define $\bar{S}_{st}$ as the average shortage in the year of entry and the two years prior in state $s$. $R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{it}$ represents industry-year indicators. I include industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages). This reduces the risk that some unobserved event within an industry drives the the outcome (like complexity) but is not related to shortages.
+I run two tests: a minimal and an expanded model. As before, let $C_{f,i,s,t}$ be the complexity of a plant $f$ with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. I repeat all of the following analyses using $C^{max}$ as well. I then define $\bar{S}_{st}$ as the average shortage in the year of entry and the two years prior in state $s$. $R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{it}$ represents industry-year indicators. I include industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages)\footnote{Results are robust to changing from industry-by-year to just industry.}. This reduces the risk that some unobserved event within an industry drives the the outcome (like complexity) but is not related to shortages.
 
 The regression equation then takes the form:
 
-\[
+\begin{equation}
+\label{eqn:interact}
 	C_{f,i,s,t} = \bar{S}_{s,t} + R_{s} + T_{t} + I_{i,t} 
-\]
+\end{equation}
 
-Limiting the analysis to only plants observed a set amount of time af their initial production naturally limits the sample size - from just below 500,000 to around 20,000\footnote{Since I don't use the adjusted revenues in this analysis, I can include my full sample of factories.}. As is visible in figure \ref{fig:new_entry_sample}, some states are reduced to very few observations. While I run my analysis with the full sample plants from all states, I  repeated all the findings when using a restricted sample without the least represent states.
-
-
-Here, the $\bar{S}_{s,t}$ takes on the role of possible producers knowledge or expectation of $z$ in the theoretical model discussed earlier. That is, are they willing to start up a factory, if they believe the electrical infrastructure is poor?
+Here, the $\bar{S}_{s,t}$ takes on the role of possible producers' knowledge or expectation of $z$ in the theoretical model discussed earlier. That is, are they willing to start up a factory, if they believe the electrical infrastructure is poor?
  
+Limiting the analysis to only plants observed a set amount of time af their initial production naturally limits the sample size - from just below 500,000 to around 20,000\footnote{Since I don't use the adjusted revenues in this analysis, I can include my full sample of factories.}. Figure \ref{fig:new_entry_sample} show that some states are reduced to very few observations. While I run my analysis with the full sample plants from all states, I  repeated all the findings when using a restricted sample without the least represent states. It is worth noting that in figure, there is no evidence of increasing left-skew in the distribution of complexity as time moves forward. This suggests that the effect is not just driven by all factories getting more complex with time (so that plant entries in later years carry the significance). To make sure of this, I rerun the analysis with a variable that indicates the median and mean complexity of all plants entering in the given year (not reported). This control does not change any of the results.
+
+% sometihng
+
+I also test a more expansive model that controls for various attractors in states. While most of the differences between states should be caught in the fixed effects, I now allow for variance in the share of the population that are working age (15-60), the share of people with at least a secondary education completed, the growth of the state economy and the total size of the state economy. 
+
+- Husk at understrege: forskellen når man tilføjer og fjerne industries.
+
+
+
 - RESULTS:
 
 The lagged average shortage is 
@@ -675,17 +653,6 @@ The lagged average shortage is
 
 To make sure that results are not driven by India getting more complex .. (DONE, not important)
 
-
-%\begin{table}
-%	\begin{center}
-%		\begin{threeparttable}
-%			\caption{Association between complexity of new plants and shortages}
-%			\label{tab:plant_entry_larger_max}
-%			\input{tables/plant_entry/pci_max_larger}
-%		\end{threeparttable}
-%	\end{center}
-%\end{table}   
-
 Remains significant under: 
  - changing the control from industry-year to industry as a whole,
  - changing the clustering
@@ -698,29 +665,25 @@ Setting instead the explained variable as the average complexity within the indu
 \begin{table} 
 	\begin{center}
 		\begin{threeparttable}
-			\caption{Association between complexity of new plants and shortages}
-			\label{tab:plant_entry_pci}
-			\input{tables/plant_entry/pci_nonfloat}
-			\begin{tablenotes} \footnotesize
-			\item[1] $\bar{S}$ is the two-year average state shortage at the time of entry. Column (1) is the the complexity of the most complex product a plant produces. Column (2) is the weighted average complexity of the products it produces. Column (3) and (4) are the median $C^{max}$ and $C$ of plants in an industry (2-digit level). Standard errors are robust and clustered by state-year.
-		\item[2] $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01 \\
+			\caption{Association between complexity of new plants, electricity use, and shortages}
+			\label{tab:entry_min}
+			\input{tables/plant_entry/entry_minimal}
+			\begin{tablenotes} \footnotesize 
+			\item[1] This table presents the results from equation \ref{eqn:interact}. $\bar{S}$ is the two-year average state shortage at the time of entry. Column (1) is the the complexity of the most complex product a plant produces. Column (2) is the weighted average complexity of the products it produces. Column (3) and (4) are the median $C^{max}$ and $C$ of plants in an industry (2-digit level). In column (5) and (6) the dependent variable has been changed to the linear probability of a factory self-generating electricity and the adjusted revenue per kWh electricity used. All columns use an intercept and fixed effects on state and year, but only column (1), (2), (5), and (6) uses 2-digit industry-year fixed effects. Standard errors are robust and clustered by state-year .
 			\end{tablenotes}
 		\end{threeparttable}
 	\end{center}
 \end{table}   
-
 
 
 \begin{table} 
 	\begin{center}
 		\begin{threeparttable}
-			\caption{Association between the electricity use of new plants and shortages}
-			\label{tab:plant_entry_electricity}
-			\input{tables/plant_entry/electricity_nonfloat}
-			\begin{tablenotes} \footnotesize
-			\item[1] $\bar{S}$ is the two-year average state shortage at the time of entry. Column (1) is the linear probability of a plant generating its own electricity. Column (2) is the adjusted revenue of a plant divided by its total electricity use (kWh). Standard errors are robust and clustered by state-year. 
-
-       	\item[2] $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01 \\
+			\caption{Association between most complex product produced in new plants and electricity shortages: added controls}
+			\label{tab:entry_max_max}
+			\input{tables/plant_entry/entry_max_max_pci}
+			\begin{tablenotes} \footnotesize 
+			\item[1]
 			\end{tablenotes}
 		\end{threeparttable}
 	\end{center}
@@ -728,8 +691,8 @@ Setting instead the explained variable as the average complexity within the indu
 
 
 
-
 TODO: Remember finding about the impact of industries.
+TODO: Remember Importance on including higher education.
 
 I also include several state-level variables: population density, share of rural population, and 
 
@@ -800,6 +763,35 @@ As an additional benefit, this plant-plant network could provide valuable inform
 Re-write, but good point:
 While the effect size is rather small and noisy, a rsult like this could help us undertand why the introduction new productiuon knowledge is such a gradual process. If there is is not a threshold of "relability" being met, producers who "jump to far" in the production space will be punished harder than others on. THis can essentially act as an attractor or a cooling effect on longer jumps.
 
+\subsection{Limitations}
+\label{sec:org979560b}
+
+LIMITATION: It is important to note that this works exploratroy in nature. Many regs were tried, and as such, the p-values reported potentially overstates the significance of the findings. That said, the main results were robust to a range of controls.
+LARGE LIMITATION: Scrubbing of plant identifiers from the sample. - se min telefonnote
+
+\subsubsection{Endogeneity}
+\label{sec:orgd4457e7}
+There are a couple of reasons the effect of electricity disruptions on economic activities are diffult to study empirically. First, the relationship is likely to have a significant endogenous component. More complex production could be related to a more intensely developed economy, which could also be related to more stabile electricity supply. On the other hand, a more developed economy could have a more complex production, but would also have a higher electricity demand which could lead to shortages.
+
+\subsubsection{Modifiable Area Unit Problem}
+\label{sec:org4e3cc26}
+My tests rely on ``ground down'' state-wide variables on electricity reliability to individual plants. As with much of research in geography, this runs into the issue of artificial boundaries. For instance, states might not be appropriate scale of measurement, or be homogenous in its distribution of reliable electricity. However, the use of the district-level nightlights should reveal if there are large differences within states.
+
+\subsubsection{Attenuation bias}
+\label{sec:orge917ac0}
+My main electricity variables are either estimations or approximations. This very likely introduces some measurement error in my independent variable. Should this error be large enough, I risk that any result drowns in attenuation bias. The instrumental variable could potentially redeem this issue significantly.
+
+\subsubsection{The problem with instrumental approaches}
+\label{sec:orge917ac0}
+
+TODO: The instruments in the literature either instrument for short-term changes in electricity supply or one industry against the other. Neither can really target the "cooling" effect of NOT going into more complex products.
+
+TODO: Most instruments - like Allcott et al - instrument year-to-year variation of shortages. This has potential for estimating the elasticity between electricity supply and complexity and output. Roundabout way of getting a result: if more complex factories tend to be more harmed on output by the shortage instrument and the supply-chain weighted shortage, we can say that electricity disruptions dissuade investment in more complex goods. This is strictly not an observed effect, but a corrolary of the observed effect.
+
+% Methods
+% - Variables
+% - Data
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%k
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -867,6 +859,7 @@ Often, one product code from the source classification maps to two different cod
 \input{tables/appendix_data_cleaning_year_output}
 
 \input{tables/appendix_data_cleaning_state_output}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -371,7 +371,8 @@ industry_median_avg_pci_se <-
 		entry_2y_final_minimal %>% filter(electricity_qty_cost_flag != 1) %>%
 		filter(total_electricity_consumed_kwh > 0) %>%
 		mutate(
-		       electricity_rev_share = adjusted_revenue / total_electricity_consumed_kwh
+		       electricity_rev_share = adjusted_revenue / total_electricity_consumed_kwh,
+		       sefl_gen_dmy = ifelse(self_generated_electricity_kwh > 0, 1, 0)
 		       ) %>%
 		filter(!is.na(electricity_rev_share)) %>%
 		filter(electricity_rev_share < 63005744) # excludes one giant outlier
@@ -396,6 +397,15 @@ industry_median_avg_pci_se <-
 		   data = entry_2y_electricity
 		   ) 
 
+	lmrob_electricity_share <-
+		lm_robust(electricity_rev_share ~ avg_shortage_2y,
+		  fixed_effects = as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year),
+		  se_type = "stata",
+		  clusters = stateyear,
+		   weights = multiplier,
+		   data = entry_2y_electricity
+		   ) 
+
 	electricity_share_se <-
 		coeftest(lm_electricity_share, vcovCL, cluster = entry_2y_electricity$stateyear, type = "HC1")
 		
@@ -412,6 +422,15 @@ industry_median_avg_pci_se <-
 		   self_gen_dmy ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year),
 		   weights = multiplier,
 		   data = entry_2y_gen_dmy
+		   )
+
+	lmrob_self_gen <- lm_robust(
+		   self_gen_dmy ~ avg_shortage_2y,
+		   fixed_effects = ~ as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year),
+		   weights = multiplier,
+		   data = entry_2y_gen_dmy,
+		   se_type = "stata",
+		   clusters = stateyear
 		   )
 
 	self_gen_se <- lm_self_gen %>%
@@ -473,9 +492,61 @@ lm_avg_pci <-
 
 nrow_avg_pci <- nrow(entry_2y_final_minimal)
 
-avg_pci_se <- 
-	coeftest(lm_max_pci, vcovCL, cluster = entry_2y_final_minimal$stateyear, type = "HC1")
+# LAV ALLE DE REGRESSIONER DER BRUGES I OUT-TABELLEN OM TIL LM ROBUST
 
+lmrob_max_pci <- 
+	lm_robust(
+	   max_pci ~ avg_shortage_2y,
+	   fixed_effects = ~ as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year), 
+	   clusters = stateyear,
+	   se_type = "stata",
+	   weights = multiplier,
+	   data = entry_2y_final_minimal
+	)
+
+lmrob_avg_pci <- 
+	lm_robust(
+	   avg_pci ~ avg_shortage_2y,
+	   fixed_effects = as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year), 
+	   clusters = stateyear,
+	   se_type = "stata",
+	   weights = multiplier,
+	   data = entry_2y_final_minimal
+	)
+
+lmrob_median_avg_pci <- 
+	lm_robust(
+	   median_ind_all_avg_pci ~ avg_shortage_2y,
+	   fixed_effects = as.factor(state_name) + as.factor(initial_production), 
+	   weights = multiplier,
+	   clusters = stateyear,
+	   se_type = "stata",
+	   data = entry_2y_final_minimal
+	) 
+
+lmrob_median_max_pci <- 
+	lm_robust(
+	   median_ind_all_max_pci ~ avg_shortage_2y,
+	   fixed_effects = as.factor(state_name) + as.factor(initial_production), 
+	   weights = multiplier,
+	   clusters = stateyear,
+	   se_type = "stata",
+	   data = entry_2y_final_minimal
+	) 
+plant_entry_table_path <- here("doc/tables/plant_entry/entry_minimal.tex")
+
+
+texreg(
+       l = list(lmrob_max_pci, lmrob_avg_pci, lmrob_median_max_pci, lmrob_median_avg_pci, lmrob_self_gen, lmrob_electricity_share),
+        custom.model.names = c("$C^{max}_{f}$", "$C_{f}$", "$C^{max}_{ind}$", "$C_{ind}$", "Self-gen (1)", "Electricity rev share"),
+      custom.coef.names = c("$\\bar{S}_{s,t}$"),
+       include.ci = FALSE,
+       file = plant_entry_table_path,
+       booktabs = TRUE,
+       fontsize = "small",
+       table = FALSE,
+       use.packages = FALSE,
+       )
 
 # CREATE TABLE:
 pci_star <- stargazer(
@@ -521,6 +592,10 @@ self_gen_star <- stargazer(
 		      ) 
 
 write(self_gen_star, here(electricity_table_path))
+
+
+
+
 
 # CREATE HISTOGRAM OF ANALYSIS SAMPLE
 # Ingen af resultaterne ændrer sig ved at udelække mindste år
