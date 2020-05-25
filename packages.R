@@ -21,6 +21,7 @@ library(lmtest) # more adv regression stuff
 library(igraph) # working with networks and network graphs
 library(estimatr)
 library(stargazer)
+library(texreg)
 
 conflicted::conflict_prefer("filter", "dplyr")
 conflicted::conflict_prefer("gather", "tidyr")

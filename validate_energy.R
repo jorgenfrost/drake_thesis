@@ -6,13 +6,6 @@ shortages_tbl <- readd("energy_shortages_tbl")
 
 es05_raw <- read_dta("/home/post/drake_project/data/external/es_india/India-2005--full data-.dta/India-2005--full-data-.dta")
 
-ihds_in <- readd("ihds_tbl")
-ihds_in <- ihds_in %>%
-  rownames_to_column("unique_id")
-  
-# PREPARE DATA -------------------------------------------------------
-
-## INITIALISE RESULT LIST
 result_ls <- list()
 
 ## ENTERPRISE SURVEY 2005 
@@ -37,31 +30,6 @@ es14_tbl <- es14_tbl %>% # electricity = 8
 	       biggest_obstacle_dmy = ifelse(biggest_obstacle == 8, 1, 0) 
 	       )
 
-
-## IHDS 2005 + 2012
-
-# Create tidy tbl
-ihds05_tbl <- ihds_in %>% 
-	select(-c(electricity_access_12, hours_electricity_12)) %>%
-	rename(
-	       hours_electricity = hours_electricity_05,
-	       electricity_access = electricity_access_05
-	       ) %>%
-	mutate(year = 2005)
-
-ihds12_tbl <- ihds_in %>% 
-	select(-c(electricity_access_05, hours_electricity_05)) %>%
-	rename(
-	       hours_electricity = hours_electricity_12,
-	       electricity_access = electricity_access_12
-	       ) %>%
-	mutate(year = 2012)
-
-ihds_tbl <- bind_rows(ihds05_tbl, ihds12_tbl)
-
-# Add shortage data
-ihds_joined_tbl <- left_join(ihds_tbl, shortages_tbl, by = c("state_name" = "state", "year"))
-
 # DEFINE HELPTER FUNCTIONS -------------------------------------------
 
 # ANALYSE ENTERPRISE SURVEYS -----------------------------------------
@@ -76,6 +44,14 @@ selfgen05_model <- lm(
   formula = self_gen ~ avg_shortage + factor(industry),
   data = es05_selfgen
 )
+selfgen05_rob <- 
+	lm_robust(
+		  formula = self_gen ~ avg_shortage,
+		  fixed_effects = factor(industry),
+		  data = es05_selfgen,
+		  clusters = asi_state_name,
+		  se_type = "stata"
+		  )
 
 # Get robust, cluster standard errors
 selfgen05_robust <- coeftest(selfgen05_model, vcov = vcovCL, cluster = es05_selfgen$asi_state_name)
@@ -149,6 +125,7 @@ wbes_star <- stargazer(
  dep.var.labels.include = FALSE,
   type = "latex",
   #align = TRUE,
+ star.cutoffs = c(0.05, 0.01, 0.001),
   column.labels = c("Self-gen share", "Obstacle", "Power quality", "Self-gen share", "Obstacle"),
   covariate.labels = c("Shortage"),
   omit = c("industry"),
@@ -167,83 +144,3 @@ wbes_star <- stargazer(
 
   write(wbes_star, here("doc/tables/energy_validity/wbes_nonfloat.tex"))
 
-# IHDS difference ----------------------------------------------------------
-
-# Remove HHs that does not have electricity access in both periods
-ihds_index_hhs <- ihds_joined_tbl %>%
-  filter(!is.na(avg_shortage) & !is.na(hours_electricity) & electricity_access == 1) %>%
-  group_by(unique_id) %>%
-  summarize(
-    obs = n()
-  ) %>% filter(obs == 2)
-
-ihds_joined_tbl <- ihds_joined_tbl %>%
-  filter(unique_id %in% ihds_index_hhs$unique_id) %>%
-  group_by(unique_id) %>%
-  arrange(year) %>%
-  mutate(
-    fd_hours = hours_electricity - lag(hours_electricity, 1),
-    fd_short = avg_shortage - lag(avg_shortage, 1),
-    fd_peak = peak_shortage - lag(peak_shortage, 1)
-  ) %>%
-  ungroup()
- 
-ihds_diff_joined_tbl <- ihds_joined_tbl %>% select(
-  unique_id,
-  state_name,
-  sweight,
-  access = electricity_access,
-  hours = hours_electricity,
-  year, 
-  avg_shortage,
-  peak_shortage,
-  fd_hours,
-  fd_short,
-  fd_peak
-  )
-  
-lm_robust(
-  fd_hours ~ fd_short,
-  weights = sweight,
-  data = ihds_joined_tbl,
-  se_type = "stata"
-  ) 
-
-lm_robust(
-  demeaned_hours ~ demeaned_shortage,
-  weights = sweight,
-  data = ihds_joined_tbl,
-  clusters = stateid,
-  se_type = "stata"
-  ) 
-hours_model <- lm(
-  demeaned_hours ~ avg_shortage,
-  weights = sweight,
-  data = ihds_joined_tbl
-  ) 
-
-hours_robust <- coeftest(hours_model, vcov = vcovCL, cluster= ihds_joined_tbl$stateid)
-coeftest(hours_model, vcov = vcovCL, cluster = ihds_joined_tbl$stateid)
-
-library(plm)
-
-stargazer(
- hours_robust,
- style = "aer",
- title = "IHDS and the Shortage variable",
- dep.var.caption = "",
- dep.var.labels.include = FALSE,
-  type = "latex",
-  #align = TRUE,
-  column.labels = c("Hours of daily electricity"),
-  covariate.labels = c("Shortage"),
-#  omit = c("industry"),
-#  omit.labels = c("Industry FE"),
- #column.sep.width = "1pt",
- #font.size = "small"
-  add.lines = list(
-    c("Obervations:", paste0(nrow(ihds_joined_tbl)))
-  ),
-    omit.table.layout = "n"
-) %>%
-  write(here("doc/tables/energy_validity/ihds_diff.tex"))

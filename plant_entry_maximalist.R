@@ -183,58 +183,81 @@ lm_robust(
 	  )
 	
 # First model: 
-# 
+
+# IDENTIFY SMALLEST STATES AND SMALLEST INDUSTRIES
+smallest_states <- 
+	entry_2y_final %>%
+	group_by(state_name) %>%
+	summarize(n = n()) %>% 
+	filter(n < 90) %>% 
+	pull(state_name)
+
 # ###### MAX PCI ################ TODO: 
 # From above: 
+entry_2y_final
+
 lmrob1_max <-
 	lm_robust(
-	max_pci ~ avg_shortage_2y + share_finished_secondary + share_15_60 + net_gdp_cap_growth,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+	max_pci ~ avg_shortage_2y + share_finished_secondary + share_15_60 + as.factor(state_name) + as.factor(initial_production),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
 
 lmrob2_max <-
 	lm_robust(
-	max_pci ~ avg_shortage_2y + share_finished_secondary + net_gdp_cap_growth,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+	max_pci ~ avg_shortage_2y + log(net_gdp_cap) + share_finished_secondary + share_15_60 + net_gdp_cap_growth + as.factor(state_name) + as.factor(initial_production),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
 lmrob3_max <- 
 	lm_robust(
-	max_pci ~ avg_shortage_2y + share_15_60 + net_gdp_mio + share_finished_secondary + net_gdp_cap_growth,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+	max_pci ~ avg_shortage_2y + log(net_gdp_cap) + share_15_60 + log(net_gdp_mio) + share_finished_secondary + net_gdp_cap_growth + as.factor(state_name) + as.factor(initial_production),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
 
 # Add industry fixed
 lmrob4_max <-
 	lm_robust(
-	max_pci ~ avg_shortage_2y + share_15_60 + net_gdp_mio + share_finished_secondary + net_gdp_cap_growth,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
+	max_pci ~ avg_shortage_2y + share_15_60 + log(net_gdp_cap) + log(net_gdp_mio) + share_finished_secondary + net_gdp_cap_growth + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
 
 lmrob5_max <-
 	lm_robust(
-	max_pci ~ avg_shortage_2y,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
+	max_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
+
+
+# CREATE TABLES -----------------------
+
+max_entry_table_path <- here("doc/tables/plant_entry/entry_max_max_pci.tex")
+library(texreg)
+texreg(
+       l = list(lmrob1_max, lmrob2_max, lmrob3_max, lmrob4_max, lmrob5_max),
+       custom.model.names = c("(1)", "(2)", "(3)", "(4)", "(5)"),
+       custom.coef.names = c(NA, "$\\bar{S}_{s,t}$", "Share with sec. education", "Share between 15 and 60", "ln(State NDP/cap)", "State NDP/cap growth", "ln(State NDP)"),
+       omit.coef = "factor",
+       include.ci = FALSE,
+       file = max_entry_table_path,
+       booktabs = TRUE,
+       fontsize = "small",
+       table = FALSE,
+       use.packages = FALSE,
+       )
 
 ########################################################
 #### AVG PCI
@@ -242,64 +265,58 @@ lmrob5_max <-
 
 lmrob1_avg <-
 	lm_robust(
-	max_avg ~ avg_shortage_2y + share_finished_secondary + share_15_60 + net_gdp_cap_growth,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+	avg_pci ~ avg_shortage_2y + share_finished_secondary + share_15_60 + as.factor(state_name) + as.factor(initial_production),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
 
 lmrob2_avg <-
 	lm_robust(
-	avg_pci ~ avg_shortage_2y + share_finished_secondary + net_gdp_cap_growth,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+	avg_pci ~ avg_shortage_2y + log(net_gdp_cap) + share_finished_secondary + share_15_60 + net_gdp_cap_growth + as.factor(state_name) + as.factor(initial_production),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
-
 lmrob3_avg <- 
 	lm_robust(
-	avg_pci ~ avg_shortage_2y + share_15_60 + net_gdp_mio + share_finished_secondary + net_gdp_cap_growth,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production),
+	avg_pci ~ avg_shortage_2y + log(net_gdp_cap) + share_15_60 + log(net_gdp_mio) + share_finished_secondary + net_gdp_cap_growth + as.factor(state_name) + as.factor(initial_production),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
 
 # Add industry fixed
 lmrob4_avg <-
 	lm_robust(
-	max_avg ~ avg_shortage_2y + share_15_60 + net_gdp_mio + share_finished_secondary + net_gdp_cap_growth,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
+	avg_pci ~ avg_shortage_2y + share_15_60 + log(net_gdp_cap) + log(net_gdp_mio) + share_finished_secondary + net_gdp_cap_growth + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
 
 lmrob5_avg <-
 	lm_robust(
-	avg_pci ~ avg_shortage_2y,
-	fixed_effects = ~ as.factor(base_year_dmy) + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
+	avg_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
 	weights = multiplier,
 	clusters = stateyear,
 	se_type = "stata",
-	data = entry_2y_final
+	data = entry_2y_final %>% filter(!state_name %in% smallest_states)
    )
 
-# CREATE TABLES -----------------------
-
-max_entry_table_path <- here("doc/tables/plant_entry/entry_max_max_pci.tex")
+avg_entry_table_path <- here("doc/tables/plant_entry/entry_max_avg_pci.tex")
 
 texreg(
-       l = list(lmrob1_max, lmrob2_max, lmrob3_max, lmrob4_max, lmrob5_max),
-      custom.coef.names = c("$\\bar{S}_{s,t}$"),
+       l = list(lmrob1_avg, lmrob2_avg, lmrob3_avg, lmrob4_avg, lmrob5_avg),
+       custom.model.names = c("(1)", "(2)", "(3)", "(4)", "(5)"),
+       custom.coef.names = c(NA, "$\\bar{S}_{s,t}$", "Share with sec. education", "Share between 15 and 60", "ln(State NDP/cap)", "State NDP/cap growth", "ln(State NDP)"),
+       omit.coef = "factor",
        include.ci = FALSE,
-       file = plant_entry_table_path,
+       file = avg_entry_table_path,
        booktabs = TRUE,
        fontsize = "small",
        table = FALSE,

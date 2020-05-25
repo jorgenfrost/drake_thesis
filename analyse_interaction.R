@@ -26,7 +26,7 @@ input_shortage_tbl <- readd("plant_input_shortage_tbl")
 
 
 # Calculate standardized production costs
-tot_prod_tbl <- plant_tbl %%
+tot_prod_tbl <- plant_tbl %>%
 	select(year, dsl, total_production_cost) %>%
 	group_by(year) %>%
 	mutate(stand_production_costs = (total_production_cost - mean(total_production_cost, na.rm = TRUE)) / sd(total_production_cost, na.rm = TRUE)) %>%
@@ -134,47 +134,46 @@ analysis_sample2 <- analysis_sample_base %>%
 	drop_na()
 
 # Model of base controls ---------------------------------------------
-lm_robust2.base <- lm_robust(
-		formula = log(adjusted_revenue) ~ wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.base <- 
+	lm_robust(
+		formula = log(adjusted_revenue) ~ wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
 		se_type = "stata"
 	    )
-
 # Model: base + pci --------------------------------------------------
 
-lm_robust2.pci_max <- lm_robust(
-		formula = log(adjusted_revenue) ~ max_pci + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.pci_max <- 
+	lm_robust(
+		formula = log(adjusted_revenue) ~ max_pci + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
 		se_type = "stata"
 	    )
 
-lm_robust2.pci_avg <- lm_robust(
-		formula = log(adjusted_revenue) ~ avg_pci + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.pci_avg <- 
+	lm_robust(
+		formula = log(adjusted_revenue) ~ avg_pci + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
 		se_type = "stata"
 	    )
 # Model: base + pci + shortages --------------------------------------
-lm_robust2.pci_max.shortage <- lm_robust(
-		formula = log(adjusted_revenue) ~ max_pci + avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
-		weights = multiplier,
-		data = analysis_sample2,
-		clusters = stateyear,
-		se_type = "stata"
-	    )
+lm_robust2.pci_max.shortage <- 
+	lm_robust(
+		  formula = log(adjusted_revenue) ~ max_pci + avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
+		  weights = multiplier,
+		  data = analysis_sample2,
+		  clusters = stateyear,
+		  se_type = "stata"
+		  )
 
-lm_robust2.pci_avg.shortage <- lm_robust(
-		formula = log(adjusted_revenue) ~ avg_pci + avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.pci_avg.shortage <- 
+	lm_robust(
+					 formula = log(adjusted_revenue) ~ avg_pci + avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
@@ -182,18 +181,18 @@ lm_robust2.pci_avg.shortage <- lm_robust(
 	    )
 
 # Model: base + pci + supply shortages -------------------------------
-lm_robust2.pci_max.input_short <- lm_robust(
-		formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.pci_max.input_short <- 
+	lm_robust(
+		formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
 		se_type = "stata"
 	    )
 
-lm_robust2.pci_avg.input_short <- lm_robust(
-		formula = log(adjusted_revenue) ~ avg_pci + input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.pci_avg.input_short <- 
+	lm_robust(
+	formula = log(adjusted_revenue) ~ avg_pci + input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap ++ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
@@ -201,28 +200,28 @@ lm_robust2.pci_avg.input_short <- lm_robust(
 	    )
 
 # Model: base + pci + shortages + pci x shortage --------------------------------------
-lm_robust2.pci_max.shortage_interact <- lm_robust(
-		formula = log(adjusted_revenue) ~ max_pci + avg_shortage + max_pci * avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.pci_max.shortage_interact <- 
+	lm_robust(
+		  formula = log(adjusted_revenue) ~ max_pci + avg_shortage + max_pci * avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
 		se_type = "stata"
 	    )
 
-lm_robust2.pci_avg.shortage_interact <- lm_robust(
-		formula = log(adjusted_revenue) ~ avg_pci + avg_shortage + avg_pci * avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
-		weights = multiplier,
+lm_robust2.pci_avg.shortage_interact <- 
+	lm_robust(
+		  formula = log(adjusted_revenue) ~ avg_pci + avg_shortage + avg_pci * avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
+		  weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
 		se_type = "stata"
 	    )
 
 # Model: base + pci + supply shortages + pci x supply shortages -----------------------
-lm_robust2.pci_max_input_short_interact <- lm_robust(
-		formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + max_pci * input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.pci_max_input_short_interact <- 
+	lm_robust(
+		formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + max_pci * input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
@@ -230,8 +229,7 @@ lm_robust2.pci_max_input_short_interact <- lm_robust(
 	    )
 
 lm_robust2.pci_avg.input_short_interact <- lm_robust(
-		formula = log(adjusted_revenue) ~ avg_pci + input_avg_shortage + avg_pci * input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+	formula = log(adjusted_revenue) ~ avg_pci + input_avg_shortage + avg_pci * input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
@@ -239,18 +237,18 @@ lm_robust2.pci_avg.input_short_interact <- lm_robust(
 	    )
 
 # Model: base + pci + shortage + pci x shortage + supply shortages + pci x supply shortages -----------------------
-lm_robust2.pci_avg.input_short_interact_plus <- lm_robust(
-		formula = log(adjusted_revenue) ~ avg_pci + input_avg_shortage + avg_pci * input_avg_shortage + avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.pci_avg.input_short_interact_plus <-
+	lm_robust(
+		formula = log(adjusted_revenue) ~ avg_pci + input_avg_shortage + avg_pci * input_avg_shortage + avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
 		se_type = "stata"
 	    )
 
-lm_robust2.pci_max.input_short_interact_plus <- lm_robust(
-		formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + max_pci * input_avg_shortage + avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+lm_robust2.pci_max.input_short_interact_plus <- 
+	lm_robust(
+		  formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + max_pci * input_avg_shortage + avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
@@ -267,7 +265,8 @@ texreg(
        l = list(lm_robust2.base, lm_robust2.pci_max, lm_robust2.pci_max.shortage, lm_robust2.pci_max.shortage_interact, lm_robust2.pci_max.input_short, lm_robust2.pci_max_input_short_interact,lm_robust2.pci_max.input_short_interact_plus),
        label = "tab:interaction_max_pci",
        custom.model.names = c("(1)", "(2)", "(3)", "(4)", "(5)", "(6)", "(7)"),
-      custom.coef.names = c("Wage/rev share", "Self-gen (1)", "Number of employees", "Production costs (z)", "State NDP/cap", "$C^{max}_{f}$", "Shortage", "$C^{max}_{f}$ $\\times$ Shortage", "Supply shortage", "$C^{max}_{f}$ $\\times$ Supply shortage"),
+      custom.coef.names = c(NA, "Wage/rev share", "Self-gen (1)", "Number of employees", "Production costs (z)", "State NDP/cap", "$C^{max}_{f}$", "Shortage", "$C^{max}_{f}$ $\\times$ Shortage", "Supply shortage", "$C^{max}_{f}$ $\\times$ Supply shortage"),
+      omit.coef = "(state)|(nic)|(year)",
        include.ci = FALSE,
        file = max_pci_tbl_path,
        booktabs = TRUE,
@@ -280,9 +279,10 @@ avg_pci_tbl_path <- here("doc/tables/analysis_interaction_avg_pci.tex")
 texreg(
        l = list(lm_robust2.base, lm_robust2.pci_avg, lm_robust2.pci_avg.shortage, lm_robust2.pci_avg.shortage_interact, lm_robust2.pci_avg.input_short, lm_robust2.pci_avg.input_short_interact, lm_robust2.pci_avg.input_short_interact_plus),
        custom.model.names = c("(1)", "(2)", "(3)", "(4)", "(5)", "(6)", "(7)"),
-      custom.coef.names = c("Wage/rev share", "Self-gen (1)", "Number of employees", "Production costs (z)", "State NDP/cap", "$C_{f}$", "Shortage", "$C_{f}$ $\\times$ Shortage", "Supply shortage", "$C_{f}$ $\\times$ Supply shortage"),
+      custom.coef.names = c(NA, "Wage/rev share", "Self-gen (1)", "Number of employees", "Production costs (z)", "State NDP/cap", "$C_{f}$", "Shortage", "$C_{f}$ $\\times$ Shortage", "Supply shortage", "$C_{f}$ $\\times$ Supply shortage"),
        include.ci = FALSE,
        file = avg_pci_tbl_path,
+      omit.coef = "(state)|(nic)|(year)",
        booktabs = TRUE,
        fontsize = "small",
        table = FALSE,
@@ -292,8 +292,7 @@ texreg(
 # WAGE AND INPUT SHARES ----------------------------------------------------
 max_pci_wage_share_supply_interact <-
 	lm_robust(
-	  formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + input_avg_shortage * wage_share_revenue + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+	  formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + input_avg_shortage * wage_share_revenue + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
@@ -302,8 +301,7 @@ max_pci_wage_share_supply_interact <-
 
 max_pci_input_share_supply_interact <-
 	lm_robust(
-	  formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + input_avg_shortage * input_share_products + input_share_products + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+	  formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + input_avg_shortage * input_share_products + input_share_products + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap  + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
@@ -312,8 +310,7 @@ max_pci_input_share_supply_interact <-
 
 max_pci_wage_share_shortage_interact <-
 	lm_robust(
-		formula = log(adjusted_revenue) ~ max_pci + avg_shortage + avg_shortage * wage_share_revenue + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+		formula = log(adjusted_revenue) ~ max_pci + avg_shortage + avg_shortage * wage_share_revenue + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
@@ -322,8 +319,7 @@ max_pci_wage_share_shortage_interact <-
 
 max_pci_input_share_shortage_interact <-
 	lm_robust(
-	  formula = log(adjusted_revenue) ~ max_pci + avg_shortage + avg_shortage * input_share_products + input_share_products + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap,
-		fixed_effects = ~ as.factor(state_name) + as.factor(year) + as.factor(nic98_2d) + as.factor(base_year_dmy),
+	  formula = log(adjusted_revenue) ~ max_pci + avg_shortage + avg_shortage * input_share_products + input_share_products + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		data = analysis_sample2,
 		clusters = stateyear,
@@ -338,8 +334,10 @@ wage_input_tbl_path <- here("doc/tables/analysis_interaction_wage_input.tex")
 texreg(
        l = list(max_pci_wage_share_supply_interact, max_pci_input_share_supply_interact, max_pci_wage_share_shortage_interact,  max_pci_input_share_shortage_interact),
         custom.model.names = c("(1)", "(2)", "(3)", "(4)"),
-      custom.coef.names = c("$C^{max}_{f}$", "Supply shortage", "Wage/rev share", "Self-gen (1)", "Number of employees", "Production costs (z)", "State NDP/cap", "Supply shortage $\\times$ wage/rev share", "Int. input/rev share", "Int. input share $\\times$ Supply shortage", "Shortage", "Shortage $\\times$ wage/rev share", "Shortage $\\times$ int. input share"),
+      custom.coef.names = c(NA, "$C^{max}_{f}$", "Supply shortage", "Wage/rev share", "Self-gen (1)", "Number of employees", "Production costs (z)", "State NDP/cap", "Supply shortage $\\times$ wage/rev share", "Int. input/rev share", "Int. input share $\\times$ Supply shortage", "Shortage", "Shortage $\\times$ wage/rev share", "Shortage $\\times$ int. input share"),
+       omit.coef = "(nic)|(year)|(state)",
        include.ci = FALSE,
+
        file = wage_input_tbl_path,
        booktabs = TRUE,
        fontsize = "small",

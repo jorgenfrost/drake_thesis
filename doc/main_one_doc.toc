@@ -4,7 +4,8 @@
 \contentsline {section}{\numberline {2}Background}{4}%
 \contentsline {section}{\numberline {3}Theoretical framework}{4}%
 \contentsline {subsection}{\numberline {3.1}Product complexity}{6}%
-\contentsline {subsection}{\numberline {3.2}Production networks and economic complexity}{8}%
+\contentsline {subsection}{\numberline {3.2}What determines economic complexity?}{8}%
+\contentsline {subsection}{\numberline {3.3}Interruptions in production networks and economic complexity}{8}%
 \contentsline {section}{\numberline {4}Methodology}{12}%
 \contentsline {subsection}{\numberline {4.1}Methods}{12}%
 \contentsline {subsubsection}{\numberline {4.1.1}Economic complexity}{12}%
@@ -17,18 +18,18 @@
 \contentsline {subsection}{\numberline {5.4}Annual Survey of Industries (ASI)}{16}%
 \contentsline {section}{\numberline {6}Analysis and results}{18}%
 \contentsline {subsection}{\numberline {6.1}Validity of electricity variable}{18}%
-\contentsline {subsection}{\numberline {6.2}Interaction between shortages and complexity}{20}%
+\contentsline {subsection}{\numberline {6.2}Interaction between shortages and complexity}{19}%
 \contentsline {subsection}{\numberline {6.3}Does shortages discourage the entry of complex plants?}{26}%
-\contentsline {subsection}{\numberline {6.4}Descriptives}{30}%
-\contentsline {subsection}{\numberline {6.5}Production technology}{30}%
-\contentsline {section}{\numberline {7}Discussion}{31}%
-\contentsline {subsection}{\numberline {7.1}Limitations}{31}%
-\contentsline {subsubsection}{\numberline {7.1.1}Endogeneity}{31}%
-\contentsline {subsubsection}{\numberline {7.1.2}Modifiable Area Unit Problem}{32}%
-\contentsline {subsubsection}{\numberline {7.1.3}Attenuation bias}{32}%
-\contentsline {subsubsection}{\numberline {7.1.4}The problem with instrumental approaches}{32}%
-\contentsline {section}{\numberline {8}Conclusion}{33}%
-\contentsline {section}{\numberline {A}Appendix: Data cleaning}{36}%
-\contentsline {subsection}{\numberline {A.1}Cleaning international trade data}{36}%
-\contentsline {subsection}{\numberline {A.2}Cleaning Annual Survey of Industries (ASI)}{36}%
-\contentsline {subsection}{\numberline {A.3}Product concordance for ASI}{37}%
+\contentsline {subsection}{\numberline {6.4}Descriptives}{31}%
+\contentsline {subsection}{\numberline {6.5}Production technology}{31}%
+\contentsline {section}{\numberline {7}Discussion}{32}%
+\contentsline {subsection}{\numberline {7.1}Limitations}{32}%
+\contentsline {subsubsection}{\numberline {7.1.1}Basic research design}{32}%
+\contentsline {subsubsection}{\numberline {7.1.2}Endogeneity and attenuation bias}{33}%
+\contentsline {subsubsection}{\numberline {7.1.3}Modifiable Area Unit Problem}{33}%
+\contentsline {section}{\numberline {8}Conclusion}{34}%
+\contentsline {section}{\numberline {A}Appendix: Data cleaning}{37}%
+\contentsline {subsection}{\numberline {A.1}Cleaning international trade data}{37}%
+\contentsline {subsection}{\numberline {A.2}Cleaning Annual Survey of Industries (ASI)}{37}%
+\contentsline {subsection}{\numberline {A.3}Product concordance for ASI}{38}%
+\contentsline {subsection}{\numberline {A.4}Appendix figures}{39}%

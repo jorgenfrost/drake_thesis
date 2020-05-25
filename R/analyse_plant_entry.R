@@ -14,6 +14,10 @@ analyse_plant_entry <- function(
 ##                         PREPARE DATA                         ##
 ##################################################################
 # READ DATA ----------------------------------------------------------
+
+plant_tbl <- plant_tbl %>%
+	mutate(nic98_1d = str_sub(nic98_3d, 1, 1))
+
 state_tbl <- readd("analysis_sample_ls")$state_tbl %>%
 	mutate(
 	       imp_urban_share = imp_urban_pop / imp_total_pop
@@ -27,22 +31,6 @@ pci_tbl <- readd("plant_pci_tbl") %>%
 	       pci_match = match
 	       ) %>%
 	filter(pci_match == "lenient")
-
-rca_qp_tbl <- readd("plant_complexity_rca_tbl") %>%
-	rename(
-	       max_rca_qp = max_complexity,
-	       avg_rca_qp = w_avg_complexity,
-	       rca_qp_match = match
-	       ) %>%
-	filter(rca_qp_match == "lenient")
-
-mean_qp_tbl <-readd("plant_mean_complexity_tbl") %>%
-	rename(
-	       max_mean_qp = max_complexity,
-	       avg_mean_qp = w_avg_complexity,
-	       mean_qp_match = match
-	       ) %>%
-	filter(mean_qp_match == "lenient")
 
 # Create year-mean and median complexity
 state_pci <- plant_tbl %>%
@@ -117,7 +105,8 @@ select_entry_vars <- function(df) {
 	       total_electricity_consumed_kwh,
 	       electricity_qty_cost_flag,
 	       adjusted_revenue,
-	       self_generated_electricity_kwh
+	       self_generated_electricity_kwh,
+	       nic98_1d
 	       )
 	return(df)
 }
@@ -147,8 +136,6 @@ lagged_shortage_tbl <- state_tbl %>%
 # ASSIGN SHORTAGE VARIABLE TO PLANTS, ADD PCI, CREATE INDUSTRY-YEAR -----------
 complexity_tbl <- plant_tbl %>%
 	inner_join(pci_tbl) %>% 
-	inner_join(mean_qp_tbl) %>%
-	inner_join(rca_qp_tbl) %>%
 	select(year, dsl, state_name, max_pci, avg_pci)
 
 industry_tbl <- plant_tbl %>% 
@@ -220,6 +207,7 @@ add_vars <- function(df) {
 	       nic87_2d = str_sub(nic87, start = 1, end = 2),
 	       nic87_2year = paste0(nic87_2d, initial_production),
 	       nic98_2year = paste0(nic98_2d, initial_production),
+	       nic98_1year = paste0(nic98_1d, initial_production),
 	       nic87year = paste0(nic87, initial_production)
 	       ) %>%
 	left_join(mean_pci_tbl, by = c("year", "state_name")) %>%
@@ -340,26 +328,6 @@ entry_3y_final_minimal <- entry_3y_sample %>% add_vars()
 # 	  se_type = "stata"
 # 	  ) 
 # 
-lm_industry_all_median_max_pci <- 
-	lm(
-	   median_ind_all_max_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production), 
-	   weights = multiplier,
-	   data = entry_2y_final_minimal
-	) 
-
-lm_industry_all_median_avg_pci <- 
-	lm(
-	   median_ind_all_avg_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production), 
-	   weights = multiplier,
-	   data = entry_2y_final_minimal
-	) 
-
-industry_median_max_pci_se <- 
-	coeftest(lm_industry_all_median_max_pci, vcovCL, cluster = entry_2y_final_minimal$stateyear, type = "HC1")
-
-industry_median_avg_pci_se <- 
-	coeftest(lm_industry_all_median_avg_pci, vcovCL, cluster = entry_2y_final_minimal$stateyear, type = "HC1")
-
 
 ##################################################################
 ##                INPUT SHARES ON SHORTAGE DATA                 ##
@@ -391,23 +359,14 @@ industry_median_avg_pci_se <-
 #	  se_type = "stata"
 #	  ) 
 
-	lm_electricity_share <-
-		lm(electricity_rev_share ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year),
-		   weights = multiplier,
-		   data = entry_2y_electricity
-		   ) 
-
 	lmrob_electricity_share <-
-		lm_robust(electricity_rev_share ~ avg_shortage_2y,
-		  fixed_effects = as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year),
+		lm_robust(electricity_rev_share ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
 		  se_type = "stata",
 		  clusters = stateyear,
 		   weights = multiplier,
 		   data = entry_2y_electricity
 		   ) 
 
-	electricity_share_se <-
-		coeftest(lm_electricity_share, vcovCL, cluster = entry_2y_electricity$stateyear, type = "HC1")
 		
 	entry_2y_gen_dmy <- 
 		entry_2y_final_minimal %>%
@@ -417,26 +376,15 @@ industry_median_avg_pci_se <-
 		       self_gen_dmy = ifelse(self_generated_electricity_kwh > 1, 1, 0)
 		       )
 
-	lm_self_gen <-
-		lm(
-		   self_gen_dmy ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year),
-		   weights = multiplier,
-		   data = entry_2y_gen_dmy
-		   )
-
-	lmrob_self_gen <- lm_robust(
-		   self_gen_dmy ~ avg_shortage_2y,
-		   fixed_effects = ~ as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year),
+	lmrob_self_gen <- 
+		lm_robust(
+			  self_gen_dmy ~ avg_shortage_2y,
+			  fixed_effects = ~ as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
 		   weights = multiplier,
 		   data = entry_2y_gen_dmy,
 		   se_type = "stata",
 		   clusters = stateyear
 		   )
-
-	self_gen_se <- lm_self_gen %>%
-		coeftest(vcovCL, cluster = entry_2y_gen_dmy$stateyear, type = "HC1")
-
-
 
 #################################################################
 ##                        CREATE TABLES                        ##
@@ -445,59 +393,28 @@ industry_median_avg_pci_se <-
 # MAX PCI MINIMAL ----------------------------------------------
 max_pci_robust <- 
 	lm_robust(
-	  max_pci ~ avg_shortage_2y,
-	  fixed_effects = ~ as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year),
+	  max_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
 	  weights = multiplier,
 	  clusters = stateyear,
 	  data = entry_2y_final_minimal,
 	  se_type = "stata"
 	  )  
-
-lm_max_pci <- 
-	lm(
-	   max_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year), 
-	   weights = multiplier,
-	   data = entry_2y_final_minimal
-	)
-
-lm_max_pci <- 
-	lm(
-	   max_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year), 
-	   weights = multiplier,
-	   data = entry_2y_final_minimal
-	)
-
-nrow_max_pci <- nrow(entry_2y_final_minimal)
-
-max_pci_se <- 
-	coeftest(lm_max_pci, vcovCL, cluster = entry_2y_final_minimal$stateyear, type = "HC1")
 
 # AVG PCI MINIMAL ----------------------------------------------
 avg_pci_robust <- 
 	lm_robust(
-	avg_pci ~ avg_shortage_2y,
-	  fixed_effects = ~ as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year),
+	avg_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d),
 	  weights = multiplier,
 	  clusters = stateyear,
 	  data = entry_2y_final_minimal,
 	  se_type = "stata"
 	  )  
-
-lm_avg_pci <- 
-	lm(
-	   avg_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year), 
-	   weights = multiplier,
-	   data = entry_2y_final_minimal
-	)
-
-nrow_avg_pci <- nrow(entry_2y_final_minimal)
 
 # LAV ALLE DE REGRESSIONER DER BRUGES I OUT-TABELLEN OM TIL LM ROBUST
 
 lmrob_max_pci <- 
 	lm_robust(
-	   max_pci ~ avg_shortage_2y,
-	   fixed_effects = ~ as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year), 
+	   max_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d), 
 	   clusters = stateyear,
 	   se_type = "stata",
 	   weights = multiplier,
@@ -506,8 +423,7 @@ lmrob_max_pci <-
 
 lmrob_avg_pci <- 
 	lm_robust(
-	   avg_pci ~ avg_shortage_2y,
-	   fixed_effects = as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2year), 
+	   avg_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production) + as.factor(nic98_2d), 
 	   clusters = stateyear,
 	   se_type = "stata",
 	   weights = multiplier,
@@ -516,8 +432,7 @@ lmrob_avg_pci <-
 
 lmrob_median_avg_pci <- 
 	lm_robust(
-	   median_ind_all_avg_pci ~ avg_shortage_2y,
-	   fixed_effects = as.factor(state_name) + as.factor(initial_production), 
+	   median_ind_all_avg_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production), 
 	   weights = multiplier,
 	   clusters = stateyear,
 	   se_type = "stata",
@@ -526,22 +441,24 @@ lmrob_median_avg_pci <-
 
 lmrob_median_max_pci <- 
 	lm_robust(
-	   median_ind_all_max_pci ~ avg_shortage_2y,
-	   fixed_effects = as.factor(state_name) + as.factor(initial_production), 
+	   median_ind_all_max_pci ~ avg_shortage_2y + as.factor(state_name) + as.factor(initial_production), 
 	   weights = multiplier,
 	   clusters = stateyear,
 	   se_type = "stata",
 	   data = entry_2y_final_minimal
 	) 
+
 plant_entry_table_path <- here("doc/tables/plant_entry/entry_minimal.tex")
 
-
+# book
+library(texreg)
 texreg(
        l = list(lmrob_max_pci, lmrob_avg_pci, lmrob_median_max_pci, lmrob_median_avg_pci, lmrob_self_gen, lmrob_electricity_share),
         custom.model.names = c("$C^{max}_{f}$", "$C_{f}$", "$C^{max}_{ind}$", "$C_{ind}$", "Self-gen (1)", "Electricity rev share"),
-      custom.coef.names = c("$\\bar{S}_{s,t}$"),
+       custom.coef.names = c(NA, "$\\bar{S}_{s,t}$"),
        include.ci = FALSE,
        file = plant_entry_table_path,
+      omit.coef = "(factor)|(ranef)",
        booktabs = TRUE,
        fontsize = "small",
        table = FALSE,
