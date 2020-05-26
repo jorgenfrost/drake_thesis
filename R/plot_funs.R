@@ -9,19 +9,33 @@
 #' @export
 
 plot_disruptions <- function(es_ls, fit, gdp_cap, write_to) {
-  
+ 
+
+      write_to = file_out("./doc/figures/introduction_disruption_plot.pdf")
+eci_tbl <- read_csv("/home/post/drake_project/data/external/oec/eci_hs4_hs96_98-18.csv")
+
+library(countrycode)
+es_ls = readd("es_int_ls")
+eci_tbl <- eci_tbl %>% 
+	gather(-c(`Country ID`, `Country`), key = year, val = eci) %>%
+	clean_names(case = "snake") %>%
+	mutate(country_code = countrycode(country, origin = "country.name", destination = "iso3c"),
+	       year = as.numeric(year)) %>%
+	mutate(iso3c = country_code) %>%
+	select(year, eci, iso3c)
+
   # Fitness data (already cleaned)
-  fit_tbl <- fit %>%
-    filter(type == "country" & iteration == max(iteration)) %>%
-    rename(iso3c = id) %>%
-    select(
-      year, 
-      iso3c,
-      fitness = val
-    ) %>%
-    mutate(ln_fitness = log(fitness))
-  
-  
+#  fit_tbl <- fit %>%
+#    filter(type == "country" & iteration == max(iteration)) %>%
+#    rename(iso3c = id) %>%
+#    select(
+#      year, 
+#      iso3c,
+#      fitness = val
+#    ) %>%
+#    mutate(ln_fitness = log(fitness))
+#  
+ gdp_cap <- readd("gdp_cap_tbl") 
   # GDP per capita data (already cleaned)
   gdp_cap_tbl <- gdp_cap %>%
     select(
@@ -33,16 +47,16 @@ plot_disruptions <- function(es_ls, fit, gdp_cap, write_to) {
   
   # Add GDP/cap and fitness to each ES block ------------------
   # Version with NA values.
-  add_vars <- function(df, fit = fit_tbl, gdp_cap = gdp_cap_tbl) {
+  add_vars <- function(df, eci = eci_tbl, gdp_cap = gdp_cap_tbl) {
     df <- df %>% 
       drop_na() %>% # drop NA values
       group_by(iso3c) %>% 
-      filter(year < max(fit$year)) %>%
+      filter(year < max(eci$year)) %>%
       filter(year == max(year)) %>%
-      left_join(fit, by = c("iso3c", "year")) %>%
+      left_join(eci, by = c("iso3c", "year")) %>%
       left_join(gdp_cap, by = c("iso3c", "year")) %>%
       ungroup() %>%
-      mutate(fit_na = ifelse(is.na(ln_fitness), 1, 0) %>% as.character())
+      mutate(eci_na = ifelse(is.na(eci), 1, 0) %>% as.character())
     
     return(df)
   }
@@ -74,11 +88,11 @@ plot_disruptions <- function(es_ls, fit, gdp_cap, write_to) {
     x.text = "GDP/cap, ln", 
     y.text = " ",
     point.size = 2,
-    color.var = "ln_fitness",
+    color.var = "eci",
     title.text,
     xlimits = c(6.5, 10),
     gradient_cols = c("#a50f15", "#ffffbf", "#253494"),
-    legend.text = "Fitness, ln"
+    legend.text = "ECI"
   ) {
     
     
@@ -95,7 +109,7 @@ plot_disruptions <- function(es_ls, fit, gdp_cap, write_to) {
       size = point.size,
       color = color.var,
       add = "reg.line",
-      shape = "fit_na",
+      shape = "eci_na",
       add.params = list(color = "black"),
     ) %>% 
       ggpar(
@@ -109,7 +123,7 @@ plot_disruptions <- function(es_ls, fit, gdp_cap, write_to) {
       # gradient_color(gradient_cols) +
       scale_color_gradientn(colours = gradient_cols, na.value = "gray") +
       scale_shape_manual(values = c(20, 4)) +
-      guides(shape = FALSE, color = guide_colorbar(label = FALSE, ticks = FALSE)) +
+      guides(shape = FALSE) +
       scale_x_continuous(limits = xlimits)
     
     return(out_plot)
@@ -161,8 +175,9 @@ plot_disruptions <- function(es_ls, fit, gdp_cap, write_to) {
     gifts_plot,
     ncol = 3, nrow = 2, common.legend = TRUE, legend = "bottom"
   ) 
-  
-  ggsave(plot = return_plot, filename = here(write_to))
+ return_plot 
+
+  ggsave(plot = return_plot, filename = here(write_to), height = 17, units = "cm")
   
   return(return_plot)
   
@@ -231,7 +246,7 @@ plot_gdp_cap_fitness <- function(fit, gdp_cap, resource_rents, ref_year, write_t
       ), 
       label.x = c(-4, -1),
       label.y = c(10, 7.5),
-      size = 5
+      size = 7
     )
   
   ggsave(plot = return_plot, filename = here(write_to))

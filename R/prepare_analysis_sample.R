@@ -32,7 +32,6 @@ exclude_states <- c(
 
 # Add plant level data -----------------------------------------------
 
-# TODO: add other vars
 
 plant_tbl <-
 	plant_tbl %>% 
