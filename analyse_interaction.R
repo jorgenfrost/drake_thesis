@@ -357,7 +357,8 @@ lm_robust_max_pci_input_short <-
 		se_type = "stata"
 	    )
 
-lm_robust_avg_pci_input_short <- lm_robust(
+lm_robust_avg_pci_input_short <-
+	lm_robust(
 	formula = log(adjusted_revenue) ~ avg_pci + input_avg_shortage + avg_pci * input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
 		weights = multiplier,
 		clusters = stateyear,
@@ -365,11 +366,37 @@ lm_robust_avg_pci_input_short <- lm_robust(
 		se_type = "stata"
 	    )
 
+## ----------------------------------- MUST HAVE PRODUCTS --------------------------
+analysis_sample_base <- analysis_sample %>% filter(wage_share_flag == 0) %>% filter(avg_total_employees > 0) %>%
+	mutate(self_gen_dmy = ifelse(self_generated_electricity_kwh > 0, 1, 0)) 
+
+analysis_sample3 <- analysis_sample_base %>%
+	filter(!is.na(adjusted_revenue)) %>%
+	select(year, dsl, adjusted_revenue, wage_share_revenue, self_gen_dmy, avg_total_employees, stand_production_costs, net_gdp_cap, state_name, nic98_2d, multiplier, max_pci, avg_pci, input_avg_shortage, avg_shortage, stateyear, base_year_dmy, total_electricity_consumed_kwh, electricity_qty_cost_flag, input_share_products) %>%
+	drop_na()
+
+lm_robust_max_pci_input_short_must_have_prod <- 
+	lm_robust(
+		formula = log(adjusted_revenue) ~ max_pci + input_avg_shortage + max_pci * input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
+		weights = multiplier,
+		data = analysis_sample3 %>% filter(input_avg_shortage < 1),
+		clusters = stateyear,
+		se_type = "stata"
+	    )
+
+lm_robust_avg_pci_input_short_must_have_prod <-
+	lm_robust(
+	formula = log(adjusted_revenue) ~ avg_pci + input_avg_shortage + avg_pci * input_avg_shortage + wage_share_revenue + as.factor(self_gen_dmy) + avg_total_employees + stand_production_costs + net_gdp_cap + as.factor(state_name) + as.factor(year) + as.factor(nic98_2d),
+		weights = multiplier,
+		clusters = stateyear,
+		data = analysis_sample3 %>% filter(input_avg_shortage < 1),
+		se_type = "stata"
+	    )
 filtered_shortage_tbl <- here("doc/tables/filtered_input_shortage.tex")
 
 texreg(
-       l = list(lm_robust_max_pci_input_short, lm_robust_avg_pci_input_short),
-        custom.model.names = c("(1)", "(2)"),
+       l = list(lm_robust_max_pci_input_short, lm_robust_avg_pci_input_short, lm_robust_max_pci_input_short_must_have_prod, lm_robust_avg_pci_input_short_must_have_prod),
+        custom.model.names = c("(1)", "(2)", "(3)", "(4)"),
       custom.coef.names = c(NA, "$C^{max}_{f}$", "Supply shortage", "Wage/rev share", "Self-gen (1)", "Number of employees", "Production costs (z)", "State NDP/cap", "$C^{max}_{f}$ $\\times$ Supply shortage", "$C_{f}$", "$C_{f}$ $\\times$ Supply shortage"),
        omit.coef = "(nic)|(year)|(state)",
        include.ci = FALSE,
@@ -379,3 +406,27 @@ texreg(
        table = FALSE,
        use.packages = FALSE
        )
+
+# CREATE HISTOGRAMS
+
+red_blue <- c("#a50f15", "#253494")
+
+hist_max_samp <-
+	ggplot(analysis_sample2 %>% uncount(multiplier), aes(x =max_pci)) +
+	geom_histogram(color = red_blue[1], fill = "white") +
+	facet_wrap(~ year) + 
+	theme_pubr() +
+	xlab(TeX('$C^{max}_{f}$')) +
+	scale_y_continuous(limits = c(0, 10000), breaks = seq(0, 10000, by = 2500))
+
+hist_avg_samp <-
+	ggplot(analysis_sample2 %>% uncount(multiplier), aes(x =avg_pci)) +
+	geom_histogram(color = red_blue[2], fill = "white") +
+	facet_wrap(~ year) + 
+	theme_pubr() +
+	xlab(TeX('$C_{f}$')) +
+	scale_y_continuous(limits = c(0, 10000), breaks = seq(0, 10000, by = 2500))
+
+
+ggsave(plot = hist_max_samp, here("doc/figures/histogram_interaction_max_sample.pdf"))
+ggsave(plot = hist_avg_samp, here("doc/figures/histogram_interaction_avg_sample.pdf"))

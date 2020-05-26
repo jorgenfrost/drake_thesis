@@ -456,16 +456,45 @@ The first column in the table presents the base model (1) without any of the com
 
 If complex production processes are punished more severely by interruptions, we would expect that electricity shortages in their supply chain would be more costly to the revenue of plants as you move up in the complexity distribution.
 
-This is precisely the picture that emerges in tables \ref{tab:interaction_avg_pci} and \ref{tab:interaction_max_pci}. SOMETHING MORE ABOUT THE HYPOTHESIS TEST.
+This is precisely the picture that emerges in tables \ref{tab:interaction_avg_pci} and \ref{tab:interaction_max_pci}. Four points are worth highlightting.
 
+First, the coefficient of complexitiy on the log revenues is positive, as expected. The effect size is very small, though. Without controlling for shortages, the marginal effect of one unit increase in $C_{f}$ (which is very large, given that PCI values are standardized to a global mean of zero) is associated with an increase in real price revenues of a plant between 4\% and 15\% (depending on the complexity metric). 
+
+Second, the Shortage variable is not a significant predictor of revenues at all, except as a mediator for the effect of complexity. This is suprising given size of estimates found in the previous literatur. Given that the added explanatory power of adding any of the variables is essentially zero, it is possible that the revenue impact of shortages drowns in the noisy model. 
+
+Third, and most important for the question at hand, is that the Supply shortage has the most significant effect on revenues, both in itself and as interaction on plant complexity. The interaction term between Supply shortage 
+
+
+The input shortage varible is highly skewed for a few observations (~30). In column (1) and (2) of table \ref{tab:filtered_input} I remove all the observation that have an Supply shortage value of above 1 (which would indicate that plants use more than all of their revenue on inputs they source from a state that has a Shortage value of 1 - that is, no electricity available at all) and run the two main regressions again. Column (3) and (4) in the same table further limits the sample to only include plants that list at least one input, no matter its share of their revenues. Just removing the ~ 30 observations increases the importance of both the Supply shortage variable and its mitigating effect on plant complexity: (C original mode: CxS = -0.52, S = -1.49; Cm: CmxS -.42, S = -1.42, Nu: CxS
+
+However, the mean value of the Supply shortage is very small so any interpretations about larger changes should be done very carefully.
 
 - The explained variance changes almost nothing, so the effect is very small. 
 - Der er ingen effect kun af shortages. Der er dog effekt af hhv PCI og input shortages or interaction effects mellem PCI og input shortages, og det er det vigtigeste.
 - The result is robust to both the centered and uncenterd interaction.
 - Table ? presents the main result again, but removing a few factories with an extremely outsized supply-shortage value
 
-FROM HERE, NOT DONE
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/histogram_interaction_avg_sample}
+	 \caption{Distribution of $C_f$}
+         \label{fig:interaction_sample_avg}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/histogram_interaction_max_sample}
+	 \caption{Distribtuion of $C^{max}_{f}$}
+         \label{fig:interaction_sample_max}
+     \end{subfigure}
+     \caption{Distribution of factories by complexity for the sample used in the main analysis on the interaction between Shortage and complexity.}
+        \label{fig:interaction_sample}
+\end{figure}
 
+
+FROM HERE, NOT DONE
 
 - To avoid that any result assigned to the interaction between complexity and supply shortages is driven by the revenue share of inputs a plant uses, I also run a version of the analysis with controls for the share of the purchase value of intermediate input products in total revenues. I present this in table \ref{tab:interaction_wage_input} column (2).
 
@@ -540,7 +569,7 @@ Conversely, if B3 is negative, then the more positive X2 is, the more negative t
 \label{sub:longterm}
 
 % ------------ WRITING ------------ 
-I know turn to the effect of longer-run shortages on the distribution of factories. Are plants with a more complex production output less likely to be constructed in states that have unreliable electricity? 
+I now turn to the effect of longer-run shortages on the distribution of factories. Are plants with a more complex production output less likely to be constructed in states that have unreliable electricity? 
 
 The ASI asks plants when the first year of production is. This makes it possible to date the entry of the plant, and match it with the Shortage variable. While the productive capital in the manufacturing sector, like factory machinery, is presumably relatively static and product specific, there is no guarantee that a plant produces the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry.
 
