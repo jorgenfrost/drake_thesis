@@ -111,6 +111,8 @@ The first question explores how electricity shortages interact with production s
 \section{Background}%
 \label{sec:background}
 
+- SE ABERASI FOR "ESTIMATED EXTRA COST OF SELF GENERATING ELECTRICITY"
+
 Some introduction.
 
 TODO: Development and background of electricity shortages in India
@@ -416,9 +418,37 @@ I present the results from the two specified regressions, as well as some altern
 	\label{fig:shortage_dist}
 \end{figure}
 
-\newpage 
-
 \subsubsection{Electricity shortages and long-run changes}\label{sub:entry_emp_strat}
+
+I now turn to the effect of longer-run shortages on the distribution of factories. Are plants with a more complex production output less likely to be constructed in states that have unreliable electricity? The analysis described here constitutes the test for hypothesis $H5_0$: if the rolling two-year average state level shortage, $\bar{S}$, is significantly associated with the complexity of new plants in the state, I reject the null hypothesis. 
+
+The ASI asks plants when they had first year of commercial production. This makes it possible to date the entry of the plant, and match it with the state shortage variable $S$. While the productive capital in the manufacturing sector, like factory machinery, is presumably relatively static and product specific, there is no guarantee that a plant produces the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry. 
+
+Since I do not have across-year plant indicators, lumping all plants that is introduced during my sample means that there is a risk of observing the same factories again and again. This entails that it is possible that any results is being driven by factories correlating with themselves. I therefor limit the analysis to observing factories exactly 2 years after their reported inaugural production (no overlap).\footnote{Estimates were slightly smaller, but essentially the same, when using plants observed three years after entry instead.} This allows plants to have a year getting started, but is not so far removed at that observations of plant-characteristics at entry is unlikely to hold.
+
+Essentially, this analysis asks: how is the complexity of plants observed two years after their initial year of production (reported, but not observed) related to the average electricity shortage in the year of their initial production and the year before? For instance, if a plant observed in Assam in 2005 reports that it had its first commercial production in 2003, I assign the average shortage of 2001-2003 in as Assam to this observation. 
+
+As before, I use robust standard errors and cluster by state-years. To account for the concerns about downward biased standard errors due to serial correlation discussed in \cite{bertrand_how_2004} (that is, if some effect "contained" the shortage outcomes carries over to other years), I also cluster by state as a robustness check.
+
+I test hypothesis $H5_0$ in two configurations: a minimal and an expanded model. As before, let $C_{f,i,s,t}$ be the complexity of a plant $f$ with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. I repeat all of the following analyses using $C^{max}$ as well. I then define $\bar{S}_{s,t}$ as the average shortage in the year of entry and the year prior in state $s$.\footnote{It is worth noting that I define the lagged shortage as the average value of the $S_{s,t}$ variable across the years, not the ratio between the average availability and demand over the period (since, presumably, producers won't be interested in overall power capacity, only the amount they are short).} $R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{i}$ represents industry indicators. While I would prefer use industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages), the (relatively) few observations means that some state-industry-entry year groups becomes very small. 
+
+As before, I only display the coefficient I'm interested in. The regression equation then takes the form:
+
+\begin{equation}
+\label{eqn:entry}
+C_{f,i,s,t} = \beta_{\bar{S}} \bar{S}_{s,t} + R_{s} + T_{t} + I_{i,t} 
+\end{equation}
+
+Here, the $\bar{S}_{s,t}$ takes on the role of possible producers' knowledge or expectation of $z$ in the theoretical model discussed earlier. That is, are they willing to start up a factory, if they believe the electrical infrastructure is poor?
+
+I also test using a more expansive model that controls for various factors that could have an "attraction" effect on the entry of plants at the state-level. While most of the differences between states should be caught in the fixed effects, I now allow for variance in the share of the population that are working age (15-60), the share of people with at least a secondary education completed, the growth of the state economy and the total size of the state economy. 
+
+
+
+- VIGTIG POINTE: Average shortage målet kan ses som et udtryk for matching effekten. Complex faactories bliver ikke lagt i høj-shortage stater.
+
+
+If the coeffecient for the two-year average state electricity shortage $\bar{S}$, $\beta_{\bar{S}}$ is significantly associated with the complexity values of new plants in both the minial and the expanded model, I reject hypothesi $H5_0$.
 
 
 \section{Data}%
@@ -482,7 +512,7 @@ Distribution of xx in 2010.
 
 The shortage observations depends on an official estimation of the non-shortage demand and is likely to be affected by measurement error. To confirm that the energy data is meaningful, I run a series of simple regression tests to "ground thruthed" microdata on the experience of manufacturing firms and on individual households. 
 
-The World Bank periodically conducts enterprise surveys in a range of countries. These surveys cover a broad variety of indicators on the production environment of firms, including perceived challenges and quality of public service provision. Survey data is available for India from 2005 and 2014 \citep{world_bank_enterprise_2020-1,world_bank_enterprise_2020-2}\footnote{The 2005 and 2014 sample covers 2,286 and 7,365 firms, respectively. The 2005 survey does not employ sample weights. For the 2014 survey, I use the strict weighting scheme.}. As shown in table TODO, the shortage variable is a significant predictor (at the p < 0.05 level) of the reported quality of the electricity supply (2005), the severity of electricity quality as a barrier to doing business (2014), the share of electricity generated by firms' own generator (2005, 2014), and whether the manager names electricity supply as the main obstacle to growth (2005, 2012)\footnote{The reason the power quality variable is only listed for 2005 is that the questionnaire have been updated.}.
+The World Bank periodically conducts enterprise surveys in a range of countries. These surveys cover a broad variety of indicators on the production environment of firms, including perceived challenges and quality of public service provision. Survey data is available for India from 2005 and 2014 \citep{world_bank_enterprise_2020-1,world_bank_enterprise_2020-2}\footnote{The 2005 and 2014 sample covers 2,286 and 7,365 firms, respectively. The 2005 survey does not employ sample weights. For the 2014 survey, I use the strict weighting scheme.}. As shown in table \ref{tab:wbes}, the shortage variable is a significant predictor (at the p < 0.05 level) of the reported quality of the electricity supply (2005), the severity of electricity quality as a barrier to doing business (2014), the share of electricity generated by firms' own generator (2005, 2014), and whether the manager names electricity supply as the main obstacle to growth (2005, 2012)\footnote{The reason the power quality variable is only listed for 2005 is that the questionnaire have been updated.}.
 
 \begin{table}
     \caption{World Bank Enterprise Surveys and the Shortage variable}
@@ -497,23 +527,42 @@ The World Bank periodically conducts enterprise surveys in a range of countries.
 
 While there is likely to be some degree of attenuation bias in the shortage variable, it is a significant predictor of electricity quality across firms and time. To add, Alam (2013) use a measure based on nightlight composites to identify blackouts and shows that it is highly correlated with the version of the shortage variable. This suggests that the shortage measurements carry meaningful information on the electricity reliability at the state level.
 
-%%%%%%%%%%%%%%%%%%% 
-The main difficulty in testing the predictions from the framework is in controlling from the other factors that co-move with power quality and plant complexity. In other words: how can I separate an unreliable power supply from other factors influencing the sophistication of plants. 
 
-- Is complexity related to: total cost of production, input share, electricity 
-
-- SE ABERASI FOR "ESTIMATED EXTRA COST OF SELF GENERATING ELECTRICITY"
-
-- Lav summary statistics over electricity use for plants.
-TODO: I conduct three anaylses. First, I examine the relationshiop between the performance of a plant, its complexity, and yearly variation in shortages. In a similar manner, I examine the relationship between the shortage contained in the plant's supply-chain (measured at the industry level). Finally, I look at how the characteristics of plants vary with the previous (two, three) years shortage at the state level. For the analysis using deflated revenues, I use a limited sample of 2000-2011.\footnote{Which is within the range of years all population-wide variables are observed.} 
 
 \subsection{Interaction between shortages and complexity}%
 \label{sub:regressions}
 
 Table \ref{tab:interaction_avg_pci} presents the result from the regressions (column (4) and (6)) as well as a number of alternatives. Table \ref{tab:interaction_max_pci} presents the same results, but using $C^{max}$ in place of $C$. I discuss the implications for my hypotheses in order.
 
-\subsubsection{Hypothesis $H1_0$}
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/histogram_interaction_avg_sample}
+	 \caption{Distribution of $C_f$}
+         \label{fig:interaction_sample_avg}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/histogram_interaction_max_sample}
+	 \caption{Distribtuion of $C^{max}_{f}$}
+         \label{fig:interaction_sample_max}
+     \end{subfigure}
+     \caption{Distribution of factories by complexity for the sample used in the main analysis on the interaction between Shortage and complexity.}
+        \label{fig:interaction_sample}
+\end{figure}
 
+\subsubsection{Minimal model}%
+\label{sub:minimal_model}
+
+\subsubsection{Association between}
+
+\begin{enumerate}
+
+	\item Hypotheses $H1_0$, $H2_0$, and $H3_0$: revenues, complexity and shortage:
+
+\end{enumerate}
 
 The first column in the table presents the base model (1) without any of the complexity- or shortage terms. Column (2) adds plant complexity, column (3) adds state Shortage, and column (5) switches Shortage with the Supply shortage varible.
 
@@ -538,25 +587,6 @@ However, the mean value of the Supply shortage is very small so any interpretati
 - Der er ingen effect kun af shortages. Der er dog effekt af hhv PCI og input shortages or interaction effects mellem PCI og input shortages, og det er det vigtigeste.
 - The result is robust to both the centered and uncenterd interaction.
 - Table ? presents the main result again, but removing a few factories with an extremely outsized supply-shortage value
-
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/histogram_interaction_avg_sample}
-	 \caption{Distribution of $C_f$}
-         \label{fig:interaction_sample_avg}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/histogram_interaction_max_sample}
-	 \caption{Distribtuion of $C^{max}_{f}$}
-         \label{fig:interaction_sample_max}
-     \end{subfigure}
-     \caption{Distribution of factories by complexity for the sample used in the main analysis on the interaction between Shortage and complexity.}
-        \label{fig:interaction_sample}
-\end{figure}
 
 
 FROM HERE, NOT DONE
@@ -630,65 +660,11 @@ Conversely, if B3 is negative, then the more positive X2 is, the more negative t
 	\end{center}
 \end{table}   
 
-\subsection{Does shortages discourage the entry of complex plants?}%
+\subsection{Does shortages discourage the entry of complex plants?}
 \label{sub:longterm}
+I now present the results from the empirical analysis in \ref{sub:entry_emp_strat}.
 
-I now turn to the effect of longer-run shortages on the distribution of factories. Are plants with a more complex production output less likely to be constructed in states that have unreliable electricity? The analysis described here constitutes the test for hypothesis $H5_0$: if the rolling two-year average state level shortage, $\bar{S}$, is significantly associated with the complexity of new plants in the state, I refect the null hypothesis. 
-
-The ASI asks plants when the first year of production is. This makes it possible to date the entry of the plant, and match it with the state shortage variable $S$. While the productive capital in the manufacturing sector, like factory machinery, is presumably relatively static and product specific, there is no guarantee that a plant produces the same product at the time of survey and the time of the inaugural production. This means that the plant complexity observered is not necessarily the plant complexity at entry. 
-
-Since I do not have across-year plant indicators, lumping all plants that is introduced during my sample means that there is a risk of observing the same factories again and again. This entails that it is possible that any results is being driven by factories correlating with themselves. I therefor limit the analysis to observing factories exactly 2 years after their reported inaugural production (no overlap).\footnote{Estimates were slightly smaller, but essentially the same, when using plants observed three years after entry instead.} This allows plants to have a year getting started, but is not so far removed at that observations of plant-characteristics at entry is unlikely to hold.
-
-Essentially, this analysis asks: how is the complexity of plants observed two years after their initial year of production (reported, but not observed) related to the average electricity shortage in the year of their initial production and the year before? For instance, if a plant observed in Assam in 2005 reports that it had its first commercial production in 2003, I assign the average shortage of 2001-2003 in as Assam to this observation. 
-
-As before, I use robust standard errors and cluster by state-years. To account for the concerns about downward biased standard errors due to serial correlation discussed in \cite{bertrand_how_2004} (that is, if some effect "contained" the shortage outcomes carries over to other years), I also cluster by state as a robustness check.
-
-It is worth noting that I define the lagged shortage as the average value of the $S_{s,t}$ variable across the years, not the ratio between the average availability and demand over the period (since, presumably, producers won't be interested in overall power capacity, only the amount they are short). 
-
-I test hypothesis $H5_0$ in two configurations: a minimal and an expanded model. As before, let $C_{f,i,s,t}$ be the complexity of a plant $f$ with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. I repeat all of the following analyses using $C^{max}$ as well. I then define $\bar{S}_{s,t}$ as the average shortage in the year of entry and the year prior in state $s$. $R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{i}$ represents industry indicators. While I would prefer use industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages)\footnote{Results are robust to changing from industry-by-year to just industry.}, the (relatively) few observations means that some state-industry-entry year groups becomes very small. 
-
-As before, I only display the coefficient I'm interested in. The regression equation then takes the form:
-
-\begin{equation}
-\label{eqn:entry}
-C_{f,i,s,t} = \beta_{\bar{S}} \bar{S}_{s,t} + R_{s} + T_{t} + I_{i,t} 
-\end{equation}
-
-Here, the $\bar{S}_{s,t}$ takes on the role of possible producers' knowledge or expectation of $z$ in the theoretical model discussed earlier. That is, are they willing to start up a factory, if they believe the electrical infrastructure is poor?If the coeffecient for the two-year average state electricity shortage $\bar{S}$, $\beta_{\bar{S}}$ is significantly associated with the complexity values of new plants, I reject hypothesi $H5_0$.
-
-Limiting the analysis to only plants observed a set amount of time af their initial production naturally limits the sample size - from around 500,000 to around 20,000\footnote{Since I don't use the adjusted revenues in this analysis, I can include my full sample of factories.}. Figure \ref{fig:new_entry_sample} show that some states are reduced to very few observations. For my main analysis, I run my analysis excluding the four least represented states (Chandirgarh, Manipur, Nagaland, and Sikkim). I  repeated all the findings when using the full sample. It is worth noting that in figure, there is no evidence of increasing left-skew in the distribution of complexity as time moves forward. This suggests that the effect is not just driven by all factories getting more complex with time (so that plant entries in later years carry the significance). To make sure of this, I rerun the analysis with a variable that indicates the median and mean complexity of all plants entering in the given year (not reported). This control does not change any of the results.
-
-I also test a more expansive model that controls for various factors that could have an "attraction" effect on the entry of plants at the state-level. While most of the differences between states should be caught in the fixed effects, I now allow for variance in the share of the population that are working age (15-60), the share of people with at least a secondary education completed, the growth of the state economy and the total size of the state economy. I also  
-
-- VIGTIG POINTE: Average shortage målet kan ses som et udtryk for matching effekten. Complex faactories bliver ikke lagt i høj-shortage stater.
-
-% ----------- NOTES ---------------
- - TODO results: One of the issues is that the industry a plant belongs to explains a ton of the variance in complexity (see column 1). This entails that whether or not complexity ...
-
- - TODO: Remember Importance on including higher education.
-
- - TODO: Remember finding about the impact of industries.
-For this reason I present both the minimal and maximal model with and without including the industry fixed-effects.
-
-- TODO: ... This question is similar in spirit to the work in \cite{allcott_how_2016} and \cite{abeberese_electricity_2017}. Both studies use some instrument for electricity (outages and prices) to meausre the choice of production technology. While also using a more recent set of plants and different controls, the main advantage of the approach in this paper is that I examine the sophistication of the output of production processes instead of the aggreagate measures used in those papers. For instance, while \cite{abeberese_electricity_2017} uses the machinery-to-labor ratio to measure how plants change in response to prices on electricity, there are many way such a change can express itself. 
-
-- To make sure that results are not driven by India getting more complex .. (DONE, not important)
-
-Remains significant under: 
- - changing the control from industry-year to industry as a whole,
- - changing the clustering
- - Adding a predictor on the mean or median complexity in all plants entering in the given year (to control plants not just all getting more complex over time)
-In column 3 and 4 in table \ref{tab:plant_entry_pci} I change the dependent variable to median plant complexity within a given industry. In the table, industry values are calculated using all plants across all years. When chacning 
-Setting instead the explained variable as the average complexity within the industry (among all plants). If this is significant, that would mean that more plants of a specific industry entered.
-
-- om industry: If I change the industry-median to industry-by-year the effec...
-
-
-
-- RESULTS:
-
-The lagged average shortage is 
-
+First a note about the sample size. Limiting the analysis to only plants observed a set amount of time af their initial production naturally limits the sample size substantially - from around 500,000 observations to around 20,000\footnote{Since I don't use the adjusted revenues in this analysis, I can include my full sample of factories.}. Figure \ref{fig:new_entry_sample} show that some states are reduced to very few observations. For my main analysis, I run my analysis excluding the four least represented states (Chandirgarh, Manipur, Nagaland, and Sikkim). All the  findings were repeated when using the full sample. It is also worth noting that in figure, there is no evidence of increasing left-skew in the distribution of complexity as time moves forward. This suggests that the effect is not just driven by all factories getting more complex with time (so that plant entries in later years carry the significance). To make sure of this, I rerun the analysis with a variable that indicates the median and mean complexity of all plants entering in the given year (not reported). This control does not change any of the results.
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
@@ -707,6 +683,22 @@ The lagged average shortage is
      \caption{Distribution of factories in the plant-entry sample (2-year after entry). Some states only have a few factories that are observed after their initial production. However, all results hold after rerunning the tests without the least represented states. The vertical axis is the (unweighted) count of factories with the given $C^{max}_{f}$ in the state/year.}
         \label{fig:new_entry_sample}
 \end{figure}
+
+\subsubsection{Entry of new plants: minimal model ($H5_0$)}
+
+So, do higher average shortages in a state dissuade the entry of factories with a complex production? Table \ref{tab:entry_min} offers some tenative evidence that the previous quality of the electricity supply is in fact associated with which kinds of plants starts producing in a state. Column (1) and (2) shows the results from the minimal model \ref{eqn:entry}. Both the most complex products produced in a plant and the plant's average complexity is positively asssociated with a smaller degree of electricity disruptions. The size of the effect, however, is very small: a one percentage point increase in the the average shortage over the previous years is associated with a 0.006 decrease the PCI of the products a plant produces.
+
+In column (3) and (4), I change the plant-level complexity value with the median complexity of all plants within their two-digit industry code. A negative coefficient would mean here that plants in more complex industries would enter into states with lower average shortages. There is no evidence that this is the case. These columns exclude the industry-fixed effects used in the other columns. Finally, column (5) shows the linear probability that a plant entering into a state with higher average electricity shortages will possess a generator.
+
+It is worth highlighting that the two-digit industry of plants accounts for almost all of the varion explained in the model. This is perhaps unsurprising as we would expect the variation in production complexity to be much greater between different industries than within them. 
+
+\subsubsection{Entry of new plants: expanded model ($H5_0$)}
+Given the large effect of industry-indicators, I also test an expanded model where I exclude indicators for some of the configurations. I now move to this model. Table \ref{tab:entry_max_avg} and \ref{tab:entry_max_max} shows the marginal association between $\bar{S}$ and $C_f$ and $C^{max}$. Column (1)-(3) excludes industry-effects. Again the average electricity shortage retains a robust, but weak, association with the kinds of plants that being production. The result is strongest when adding all controls, including the industry-indicator: keeping equal the share of the population with a secondary education, the share of people in working age, the prosperity of the state, the economic growth in the state, and the size of the total economy, a one percentage point increase in the electricity shortage of the past two years is associated with a 0.009 decrease in the PCI of the most complex products plants produce (and a slightly smaller decrease in the average). Column (5) highlights the importance of the industry the plant belongs to: the models explanatory power barely changes using only the entry year-, state- and industry-fixed effects.
+
+In conclusion, while the quantitative effect is very small, the data show a weak association between the two-year average electricity shortage in a state and the type of factories that enters into operation. Given that this result is robust to a variety of controls, including changing the error-clustering to states (rather than state-year), adding a control for total complexity in India, and a range of different combinations of controls, and using both the most and the average complexity of the products plants produce, I tentatively reject hypothesis $H4_0$: "The association between a plant's complexity and revenues does not change across different levels of supply-chain electricity shortages."
+
+
+
 
 \begin{table} 
 	\begin{center}
@@ -729,7 +721,7 @@ The lagged average shortage is
 			\label{tab:entry_max_max}
 			\input{tables/plant_entry/entry_max_max_pci}
 			\begin{tablenotes} \footnotesize 
-			\item[1] This table presents the results from the model with expanded controls in TODO. The dependent variables in all five columns in the complexity of the most complex product proced by a new plant ($C^{max}_{f,t}$). The independent variables in order: the two-year average state shortage at the time of entry, the share of population that has completed (at minimum) a secondary education, the share of the population between 15 and 60 years old, the natural log of state net domestic product by capita (constant prices), the yearly change in net domestic product by capita (constant prices), the natural log of total state net domestic product (constant prices, divided by 1 mio). Columns (1) through (3) use state- and entry-year fixed effects. Column (4) and (5) also use two-digit industry fixed effects. All standard errors are robust and clustered by state-year.
+			\item[1] This table presents the results from the model of new plants with expanded controls. The dependent variables in all five columns in the complexity of the most complex product proced by a new plant ($C^{max}_{f,t}$). The independent variables in order: the two-year average state shortage at the time of entry, the share of population that has completed (at minimum) a secondary education, the share of the population between 15 and 60 years old, the natural log of state net domestic product by capita (constant prices), the yearly change in net domestic product by capita (constant prices), the natural log of total state net domestic product (constant prices, divided by 1 mio). Columns (1) through (3) use state- and entry-year fixed effects. Column (4) and (5) also use two-digit industry fixed effects. All standard errors are robust and clustered by state-year.
 			\end{tablenotes}
 		\end{threeparttable}
 	\end{center}
@@ -743,7 +735,7 @@ The lagged average shortage is
 			\label{tab:entry_max_avg}
 			\input{tables/plant_entry/entry_max_avg_pci}
 			\begin{tablenotes} \footnotesize 
-			\item[1] This table presents the results from the model with expanded controls in TODO. The dependent variables in all five columns in weighted average complexity of new plants ($C_{f,t}$). The independent variables in order: the two-year average state shortage at the time of entry, the share of population that has completed (at minimum) a secondary education, the share of the population between 15 and 60 years old, the natural log of state net domestic product by capita (constant prices), the yearly change in net domestic product by capita (constant prices), the natural log of total state net domestic product (constant prices, divided by 1 mio). Columns (1) through (3) use state- and entry-year fixed effects. Column (4) and (5) also use two-digit industry fixed effects. All standard errors are robust and clustered by state-year.
+			\item[1] This table presents the results from the model on new plants with expanded controls. The dependent variables in all five columns in weighted average complexity of new plants ($C_{f,t}$). The independent variables in order: the two-year average state shortage at the time of entry, the share of population that has completed (at minimum) a secondary education, the share of the population between 15 and 60 years old, the natural log of state net domestic product by capita (constant prices), the yearly change in net domestic product by capita (constant prices), the natural log of total state net domestic product (constant prices, divided by 1 mio). Columns (1) through (3) use state- and entry-year fixed effects. Column (4) and (5) also use two-digit industry fixed effects. All standard errors are robust and clustered by state-year.
 			\end{tablenotes}
 		\end{threeparttable}
 	\end{center}
@@ -762,8 +754,17 @@ The lagged average shortage is
 \section{Discussion}%
 \label{sec:discussion}
 
-\subsection{Findings}%
+- TODO: ... This question is similar in spirit to the work in \cite{allcott_how_2016} and \cite{abeberese_electricity_2017}. Both studies use some instrument for electricity (outages and prices) to meausre the choice of production technology. While also using a more recent set of plants and different controls, the main advantage of the approach in this paper is that I examine the sophistication of the output of production processes instead of the aggreagate measures used in those papers. For instance, while \cite{abeberese_electricity_2017} uses the machinery-to-labor ratio to measure how plants change in response to prices on electricity, there are many way such a change can express itself. 
+
+\subsection{Implications of findings}%
 \label{sub:findings}
+
+- TODO: The main difficulty in testing the predictions from the framework is in controlling from the other factors that co-move with power quality and plant complexity. In other words: how can I separate an unreliable power supply from other factors influencing the sophistication of plants. 
+
+- Is complexity related to: total cost of production, input share, electricity 
+
+- Lav summary statistics over electricity use for plants.
+TODO: I conduct three anaylses. First, I examine the relationshiop between the performance of a plant, its complexity, and yearly variation in shortages. In a similar manner, I examine the relationship between the shortage contained in the plant's supply-chain (measured at the industry level). Finally, I look at how the characteristics of plants vary with the previous (two, three) years shortage at the state level. For the analysis using deflated revenues, I use a limited sample of 2000-2011.\footnote{Which is within the range of years all population-wide variables are observed.} 
 
 - TODO: Brummit et al models basically exactly the effect I'm after.
 

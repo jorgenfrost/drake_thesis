@@ -279,6 +279,8 @@ plot_richest_poorest_exporters <- function(complexity, ref_year, gdp_cap, rpca, 
     mutate(rpca_bin = ifelse(rca_cap >= 1, 1, 0)) %>%
     select(country_code, year, hs_product_code, export_value, rpca_bin)
   
+
+
   complexity_tbl <- complexity %>%
     filter(metric == "complexity") %>%
     filter(year == ref_year & iteration == max(iteration)) %>%
@@ -606,6 +608,6 @@ outplot_match <- ggplot(test_tbl, aes(x = log(max_complexity), color = match)) +
 	theme_pubr() +
 	scale_color_manual(values = c("#a50f15", "#253494"), name = "")
 
-ggsave(plot = outplot_match, filename = here(write_to))
+# ggsave(plot = outplot_match, filename = here(write_to))
 # end
 }
