@@ -6,6 +6,12 @@ Abeberese, A.~B. (2017).
   {{India}}.
 \newblock {\em The Review of Economics and Statistics}, 99(5):839--852.
 
+\bibitem[Abeberese et~al., 2019]{abeberese_productivity_2019}
+Abeberese, A.~B., Ackah, C.~G., and Asuming, P.~O. (2019).
+\newblock Productivity {{Losses}} and {{Firm Responses}} to {{Electricity
+  Shortages}}: {{Evidence}} from {{Ghana}}.
+\newblock {\em The World Bank Economic Review}, (lhz027).
+
 \bibitem[Acemoglu et~al., 2012]{acemoglu_network_2012}
 Acemoglu, D., Carvalho, V.~M., Ozdaglar, A., and Tahbaz-Salehi, A. (2012).
 \newblock The network origins of aggregate fluctuations.
@@ -66,11 +72,22 @@ Carvalho, V.~M. (2014).
 \newblock Load {{Generation Balance Report}}.
 \newblock Technical report, {Central Electricity Authority}, {New Delhi}.
 
+\bibitem[{CEA}, 2013]{cea_planwise_2013}
+{CEA} (2013).
+\newblock Planwise {{Capacity Addition}}.
+\newblock Technical report, {Central Electricity Authority}, {New Delhi}.
+
 \bibitem[Chakravorty et~al., 2014]{chakravorty_does_2014}
 Chakravorty, U., Pelli, M., and Ural~Marchand, B. (2014).
 \newblock Does the quality of electricity matter? {{Evidence}} from rural
   {{India}}.
 \newblock {\em Journal of Economic Behavior \& Organization}, 107:228--247.
+
+\bibitem[{Fisher-Vanden} et~al., 2015]{fisher-vanden_electricity_2015}
+{Fisher-Vanden}, K., Mansur, E.~T., and Wang, Q.~J. (2015).
+\newblock Electricity shortages and firm productivity: {{Evidence}} from
+  {{China}}'s industrial firms.
+\newblock {\em Journal of Development Economics}, 114:172--188.
 
 \bibitem[Frenken et~al., 2007]{frenken_related_2007}
 Frenken, K., Van~Oort, F., and Verburg, T. (2007).
@@ -78,12 +95,23 @@ Frenken, K., Van~Oort, F., and Verburg, T. (2007).
   Growth}}.
 \newblock {\em Regional Studies}, 41(5):685--697.
 
+\bibitem[Grainger and Zhang, 2017]{grainger_impact_2017}
+Grainger, C.~A. and Zhang, F. (2017).
+\newblock {\em The {{Impact}} of {{Electricity Shortages}} on {{Firm
+  Productivity}}: {{Evidence}} from {{Pakistan}}}.
+\newblock Policy {{Research Working Papers}}. {The World Bank}.
+
 \bibitem[Hartmann et~al., 2017]{hartmann_linking_2017-1}
 Hartmann, D., Guevara, M.~R., {Jara-Figueroa}, C., Aristaran, M., and Hidalgo,
   C.~A. (2017).
 \newblock Linking {{Economic Complexity}}, {{Institutions}} and {{Income
   Inequality}}.
 \newblock {\em World Development}, 93:75--93.
+
+\bibitem[Hausmann and Hidalgo, 2011]{hausmann_network_2011}
+Hausmann, R. and Hidalgo, C.~A. (2011).
+\newblock The network structure of economic output.
+\newblock {\em Journal of Economic Growth}, 16(4):309--342.
 
 \bibitem[Hausmann et~al., 2013]{hausmann_atlas_2013}
 Hausmann, R., Hidalgo, C.~A., Bustos, S., Coscia, M., Simoes, A., and Yildrim,
@@ -122,6 +150,11 @@ Jones, C.~I. (2011).
 Kremer, M. (1993).
 \newblock The {{O}}-{{Ring Theory}} of {{Economic Development}}.
 \newblock {\em The Quarterly Journal of Economics}, 108(3):551--575.
+
+\bibitem[McRae, 2015]{mcrae_infrastructure_2015}
+McRae, S. (2015).
+\newblock Infrastructure quality and the subsidy trap.
+\newblock {\em American Economic Review}, 105(1):35--66.
 
 \bibitem[Min et~al., 2017]{min_whose_2017-2}
 Min, B., O'Keeffe, Z., and Zhang, F. (2017).
@@ -196,8 +229,8 @@ Tacchella, A., Mazzilli, D., and Pietronero, L. (2018).
 
 \bibitem[{World Bank}, 2020d]{world_bank_world_2020-1}
 {World Bank} (2020d).
-\newblock World {{Development Indicators}}: {{GDP}} per capita, {{PPP}}
-  (constant 2011 international \$).
+\newblock World {{Development Indicators}}: {{GDP}}, {{PPP}} (constant 2011
+  international \$).
 \newblock https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD.
 
 \bibitem[{World Bank}, 2020e]{world_bank_world_2020}
@@ -205,5 +238,11 @@ Tacchella, A., Mazzilli, D., and Pietronero, L. (2018).
 \newblock World {{Development Indicators}}: {{Total}} natural resources rents
   (\% of {{GDP}}).
 \newblock https://data.worldbank.org/indicator/NY.GDP.TOTL.RT.ZS.
+
+\bibitem[Zhang, 2018]{zhang_dark_2018}
+Zhang, F. (2018).
+\newblock In the {{Dark}}: {{How Much Do Power Sector Distortions Cost South
+  Asia}}?
+\newblock page 261.
 
 \end{thebibliography}

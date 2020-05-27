@@ -5,46 +5,48 @@ The style file: apalike.bst
 A level-1 auxiliary file: setup/temp_title.aux
 A level-1 auxiliary file: setup/listofcontents.aux
 Database file #1: setup/collection.bib
+Warning--there's a number but no volume in abeberese_productivity_2019
 Warning--empty journal in adam_economic_2019
-You've used 37 entries,
+Warning--empty journal in zhang_dark_2018
+You've used 44 entries,
             1935 wiz_defined-function locations,
-            687 strings with 9988 characters,
-and the built_in function-call counts, 13627 in all, are:
-= -- 1366
-> -- 505
-< -- 24
-+ -- 188
-- -- 164
-* -- 1146
-:= -- 2414
-add.period$ -- 112
-call.type$ -- 37
-change.case$ -- 265
-chr.to.int$ -- 33
-cite$ -- 38
-duplicate$ -- 500
-empty$ -- 954
-format.name$ -- 213
-if$ -- 2609
+            719 strings with 10987 characters,
+and the built_in function-call counts, 16103 in all, are:
+= -- 1615
+> -- 588
+< -- 30
++ -- 218
+- -- 190
+* -- 1343
+:= -- 2852
+add.period$ -- 134
+call.type$ -- 44
+change.case$ -- 313
+chr.to.int$ -- 40
+cite$ -- 47
+duplicate$ -- 601
+empty$ -- 1129
+format.name$ -- 250
+if$ -- 3092
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 31
-newline$ -- 187
-num.names$ -- 112
-pop$ -- 195
+missing$ -- 38
+newline$ -- 222
+num.names$ -- 133
+pop$ -- 233
 preamble$ -- 1
-purify$ -- 267
+purify$ -- 315
 quote$ -- 0
-skip$ -- 384
+skip$ -- 463
 stack$ -- 0
-substring$ -- 1030
-swap$ -- 37
-text.length$ -- 1
+substring$ -- 1193
+swap$ -- 49
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 216
-warning$ -- 1
-while$ -- 120
+type$ -- 256
+warning$ -- 3
+while$ -- 141
 width$ -- 0
-write$ -- 472
-(There was 1 warning)
+write$ -- 563
+(There were 3 warnings)

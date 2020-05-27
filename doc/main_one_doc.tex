@@ -37,6 +37,8 @@
 
 \begin{document}
 
+
+
 % \include{setup/titlepage}
 
 \include{setup/temp_title}
@@ -48,32 +50,17 @@
 % - Limitations, scope
 % - Structure
 
- - FINDINGS INDTIL VIDERE:
- - Significant interaction between input shortages and revenues for complex factories. 
- - Significant finding in the relationship between the average shortages 2 and 3 years earlier and the the complexity of new plants 
-
- THE NEGATIVE EFFECT suggest that in high disruption enviroments more complex production can be LESS profitable. This could essentially act as "attractor" towards non-complex industry in the same vein as a poverty trap.
-
-
 \section{Introduction}\label{sec:introduction}
-
-TODO: HIGHLIGHT: It is to my knowledge the first time the role of supply networks have been used to study the impact of electricity shortages.
-
-TODO: Restructure introduction
-
-TODO: Write up research aims/questions
-
-TODO: Underline why economic complexity is important in development context.
 
 TODO: Update structure of thesis
 
-TODO: Use phrase like: using methods from network science and ...
+The products produced in rich countries are very different from the products produced in poor countries. Why? There is a growing empirical literature showing that the difference between countries' economic sophistication, defined by the kinds of products they produce, explain large variation in GDP per capita (see figure \ref{fig:framework-eci-gdp}) and growth rates \citep{tacchella_dynamical_2018}, however, very little empirical evidence examines the micro-foundations behind these differences.
 
-The products produced in rich countries are very different from the products produced in poor countries. Why? While there is a gorwing empirical literature showing that the difference between countries' economic sophistication explain large variation in GDP per capita (see figure \ref{fig:framework-eci-gdp}) and growth rates \citep{tacchella_dynamical_2018}, very little empirical evidence examines the micro-foundations behind these differences. 
+From the literature on economic complexity and product upgrading, we know that the productive capabilities in an economy is an important predictor of economic growth \citep{hausmann_network_2011}. However, despite open markets and vast access to information, developing economy uptake to more sophisticated production have been a slow, and path dependent process \citep{hidalgo_product_2007}.
 
-We know from theoretical work that under certain conditions, quite small changes in the ? can have large effects on... ? To add, ..
+At the same time, the access to reliable electricity is often highlighted as one of the key challenges facing industrial production in less developed economies. The approach taken to quantify this effect is usually based on production stoppages at the unit level (plants, factories or firms). In this paper, I propose a pathway between a more disruptive production environment and the level of sophistication in the economy. Specifically, I argue that only taking into account the effect of production failures at the plant level underestimates the true effect of a disruptive environment on production networks and incentives.
 
-This paper examines the ability of electricity interruptions in the production environment to explain the complexity of products made at the plant level in India between 2000 and 2016. The mechanism is simple. If more complex products require more intermediate inputs or more steps in production, interruptions or failures in production processes punish them harder than simpler ones. If these disruption-costs are punitive enough, investors will put their money elsewhere and producers will choose less complex products. Given that electricity is an important input in manufacturing -  most factories cannot produce anything without running lights, machines, and motors - an unreliably supply could significantly reduce the productivity of a plant.
+The mechanism is simple. If more complex products require more intermediate inputs or more steps in production, interruptions or failures in production processes punish them harder than simpler ones. If these disruption-costs are punitive enough, investors will put their money elsewhere and producers will choose less complex products. Given that electricity is an important input in manufacturing -  most factories cannot produce anything without running lights, machines, and motors - an unreliably supply could significantly reduce the productivity of a plant. To test for this effect, I examine the ability of electricity interruptions in the production environment to explain the complexity of products made at the plant level of in India between 2000 and 2016. 
 
 \begin{figure}[htpb]
 	\centering
@@ -82,14 +69,13 @@ This paper examines the ability of electricity interruptions in the production e
 	\label{fig:disruption-fig}
 \end{figure}
 
-The role of electricity in production inefficiencies have recently drawn the attention of researchers. Two India-specific patterns are worth highlighting: the importance of the quality of electricity, rather than just electricity alone, and the evidence on output-costs of electricity shortages. \cite{samad_benefits_2016} and \cite{chakravorty_does_2014} both find improvements in incomes from access to electricity, but much larger income gains from access to quality electricity (from 9.6\% to 17\% and from 9\% to 28.6\%)\footnote{The latter study only non-agricultural incomes.}. \cite{abeberese_electricity_2017} finds that increases in electricity prices reduces the electricity- and machine-intensity of activities, leading to smaller growth in production output. Finally, \cite{allcott_how_2016} finds a 5\% - 10\% reduction in plant-level profits from shortages in electricity, with a lower productivity-penalty due to generator substitution. The approach taken in this paper proposes a way to unify these observations. Unreliable electricity punishes more complex plants and improvements in quality have positive externalities on the local production, and a more complex manufacturing sector has positive effects on local incomes. Similarly, the relatively small output-penalty observed by \cite{allcott_how_2016} could mask production choices into simpler and lower-complexity products.
-
 The approach taken in this paper is primarily related to three strands of literature. First, the literature of economic complexity and the sophistication of an economy's capability base  (\citealp{frenken_related_2007,hausmann_atlas_2013,tacchella_new_2012}). In addition, to develop the relation between production disruptions and product complexity, I draw on O-ring-type effects as modeled in \cite{kremer_o-ring_1993} and \cite{jones_intermediate_2011}, and the recent literature on volatility in production networks \citep{acemoglu_network_2012}. While the latter is mainly concerned with aggregate effect of sectoral shocks, the importance of input-output linkages are equally relevant at the plant level.
 
 \subsection{Aim and research questions}%
 \label{sub:aim_and_research_questions}
-The objective of this research is to explore the relationship between interruptions in the supply of electricity, here taking the role of the more general production interruptions, and the sophistication of manufacturing production. More specifically, I'm interested in whether an uncertain production environment can help explain the difference in economic complexity observed at the factory level. Two overall questions guides the research: 
+The objective of this research is to explore the relationship between interruptions in the supply of electricity, here taking the role of the more general production interruptions, and the sophistication of manufacturing production.
 
+More specifically, I'm interested in whether an uncertain production environment can help explain the difference in economic complexity observed at the factory level. To analyse this effect, I put together an extensive set of data on electricity-, state- and plant-level indicators covering sixteen year across thirty Indian states. Two overall questions guides the research: 
 
 \begin{enumerate}
 
@@ -99,10 +85,12 @@ The objective of this research is to explore the relationship between interrupti
 
 \end{enumerate}
 
-The first question explores how electricity shortages interact with production sophistication at the plant level. The second question adress the impact of this interaction, as it expresses itself in the type of products being made in the economy. In section \ref{sub:methodology} I turn the two research questions into a set of testable hypotheses based on the discussion in the theoretical framework (\ref{sec:production_networks}).
+The first question explores how electricity shortages interact with production sophistication at the plant level. The second question adress the impact of this interaction, as it expresses itself in the type of products being made in the economy. In section \ref{sub:hyp} I turn the two research questions into a set of testable hypothese.
 
 \subsection{Structure of thesis}%
 \label{sub:structure_of_thesis}
+The structure of paper proceeds as follows. I first 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,23 +99,15 @@ The first question explores how electricity shortages interact with production s
 \section{Background}%
 \label{sec:background}
 
-- SE ABERASI FOR "ESTIMATED EXTRA COST OF SELF GENERATING ELECTRICITY"
+In the last few years, India has made enormous strides in expanding the quality of the electricity supply. Since 2018, the electricity grid has reached 100\% coverage of villages and the distance between the average deficit of required power has been reduced to a less than a percent from an overage ov 8.5\% in 2012. This has been in large parts been accomplished a massive expansion in the generative ability of the power sector: between 2007 and 2017 the capacity more than doubled \citep{zhang_dark_2018}. Until recently, however, the electricity sector was plagued by poor market incentives, large technical losses and an a rapidly increasing demand. This has led to endemic shortages during the past decades.
 
-Some introduction.
+There are several reasons behind the persistent shortages. Despite the fact the electricity has been open to private enterprises since the 1991 liberalization, state- and government run companies still accounted for 80\% of electricity generation in 2010 (split 51\% to 29\%), as well as most retail distribution companies. For decades, state-run distribution companies have provided fixed-fee electricity provision to aggricultural consumers. These unmeetered prices are have then been partly paid for be electricity prices for industrial use at almost four times the price \citep{allcott_how_2016}. For many years, this has led to a "quality-subsidy" trap, where distributors provide poor-quality electricity, consumers accept this because of the low price and the public underwrites the losses of the distribution companies \citep{mcrae_infrastructure_2015}. 
 
-TODO: Development and background of electricity shortages in India
+Despite the government subsidies, distribution companies have run with large yearly deficits: between 1992 and 2010, such companies reported a loss of a 61 billion 2004-USD dollars in total \citep{allcott_how_2016}. As an example of the underinvestment in the electricity sector is the "understanding" signed by investors after libralization in 1991 to build 50 gigawatts of power-generation capacity. Of these 50, 4 was build. Similarly, between 1997 and 2007, only half of the 71 gigawatts capacity planned for construction was realized \citep{cea_planwise_2013}. To the under capacity comes a large amount of technical losses. For instance, between 1994 and 2009, Indian thermal plants were offline about 28\% of the time due to forced outages, planned maintenance, and shortages in coal. 
 
-TODO: underinvestment, prices, inefficience, source: Zhang (Out of the Darkness), Allcott et all, Alam (2013)
+In the same period (2000-2016), the size of the Indian economy more than doubled and the population added some 250 million people. Together, the inability for companies to clear the market, underinvestment, rapid population growth, and massive increases in the size of the economy, this led to wide spread shortages during the study period (2000-2016). 
 
-- Current situation:
-IHDS paper (xxx million of people..)
-
-According to Allcott:
-- Infrastructure and subsidy trap (McRae 2015)
-- Secibd reason: underinvestment in the new generation capacity- After 1991 liberation, sigened undertadning of agreeing to build 50 GW pr Gen Cap. Of 71 targetd between 1997 and 2007 only half was buld (CEA paper).
-- Between 1994 and 2009, Indian coal power planrs were offline about 28 \% pfo time due to forced outages, planned maintenance, scoal shortages, other factors. 
-
-According to Abeberese:
+These shortages provide significant barriers to the daily operations of companies. Figure \ref{fig:biggest_obstacle} shows the results from two Enterprise Surveys conducted by the World Bank \citep{world_bank_enterprise_2020-1,world_bank_enterprise_2020-2}. In 2005, electricity is by  While electricity has been overtaken by corruption as the main concern of companies, more than 30\% still perceive that access to power is at least a major obstacle to their operations in 2014.
 
 \begin{figure}[htpb]
 	\centering
@@ -136,25 +116,29 @@ According to Abeberese:
 	\label{fig:biggest_obstacle}
 \end{figure}
 
+\begin{figure}[htpb]
+	\centering
+	\label{fig:shortage_p_dl}
+	\includegraphics[width=1\linewidth]{figures/shortage_p_dl}
+	\caption{There is a significant variation between the shortage of states in a given year, as well as within states across time. On the left is the yearly average shortage in the five most populous states in 2001. The dotted line is period average for each state. On the right is the distribution of yearly shortages for all states.}%
+	\label{fig:shortage_dist}
+\end{figure}
 
+Such pricing industry-agriculture pricing distortions and lack of reliable power is bound to cause production frictions. The importance of electricity in production inefficiencies have recently been documented in several settings at the level of the individual firm \citep{grainger_impact_2017,abeberese_productivity_2019,fisher-vanden_electricity_2015}. 
 
-TODO: plot most populous states by avg shortage and peak shortage
-TODO: above plot but related to economic growth (sep. by base years) (if no obvoius cor. might appear uncorrelated, but lots of ways it can work together)
-TODO: India over time: complexity, growth in GDP, population.
+Two India-specific patterns are worth highlighting here: the importance of the quality of electricity, rather than just electricity alone, and the evidence on output-costs of electricity shortages. \cite{samad_benefits_2016} and \cite{chakravorty_does_2014} both find improvements in incomes from access to electricity, but much larger income gains from access to quality electricity (from 9.6\% to 17\% and from 9\% to 28.6\%)\footnote{The latter study only non-agricultural incomes.}. \cite{abeberese_electricity_2017} finds that increases in electricity prices reduces the electricity- and machine-intensity of activities, leading to smaller growth in production output. Finally, \cite{allcott_how_2016} finds a 5\% - 10\% reduction in plant-level profits from shortages in electricity, with a lower productivity-penalty due to generator substitution.
 
-TODO: Why should we care about complexity?
-
-TODO: Development of complexity/fitness in India + plot change in complexity against change in GDP/cap
-
-% Literature review
-% - Economic complexity
-% - Electricity in India
+The approach taken in this paper proposes a way to unify these observations. If unreliable electricity punishes more complex plants and improvements in quality have positive externalities on the local production, and a more complex manufacturing sector has positive effects on local incomes. Similarly, the relatively small output-penalty observed by \cite{allcott_how_2016} could mask production choices into simpler and lower-complexity products.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Theoretical framework}%
+\section{Litterature and theoretical framework}%
 \label{sec:framework}
+
+\subsection{Electricity and industry}
+\label{sub:elec}
+
 
 \subsection{Product complexity}
 \label{sec:frame-product-complexity}
@@ -186,18 +170,6 @@ This framework has proven to be a strong predictor of economic performance. Figu
 
 The aggregate-level economic complexity is the outcome of a myriad of micro-level decisions, historical conditions, firm decisions. Despite the fact that the economic complexity algortihm explicitely defines aggregate economic complexity as the collection of product complexity, the factors that drive micro-level economic sophistication are not very well understood, and have seen very little empirical study.
 
-\subsection{What drives product sophistication?}%
-\label{sub:what_drives_product_sophistication_}
-
-- Reference product upgrading.
-
-- Highlight why "threshold" (richest/poorest exporters) graph is important.
-
-- Rud 2012: finder at en udviddelse i electricity netowrk øger manufacturing outpuit
-
-- Fisher-Vanden viser at firmaer skrifter til at købe deres inputs. 
-
-
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=\linewidth]{figures/richest_poorest_pci}
@@ -218,52 +190,43 @@ x_i =  (z_i l_i)^{\alpha}(\prod^{n}_{j = 1} x_{ij}^{w_{ij}})^{1 - \alpha}
 
 where $x_i$ is the output of plant $i$, \(l_i\) is the amount of labor hired by plant \(i\) and \(\alpha \in (0, 1)\) is the share of labor in production. \(z_i\) models some risk of production failure (or delay) due to exogenous factors (e.g. fire, theft, power outages, corruption). More accurately, \(z_i\) is one minus the risk of failure. In this paper, the interruption I test is unreliable electricity. \(x_{ij}\) is the amount of the output by plant \(j\) that is used as intermediate input in the production of \(x_i\). \(w_{ij} \geq 0\) is the amount of good \(j\) in the total intermediate input used in the production of good \(i\), and thus represents a sort of production recipe for plant \(i\). I also take \(\sum_j w_{ij} = 1\), i.e. there are constant returns to scale.
 
-
-<<<>>>> TODO
-Taking this model as point of departure, it is possible highlight three important mechanisms in the relationship between interruptions and the complexity of production. I 
-
-1. While risk is applied evenly at the plant level, it increases in the 
-<<<>>> TODO 
-
-
-
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/framework/framework_io_model}
-	\caption{Three stylized input-output configurations in a four sector economy. Each note represents a plant or an economic sector. Arrows show supply relations. The left-most model thus have one plant (4) needing inputs from three other plants (1, 2, 3).}%
+	\caption{Three stylized input-output configurations in a four sector economy. Each node represents a plant or an economic sector. Arrows show supply relations. The left-most model thus have one plant (4) needing inputs from three other plants (1, 2, 3).}%
 	\label{fig:framework-io-model}
 \end{figure}
 
-At the individual plant \(i\), \(z_i\) is the only source of production failure in this model. However, it is important to note that each individual intermediate input (\(x_{ij}\) for \(j = 1, 2, ..., n\)) needed for production is also made at a plant, with its own risk of failure. Thus, a potentially large share of disruptions to plant $i$'s production occur through disruptions in it its supplier network. The left-most graph in figure \ref{fig:framework-io-model} shows this relationship: should plant one fail to deliver, this impacts the productivity of sector 4.
+At the individual plant \(i\), \(z_i\) is the only source of production failure in this model. However, it is important to note that each individual intermediate input (\(x_{ij}\) for \(j = 1, 2, ..., n\)) needed for production is also made at a plant, with its own risk of failure. Thus, a potentially large share of disruptions to plant $i$'s production occur through disruptions in it its supplier network. The left-most graph in figure \ref{fig:framework-io-model} shows this relationship: should plant one fail to deliver, this impacts the productivity of sector four.
 
-The importance of a failure on one of a plants' suppliers depends on how substitutable intermediate inputs are. If the ability of plants to substitute between different types of intermediate inputs are close to 0, the expected output of a factory declines rapidly when \(n\) increases. In the simple case that the output of a factory is just the value of the intermediate inputs and the distribution of \(z\) is equal across factories, the relationship between expected output and the number of inputs \(n\) can be written as \(n\cdot(z^{n})\) and is identical to the O-ring problem in \cite{kremer_o-ring_1993}\footnote{Here it is assumed that failure in a production ruins the whole production for that period. That is, a fire cannot burn only half the production and electricity shortages cannot last just half the period. These assumptions are only relevant for the example, not the general argument.} (see figure \ref{fig:framework-z}).
+The importance of a failure in one of a plants' suppliers depends on how substitutable intermediate inputs are. If the ability of plants to substitute between different types of intermediate inputs are close to 0, the expected output of a factory declines rapidly when \(n\) increases. In the simple case that the output of a factory is just the value of the intermediate inputs and the distribution of \(z\) is equal across factories, the relationship between expected output and the number of inputs \(n\) can be written as \(n\cdot(z^{n})\) and is identical to the O-ring problem in \cite{kremer_o-ring_1993}\footnote{Here it is assumed that failure in a production ruins the whole production for that period. That is, a fire cannot burn only half the production and electricity shortages cannot last just half the period. These assumptions are only relevant for the example, not the general argument.} (see figure \ref{fig:framework-z}).
 
-Substitutability varies naturally between inputs, and specific elasticities is an ongoing research area \citep{brummitt_contagious_2017,carvalho_micro_2014}. Much of the recent research on the propagation of shocks through production networks suggest that, at least in the short term, declines in input availability has a large effect on output for the consuming sector. For instance, using a 2011 earthquake in Japan as an exogenous shock, \cite{boehm_input_2019-1} finds evidence of a near 1-to-1 ratio between input and output losses. This points to elasticities (ability to change one input for another) of intermediate inputs in manufacturing around 0.
+Substitutability varies naturally between inputs, and specific elasticities of input and output losses is an ongoing research area \citep{brummitt_contagious_2017,carvalho_micro_2014}. Much of the recent research on the propagation of shocks through production networks suggest that declines in input availability has a large effect on output for the consuming sector, at least in the short term. For instance, using a 2011 earthquake in Japan as an exogenous shock, \cite{boehm_input_2019-1} finds evidence of a near 1-to-1 ratio between input and output losses. This points to elasticities (ability to change one input for another) of intermediate inputs in manufacturing around 0.
 
-This effect is supported by \cite{barrot_input_2016} who find that firm-specific shocks propagate through production-networks for more specific inputs. If more complex productions require a larger number of intermediate inputs or more specific (less substitutable) inputs, disruptions will punish the output of complex products more. Intuitively this makes sense: more parts goes into a medical imaging equipment than baked goods. Similarly, lenses and microchips are highly specific, while cane sugar could feasibly replace beet sugar.
+This effect is supported by \cite{barrot_input_2016} who find that firm-specific shocks propagate through production-networks for more specific inputs. If more complex production require a larger number of intermediate inputs or more specific (less substitutable) inputs, disruptions will punish the output of complex products more. Intuitively this makes sense: more parts goes into a medical imaging equipment than baked goods. Similarly, lenses and microchips are highly specific, while cane sugar could feasibly replace beet sugar.
 
-A second effect is modeled in the middle graph in figure \ref{fig:framework-io-model}. Here, supply-relationships depend completely on the output of the node at one stage earlier in the production process. This highlights an important mechanisms. If a plant is dependent on the output of a plant, which is again dependent on intermediate inputs, and so on for \(n\) stages, then risks multiply in production chains. The effect of losses in the source sector has (decreasing) knock-on effects throughout the production chain\footnote{Decreasing because not all the value of a production process comes from the input.}. If the outputs at each production state increase in value, which is a reasonable assumption, this means that failures in later stages are more expensive than in earlier ones.
+A second effect is modeled in the middle graph in figure \ref{fig:framework-io-model}. Here, supply-relationships depend completely on the output of the node at one stage earlier in the production process. This highlights an important mechanisms. If a plant is dependent on the output of a plant, which is again dependent on intermediate inputs, and so on for \(n\) stages, then risks multiply in production chains. The effect of losses in the source sector has (decreasing) knock-on effects throughout the production chain\footnote{Decreasing because not all the value of a production process comes from the input.}. If the outputs at each production stage increase in value, which is a reasonable assumption, failures in later stages are more expensive than in earlier ones.
 
-Taken together, the two points highlighed thus far suggests an important path-way between the complexity of plants and interruptions in the production environment.  We would expect more primary production (that is, less complex production) in more disruptive environments if A) more complex products are punished harder by supply-chain unreliability since these products have longer production chains, and B) longer production chains locate their later stages in more reliabile environments. This is corresponds well with the picture in figure \ref{fig:disruption-fig}. 
+Taken together, the two points highlighed thus far suggests an important path-way between the complexity of plants and interruptions in the production environment.  We would expect more primary production (that is, less complex production) in more disruptive environments if A) more complex products are punished harder by supply-chain unreliability since these products have longer production chains, and B) longer production chains locate their later stages in more reliabile environments. This corresponds well with the picture in figure \ref{fig:disruption-fig}. 
 
-Furthermore, since risks propagate through production inputs, the marginal returns to increases in primary inputs (like labor) are higher in high-disruption environments. The risks an individual plant faces scales with increases in the share of intermediate inputs (\(1 - \alpha\)) but not with increases in the share of labor (\(\alpha\)). For instance, the extreme case of \(\alpha = 1\) no intermediate inputs are used and the risk to a plant \(i\)'s production is fully contained in \(z_i\). 
+Furthermore, since risks propagate through production inputs, the marginal returns to increases in primary inputs (like labor) are higher in high-disruption environments. The risks an individual plant faces scales with increases in the share of intermediate inputs (\(1 - \alpha\)) but not with increases in the share of labor (\(\alpha\)). For instance, in the extreme case of \(\alpha = 1\) no intermediate inputs are used and the risk to a plant \(i\)'s production is fully contained in \(z_i\). 
 
-The right most configuration in figure \ref{fig:framework-io-model} models a configuration we would expect to meet in a real economy. Here, the output of node 4 depends directly on sector three, but with sector three's output depending on inputs from two sectors. A shock to sector one, for instance, would in this case be moderated both by sector threes relative dependence on outputs from node one (vs node two), by node three's connection between input and output, and by the degree sector four relies in inputs from sector three.
+The right most configuration in figure \ref{fig:framework-io-model} depicts a configuration we would expect to meet in a real economy. Here, the output of node four depends directly on sector three, but with sector three's output depending on inputs from two sectors. A shock to sector one, for instance, would in this case be moderated both by sector three's relative dependence on outputs from node one (vs node two), by node three's connection between input and output, and by the degree to which sector four relies on inputs from sector three.
 
-A key result in the seminal paper by \cite{kremer_o-ring_1993} is that under certain conditions (when quality is not a substitute for quantity and a production function that looks like the one outlined above) an economy will have a larger aggregate output by matching quality. Quality is Kremer's version of the \(z\) used in this paper. To illustrate the idea of matching, say that two firms make one product product each with same simple output function: output is just equal to the number of inputs, $n$. If production again has $z$ risk failing (and ruining the output), we can write the expected output as $n(z^n)$. Each product is similar in its use of inputs, and there are four suppliers available, two highly reliable \(z_{h}\) and two less so \(z_{l}\). These can be matched or mixed in production. We thus have two ways or organizing the production: $2(z_h^2) + 2(z_l^2)$ or $2(z_l z_h) + 2(z_l z_h)$. If $z_h = 1$ and $z_l = 0.5$, the matched output is 2.5 and the mixed is 2. That is, using the same plants and the same number of inputs we get a 25\% higher outcome by matching\footnote{For a proof that this is always true, we can follow \cite{kremer_o-ring_1993}:
+A key result in the seminal paper by \cite{kremer_o-ring_1993} is that under certain conditions (when quality is not a substitute for quantity and a production function that looks like the one outlined above) an economy will have a larger aggregate output by matching quality in inputs. Quality is Kremer's version of the \(z\) used in this paper. To illustrate the idea of matching, say that two firms make one product product each with same simple output function: output is just equal to the number of inputs, $n$. If production again has $z$ risk of failing (and ruining the output), we can write the expected output as $n(z^n)$. Each product is similar in its use of inputs, and there are four suppliers available, two highly reliable \(z_{h}\) and two less so \(z_{l}\). These can be matched or mixed in production. We thus have two ways or organizing the production: $2(z_h^2) + 2(z_l^2)$ or $2(z_l z_h) + 2(z_l z_h)$. If $z_h = 1$ and $z_l = 0.5$, the matched output is 2.5 and the mixed is 2. That is, using the same plants and the same number of inputs we get a 25\% higher outcome by matching\footnote{For a proof that this is always true, we can follow \cite{kremer_o-ring_1993}:
 \begin{align*}
 	(z_h - z_l)^2 >& 0 \\  z_h^2 + z_l^2 - 2z_h z_l >& 0 \\ z_h^2 + z_l^2 >& 2z_h z_1
 \end{align*}}
 
-  This is an important result for explaining what kinds of products are made in an economy. If production chains match their risk of interruption, even very small difference in the risk of having some kind of production delay can have large effects on where investors and producers choose to place their production infrastructure. The large output penalty to even a few weak links in a production chain suggests that regions could need to reach a certain threshold of production reliability to enter into production of more complex goods. This interpretation is a possible explanation for the pattern seen in figure \ref{fig:framework-least-most}. This effect in turn opens the possibility of an S-curve style effect (see \cite{brummitt_contagious_2017} for a dynamic model of such an effect): as long as a certain floor of reliability is not met in the aggregate economy, even a few weak links limits the incentive for investments in more complex productions. This increases the relative marginal returns on producing more primary and simpler goods, which limits the necessity for fixing disruptions.
+  This is an important result for explaining what kinds of products are made in an economy. If production chains match their risk of interruption, even very small differences in the risk of having some kind of production delay can have large effects on where investors and producers choose to place their production infrastructure. The large output penalty to even a few weak links in a production chain suggests that regions may need to reach a certain threshold of production reliability to enter into production of more complex goods. This interpretation is a possible explanation for the pattern seen in figure \ref{fig:framework-least-most}. This effect in turn opens the possibility of an S-curve style effect (see \cite{brummitt_contagious_2017} for a dynamic model of such an effect): as long as a certain floor of reliability is not met in the aggregate economy, even a few weak links limits the incentive for investments in more complex productions. This increases the relative marginal returns on producing more primary and simpler goods, which limits the necessity for fixing disruptions.
 
-With regards to electricity-driven interruptions, a potentially important caveat is the ability of plants to invest in buffers against disruptions by purchasing a generator. However, generator electricity is more expensive and depreciate over time. This means that substituting away from the central electricity imposes a kind of input-tax on the production.\footnote{It also requires that suppliers upstream from the self-generating factory invest in generators. I don't test for "self-generating" matching in this paper.} In this vain, \cite{abeberese_electricity_2017} finds that higher electricity prices leads to self-selection into the less machine heavy and low-growth activities. This suggests another pathway between economic complexity and electricity quality. 
+With regards to electricity-driven interruptions, a potentially important caveat is the ability of plants to invest in buffers against disruptions by purchasing a generator. However, generator electricity is more expensive and depreciate over time. This means that substituting away from the central electricity supply imposes a kind of input-tax on the production.\footnote{It also requires that suppliers upstream from the self-generating factory invest in generators. I don't test for "self-generating" matching in this paper.} In this vain, \cite{abeberese_electricity_2017} finds that higher electricity prices leads to self-selection into the less machine heavy and low-productivity activities. This suggests another pathway between economic complexity and electricity quality. 
 
 To summarize, I highlight three important interactions between interuptions and economic complexity at the production-level:
 
 \begin{enumerate}
 
-\item Production failures are more costly the longer down the production chain it happens. While some of this effect should be observed in the loss of plant-level revenues due to the higher price of inputs, this value loss will act more in the pre-production choice of where to place production, especially so for firms controlling a larger share of the whole value chain.
+\item Production failures are more costly the longer down the production chain they occur. While some of this effect should be observed in the loss of plant-level revenues due to the higher price of inputs, this value loss will act more in the pre-production choice of where to place production, especially so for firms controlling a larger share of the whole value chain.
 
 \item As the necessary interactions to produce a product increase, small increases in the risk of failure increases the expected cost of output losses exponentially. If the production process is subject to the constraint of very specific inputs, even very small increases in the unreliability of impose quantitatively large output penalties.
 
@@ -298,7 +261,41 @@ Finally, the fith hypothesis relates to the long-run association between interru
 
 For all of the following hypthesis tests I use the standard rejection threshold of95\% (p < 0.05).
 
-In the next section I present how I operationalize the variables used to test the claims above. I detail my empirical strategy to test hypthesis $H1_0$ through $H4_0$ in section \ref{sub:interaction_emp_strat}. I present approach to testing the  long-run changes of $H5_0$ in section \ref{sub:entry_emp_strat}.
+In section \ref{sub:key_variables} I present how I operationalize the variables used to test the claims above. I detail my empirical strategy to test hypthesis $H1_0$ through $H4_0$ in section \ref{sub:interaction_emp_strat}. I present approach to testing the  long-run changes of $H5_0$ in section \ref{sub:entry_emp_strat}.
+
+ \newpage
+
+\section{Data}%
+\label{sub:data}
+
+To perform the tests described in section \ref{sec:emp_strat} I collect a broad set of data on states, manufacturing plants, and socio-economic indicators. I present it here.
+
+\subsection{Economic complexity}%
+\label{sub:international_trade_data}
+I collect data on the complexity of products and countries from the Observatory of Economic Complexity (OEC) \citep{simoes_economic_2011}. They provide highly dissagregated data on the economic complexity of products down to the Harmonized System (HS) six-digit level. Here I use products at the four-digit level, classified by the HS 1996-revision. For details on how the complexity of a product is calculated, see appendix \ref{sub:economic_complexity_appendix}.
+
+\subsection{Electricity shortages}%
+\label{sub:energy_data}
+My data on electricity shortages comes from India's Central Electricity Authority (CEA). The main feature of the dataset is a measure of shortages based on the difference between the observed consumption of electricity and the estimated counterfactual demand. I extract the energy data from the Power Supply Position of States section of the annual Load Generation Balance Reports published by the CEA \citep{cea_load_2009}. Digital versions are only available from 2009-10 at the earliest. For earlier years (1998-2009) I use the dataset constructed by \cite{allcott_how_2016} who worked in collaboration with the CEA to collect, digitize, and clean earlier reports. I then perform an extra step of cleaning up inconsistencies in the early-years set of observations.
+
+\subsection{Manufacturing plants}%
+\label{sub:plant_data}
+I use plant level data from the Annual Survey of Industries (ASI) \citep{mospi_annual_2000-1}. The ASI is the primary source of information on industry in India and is collected annually by the Indian Ministry of Statistics and Programme Implementation (MOSPI). The ASI covers the manufacturing units in the registered sector. All registered factories with more than 100 employees (the ``census scheme'') is surveyed every year. Smaller factories are randomly sampled every year, stratified by industry and state. For the years 2000-2003, the census scheme covered factories with more than 200 workers. Until 2004 the sampling scheme covered around 1/3 of all registered factories. Since then, it has covered around 1/5. For each plant, the ASI provides comprehensive information relating to input, output, value added, employment, and assets. For any analysis using the ASI data, unless otherwised specified, I use the yearly sample wieghts supplied with the data.
+
+Importantly, the ASI is a unique source of product-level output\footnote{As an example of the granularity of the original data, the ASICC and NPCMS-2011 codes distinguish between detergent paste, detergent cake, and detergent powder. The HS-96 series groups these together at the four digit level, but distinguishes them from "Organic surface-active agents (not soap); surface-active, washing (including auxiliary washing) and cleaning preparations".}. In the earlier years of my sample, products are listed according to their 5-digit ASI Commodity Classification (ASICC) codes, whereas later years are listed in NPCMS-2011 codes. This is a non-trivial change in classification system. Given a different classification structure, products can both change in complexity and importance in output-volume. To assign complexity values to plant's production, I convert the product classifiction into Harmonized System 1996 (HS96) codes through a series of concordances. For a walktrough, see appendix \ref{sec:appendix_data_cleaning}.
+
+There are a couple of important shortcomings when using ASI data. First, while the census schemes covers all factories with more than 100 (or 200) workers and the sampling scheme is a representative sample of smaller factories, they apply only to registered factories. \cite{nagaraj_how_2002} shows that only around 48\% and 43\% of the manufacturing establishments covered in the economic census for 1980 and 1990 appear in the ASI for the given year. Additionally, there is a possibility of underreporting a plant's value-added for tax-avoidance purposes. However, if the non-included factories or the underreported value-added are not strongly related to electricity shortages or to product complexity, the results should not be influenced. Even if these issues persist to years covered by my sample, the ASI covers a significant part of the Indian manufacturing sector.
+
+In the raw dataset (2000-2016) there are 908,010 observations of plants. The data set require substantial cleaning. For example, factories can be observed in the survey even if they have closed down. After cleaning the dataset according to the procedure outlined in appendix \ref{sec:appendix_data_cleaning}, I am left with 565,223 plant-in-year observations between 2000 and 2016 across 30 states\footnote{I also exclude a few state (and state-like regions) due to either A. having very few years included in the CEA reports (Lakshadweep, Damordar Valley Corporation, and Telangana), B. because they are not present in the RBI data (Dadra and Nagar Haveli), and C. if they have too few observations in the final base sample (Andaman and Nicobar Islands, Arunachal Pradesh).}.
+
+\subsection{State-wise variables}%
+\label{sub:state_wise_variables}
+
+I get data on state-wise net domestic product, both total and per capita, from the Reserve Bank of India (RBI). While both series are in constant prices, there are often multiple base-years available. When there are observations for the same year using different base-years, I use the newest. The choice of base is not a completely trivial issue, since there are often substantial differences for estimates for the same year measured against two different base-years. For instance, after rebasing GDP in 1999-2000, the total net domestic gross product increases by almost 65\% compared to the same year (1999-2000) measured using 1993-94 as a base. To make sure that rebasing the GDP does not drive results spuriously, I rerun all the main tests with indicator variables for the base year.
+
+From the RBI I also collect data on the total population in each state, the share of population that lives in urban and rural areas and the population density. These variables are mainly used in robustness checks. These values are only available at the 10-year census intervals (1991-2001-2011). For years in between I create a simple imputation of change between observations evenly spaced out on years. For any analysis using population controls, I exclude years after 2011 (last available census). 
+I also collect individual level microdata on from the Indian National Sample Surveys (NSS) \citep{nsso_national_2000}. The NSS is conducted by the National Sample Survey Office (NSSO) and provides high frequency representative data on a variety of socio-economic outcomes. Surveys are structured as rounds, with each round typically covering a year. From the NSS I clean and aggregate rounds from 2000 through 2015 to state-wise information on the share of the population that has completed at least a secondary education as well as the share of people between 15-60 years of age (which proxies for the size of the potential work force).
+
 
 \newpage
 
@@ -312,7 +309,7 @@ In this section I first develop the variables used to test the hypotheses presen
 \subsubsection{Plant complexity}%
 \label{sub:plant_complexity}
 
-For each plant, I quantify the complexity of its production output as the weighted average the complexity-values for each product it produces. I assign weights based on the value of the production. That is, the complexity for factory \(f\) at time \(t\), \(C_{ft}\), is defined as:
+For each plant, I quantify the complexity of its production output as the weighted average the complexity-values for each product it produces. I assign weights based on the value of the production of each product. That is, the complexity for factory \(f\) at time \(t\), \(C_{ft}\), is defined as:
 
 \[
 C_{ft} = \sum_p PCI_{pt} \frac{O_{fpt}}{\sum_p O_{fpt}}
@@ -320,7 +317,7 @@ C_{ft} = \sum_p PCI_{pt} \frac{O_{fpt}}{\sum_p O_{fpt}}
 
 where \(PCI_{pt}\) is the product complexity of product \(p\) at time \(t\) and \(O_{fpt}\) is the output (in current prices) of factory \(f\) in product \(p\) at time \(t\). The value of the production output is calculated as the net unit sale value of a given product times the amount of units sold. 
 
-This definition potentially underestimates the complexity of multi-product factories that produce complex products, but happen to sell a lot of their low-complex ones. I therefor also include a stricter measure of plant complexity, \(C^{\text{max}}_{ft}\), that uses only the most complex product in a factory's product-portfolio, regardless of the output volume. Alternatively, this measure can be thought as the top-line or "complexity capacity" of a given plant. 
+This definition potentially underestimates the complexity of multi-product factories that produce complex products, but also happens to sell a lot of their low-complexity products. I therefor also include a stricter measure of plant complexity, \(C^{\text{max}}_{ft}\), that uses only the most complex product in a factory's product-portfolio, regardless of the output volume. Alternatively, this measure can be thought of as the top-line or "complexity capacity" of a given plant. 
 
 \[
 C^{\text{max}}_{ft} = max \{ Q_{1t} I_{1ft}, \text{ ... }, Q_{pt} I_{pt} \}
@@ -335,7 +332,7 @@ I_{pft} = \begin{cases}
 \end{cases}
 \]
 
-\subsubsection{Shortage}%
+\subsubsection{Electricity shortage}%
 \label{sub:shortage}
 
 At the end of each year, the Central Electricity Authority (CEA) and the Regional Power Committees estimate the monthly counterfactual quantity that would have been demanded in each Indian state if there were no shortages. This annual figure, listed in current prices, is the assessed demand of electricity in a state (\(A\)). The sum of electricity available from power plants and net imports is the energy available ($E$). The measure of shortages (\(S\) or Shortage) is then defined as the percent of demand in state \(s\) in year \(t\) that is not met:
@@ -355,42 +352,39 @@ The final sample consists of state-year observations of 30 states from 1998-2017
 \subsubsection{Supply chain shortage}%
 \label{sub:supply_chain_quality}
 
-In addition to the CEA estimated electricity shortage, I construct a separate measure of supply-shortages. As discussed in section \ref{sec:production_networks}, using only the plant-state shortage relationship underestimates the importance of connections between different plants in production networks. In order to construct my measure of supply-chain quality, I need to connect three different sets of information. First, I have the disruption-variable, Shortage, on the state-level. Next, I know which plants produce which products, how much of them each contributes, and in which states they are located. Finally, I also have information on what kinds of inputs plants use.
+In addition to the CEA estimated electricity shortage, I construct a separate measure of supply-shortages. As discussed in section \ref{sec:production_networks}, using only the plant-state shortage relationship underestimates the importance of connections between different plants in production networks. In order to construct my measure of supply-chain quality, I need to connect three different sets of information. First, I have the disruption-variable, Shortage, on the state-level. Next, I know which plants produce which products, how much of them each contributes, and in which states they are located. Finally, I also have information on what kinds of inputs plants use. I connect them in two steps.
 
-I connect them in three steps. First, for each year, I find how much of each product is produced in each state. I can assign a weighted "production" shortage-average to each product. Here, plants that contribute more of the total output of a product contribute equally more of their state's shortage-value than smaller plants. Second, for each plant I find the importance of each input. I define this as the purchase-value of the input-product as a share of the plants total revenue. Finally, for each plant in each year, I attach the "product-shortage" value of their inputs. I then multply this value by the product's share of the individual plant's revenues and sum the result for all products for each plant. This has two advantages: it means that products are given importance relative to their importance to the plant, and that the supply-shortage is more important for plants that use more intermediate inputs (because the supply uncertainty is less important for plants that hardly use any inputs) to create their revenue.
-
-More formally, I first find the product-shortage value for product $p$ $S_{p}$ in year $t$ by weighting the shortage of each state by the share of the product that is produced there:
+First, for each year, I find how much of each product is produced in each state. I then assign a weighted "production" shortage-average to each product. Formally, I find the product-shortage value for product $p$ $S_{p}$ in year $t$ by weighting the shortage of each state by the share of the product that is produced there:
 
 \[
-	S_{p,t} =  \sum_s w_{p,s,t} S_{s,t} 
+S_{p,t} =  \sum_s w_{p,s,t} S_{s,t}
 \]
 
-where $w_{p,s,t}$ is the share of product $p$'s total yearly output that is accounted for by state $s$ in year $t$. As before $S_{s,t}$ is the average shortage for state $s$ in year $t$. 
+where $w_{p,s,t}$ is the share of product $p$'s total yearly output that is accounted for by state $s$ in year $t$. As before $S_{s,t}$ is the average shortage for state $s$ in year $t$. It is important to note that this metric does not take into account any spatial relationships. If the supply-linkages is strongly conditioned on geographical closeness this approach will misassign the importance of shortages in industries. That is, I make the implicit assumption that industry-wide output is distributed evenly geographically. Since the ASI does not carry information of where plants source their inputs from, I can't account for this effect.
 
-Next I connect this value to to plants. Let $m_{f,p,t}$ be ration between the amount of product $p$ plant $f$ lists as input (expressed in current prices) divided by the total revenue of plant $f$. The supply shortage value for plant $f$ in ad given year $t$ is then found in $D_{f,t}$ (D for disruption, to distinguish it from $S$): 
+Second, for each plant I find the importance of each input. I define this as the purchase-value of the input-product as a share of the plants total revenue. Then, for each plant in each year, I attach the "product-shortage" value of their inputs. I multiply this value by the product's share of the individual plant's revenues and sum the result for all products for each plant. This has two advantages: it means that products are given importance relative to their importance to the plant, and that the supply-shortage is more important for plants that use more intermediate inputs (because the supply uncertainty is less important for plants that hardly use any inputs) to create their revenue. Formally, let $m_{f,p,t}$ be the ratio between the amount of product $p$ plant $f$ lists as input (expressed in current prices) divided by the total revenue of plant $f$. The supply shortage value for plant $f$ in a given year $t$ is then found in $D_{f,t}$ (D for disruption, to distinguish it from $S$):
 
 \[
-	D_{f,t} = \sum_p m_{f,p,t} S_{p,t}
+D_{f,t} = \sum_p m_{f,p,t} S_{p,t}
 \]
 
-Note that the $m$ values does not necessarily sum to one, since it is weighted by the share of revenues, not by share of all inputs. This means that plants with a smaller share of inputs in their production process will be assigned a smaller supply shortage, even if the product-shortage of the input is high.\footnote{This measure only takes into account downstream effects. Should there also be an effect where factories that has to stop their work becasue shortages result in customers buys less input it should have an effect on supplying industries. However, unless more complex factories are more likely to be situated as a supplier to other factories, it is hard to see how this downstream link would effect plant-complexity.}
-
-It is important to note that this metric does not take into account any spatial relationships. If the supply-linkages is strongly conditioned on geographical closeness this approach will misassign the importance of shortages in industries. That is, I take the implicit assumption that industry-wide output is distributed evenly geographically. Since the ASI does not carry information of where plants source their inputs from, I can't account for this effect.
+Note that the $m$ values does not necessarily sum to one, since it is weighted by the share of revenues, not by share of all inputs. This means that plants with a smaller share of inputs in their production process will be assigned a smaller supply shortage, even if the product-shortage of the input is high.\footnote{This measure only takes into account downstream effects. Should there also be an effect where factories that has to stop their work becasue shortages result in customers buying less input it would have an effect on supplying industries. However, unless more complex factories are more likely to be situated as a supplier to other factories, it is hard to see how this downstream link would effect plant-complexity.}
 
 \subsection{Empirical strategy}\label{sec:emp_strat}
 
-In this section I outline the empirical strategy I use to test hypothesis $H1$ and $H2$ presented above. As a general approach, I use variations over several different specifications of least squares regressions with fixed effects. I present the tests for hypthese $H1$ and $H2$ in \ref{ref:interaction_emp_strat} and \ref{sub:entry_emp_strat}, respectively.
+In this section I outline the empirical strategy I use to test hypothesis $H1$ and $H2$ presented above. As a general approach, I use variations over several different specifications of least squares regressions with fixed effects. I present the tests for hypthese $H1$ and $H2$ in \ref{sub:interaction_emp_strat} and \ref{sub:entry_emp_strat}, respectively.
 
 \subsubsection{Plant revenues, complexity, and electricity shortages}\label{sub:interaction_emp_strat}
 
-One of the key predictions from the discussion in on the relationship between more complex production and disruptions is that electricity shortages at the plant level should affect the plant-revenue more or less equally across complexity level. Disruptions in the supply-chain, however, should not. As the importance of intermediate products in a plant's production increases, especially if they themselves have a long supply line, the lost value of input-supply disruptions increases. In other words, for more complex plants, we would expect that shortages in the supply-chain increases in importance. We can test this relationship by modelling the average revenues of plants, but adding an interaction term between the two different kinds of shortages and complexity. Should this interaction be significant, it suggests that the level of shortages change the effect of complexity on revenues.
+In this section, I describe how I test hypotheses 1 to 4 through a regression analysis.
 
- If it is true that supply chain interruptions is more important for more complex plants is true, I would expect that the interaction between complexity and supply-chain shortage to be significant and negative, but the interaction between the state shortage and complexity is less so\footnote{This assumes that plants don't have the majority of their supply chain in the same state.}. 
+Let $O^{g}_{f,t}$ be the (natural log of) revenue (total gross sales) of a plant $f$ in year $t$ expressed in 2005 constant Rs. This my dependent variable. I add controls for the number of workers employeed by each plant (averaged over a year) $E_{f,t}$, the prosperity in the state (net domestic product per capita, constant prices) $N_{s,t}$, and the share of revenue paid as wages $W_{s,t}$. To make sure revenues are not just driven by large turnovers, I also control for the plant's position in the distribution of total production costs in the year I observe the plant. I use the distribution instead of the actual monetary value because I don't have a reliable deflator for the total production costs\footnote{In contrary to only adjusting prices of plant output, this was unfeasible because it would involve deflating wages, energy inputs, intermediate inputs, etc, seperately.}. I take the Z-score of the total production costs of the plant by by subtracting the average value of observed plants in the same year, and dividing by the standard deviation. I denote this value as $X^{z}_{f,t,i}$. I then add fixed effect controls for state $R_{s}$, year $T_{t}$, two-digit industry $I_i$. Finally, I add my variables of interest: plant complexity $C_{f,t}$ and the two disruption variables, Shortage ($S_{s,t}$) and Supply shortage ($D_{f,t}$). I also include an interaction term between complexity and each of the two electricity shortage variables.
 
-Let $O^{g}_{f,t}$ be the (natural log of) revenue (total gross sales) of a plant $f$ in year $t$ expressed in 2005 constant Rs. This my dependent variable. I add controls for the number of workers employeed by each plant (averaged over a year) $E_{f,t}$, the prosperity in the state (net domestic product per capita, constant prices) $N_{s,t}$, and the share of revenue paid as wages $W_{s,t}$. To make sure revenues are not just driven by large turnovers, I also control for the plant's position in the distribution of total production costs in the year I observe the plant. I use the distribution instead of the actual monetary value because I don't have a reliable deflator for the total production costs\footnote{In contrary to only adjusting prices of plant output, this was unfeasible because it would involve deflating wages, energy inputs, intermediate inputs, etc, seperately.}. I take the Z-score of the total production costs of the plant by by subtracting the average value of observed plants in the same year, and dividing by the standard deviation. I denote this value as $X^{z}_{f,t,i}$. I then add fixed effect controls for state $R_{s}$, year $T_{t}$, two-digit industry $I_i$. Finally, I add plant complexity $C_{f,t}$ and the two disruption variables, Shortage ($S_{s,t}$) and Supply shortage ($D_{f,t}$). I also run a number of different variations using intermediate input share of revenues, electricity intensity (revenue/kWh), and log-forms of the predictors. The main result is not sensitive to any of these alternatives. As an alternative to the weighted complexity $C_{f,t}$ I also present results based on the most complex product produced in a plant, $C^{max}_{f,t}$.
+The interaction term is added to address hypothesis 4 on how supply chain shortages affect the impact of complexity on plant output. One of the key predictions from the discussion on the relationship between more complex production and disruptions is that electricity shortages at the plant level should affect the plant-revenue more or less equally across complexity level. Disruptions in the supply-chain, however, should not. As the importance of intermediate products in a plant's production increases, especially if they themselves have a long supply line, the lost value of input-supply disruptions increases. In other words, for more complex plants, we would expect that shortages in the supply-chain increases in importance. We can test this relationship by modelling the average revenues of plants, but adding an interaction term between the two different kinds of shortages and complexity. If it is true that supply chain interruptions is more important for more complex plants, I would expect that the interaction between complexity and supply-chain shortage is significant and negative, but the interaction between the state shortage and complexity is less so\footnote{This assumes that plants do not have the majority of their supply chain in the same state.}.
 
-I only have a good industry-specific (3-digit) deflator of gross sales up to 2011, meaning that I limit my sample to the plants observed between 2000 and 2011 for the main analysis. I further restrict it by removing the observations that are flagged by the procedure described in appendix \ref{sub:cleaning_annual_survey_of_industries_asi}. This leaves me with some 285,000 observations of plants from 2000 to 2011. Since my shortage variable is applied at the level of states in different years, plants that are observed in the same year and state have potentially correlated errors. To adjust for this I cluster my standard errors by state-years (so that "Jammu and Kashmir in 2009" is one cluster and "Jammu and Kashmir in 2010" is another). 
-To keep at least some legibility, let all the plant-level controls ($E$, $W$, $X^{z}$) be contained in $PLANT$ and the fixed effect indicators ($R$, $T$, $I$) be contained in $FE$. I also display only the three coefficients I'm interested in: the coefficient of complexity on revenues, the coefficiant of electrictiy shortages on revenues, and their interaction. 
+I only have a good industry-specific (3-digit) deflator of gross sales up to 2011, meaning that I limit my sample to the plants observed between 2000 and 2011 for the main analysis. I further restrict it by removing the observations that are flagged by the procedure described in appendix \ref{sub:cleaning_annual_survey_of_industries_asi}. This leaves me with some 285,000 observations of plants from 2000 to 2011. Since my shortage variable is applied at the level of states in different years, plants that are observed in the same year and state have potentially correlated errors. To adjust for this I cluster my standard errors by state-years (so that "Jammu and Kashmir in 2009" is one cluster and "Jammu and Kashmir in 2010" is another).
+
+To keep at least some legibility, let all the plant-level controls ($E$, $W$, $X^{z}$) be contained in $PLANT$ and the fixed effect indicators ($R$, $T$, $I$) be contained in $FE$. I also display only the three coefficients I'm interested in: the coefficient of complexity on revenues, the coefficiant of electrictiy shortages on revenues, and their interaction.
 
 Indexing plants by $f$, years by $t$, and states by $s$ this gives me the full form of my main two main equations:
 
@@ -406,17 +400,9 @@ O^{g}_{f,t,i} = \beta_{comp} C_{f,t} + \beta_{supply} D_{s,t} + \beta_{D\times C
 
 I test for hypothesis $H1_0$, $H2_0$, and $H3_0$ using the coefficient significance test by step-wise adding the variables for complexity ($C$), state-level shortage ($S$), and supply chain shortages ($D$). To be precise, I test the significance of coefficients $\beta_{comp}$, $\beta_{short}$, and $\beta_{supple}$ in explaining the revenues of plants.
 
-For hypothesis $H4_0$, on how supply chain shortages alter the effect of complexity on plant revenue, I turn to the $\beta_{D \times C}$ coefficient. I f $\beta_{D \times C}$ is statistically significant and negative, it suggests as plants supply shortages increase, the added value of a plant being more complex declines. 
+For hypothesis $H4_0$, on how supply chain shortages alter the effect of complexity on plant revenue, I turn to the $\beta_{D \times C}$ coefficient. I f $\beta_{D \times C}$ is statistically significant and negative, it suggests as plants supply shortages increase, the added value of a plant being more complex declines.
 
-I present the results from the two specified regressions, as well as some alternative models, in section \ref{sub:regressions}.
-
-\begin{figure}[htpb]
-	\centering
-	\label{fig:shortage_p_dl}
-	\includegraphics[width=1\linewidth]{figures/shortage_p_dl}
-	\caption{While there is a significant variation between the shortage of states in a given year, for some states the within-state variation is much larger. This has implications for how to analyse the association between shortages and plant sophistication. On the left is the yearly average shortage in the five most populous states in 2001. The dotted line is period average for each state. On the right is the distribution of yearly shortages for all states.}%
-	\label{fig:shortage_dist}
-\end{figure}
+I present the results from the regressions above, as well as some alternative models, in section \ref{sub:regressions}.
 
 \subsubsection{Electricity shortages and long-run changes}\label{sub:entry_emp_strat}
 
@@ -432,7 +418,7 @@ As before, I use robust standard errors and cluster by state-years. To account f
 
 I test hypothesis $H5_0$ in two configurations: a minimal and an expanded model. As before, let $C_{f,i,s,t}$ be the complexity of a plant $f$ with its first year of production in year $t$ indexed by 2-digit NIC industry $i$ and state $s$. I repeat all of the following analyses using $C^{max}$ as well. I then define $\bar{S}_{s,t}$ as the average shortage in the year of entry and the year prior in state $s$.\footnote{It is worth noting that I define the lagged shortage as the average value of the $S_{s,t}$ variable across the years, not the ratio between the average availability and demand over the period (since, presumably, producers won't be interested in overall power capacity, only the amount they are short).} $R_{s}$ and $T_{t}$ represents state and year specific indicator variables. Finally, $I_{i}$ represents industry indicators. While I would prefer use industry-year dummies to control for specific temporal industry trends (like an event or demand - policy, climate, etc - that influences the entry of plants within an industry, but is not related to shortages), the (relatively) few observations means that some state-industry-entry year groups becomes very small. 
 
-As before, I only display the coefficient I'm interested in. The regression equation then takes the form:
+Again, I only display the coefficient I'm interested in. The regression equation then takes the form:
 
 \begin{equation}
 \label{eqn:entry}
@@ -443,75 +429,18 @@ Here, the $\bar{S}_{s,t}$ takes on the role of possible producers' knowledge or 
 
 I also test using a more expansive model that controls for various factors that could have an "attraction" effect on the entry of plants at the state-level. While most of the differences between states should be caught in the fixed effects, I now allow for variance in the share of the population that are working age (15-60), the share of people with at least a secondary education completed, the growth of the state economy and the total size of the state economy. 
 
-
-
-- VIGTIG POINTE: Average shortage målet kan ses som et udtryk for matching effekten. Complex faactories bliver ikke lagt i høj-shortage stater.
-
-
 If the coeffecient for the two-year average state electricity shortage $\bar{S}$, $\beta_{\bar{S}}$ is significantly associated with the complexity values of new plants in both the minial and the expanded model, I reject hypothesi $H5_0$.
 
-
-\section{Data}%
-\label{sub:data}
-
-To perform the tests described in section \ref{sec:emp_strat} a collect a broad section of data on states, manufacturing plants, and socio-economic indicators. I present it here.
-
-\subsection{State-wise variables}%
-\label{sub:state_wise_variables}
-
-I get data on state-wise net domestic product, both total and per capita, from the Reserve Bank of India (RBI). While both series are in constant prices, there are often multiple base-years available. When there are observations for the same year using different base-years, I use the newest. The choice of base isn't a completely trivial issue, since there are often substantial differences for estimates for the same year measured against two different base-years. For instance, after rebasing GDP in 1999-2000, the total net domestic gross product increases by almost 65\% compared to the same year (1999-2000) measured using 1993-94 as a base. To make sure that rebasing the GDP does not drive results spuriously, I rerun all the main tests with indicator variables for the base year.
-
-From the RBI I also collect data on the total population in each state, the share of population that lives in urban and rural areas and the population density. These values are only available at the 10-year census intervals (1991-2001-2011). For years in between I create a simple imputation of change between observations evenly spaced out on years. For any analysis using population controls, I exclude years after 2011 (last available census). They mainly used in robustness checks.
-
-I also collect individual level microdata on from the Indian National Sample Surveys (NSS) \citep{nsso_national_2000}. The NSS is conducted by the National Sample Survey Office (NSSO) and provides high frequency representative data on a variety of socio-economic outcomes. Surveys are structured as rounds, with each round typically covering a year. From the NSS I clean and aggregate rounds from 2000 through 2015 to state-wise information on the share of the population that has completed at least a secondary education as well as the share of people between 15-60 years of age (which proxies for the size of the potential work force).
-
-\subsection{Economic complexity}%
-\label{sub:international_trade_data}
-I collect data on the complexity of products and countries from the Observatory of Economic Complexity (OEC) \citep{simoes_economic_2011}. They provide highly dissagregatd data on the economic complexity of products at down to the Harmonized System (HS) six-digit level. Here I use products at the four-digit level, classified by the HS 1996-revision. For details on how the complexity of a product is calculated, see appendix \ref{sub:economic_complexity_appendix}.
-
-\subsection{Electricity shortages}%
-\label{sub:energy_data}
-My data on electricity shortages comes from India's Central Electricity Authority (CEA). The main feature of the dataset is a measure of shortages based on the difference between the observed consumption of electricity and the estimated counterfactual demand. I extract the energy data from the Power Supply Position of States section of the annual Load Generation Balance Reports published by the CEA \citep{cea_load_2009}. Digital versions are only available from 2009-10 at the earliest. For earlier years (1998-2009) I use the dataset constructed by \cite{allcott_how_2016} who worked in collaboration with the CEA to collect, digitize, and clean earlier reports. I then perform an extra step of cleaning up inconsistencies in the early-years set of observations.
-
-\subsection{Manufacturing plants}%
-\label{sub:plant_data}
-I use plant level data from the Annual Survey of Industries (ASI) \citep{mospi_annual_2000-1}. The ASI is the primary source of information on industry in India and is collected annually by the Indian Ministry of Statistics and Programme Implementation (MOSPI). The ASI covers the manufacturing units in the registered sector. All registered factories with more than 100 employees (the ``census scheme'') is surveyed every year. Smaller factories are randomly sampled every year, stratified by industry and state. For the years 2000-2003, the census scheme covered factories with more than 200 workers. Until 2004 the sampling scheme covered around 1/3 of all registered factories. Since, it has covered around 1/5. For each plant, the ASI provides comprehensive information relating to input, output, value added, employment, and assets, Importantly, the ASI is a unique source of product-level output\footnote{As an example of granularity of the original data, the ASICC and NPCMS-2011 codes distinguish between detergent paste, detergent cake, and detergent powder. The HS-96 series groups these together at the four digit level, but distinguishes them from "Organic surface-active agents (not soap); surface-active, washing (including auxiliary washing) and cleaning preparations".}.
-
-In the earlier years of my sample, products are listed according to their 5-digit ASI Commodity Classification (ASICC) codes, whereas later years are listed in NPCMS-2011 codes. This is a non-trivial change in classification system. Given a different classification structure, products can both change in complexity and importance in output-volume. To assign complexity values to plant's production, I convert the product classifiction into Harmonized System 1996 (HS96) codes through a series of concordances. For a walktrough, see appendix \ref{sec:appendix_data_cleaning}.
-
-There are a couple of important shortcomings when using ASI data. First, while the census schemes covers all factories with more than 100 (or 200) workers and the sampling scheme is a representative sample of smaller factories, they apply only to registered factories. \cite{nagaraj_how_2002} shows that only around 48\% and 43\% of the manufacturing establishments covered in the economic census for 1980 and 1990 appear in the ASI for the given year. Additionally, there is a possibility of underreporting a plant's value-added for tax-avoidance purposes. However, if the non-included factories or the underreported value-added are not strongly related to electricity shortages or to product complexity, the results should not be influenced. Even if these issues persist to years covered by my sample, the ASI covers a significant part of the Indian manufacturing sector.
-
-In the raw dataset (2000-2016) there are 908,010 observations of plants. The data set require substantial cleaning. For example, factories can be observed in the survey even if they have closed down. After cleaning the dataset according to the procedure outlined in appendix \ref{sec:appendix_data_cleaning}, I am left with 565,223 plant-in-year observations between 2000 and 2016 across 30 states\footnote{I also exclude a few state (and state-like regions) due to either A. having very few years included in the CEA reports (Lakshadweep, Damordar Valley Corporation, and Telangana), B. because they are not present in the RBI data (Dadra and Nagar Haveli), and C. if they have too few observations in the final base sample (Andaman and Nicobar Islands, Arunachal Pradesh).}.
 
 \newpage
 
 \section{Analysis and results}%
 \label{sec:analysis_and_results}
- In this section... I first turn the predictions on the relationship between plant comlpexity and electricity interrtuptions from the discsussion in section ... into a set af testable hypothese. Next, I present the analysis and results in the same go. I discuss the findings in section \ref{discussion}.
-
-To sum up the most important implications from...:
-
-1.
-2. 
-3.
-
-Supply chain quality = both max (to test for the threshold-idea) and mean.
-
-HUSK POINTE OM SAMPLE RESTRICTION: Main resutls table is artificially not strong.
-
-I now turn to my analysis and results. I discuss them in section TODO. I first ask some preliminary questions - how vaible is my measure of shortages? How is plant complexity related to production choices? - before turning to the main analysis on if electricity shortages harm complex plants disproportionately. 
-
-DESCRIPTIVES:
-
-Indian complexity over time
-
-Distribution of xx in 2010. 
 
 \subsection{Validity of electricity variable}%
 \label{sub:validity_of_electricity_variable}
 
-The shortage observations depends on an official estimation of the non-shortage demand and is likely to be affected by measurement error. To confirm that the energy data is meaningful, I run a series of simple regression tests to "ground thruthed" microdata on the experience of manufacturing firms and on individual households. 
-
+The shortage observations depends on an official estimation of the non-shortage demand and is likely to be affected by measurement error. To confirm that the energy data is meaningful, I run a series of simple regression tests to "ground thruth" state shortages to microdata on the experience of manufacturing firms and on individual households. 
 The World Bank periodically conducts enterprise surveys in a range of countries. These surveys cover a broad variety of indicators on the production environment of firms, including perceived challenges and quality of public service provision. Survey data is available for India from 2005 and 2014 \citep{world_bank_enterprise_2020-1,world_bank_enterprise_2020-2}\footnote{The 2005 and 2014 sample covers 2,286 and 7,365 firms, respectively. The 2005 survey does not employ sample weights. For the 2014 survey, I use the strict weighting scheme.}. As shown in table \ref{tab:wbes}, the shortage variable is a significant predictor (at the p < 0.05 level) of the reported quality of the electricity supply (2005), the severity of electricity quality as a barrier to doing business (2014), the share of electricity generated by firms' own generator (2005, 2014), and whether the manager names electricity supply as the main obstacle to growth (2005, 2012)\footnote{The reason the power quality variable is only listed for 2005 is that the questionnaire have been updated.}.
 
 \begin{table}
@@ -525,14 +454,12 @@ The World Bank periodically conducts enterprise surveys in a range of countries.
     \end{minipage}
 \end{table}   
 
-While there is likely to be some degree of attenuation bias in the shortage variable, it is a significant predictor of electricity quality across firms and time. To add, Alam (2013) use a measure based on nightlight composites to identify blackouts and shows that it is highly correlated with the version of the shortage variable. This suggests that the shortage measurements carry meaningful information on the electricity reliability at the state level.
-
-
+While there is likely to be some degree of attenuation bias in the shortage variable, it is a significant predictor of electricity quality across firms and time. To add, Alam (2013) use a measure based on nightlight composites to identify blackouts and shows that it is highly correlated with the peak version of the shortage variable. This suggests that the shortage measurements carry meaningful information on the electricity reliability at the state level.
 
 \subsection{Interaction between shortages and complexity}%
 \label{sub:regressions}
 
-Table \ref{tab:interaction_avg_pci} presents the result from the regressions (column (4) and (6)) as well as a number of alternatives. Table \ref{tab:interaction_max_pci} presents the same results, but using $C^{max}$ in place of $C$. I discuss the implications for my hypotheses in order.
+I now present the results from the analysis outlined in section \ref{sub:interaction_emp_strat} on the relationship between plant revenues, electricity shortages, and interruptions in the supply chain. I first address hypotheses $H1_0$, $H2_0$, and $H3_0$. Lastly I present the findings on the interaction effects on plant complexity and electricity shortages in the supply chain ($H4_0$).
 
 \begin{figure}
      \centering
@@ -553,58 +480,47 @@ Table \ref{tab:interaction_avg_pci} presents the result from the regressions (co
         \label{fig:interaction_sample}
 \end{figure}
 
-\subsubsection{Minimal model}%
-\label{sub:minimal_model}
+\subsubsection{Revenues, complexity and shortages ($H1_0$, $H2_0$, and $H3_0$)}
+Table \ref{tab:interaction_avg_pci} and \ref{tab:interaction_max_pci} displays the results from the regression in equation \ref{eqn:int_shortages} and \ref{eqn:int_supply}.
 
-\subsubsection{Association between}
+As for hypothesis $H1_0$, column (1) through (7) shows that the complexity of a plant explains a statistically significant part of the variation on plant revenues, under a range of controls and using both measures of electricity interruption (with and without interactions). Since the adjusted revenues are expressed in their natural log, the coefficients are readily interpreted: without the interaction effects, a one unit increase in PCI of a plant's most complex product is associated with a marginal increse in revenues of 15\% (the equivilient being number being a much more pedestrian 4\% for the average complexity of the plant). Since PCI-values are standardized for each year, a one unit increase means producing products that are one standard deviation more complex. However, given that I test for interaction effects in the next section, one should be careful about interpreting the association between complexity and revenues seperately. 
 
-\begin{enumerate}
+While the explanatory power a plant's complexity adds to model is very small, the association is robust across the different specifications. I reject hypothesis $H1_0$: "Plant level complexity is not associated with higher revenues."
 
-	\item Hypotheses $H1_0$, $H2_0$, and $H3_0$: revenues, complexity and shortage:
+Suprisingly, the state-level Shortage is not found to be significantly associated with changes in plant revenues. I therefor cannot reject hypothesis $H2_0$: "The level of state-wide electricity shortages is not associated with variation in plant revenues." 
 
-\end{enumerate}
+Next I turn to hypothesis $H3_0$. The strongly significant Supply shortage coefficient in Column (5) in table \ref{tab:interaction_avg_pci} and \ref{tab:interaction_max_pci} suggests that marginal increases in interruptions in a plant's suppliers is associated with a loss of plant revenues. I reject hypothesis $H3_0$: "The level of supply-chain electricity shortages is not associated with variation in plant revenues." 
 
-The first column in the table presents the base model (1) without any of the complexity- or shortage terms. Column (2) adds plant complexity, column (3) adds state Shortage, and column (5) switches Shortage with the Supply shortage varible.
+While they are not reported here, I also run a number of different variations using intermediate input share of revenues, electricity intensity (revenue/kWh), and log-forms of the predictors. None of the results reported above is sensitive to any of these alternatives.
 
-If complex production processes are punished more severely by interruptions, we would expect that electricity shortages in their supply chain would be more costly to the revenue of plants as you move up in the complexity distribution.
+In conclusion, I find significant positive associations between marginal increases in the complexity of a plant's production and significant negative associations between marginal increases in the amount of shortages contained in a plants supply-network and its revenues. I don't find a significant relationship between marginal changes in state-level electricity shortage and variations in plant revenue. I therefor reject hypothese $H1_0$ and $H3_0$, but not $H2_0$.
 
-This is precisely the picture that emerges in tables \ref{tab:interaction_avg_pci} and \ref{tab:interaction_max_pci}. Four points are worth highlightting.
+\subsubsection{Interaction between supply-chain shortages and plant complexity ($H4_0$)}
 
-First, and most importantly for the question at hand, is that the coefficient for Supply shortage ( ), for s
+I now turn to the main effect studied in this paper: the relationship between a plant's complexity and supply chain shortages. Again, table \ref{tab:interaction_avg_pci} and \ref{tab:interaction_max_pci} displays the main results. Column (5), (6), and (7) shows the result from using using Supply shortage as control, adding an interaction with complexity, and further adding state-level Shortage as control. The coefficient of the Supply shortage is significant and negative at each step. 
 
-the coefficient of complexitiy on the log revenues is positive, as expected. The effect size is very small, though. Without controlling for shortages, the marginal effect of one unit increase in $C_{f}$ (which is very large, given that PCI values are standardized to a global mean of zero) is associated with an increase in real price revenues of a plant between 4\% and 15\% (depending on the complexity metric). 
+The most important result is in the interaction with either of the complexity measures. The negative complexity $\times$ Supply shortage coefficient means that as the plants get more complex, the negative association between electricity shortages on plant revenues becomes increasingly strong. Analogously, it could be interpreted as when Supply shortages increase, it becomes increasingly less profitable to produce more complex products.
 
-Second, the Shortage variable is not a significant predictor of revenues at all, except as a mediator for the effect of complexity. This is suprising given size of estimates found in the previous literatur. Given that the added explanatory power of adding any of the variables is essentially zero, it is possible that the revenue impact of shortages drowns in the noisy model. 
+To make sure that the result is not just driven by within-state shortages, I run the same analysis using the state-level Shortage. This version of the model is reported in column (4) (with Shortage alone) and column (7) (using Shortage as a control). While the Shortage interaction on $C_f$ is mildly significant in column (4), the fact that it, contrary to the Supply shortage coefficient, is insignificant alone, on $C^{max}$ and as a control for the Supply shortage interaction with $C$ suggests that the result is spurious. 
 
-Third, and most important for the question at hand, is that the Supply shortage has the most significant effect on revenues, both in itself and as interaction on plant complexity. The interaction term between Supply shortage 
+If complex production processes are punished more severely by interruptions, we would expect that electricity shortages in their supply chain would be more costly to the revenue of plants as you move up in the complexity distribution. This is precisely the picture that emerges in table \ref{tab:interaction_avg_pci} and \ref{tab:interaction_max_pci}.  
 
+I further explore the relationship in two ways.
 
-The input shortage varible is highly skewed for a few observations (~30). In column (1) and (2) of table \ref{tab:filtered_input} I remove all the observation that have an Supply shortage value of above 1 (which would indicate that plants use more than all of their revenue on inputs they source from a state that has a Shortage value of 1 - that is, no electricity available at all) and run the two main regressions again. Column (3) and (4) in the same table further limits the sample to only include plants that list at least one input, no matter its share of their revenues. Just removing the ~ 30 observations increases the importance of both the Supply shortage variable and its mitigating effect on plant complexity: (C original mode: CxS = -0.52, S = -1.49; Cm: CmxS -.42, S = -1.42, Nu: CxS
+The theoretical model predicts that while reliance on inputs (namely specific inputs) have multiplying effects on the level of shortage experienced-driven losses, a larger share of labour in production should not have this effect. I would therefor expect that the interaction effect between the wage-share of revenues and Supply shortages to be in the opposite direction: as the level in supply-chain interruptions increase, higher shares of wages to revenue (proxying for labor inputs) will be increasingly positive for plant revenue. Column (1) in table \ref{tab:interaction_wage_input} shows that while the coefficient of wage shares alone remain negatively related to revenues, in the face of supply chain interruptions, the effect is completely reversed.\footnote{I only report the relationship to $C^{max}$, but the outcome is statistically identical for $C$.} I also tests for the relationship between the amount a plant spends on intermediate inputs (as  share of revenue) and the Supply shortage. There is no significant relationship. Given the noisy model, this could be due to a weak effect being lost. It could also, however, highlight the fact that inputs are not alike: some inputs are highliy specific and vulnurable to supply-interruptions, while others are not. Based on the data presented here, it is not possible to make judgements either way.
 
-However, the mean value of the Supply shortage is very small so any interpretations about larger changes should be done very carefully.
+In addition, I run a test with a slightly adjusted sample. The Supply shortage variable is highly skewed for a few observations (around 30). In column (1) and (2) of table \ref{tab:filtered_input} I remove all the observation that have an Supply shortage value of above one. A supply shortage value of more than one would indicate that plants use more than all of their revenue on inputs, and that they source all of these inputs from a state that has a Shortage value of 1 -  that is, no electricity available at all. I run the two main regressions again. Column (3) and (4) in the same table further limits the sample to only include plants that list at least one input, no matter its share of their revenues. Just removing the 32 observations increases the importance of both the Supply shortage variable and its mitigating effect on plant complexity even further. Indeed, from the effect on revenues being stronger than the dampening effect on complexity, the reverse is now observed\footnote{One should be careful making too strong claims about the numerical impact of the shortages, though. Depending on the sample used, the mean value of the Supply shortage variable ranges around 0.04-0.045, with a standard deviation of about the same, meaning that it is very easy to make conclusions on out-of-sample values.}.
 
-- The explained variance changes almost nothing, so the effect is very small. 
-- Der er ingen effect kun af shortages. Der er dog effekt af hhv PCI og input shortages or interaction effects mellem PCI og input shortages, og det er det vigtigeste.
-- The result is robust to both the centered and uncenterd interaction.
-- Table ? presents the main result again, but removing a few factories with an extremely outsized supply-shortage value
+Similarly to the previous section, I repeat the tests with different variations in controls, including electricity intensity (kWh/revenue). I also test the interaction using centered versions of $C$, $C^{max}$ and Supply shortage. None of the results change significantly. 
 
+Together, these results are strongly in line the theoretical predictions. Three effects are worth highlighting. 
 
-FROM HERE, NOT DONE
+\begin{itemize}
+	\item First, the analysis showed a weak- or non-existing relationship between the amount of state-level Shortage and the association of complexity and revenues.
+	\item Second, the analysis found a persistently strong association between higher levels of supply-network shortages and a less positive relationship between plant complexity and revenues.
 
-- To avoid that any result assigned to the interaction between complexity and supply shortages is driven by the revenue share of inputs a plant uses, I also run a version of the analysis with controls for the share of the purchase value of intermediate input products in total revenues. I present this in table \ref{tab:interaction_wage_input} column (2).
-
- - We can further investigate this effect by looking a the other predictions of the discussion in the framework. First, given that state-shortages act at the plant-level and supply-chain shortages act at the input-level, a higher wage-revenue share should act dampening on the effect of Supply shortages on plant revenues. Table \ref{tab:interaction_wage_input} ows the relationship betweem 
-- I only report the results $C^{max}$, but the results from the weighted average were statistically essentially identical.
-
-- As we can see... The respectively positive and negative coefficient of  .. 
-This means that, in this model and on this data, as supply chain shortages increases the more negative the effect of complexity becomes on revenues.
-
-- IMPORTANTLY: B3 = Coefficient, X1 = PCI, X2 = SUPPLY CHAIN SHORTAGE.
-Conversely, if B3 is negative, then the more positive X2 is, the more negative the effect of X1 on Y becomes (or alternatively, the more negative X2 is, the more positive effect of X1 on Y becomes). 
-
-- Med andre ord: Når interaction koefficientent er negative, så desto højere supply chain shortages er, desto mere negativ er effekten af PCI on revenues
-
-- One of the main concerns here, is that I don't have plant identifiers. Without 
+	\item Finally, the association between the share of revenues paid in wages and plant revenues is reversed as the level of Supply shortages increase. This suggest that plants with a high share wages paid relative to revenue are relatively (to other manufacturing plants) less adversely impacted by supply interruptions.
+	\end{itemize}
 
 \begin{sidewaystable}
 	\begin{center}
@@ -660,11 +576,12 @@ Conversely, if B3 is negative, then the more positive X2 is, the more negative t
 	\end{center}
 \end{table}   
 
-\subsection{Does shortages discourage the entry of complex plants?}
+\subsection{Do shortages discourage the entry of complex plants?}
 \label{sub:longterm}
 I now present the results from the empirical analysis in \ref{sub:entry_emp_strat}.
 
-First a note about the sample size. Limiting the analysis to only plants observed a set amount of time af their initial production naturally limits the sample size substantially - from around 500,000 observations to around 20,000\footnote{Since I don't use the adjusted revenues in this analysis, I can include my full sample of factories.}. Figure \ref{fig:new_entry_sample} show that some states are reduced to very few observations. For my main analysis, I run my analysis excluding the four least represented states (Chandirgarh, Manipur, Nagaland, and Sikkim). All the  findings were repeated when using the full sample. It is also worth noting that in figure, there is no evidence of increasing left-skew in the distribution of complexity as time moves forward. This suggests that the effect is not just driven by all factories getting more complex with time (so that plant entries in later years carry the significance). To make sure of this, I rerun the analysis with a variable that indicates the median and mean complexity of all plants entering in the given year (not reported). This control does not change any of the results.
+First, a note about the sample size. Limiting the analysis to only plants observed a set amount of time af their initial production naturally reduces the sample size substantially - from around 500,000 observations to around 20,000\footnote{Since I don't use the adjusted revenues in this analysis, I can include my full sample of factories.}. Figure \ref{fig:new_entry_sample} show that some states are reduced to very few observations. For my main analysis, I run the regression excluding the four least represented states (Chandirgarh, Manipur, Nagaland, and Sikkim). All the  findings were repeated when using the full sample. It is also worth noting that in figure, there is no evidence of increasing left-skew in the distribution of complexity as time moves forward. This suggests that the effect is not just driven by all factories getting more complex with time (so that plant entries in later years carry the significance). To make sure of this, I rerun the analysis with a variable that indicates the median and mean complexity of all plants entering in the given year (not reported). This control does not change any of the results.
+
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
@@ -688,17 +605,14 @@ First a note about the sample size. Limiting the analysis to only plants observe
 
 So, do higher average shortages in a state dissuade the entry of factories with a complex production? Table \ref{tab:entry_min} offers some tenative evidence that the previous quality of the electricity supply is in fact associated with which kinds of plants starts producing in a state. Column (1) and (2) shows the results from the minimal model \ref{eqn:entry}. Both the most complex products produced in a plant and the plant's average complexity is positively asssociated with a smaller degree of electricity disruptions. The size of the effect, however, is very small: a one percentage point increase in the the average shortage over the previous years is associated with a 0.006 decrease the PCI of the products a plant produces.
 
-In column (3) and (4), I change the plant-level complexity value with the median complexity of all plants within their two-digit industry code. A negative coefficient would mean here that plants in more complex industries would enter into states with lower average shortages. There is no evidence that this is the case. These columns exclude the industry-fixed effects used in the other columns. Finally, column (5) shows the linear probability that a plant entering into a state with higher average electricity shortages will possess a generator.
+In column (3) and (4), I change the plant-level complexity value with the median complexity of all plants within their two-digit industry code. A negative coefficient would mean here that plants in more complex industries would enter into states with lower average shortages. There is no evidence that this is the case. These columns exclude the industry-fixed effects used in the other columns. Column (5) shows the linear probability that a plant entering into a state with higher average electricity shortages will possess a generator. Finally, column (6) shows that the electricity/revenue share of new plants is not significantly assocated with the states past shortage.
 
-It is worth highlighting that the two-digit industry of plants accounts for almost all of the varion explained in the model. This is perhaps unsurprising as we would expect the variation in production complexity to be much greater between different industries than within them. 
+It is worth highlighting that the two-digit industry of plants accounts for almost all of the varion explained in the model. This is perhaps unsurprising as we would expect the variation in production complexity to be much greater between different industries than within them. Given the large effect of industry-indicators, I also test an expanded model where I exclude indicators for some of the configurations. I now move to this model.
 
 \subsubsection{Entry of new plants: expanded model ($H5_0$)}
-Given the large effect of industry-indicators, I also test an expanded model where I exclude indicators for some of the configurations. I now move to this model. Table \ref{tab:entry_max_avg} and \ref{tab:entry_max_max} shows the marginal association between $\bar{S}$ and $C_f$ and $C^{max}$. Column (1)-(3) excludes industry-effects. Again the average electricity shortage retains a robust, but weak, association with the kinds of plants that being production. The result is strongest when adding all controls, including the industry-indicator: keeping equal the share of the population with a secondary education, the share of people in working age, the prosperity of the state, the economic growth in the state, and the size of the total economy, a one percentage point increase in the electricity shortage of the past two years is associated with a 0.009 decrease in the PCI of the most complex products plants produce (and a slightly smaller decrease in the average). Column (5) highlights the importance of the industry the plant belongs to: the models explanatory power barely changes using only the entry year-, state- and industry-fixed effects.
+ Table \ref{tab:entry_max_max} and \ref{tab:entry_max_avg} shows the marginal association between $\bar{S}$ and $C_f$ and $C^{max}$ in the model with an expanded group of controls. Column (1)-(3) excludes industry-effects. Again the average electricity shortage retains a robust, but weak, association with the kinds of plants that being production. The result is strongest when adding all controls, including the industry-indicator: keeping equal the share of the population with a secondary education, the share of people in working age, the prosperity of the state, the economic growth in the state, and the size of the total economy, a one percentage point increase in the electricity shortage of the past two years is associated with a 0.009 decrease in the PCI of the most complex products plants produce (and a slightly smaller decrease in the average). Column (5) highlights the importance of the industry the plant belongs to: the models explanatory power barely changes using only the entry year-, state- and industry-fixed effects.
 
-In conclusion, while the quantitative effect is very small, the data show a weak association between the two-year average electricity shortage in a state and the type of factories that enters into operation. Given that this result is robust to a variety of controls, including changing the error-clustering to states (rather than state-year), adding a control for total complexity in India, and a range of different combinations of controls, and using both the most and the average complexity of the products plants produce, I tentatively reject hypothesis $H4_0$: "The association between a plant's complexity and revenues does not change across different levels of supply-chain electricity shortages."
-
-
-
+In conclusion, while the quantitative effect is very small, the data show a weak association between the two-year average electricity shortage in a state and the type of factories that enters into operation. Given that this result is robust to a variety of controls, including changing the error-clustering to states (rather than state-year), adding a control for overall change in production complexity in India, and a range of different combinations of controls, and using both the max and the average complexity of the products plants produce, I tentatively reject hypothesis $H5_0$: "The association between a plant's complexity and revenues does not change across different levels of supply-chain electricity shortages."
 
 \begin{table} 
 	\begin{center}
@@ -743,9 +657,6 @@ In conclusion, while the quantitative effect is very small, the data show a weak
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -753,45 +664,51 @@ In conclusion, while the quantitative effect is very small, the data show a weak
 
 \section{Discussion}%
 \label{sec:discussion}
+In this section I discuss the most important findings from the analyses presented in the previous section, as well as some important limitations.
 
-- TODO: ... This question is similar in spirit to the work in \cite{allcott_how_2016} and \cite{abeberese_electricity_2017}. Both studies use some instrument for electricity (outages and prices) to meausre the choice of production technology. While also using a more recent set of plants and different controls, the main advantage of the approach in this paper is that I examine the sophistication of the output of production processes instead of the aggreagate measures used in those papers. For instance, while \cite{abeberese_electricity_2017} uses the machinery-to-labor ratio to measure how plants change in response to prices on electricity, there are many way such a change can express itself. 
+In section
 
+
+Given the relatively strong association found between a decreasing marginal value of economic complexity as supply-chain shortages increase, this suggest that for at given level of disruption in the production environment, producers can "overshoot" the complexity of their production. In addition, should there exist a higher price of entry into more producing more complex products, the cooling effect on incentives should be multiplied. 
+
+Using a purely theoretical "ball-and-urn"-style model, \cite{brummitt_contagious_2017} show the possibility of such a result. 
+
+In addition, the results presented in this paper suggests that the litterature that estimates the costs to low-quality electricity underestimates two effects. First, there is the unaccounted for electricity disruption in supply chain network. If this effect not included, a supply-driven loss in revenues would go unnoticed in the "treatment"-group and cause downward-biased estimates of the true output penalty to the electricity outages. To my knowledge, this supply chain-effect has not been introduced in literature on electricity costs on manufacturing output.
+
+Secondly, while a few papers explicitly find some change in firm behaviour, like substituting local for imported inputs \cite{fisher-vanden_electricity_2015} or changing the relative share of production inputs \citep{abeberese_electricity_2017}, there is typically no account of the structural effects on what kiinds of new production is introduced into the economy (except for explicitly electricity-related outcomes). If, as the results here seems to indicate (although weakly), there is a matching effect on the kinds of 
+
+
+
+they typically don't take into accout the structural effects of how incentives change given that more ecomplex producers, which are presumed to be better for the economy,are more punished by the shortages than simpler undertakings.
 \subsection{Implications of findings}%
 \label{sub:findings}
 
-- TODO: The main difficulty in testing the predictions from the framework is in controlling from the other factors that co-move with power quality and plant complexity. In other words: how can I separate an unreliable power supply from other factors influencing the sophistication of plants. 
 
-- Is complexity related to: total cost of production, input share, electricity 
-
-- Lav summary statistics over electricity use for plants.
-TODO: I conduct three anaylses. First, I examine the relationshiop between the performance of a plant, its complexity, and yearly variation in shortages. In a similar manner, I examine the relationship between the shortage contained in the plant's supply-chain (measured at the industry level). Finally, I look at how the characteristics of plants vary with the previous (two, three) years shortage at the state level. For the analysis using deflated revenues, I use a limited sample of 2000-2011.\footnote{Which is within the range of years all population-wide variables are observed.} 
 
 - TODO: Brummit et al models basically exactly the effect I'm after.
 
-- TODO: So, what to make of the ?
-
-- TODO: Note that the distribution of inp avg shortage is strange. However, if I remove the more extreme values (probably thos with misreported revenues or inputs), like those above 1 the effect of shortages 
-
-- TODO The results here suggests that the litterature that estimates the cost of having a poor electricity grid underestimates two effects: first there is the "hidden" electricity disruption in supply chain network. To my knowledge, this has not been measured in the literature at all. And second, they typically don't take into accout the structural effects of how incentives change given that more ecomplex producers, which are presumed to be better for the economy,are more punished by the shortages than simpler undertakings.
-
-"hidden" inside 
-
-- TODO: the importance of findings.
 
 - TODO: The lack of weather controls.
 
-- TODO: (on only measureing first order in the supply quality var). However, there is no reason why it should not be possible to construct a network of the ~ 30,000 plants observed each year and the repeatedly weigh their relationship be the production- and supply-weighted shortaged. Essentially, this would be taking the approach I do above, but after the steps I conduct, repeat them using the adjusted production-shortage variable. This would be equvilant to going "one step" back in the supply-chain each time. At the first iteration a plant's (plant A) supply chain quality is only weighted by its suppliers' state-shortage. Next their suppliers' state-shortage is included (through their supply-chain quality value from the first iteration) and discounted by the importance of their relationship to the plant (A). Then the suppliers suppliers influence is included, an so on. Because each step is "filtered" by the relative importance of the supply-relationship (the share of revenue), each additional step would include more plants, but their importance would be (exponentially) smaller for each time you move "up" in the supply chain. 
-
-- As an additional benefit, this plant-plant network could provide valuable information on which products are the most central in the production network - and where they are located - which could be important in guiding government investment in infrastructure. A lower shortage in central products would be markedly more effective in increasing firm performance than less central products \footnote{Although, the granularity of the "shortage" variable (which is now the state-level) would probably need to be finer.}. Unfortunately, it was not possible to finish these calculation within the timeframe of the thesis project.
 
 - Re-write, but good point: While the effect size is rather small and noisy, a rsult like this could help us undertand why the introduction new productiuon knowledge is such a gradual process. If there is is not a threshold of "relability" being met, producers who "jump to far" in the production space will be punished harder than others on. THis can essentially act as an attractor or a cooling effect on longer jumps.
+
+
+ 
+
+
+It is also worth highlighting that my information on the disruption in the supply chain effectively only measures the first "step" up the suppy network. However, there is no reason why it should not be possible to construct a network of the around 50,000 plants observed each year, and then repeatedly weigh their relationship by the production- and supply-weighted shortaged.
+
+Essentially, this would be taking the approach I do above, but after the steps I conduct, repeat them using the adjusted production-shortage variable in place of the state-level shortage. This is equvilant to going "one step" back in the supply-chain each time. At the first iteration, the plant's supply chain quality is only weighted by its suppliers' state-shortage. Next their suppliers' state-shortage is included (through their supply-chain quality value from the first iteration) and discounted by the importance of their relationship to the original plant. Next, the suppliers' suppliers electricity shortage is included, an so on. Because each step is "filtered" by the relative importance of the supply-relationship (the share of revenue), each additional step would include more plants, but their importance would be (exponentially) smaller for each time you move "up" in the supply chain. 
+
+As an additional benefit, such a plant-plant network could provide valuable information on which products are the most central in the production network - and where they are located - which could be important in guiding government investment in infrastructure. A lower shortage in central products would be markedly more effective in increasing firm performance than less central products \footnote{Although, the granularity of the "shortage" variable (which is now the state-level) would probably need to be finer.}. Unfortunately, it was not possible to finish these calculation within the timeframe of the thesis project.
 
 \subsection{Limitations}
 \label{sec:org979560b}
 I now present a few of the limitations of the results presented above. 
 
-\subsubsection{Basic research design}
-First, the effects shown in this paper are purely associative. I do not randomize any assignment of shortages, and I don't instrument for changes in the electricity availabilty. This means that any causal claims has to be purely conjectual.
+\subsubsection{Research design}
+First, the effects shown in this paper are purely associative. I do not randomize any assignment of shortages, and I don't instrument for changes in the electricity availabilty. This means that any causal claims has to be purely conjectual. In addition, the main difficulty in testing the predictions from the framework is in controlling from the other factors that co-move with power quality and plant complexity. Without causal assignment, it is difficult to assess if this research cleared that bar.
 
 Second, I don't have any across-time plant identifiers. While these do exist in the original data, since the 2018 release of the ASI on MOSPI's data platform this variable have been scrubbed. This reduces the power of the research substantially. As noted earlier, there also strong reduces the explanatory power of the plant-entry analysis, given the limitations it puts on the sample size. Finally, all observations becomes significantly more noisy without specific plant identifiers. 
 
@@ -807,7 +724,7 @@ One way to address this issue would be to repeat the analysis using one the IV-a
 
 \subsubsection{Modifiable Area Unit Problem}
 \label{sec:org4e3cc26}
-My tests rely on ``ground down'' state-wide variables on electricity reliability to individual plants. As with much of research across spatial units, this runs into the issue of artificial boundaries. For instance, states might not be appropriate scale of measurement, or be homogenous in its distribution of reliable electricity. \cite{min_whose_2017-2} construct a power supply irregularity index of 600,000 villages in India based on high frequency night-light photos. They show that there is substantial variance within states. Whether or not this village variance would impact the variance on plants within states is unclear. The authors did not respond to multiple requests, and their concrete methodology is unclear from their work. It would be valuable to test the results from this paper against a more fine-grained assignment of electricity reliability (also, one that is not estimated from official side).
+My tests rely on ``ground down'' state-wide variables on electricity reliability to individual plants. As with much of research across spatial units, this runs into the issue of artificial boundaries. It is not uncommon that results that based on aggregate units disseappear at more fine-grained analysis. For instance, states might not be appropriate scale of measurement, or be homogenous in its distribution of reliable electricity. \cite{min_whose_2017-2} construct a power supply irregularity index of 600,000 villages in India based on high frequency night-light photos. They show that there is substantial variance within states. Whether or not this village variance would impact the variance on plants within states is unclear. The authors did not respond to multiple requests, and their concrete methodology is unclear from their work. It would be valuable to test the results from this paper against a more fine-grained assignment of electricity reliability (also, one that is not estimated from official side).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -908,9 +825,17 @@ And finally, \(k_{c,0} = \sum_p M_{cp}\) and \(k_{p,0} = \sum_c M_{cp}\). The en
 
 \newpage
 
-\section{Appendix: assorted}%
+\section{Appendix: Figures}%
 \label{sub:appendix_figs}
 
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/framework/framework_z}
+	\caption{Expected plant output by risk and number of inputs: (A) for very small increases in risk we see massive drops in expected output (in the example \(n = 10\)): when going from \(z = .95\) (dashed) to \(z = .90\) (dotted) - a decrease of 5.26\% - expected output falls more than 40 \%; (B) as complexity of production increases, the drop from potential output driven by marginal decreases in quality skyrockets. In terms of production, this suggest that small changes in the risk of failure disproportionately punishes higher complexity producers.}%
+	\label{fig:framework-z}
+\end{figure}
+
+\section{Appendix: Tables}%
 \input{tables/appendix_data_cleaning_year_obs}
 
 \input{tables/appendix_data_cleaning_state_obs}
@@ -919,13 +844,6 @@ And finally, \(k_{c,0} = \sum_p M_{cp}\) and \(k_{p,0} = \sum_c M_{cp}\). The en
 
 \input{tables/appendix_data_cleaning_state_output}
 
-
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.8\linewidth]{figures/framework/framework_z}
-	\caption{Expected plant output by risk and number of inputs: (A) for very small increases in risk we see massive drops in expected output (in the example \(n = 10\)): when going from \(z = .95\) (dashed) to \(z = .90\) (dotted) - a decrease of 5.26\% - expected output falls more than 40 \%; (B) as complexity of production increases, the drop from potential output driven by marginal decreases in quality skyrockets. In terms of production, this suggest that small changes in the risk of failure disproportionately punishes higher complexity producers.}%
-	\label{fig:framework-z}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
