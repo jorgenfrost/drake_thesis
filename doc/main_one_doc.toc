@@ -3,33 +3,32 @@
 \contentsline {subsection}{\numberline {1.2}Structure of thesis}{3}%
 \contentsline {section}{\numberline {2}Background}{4}%
 \contentsline {section}{\numberline {3}Litterature and theoretical framework}{7}%
-\contentsline {subsection}{\numberline {3.1}Electricity and industry}{7}%
-\contentsline {subsection}{\numberline {3.2}Product complexity}{7}%
-\contentsline {subsection}{\numberline {3.3}Interruptions in production networks and economic complexity}{8}%
-\contentsline {subsection}{\numberline {3.4}Hypotheses}{13}%
-\contentsline {section}{\numberline {4}Data}{15}%
-\contentsline {subsection}{\numberline {4.1}Economic complexity}{15}%
-\contentsline {subsection}{\numberline {4.2}Electricity shortages}{15}%
-\contentsline {subsection}{\numberline {4.3}Manufacturing plants}{15}%
-\contentsline {subsection}{\numberline {4.4}State-wise variables}{16}%
-\contentsline {section}{\numberline {5}Methodology}{17}%
-\contentsline {subsection}{\numberline {5.1}Key variables}{17}%
-\contentsline {subsubsection}{\numberline {5.1.1}Plant complexity}{17}%
-\contentsline {subsubsection}{\numberline {5.1.2}Electricity shortage}{17}%
-\contentsline {subsubsection}{\numberline {5.1.3}Supply chain shortage}{18}%
-\contentsline {subsection}{\numberline {5.2}Empirical strategy}{19}%
-\contentsline {subsubsection}{\numberline {5.2.1}Plant revenues, complexity, and electricity shortages}{19}%
-\contentsline {subsubsection}{\numberline {5.2.2}Electricity shortages and long-run changes}{20}%
-\contentsline {section}{\numberline {6}Analysis and results}{23}%
-\contentsline {subsection}{\numberline {6.1}Validity of electricity variable}{23}%
-\contentsline {subsection}{\numberline {6.2}Interaction between shortages and complexity}{24}%
-\contentsline {subsubsection}{\numberline {6.2.1}Revenues, complexity and shortages ($H1_0$, $H2_0$, and $H3_0$)}{24}%
-\contentsline {subsubsection}{\numberline {6.2.2}Interaction between supply-chain shortages and plant complexity ($H4_0$)}{25}%
-\contentsline {subsection}{\numberline {6.3}Do shortages discourage the entry of complex plants?}{26}%
-\contentsline {subsubsection}{\numberline {6.3.1}Entry of new plants: minimal model ($H5_0$)}{31}%
-\contentsline {subsubsection}{\numberline {6.3.2}Entry of new plants: expanded model ($H5_0$)}{32}%
-\contentsline {section}{\numberline {7}Discussion}{33}%
-\contentsline {subsection}{\numberline {7.1}Implications of findings}{36}%
+\contentsline {subsection}{\numberline {3.1}Product complexity}{7}%
+\contentsline {subsection}{\numberline {3.2}Interruptions in production networks and economic complexity}{8}%
+\contentsline {subsection}{\numberline {3.3}Hypotheses}{13}%
+\contentsline {section}{\numberline {4}Data}{14}%
+\contentsline {subsection}{\numberline {4.1}Economic complexity}{14}%
+\contentsline {subsection}{\numberline {4.2}Electricity shortages}{14}%
+\contentsline {subsection}{\numberline {4.3}Manufacturing plants}{14}%
+\contentsline {subsection}{\numberline {4.4}State-wise variables}{15}%
+\contentsline {section}{\numberline {5}Methodology}{16}%
+\contentsline {subsection}{\numberline {5.1}Key variables}{16}%
+\contentsline {subsubsection}{\numberline {5.1.1}Plant complexity}{16}%
+\contentsline {subsubsection}{\numberline {5.1.2}Electricity shortage}{16}%
+\contentsline {subsubsection}{\numberline {5.1.3}Supply chain shortage}{17}%
+\contentsline {subsection}{\numberline {5.2}Empirical strategy}{18}%
+\contentsline {subsubsection}{\numberline {5.2.1}Plant revenues, complexity, and electricity shortages}{18}%
+\contentsline {subsubsection}{\numberline {5.2.2}Electricity shortages and long-run changes}{19}%
+\contentsline {section}{\numberline {6}Analysis and results}{22}%
+\contentsline {subsection}{\numberline {6.1}Validity of electricity variable}{22}%
+\contentsline {subsection}{\numberline {6.2}Interaction between shortages and complexity}{23}%
+\contentsline {subsubsection}{\numberline {6.2.1}Revenues, complexity and shortages ($H1_0$, $H2_0$, and $H3_0$)}{23}%
+\contentsline {subsubsection}{\numberline {6.2.2}Interaction between supply-chain shortages and plant complexity ($H4_0$)}{24}%
+\contentsline {subsection}{\numberline {6.3}Do shortages discourage the entry of complex plants?}{30}%
+\contentsline {subsubsection}{\numberline {6.3.1}Entry of new plants: minimal model ($H5_0$)}{30}%
+\contentsline {subsubsection}{\numberline {6.3.2}Entry of new plants: expanded model ($H5_0$)}{31}%
+\contentsline {section}{\numberline {7}Discussion}{35}%
+\contentsline {subsection}{\numberline {7.1}Findings}{35}%
 \contentsline {subsection}{\numberline {7.2}Limitations}{36}%
 \contentsline {subsubsection}{\numberline {7.2.1}Research design}{37}%
 \contentsline {subsubsection}{\numberline {7.2.2}Endogeneity and attenuation bias}{37}%
@@ -40,4 +39,4 @@
 \contentsline {subsection}{\numberline {A.2}Product concordance for ASI}{43}%
 \contentsline {section}{\numberline {B}Appendix: Calculating product complexity}{46}%
 \contentsline {section}{\numberline {C}Appendix: Figures}{47}%
-\contentsline {section}{\numberline {D}Appendix: Tables}{47}%
+\contentsline {section}{\numberline {D}Appendix: Tables}{48}%
