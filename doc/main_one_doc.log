@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.18)  27 MAY 2020 12:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.18)  27 MAY 2020 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -484,15 +484,15 @@ Package pdftex.def Info: figures/histogram_interaction_max_sample.pdf  used on i
 <figures/analysis_entry_sample_year_histograms.pdf, id=200, 505.89pt x 505.89pt>
 File: figures/analysis_entry_sample_year_histograms.pdf Graphic file (type pdf)
 <use figures/analysis_entry_sample_year_histograms.pdf>
-Package pdftex.def Info: figures/analysis_entry_sample_year_histograms.pdf  used on input line 595.
+Package pdftex.def Info: figures/analysis_entry_sample_year_histograms.pdf  used on input line 593.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
 <figures/analysis_entry_sample_state_histograms.pdf, id=201, 505.89pt x 505.89pt>
 File: figures/analysis_entry_sample_state_histograms.pdf Graphic file (type pdf)
 <use figures/analysis_entry_sample_state_histograms.pdf>
-Package pdftex.def Info: figures/analysis_entry_sample_state_histograms.pdf  used on input line 602.
+Package pdftex.def Info: figures/analysis_entry_sample_state_histograms.pdf  used on input line 600.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
  [30 <./figures/analysis_entry_sample_year_histograms.pdf> <./figures/analysis_entry_sample_state_histograms.pdf>] (./tables/plant_entry/entry_minimal.tex)
-Overfull \hbox (24.40657pt too wide) in paragraph at lines 626--633
+Overfull \hbox (24.40657pt too wide) in paragraph at lines 624--631
  [] 
  []
 
@@ -532,7 +532,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 226--229
  []
 
 ) [42]
-Underfull \hbox (badness 10000) in paragraph at lines 781--781
+Underfull \hbox (badness 10000) in paragraph at lines 779--779
 [][]\T1/cmr/m/n/9 http://www.csoisw.gov.in/CMS/En/1027-npcms-national-product-classification-for-manufacturing-
  []
 
@@ -540,13 +540,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 781--781
 <figures/appendix/appendix_density_product_match.pdf, id=258, 505.89pt x 505.89pt>
 File: figures/appendix/appendix_density_product_match.pdf Graphic file (type pdf)
 <use figures/appendix/appendix_density_product_match.pdf>
-Package pdftex.def Info: figures/appendix/appendix_density_product_match.pdf  used on input line 787.
+Package pdftex.def Info: figures/appendix/appendix_density_product_match.pdf  used on input line 785.
 (pdftex.def)             Requested size: 341.43436pt x 341.43785pt.
  [44] [45 <./figures/appendix/appendix_density_product_match.pdf>] [46]
 <figures/framework/framework_z.pdf, id=274, 522.95375pt x 226.8475pt>
 File: figures/framework/framework_z.pdf Graphic file (type pdf)
 <use figures/framework/framework_z.pdf>
-Package pdftex.def Info: figures/framework/framework_z.pdf  used on input line 835.
+Package pdftex.def Info: figures/framework/framework_z.pdf  used on input line 833.
 (pdftex.def)             Requested size: 341.43436pt x 148.11024pt.
  [47 <./figures/framework/framework_z.pdf>] (./tables/appendix_data_cleaning_year_obs.tex) (./tables/appendix_data_cleaning_state_obs.tex
 Overfull \hbox (21.99995pt too wide) in paragraph at lines 5--51
@@ -573,7 +573,7 @@ Here is how much of TeX's memory you used:
  41i,16n,43p,1970b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on main_one_doc.pdf (57 pages, 820197 bytes).
+Output written on main_one_doc.pdf (57 pages, 820442 bytes).
 PDF statistics:
  999 PDF objects out of 1000 (max. 8388607)
  293 compressed objects within 3 object streams
