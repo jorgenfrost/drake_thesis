@@ -41,6 +41,7 @@
 
 \include{setup/titlepage}
 
+\include{setup/abstract}
 % \include{setup/temp_title}
 
 \include{setup/listofcontents}
@@ -54,8 +55,6 @@
 
 \section{Introduction}\label{sec:introduction}
 
-TODO: Update structure of thesis
-
 The products produced in rich countries are very different from the products produced in poor countries. Why? There is a growing empirical literature showing that the difference between countries' economic sophistication, defined by the kinds of products they produce, explain large variation in GDP per capita (see figure \ref{fig:framework-eci-gdp}) and growth rates \citep{tacchella_dynamical_2018}, however, very little empirical evidence examines the micro-foundations behind these differences.
 
 From the literature on economic complexity and product upgrading, we know that the productive capabilities in an economy is an important predictor of economic growth \citep{hausmann_network_2011}. However, despite open markets and vast access to information, developing economy uptake to more sophisticated production have been a slow, and path dependent process \citep{hidalgo_product_2007}.
@@ -64,12 +63,6 @@ At the same time, the access to reliable electricity is often highlighted as one
 
 The mechanism is simple. If more complex products require more intermediate inputs or more steps in production, interruptions or failures in production processes punish them harder than simpler ones. If these disruption-costs are punitive enough, investors will put their money elsewhere and producers will choose less complex products. Given that electricity is an important input in manufacturing -  most factories cannot produce anything without running lights, machines, and motors - an unreliably supply could significantly reduce the productivity of a plant. To test for this effect, I examine the ability of electricity interruptions in the production environment to explain the complexity of products made at the plant level of in India between 2000 and 2016. 
 
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.8\linewidth]{figures/introduction_disruption_plot}
-	\caption[Production disruption, economic complexity and GDP per capita]{Production disruptions tend to have a higher frequence in poorer, less complex economies. The color of points are country economic complexity index values (ECI), where blue is more complex. Gray crosses has a missing complexity value. Lines are SLR fits to ln(GDP/cap). Disruption data is from \cite{world_bank_enterprise_2020}. ECI data is from \cite{simoes_economic_2011}. Countries are not surveyed the same years, so complexity and GDP/cap values have been matched to the newest survey year for each country before 2017. No country has more than one observation.}
-	\label{fig:disruption-fig}
-\end{figure}
 
 The approach taken in this paper is primarily related to three strands of literature. First, the literature of economic complexity and the sophistication of an economy's capability base  (\citealp{frenken_related_2007,hausmann_atlas_2013,tacchella_new_2012}). In addition, to develop the relation between production disruptions and product complexity, I draw on O-ring-type effects as modeled in \cite{kremer_o-ring_1993} and \cite{jones_intermediate_2011}, and the recent literature on volatility in production networks \citep{acemoglu_network_2012}. While the latter is mainly concerned with aggregate effect of sectoral shocks, the importance of input-output linkages are equally relevant at the plant level.
 
@@ -91,9 +84,15 @@ The first question explores how electricity shortages interact with production s
 
 \subsection{Structure of thesis}%
 \label{sub:structure_of_thesis}
-The structure of paper proceeds as follows. I first introduce the backdrop of the widespread electrcitiy shortages that is used in the empirical analysis. Next, I discuss the key concepts TODO 
+In this paper I first briefly present the background of the widespread electricity shortages in India and its relationship to the manufacturing sector. Second, I develop the theoretical connection between interruptions in production chains, sophistication of economic activity, and electricity shortages. From this model, I construct a set of hypothesis to test against the empirical data. In section 4 I present the data sources used in the analysis. Section 5 presents the construction and operationalisation of my key variables. Here, I also detail my empirical strategy. Section 6 and 7 presents the results of the analysis and discusses the findings. Finally, I conclude.
 
 
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/introduction_disruption_plot}
+	\caption[Production disruption, economic complexity and GDP per capita]{Production disruptions tend to have a higher frequence in poorer, less complex economies. The color of points are country economic complexity index values (ECI), where blue is more complex. Gray crosses has a missing complexity value. Lines are SLR fits to ln(GDP/cap). Disruption data is from \cite{world_bank_enterprise_2020}. ECI data is from \cite{simoes_economic_2011}. Countries are not surveyed the same years, so complexity and GDP/cap values have been matched to the newest survey year for each country before 2017. No country has more than one observation.}
+	\label{fig:disruption-fig}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -682,7 +681,7 @@ The first set of hypotheses (1 to 3) were the "basic" predictions: all else equa
 
 Two reasons could plausibly explain the different result. First, they use an IV-approach to instruments for changes in the state-level shortages. This reduces a lot of ambiguous relationship between factors that impact both revenues and shortages (like economic growth). Second, they have access to individual plant-level indicators across different sample years. Again, this reduces the noise in the data significantly: by using plant-level indicators, they are able to control all the intrinsic between-plant heterogeneity. In my model, these difference between plants becomes added statistical noise. Finally, since their sample (1992-2010) is different from mine (2000-2010 for the specific analysis), it is possible (but unlikely) that the relationship does not hold for only a subset of the years.
 
-Next, an important implication from model discussed in section \ref{sec:frame-product-complexity} is that while electricity shortages acting at the plant-level - such as outages on the general supply network - will act on plants in a similar way (depending on their electricity intensity), disruptions in the supply chain will not. Testing for this effect, I find a significant association between an increasingly smaller association between increasing marginal product complexit and higher plant revenues as the level of supply shortages increase. In other words, the data suggest that if there is a high degree of supply-chain ucertainty, the more complex factories gets less profitable (compared to less complex factories). Such an interaction effect is not observed between the state-level shortages and the association between plant complexity and revenues\footnote{While one term, $C_f \times S_{s}$, was weakly significant under a specific set of controls, all the other combinations were not. I therefor disregard that result here.}.
+Next, an important implication from the model discussed in section \ref{sec:frame-product-complexity} is that while electricity shortages acting at the plant-level - such as outages on the general supply network - will act on plants in a similar way (depending on their electricity intensity), disruptions in the supply chain will not. Testing for this effect, I find a significant association between an increasingly smaller association between increasing marginal product complexit and higher plant revenues as the level of supply shortages increase. In other words, the data suggest that if there is a high degree of supply-chain ucertainty, the more complex factories gets less profitable (compared to less complex factories). Such an interaction effect is not observed between the state-level shortages and the association between plant complexity and revenues\footnote{While one term, $C_f \times S_{s}$, was weakly significant under a specific set of controls, all the other combinations were not. I therefor disregard that result here.}.
 
 So what does such a finding mean? Essentially, this suggests that in higher uncertainty environments, such as many developing economies, it becomes less attractive to invest in a more complex production setup. Given the relatively strong interaction coefficient of supply-shortages on the benefit complexity (especially with the adjusted sample), this suggest that for at given level of disruption in the production environment, producers can "overshoot" the complexity of their production. Should there also exist a higher price of entry into producing more complex products, this could have a significant impact the incentives to invest in higher complexity production technology. This point is highlighted by the result that while a higher wage/revenue share is strongly negatively associated with plant revenues, the interaction between wage-share and shortages in the input supply is strongly positive. This suggests that, again, the presence of a more disruptive production environment perverts incentives away from what usually considered preferable (less primary industry, more complex production). 
 
@@ -723,17 +722,31 @@ My tests rely on ``ground down'' state-wide variables on electricity reliability
 \section{Conclusion}%
 \label{sec:conclusion}
 
-- 1) Shortages does not affect the revenues of compleks plants more. This was to be expected. If the act on the plant level, there should be an effect.
+At the beginning of this paper, I posed two questions:
 
-- 2) Supply shortages act on input-level. This would be expected to act harder on plants that are more complex. This I found.
+\begin{enumerate}
 
-- 3) A corrolary to this finding (2) is that the larger wage-share is of a plant, the smaller we would expect the impact of supply shortages to be. This was also found. (A caveat to this finding is that factories with high wage share will naturally have a smaller supply shortage, because it is weighted by their product use.)
+\item How is the impact of production interruptions - in the form of electricity shortages - on factory output related to the sophistication of the factory's production?
 
-- 4) In the second part I tested if there is a relationship between the shortages present in a state for the previous years, and the kinds of plants that at build. This showed a statistically significant relationship between how complex factories are, and the knowledge of how vulnurable their production is. This is strictly associative evidence, but it could be interpreted as an expression of the matching-effect from Kremer. Given the expectation of unreliable the production in a state would be, more complex factories will tend towards more stable states. I find that is effect is statistically significant - even controlling for range of different attractors (such as economy-size, work-force size, education level, economic growth, and industry).
+\item What relationship, if any, does this association between complexity and interruptions have with the complexity of the manufacturing sector in India in the long run?
 
-- 5) The results here suggest that some of the estimated effects of the cost of electricity (or, for that matter, other) interruptons that are done by estimating the counterfactual revenue can be significant underestimates. A) No supply chain effect measured in these effects, and B) no effect on the aggregate economic differences when investment is dissuaded. In addition to any revenue loss, 
+\end{enumerate}
 
-- A result that I have not explored here, but is worth noting is that while India has increased greatly in country-wide economic complexity the previous 15 years, the plant-level complexity does not seem to have followed suit. Given that economic complexity is measured at the level of exports, this points to the economic change in India being primarily driven by a smaller core of exporters.
+In this paper I have explored the relationship between the level of electricity shortages contained in a plant's production environment, both locally and in the supply chain, and the economic complexity of its output.
+
+I first develop a theoretical model of the connection between economic complexity and interruptions. From this model, I then develop a set of hypotheses that I bring to data. Using a variety of different regression specifications on a large unit-level data set spanning 16 years, I find robust evidence on the connection between electricity shortages and production complexity in two important ways.
+
+First, I find that while the local electricity supply is not related to the importance of complexity for plant revenues, interruptions in the input supply of plant strongly conditions the association between complexity of a plant's output and revenues.
+
+Second, I find a small, but robust, association between the past two-year average electricity shortages of states and the entry choices of new plants. A higher two-year level of average electricity shortages is associated with less complex plants entering intro production in the state. 
+
+Taken together, these results suggests an important relationship between the complexity in an economy and its level of production disruptions. The association between interruptions in the supply-chain, complexity, and revenues suggests that higher levels of risk of production-failure (or stoppage) can lead to pervese incentives in the manufacturing sector by increasing the returns to primary production relative to more sophisticated activities. 
+
+While these results are purely correlations, they suggests that much of the previous litterature have underestimated the costs of a poor quality power supply. The first reason concerns the revenue effects of interruptions in the input supply. Many studies exploit some version an instrumental variable assignment of electricity shortages to study the loss of revenue. However, if these studies do not take into account the revenue impacts of interruptions in the input supply, some of the variation in revenues that is caused by electricity shortages will be misassigned. This creates a downward biased estimate of the true cost of poor electricity. Secondly, the results presented in this paper suggests that as interruptions contained inte supply-chains increase, the value of more complex production decreases. This suggests that studies on the aggregate loss to electricity shortages also need to take into account possible self-selection into less productive industries.
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

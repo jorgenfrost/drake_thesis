@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.18)  27 MAY 2020 10:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.18)  27 MAY 2020 12:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -291,7 +291,7 @@ Package: threeparttable 2003/06/13  v 3.0
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count284
 \l__pdf_internal_box=\box63
-) (./main_one_doc.aux (./setup/titlepage.aux) (./setup/listofcontents.aux)
+) (./main_one_doc.aux (./setup/titlepage.aux) (./setup/abstract.aux) (./setup/listofcontents.aux)
 
 LaTeX Warning: Label `tab:' multiply defined.
 
@@ -381,6 +381,12 @@ Package pdftex.def Info: logo.jpg  used on input line 22.
 
 
 {/home/post/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.jpg>])
+\openout2 = `setup/abstract.aux'.
+
+ (./setup/abstract.tex) [1
+
+
+]
 \openout2 = `setup/listofcontents.aux'.
 
  (./setup/listofcontents.tex (./main_one_doc.toc
@@ -391,18 +397,18 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
  (/home/post/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) [2
 
 
 ])
 \tf@toc=\write3
 \openout3 = `main_one_doc.toc'.
 
- [2] (./main_one_doc.lof)
+ [3] (./main_one_doc.lof)
 \tf@lof=\write4
 \openout4 = `main_one_doc.lof'.
 
- [3] (./main_one_doc.lot
+ [4] (./main_one_doc.lot
 Overfull \hbox (0.71036pt too wide) in paragraph at lines 4--4
  [][] []\T1/cmr/m/n/10.95 Association be-tween Sup-ply short-ages, wage-share, in-ter-me-di-ate in-put share, 
  []
@@ -411,82 +417,82 @@ Overfull \hbox (0.71036pt too wide) in paragraph at lines 4--4
 \tf@lot=\write5
 \openout5 = `main_one_doc.lot'.
 
- [4])
-<figures/introduction_disruption_plot.pdf, id=30, 505.89pt x 482.80376pt>
+ [5]) [1
+
+]
+<figures/introduction_disruption_plot.pdf, id=38, 505.89pt x 482.80376pt>
 File: figures/introduction_disruption_plot.pdf Graphic file (type pdf)
 <use figures/introduction_disruption_plot.pdf>
-Package pdftex.def Info: figures/introduction_disruption_plot.pdf  used on input line 69.
+Package pdftex.def Info: figures/introduction_disruption_plot.pdf  used on input line 92.
 (pdftex.def)             Requested size: 341.43436pt x 325.85637pt.
- [1
-
-] [2 <./figures/introduction_disruption_plot.pdf>] [3]
-Overfull \hbox (2.63573pt too wide) in paragraph at lines 108--109
+ [2] [3 <./figures/introduction_disruption_plot.pdf>]
+Overfull \hbox (2.63573pt too wide) in paragraph at lines 107--108
 []\T1/cmr/m/n/10.95 Despite the gov-ern-ment sub-si-dies, dis-tri-bu-tion com-pa-nies have run with large yearly deficits:
  []
 
 [4]
-<figures/background_wbes.pdf, id=53, 504.88625pt x 504.88625pt>
+<figures/background_wbes.pdf, id=56, 504.88625pt x 504.88625pt>
 File: figures/background_wbes.pdf Graphic file (type pdf)
 <use figures/background_wbes.pdf>
-Package pdftex.def Info: figures/background_wbes.pdf  used on input line 123.
+Package pdftex.def Info: figures/background_wbes.pdf  used on input line 122.
 (pdftex.def)             Requested size: 341.43436pt x 341.43832pt.
-<figures/shortage_p_dl.pdf, id=54, 505.89pt x 505.89pt>
+<figures/shortage_p_dl.pdf, id=57, 505.89pt x 505.89pt>
 File: figures/shortage_p_dl.pdf Graphic file (type pdf)
 <use figures/shortage_p_dl.pdf>
-Package pdftex.def Info: figures/shortage_p_dl.pdf  used on input line 131.
+Package pdftex.def Info: figures/shortage_p_dl.pdf  used on input line 130.
 (pdftex.def)             Requested size: 426.79134pt x 426.7973pt.
  [5 <./figures/background_wbes.pdf>] [6 <./figures/shortage_p_dl.pdf>]
-<figures/framework/framework_complexity_model_bw.png, id=76, 1207.51125pt x 543.02875pt>
+<figures/framework/framework_complexity_model_bw.png, id=79, 1207.51125pt x 543.02875pt>
 File: figures/framework/framework_complexity_model_bw.png Graphic file (type png)
 <use figures/framework/framework_complexity_model_bw.png>
-Package pdftex.def Info: figures/framework/framework_complexity_model_bw.png  used on input line 161.
+Package pdftex.def Info: figures/framework/framework_complexity_model_bw.png  used on input line 160.
 (pdftex.def)             Requested size: 341.43436pt x 153.54675pt.
-<figures/eci_cap.pdf, id=78, 505.89pt x 284.06125pt>
+<figures/eci_cap.pdf, id=81, 505.89pt x 284.06125pt>
 File: figures/eci_cap.pdf Graphic file (type pdf)
 <use figures/eci_cap.pdf>
-Package pdftex.def Info: figures/eci_cap.pdf  used on input line 170.
+Package pdftex.def Info: figures/eci_cap.pdf  used on input line 169.
 (pdftex.def)             Requested size: 426.79134pt x 239.65005pt.
  [7]
-<figures/richest_poorest_pci.pdf, id=82, 568.1225pt x 341.275pt>
+<figures/richest_poorest_pci.pdf, id=86, 568.1225pt x 341.275pt>
 File: figures/richest_poorest_pci.pdf Graphic file (type pdf)
 <use figures/richest_poorest_pci.pdf>
-Package pdftex.def Info: figures/richest_poorest_pci.pdf  used on input line 179.
+Package pdftex.def Info: figures/richest_poorest_pci.pdf  used on input line 178.
 (pdftex.def)             Requested size: 426.79134pt x 256.38783pt.
  [8 <./figures/framework/framework_complexity_model_bw.png>] [9 <./figures/eci_cap.pdf> <./figures/richest_poorest_pci.pdf>]
-<figures/framework/framework_io_model.png, id=109, 1138.2525pt x 347.2975pt>
+<figures/framework/framework_io_model.png, id=112, 1138.2525pt x 347.2975pt>
 File: figures/framework/framework_io_model.png Graphic file (type png)
 <use figures/framework/framework_io_model.png>
-Package pdftex.def Info: figures/framework/framework_io_model.png  used on input line 198.
+Package pdftex.def Info: figures/framework/framework_io_model.png  used on input line 197.
 (pdftex.def)             Requested size: 341.43436pt x 104.17415pt.
  [10 <./figures/framework/framework_io_model.png>] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] (./tables/energy_validity/wbes_nonfloat.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 6--458
+Underfull \hbox (badness 10000) in paragraph at lines 6--457
 
  []
 
 [22]
-<figures/histogram_interaction_avg_sample.pdf, id=159, 505.89pt x 505.89pt>
+<figures/histogram_interaction_avg_sample.pdf, id=162, 505.89pt x 505.89pt>
 File: figures/histogram_interaction_avg_sample.pdf Graphic file (type pdf)
 <use figures/histogram_interaction_avg_sample.pdf>
-Package pdftex.def Info: figures/histogram_interaction_avg_sample.pdf  used on input line 473.
+Package pdftex.def Info: figures/histogram_interaction_avg_sample.pdf  used on input line 472.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<figures/histogram_interaction_max_sample.pdf, id=160, 505.89pt x 505.89pt>
+<figures/histogram_interaction_max_sample.pdf, id=163, 505.89pt x 505.89pt>
 File: figures/histogram_interaction_max_sample.pdf Graphic file (type pdf)
 <use figures/histogram_interaction_max_sample.pdf>
-Package pdftex.def Info: figures/histogram_interaction_max_sample.pdf  used on input line 480.
+Package pdftex.def Info: figures/histogram_interaction_max_sample.pdf  used on input line 479.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
  [23 <./figures/histogram_interaction_avg_sample.pdf> <./figures/histogram_interaction_max_sample.pdf>] [24] (./tables/analysis_interaction_avg_pci.tex) (./tables/analysis_interaction_max_pci.tex) (./tables/analysis_interaction_wage_input.tex) [25] [26] [27] (./tables/filtered_input_shortage.tex) [28] [29]
-<figures/analysis_entry_sample_year_histograms.pdf, id=197, 505.89pt x 505.89pt>
+<figures/analysis_entry_sample_year_histograms.pdf, id=200, 505.89pt x 505.89pt>
 File: figures/analysis_entry_sample_year_histograms.pdf Graphic file (type pdf)
 <use figures/analysis_entry_sample_year_histograms.pdf>
-Package pdftex.def Info: figures/analysis_entry_sample_year_histograms.pdf  used on input line 596.
+Package pdftex.def Info: figures/analysis_entry_sample_year_histograms.pdf  used on input line 595.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<figures/analysis_entry_sample_state_histograms.pdf, id=198, 505.89pt x 505.89pt>
+<figures/analysis_entry_sample_state_histograms.pdf, id=201, 505.89pt x 505.89pt>
 File: figures/analysis_entry_sample_state_histograms.pdf Graphic file (type pdf)
 <use figures/analysis_entry_sample_state_histograms.pdf>
-Package pdftex.def Info: figures/analysis_entry_sample_state_histograms.pdf  used on input line 603.
+Package pdftex.def Info: figures/analysis_entry_sample_state_histograms.pdf  used on input line 602.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
  [30 <./figures/analysis_entry_sample_year_histograms.pdf> <./figures/analysis_entry_sample_state_histograms.pdf>] (./tables/plant_entry/entry_minimal.tex)
-Overfull \hbox (24.40657pt too wide) in paragraph at lines 627--634
+Overfull \hbox (24.40657pt too wide) in paragraph at lines 626--633
  [] 
  []
 
@@ -526,21 +532,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 226--229
  []
 
 ) [42]
-Underfull \hbox (badness 10000) in paragraph at lines 770--770
+Underfull \hbox (badness 10000) in paragraph at lines 781--781
 [][]\T1/cmr/m/n/9 http://www.csoisw.gov.in/CMS/En/1027-npcms-national-product-classification-for-manufacturing-
  []
 
 [43]
-<figures/appendix/appendix_density_product_match.pdf, id=254, 505.89pt x 505.89pt>
+<figures/appendix/appendix_density_product_match.pdf, id=258, 505.89pt x 505.89pt>
 File: figures/appendix/appendix_density_product_match.pdf Graphic file (type pdf)
 <use figures/appendix/appendix_density_product_match.pdf>
-Package pdftex.def Info: figures/appendix/appendix_density_product_match.pdf  used on input line 776.
+Package pdftex.def Info: figures/appendix/appendix_density_product_match.pdf  used on input line 787.
 (pdftex.def)             Requested size: 341.43436pt x 341.43785pt.
  [44] [45 <./figures/appendix/appendix_density_product_match.pdf>] [46]
-<figures/framework/framework_z.pdf, id=271, 522.95375pt x 226.8475pt>
+<figures/framework/framework_z.pdf, id=274, 522.95375pt x 226.8475pt>
 File: figures/framework/framework_z.pdf Graphic file (type pdf)
 <use figures/framework/framework_z.pdf>
-Package pdftex.def Info: figures/framework/framework_z.pdf  used on input line 824.
+Package pdftex.def Info: figures/framework/framework_z.pdf  used on input line 835.
 (pdftex.def)             Requested size: 341.43436pt x 148.11024pt.
  [47 <./figures/framework/framework_z.pdf>] (./tables/appendix_data_cleaning_year_obs.tex) (./tables/appendix_data_cleaning_state_obs.tex
 Overfull \hbox (21.99995pt too wide) in paragraph at lines 5--51
@@ -552,25 +558,25 @@ Overfull \hbox (11.27083pt too wide) in paragraph at lines 5--32
  [][] 
  []
 
-) (./tables/appendix_data_cleaning_state_output.tex) [48] [49] [50] [51] (./main_one_doc.aux (./setup/titlepage.aux) (./setup/listofcontents.aux))
+) (./tables/appendix_data_cleaning_state_output.tex) [48] [49] [50] [51] (./main_one_doc.aux (./setup/titlepage.aux) (./setup/abstract.aux) (./setup/listofcontents.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6177 strings out of 482913
- 93432 string characters out of 5959408
- 379164 words of memory out of 5000000
- 21263 multiletter control sequences out of 15000+600000
+ 6187 strings out of 482913
+ 93614 string characters out of 5959408
+ 379614 words of memory out of 5000000
+ 21267 multiletter control sequences out of 15000+600000
  553416 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  41i,16n,43p,1970b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+ </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on main_one_doc.pdf (56 pages, 817209 bytes).
+Output written on main_one_doc.pdf (57 pages, 820197 bytes).
 PDF statistics:
- 994 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
+ 999 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
