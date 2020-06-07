@@ -430,3 +430,56 @@ hist_avg_samp <-
 
 ggsave(plot = hist_max_samp, here("doc/figures/histogram_interaction_max_sample.pdf"))
 ggsave(plot = hist_avg_samp, here("doc/figures/histogram_interaction_avg_sample.pdf"))
+
+## get mean values and sd for defence
+vals <- analysis_sample2 %>% 
+	uncount(multiplier) %>%
+	summarize(
+		  mean_avg_c = mean(avg_pci),
+		  sd_avg_c = sd(avg_pci),
+		  mean_max_c = mean(max_pci),
+		  sd_max_c = sd(max_pci),
+		  mean_employees = mean(avg_total_employees),
+		  sd_employees = sd(avg_total_employees),
+		  mean_input_short = mean(input_avg_shortage),
+		  sd_input_short = sd(input_avg_shortage),
+		  mean_short = mean(avg_shortage),
+		  sd_short = sd(avg_shortage),
+		  mean_adj_rev = mean(adjusted_revenue),
+		  median_adj_rev = median(adjusted_revenue),
+		  sd_adj_rev = sd(adjusted_revenue)
+		  )
+kable(vals, "markdown")
+
+analysis_sample3 %>% filter(input_avg_shortage < 1) %>%
+	uncount(multiplier) %>%
+	summarize(
+		  mean_avg_c = mean(avg_pci),
+		  sd_avg_c = sd(avg_pci),
+		  mean_max_c = mean(max_pci),
+		  sd_max_c = sd(max_pci),
+		  mean_employees = mean(avg_total_employees),
+		  sd_employees = sd(avg_total_employees),
+		  mean_input_short = mean(input_avg_shortage),
+		  sd_input_short = sd(input_avg_shortage),
+		  mean_short = mean(avg_shortage),
+		  sd_short = sd(avg_shortage),
+		  mean_adj_rev = mean(adjusted_revenue),
+		  median_adj_rev = median(adjusted_revenue),
+		  sd_adj_rev = sd(adjusted_revenue)
+		  )
+
+
+
+out <- readd("output_hs96_tbl")
+
+analysis_sample2 %>% 
+	select(year, dsl, multiplier) %>%
+	left_join(out) %>%
+	filter(year == 2011) %>%
+	uncount(multiplier) %>% 
+	group_by(lenient_hs96, hs96_desc) %>%
+	summarize(val = sum(gross_sale_val)) %>% 
+	arrange(desc(val)) %>% 
+	head(7) %>%
+	kable("markdown")

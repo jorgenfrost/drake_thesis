@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.18)  27 MAY 2020 12:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.18)  7 JUN 2020 09:45
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**main_one_doc.tex
+**main_one_doc
 (./main_one_doc.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-02-25> (/home/post/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2020-02-25>
+(/home/post/.TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/home/post/.TinyTeX/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
@@ -22,14 +22,18 @@ File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
-) (/home/post/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/home/post/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2019/11/07 v1.0c TeX engine tests
 ))
 \Gm@cnth=\count175
@@ -44,30 +48,39 @@ Package: iftex 2019/11/07 v1.0c TeX engine tests
 \Gm@layouthoffset=\dimen141
 \Gm@layoutvoffset=\dimen142
 \Gm@dimlist=\toks16
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
- (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
- (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
- (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen143
 \Gin@req@width=\dimen144
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
- (/home/post/.TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
 \captionmargin=\dimen145
@@ -81,25 +94,30 @@ Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count178
 \c@continuedfloat=\count179
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
 \c@subfigure=\count180
 \c@subtable=\count181
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 (/home/post/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
- (/home/post/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
 \ex@=\dimen152
-)) (/home/post/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+))
+(/home/post/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen153
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count182
@@ -139,16 +157,19 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/home/post/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/home/post/.TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+))
+(/home/post/.TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip52
 \LTright=\skip53
@@ -165,18 +186,21 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \c@LT@tables=\count197
 \c@LT@chunks=\count198
 \LT@p@ftn=\toks24
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip56
 \bibsep=\skip57
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count199
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/appendix/appendix.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@pps=\count266
 \c@@ppsavesec=\count267
 \c@@ppsaveapp=\count268
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen162
 \lightrulewidth=\dimen163
@@ -195,9 +219,11 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count271
 \@lastruleclass=\count272
 \@thisrulewidth=\dimen174
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/rotating.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
- (/home/post/.TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count273
@@ -205,9 +231,11 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \rotFPbot=\skip59
 \rot@float@box=\box51
 \rot@mess@toks=\toks25
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/tools/dcolumn.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/tools/dcolumn.sty
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
- (/home/post/.TinyTeX/texmf-dist/tex/latex/tools/array.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen175
 \ar@mcellbox=\box52
@@ -216,46 +244,56 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \extratabsurround=\skip60
 \backup@length=\skip61
 \ar@cellbox=\box53
-)) (/home/post/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+))
+(/home/post/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip62
 \multirow@cntb=\count274
 \multirow@dima=\skip63
 \bigstrutjot=\dimen177
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen178
 \WF@size=\dimen179
 \c@WF@wrappedlines=\count275
 \WF@box=\box54
 \WF@everypar=\toks27
 Package: wrapfig 2003/01/31  v 3.6
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/float/float.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count276
 \float@exts=\toks28
 \float@box=\box55
 \@float@everytoks=\toks29
 \@floatcapt=\box56
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
- (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/color.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
- (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
 \everycr=\toks30
 \minrowclearance=\skip64
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
- (/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
- (/home/post/.TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box57
 \sift@deathcycles=\count277
@@ -284,14 +322,18 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \tabu@hleads=\box60
 \tabu@vleads=\box61
 \tabu@cellskip=\skip65
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box62
-) (/home/post/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+)
+(/home/post/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count284
 \l__pdf_internal_box=\box63
-) (./main_one_doc.aux (./setup/titlepage.aux) (./setup/abstract.aux) (./setup/listofcontents.aux)
+)
+(./main_one_doc.aux (./setup/titlepage.aux) (./setup/abstract.aux)
+(./setup/listofcontents.aux)
 
 LaTeX Warning: Label `tab:' multiply defined.
 
@@ -355,14 +397,18 @@ LaTeX Font Info:    ... okay on input line 38.
 
 (/home/post/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/home/post/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
- (/home/post/.TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
@@ -371,16 +417,18 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \openout2 = `setup/titlepage.aux'.
 
- (./setup/titlepage.tex
+
+(./setup/titlepage.tex
 <logo.jpg, id=1, 1431.3475pt x 1086.0575pt>
 File: logo.jpg Graphic file (type jpg)
 <use logo.jpg>
-Package pdftex.def Info: logo.jpg  used on input line 22.
+Package pdftex.def Info: logo.jpg  used on input line 23.
 (pdftex.def)             Requested size: 170.71393pt x 129.52582pt.
  [1
 
 
-{/home/post/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.jpg>])
+{/home/post/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.jpg>
+])
 \openout2 = `setup/abstract.aux'.
 
  (./setup/abstract.tex) [1
@@ -389,13 +437,16 @@ Package pdftex.def Info: logo.jpg  used on input line 22.
 ]
 \openout2 = `setup/listofcontents.aux'.
 
- (./setup/listofcontents.tex (./main_one_doc.toc
+
+(./setup/listofcontents.tex (./main_one_doc.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
- (/home/post/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
- (/home/post/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+
+(/home/post/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2
 
@@ -404,13 +455,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write3
 \openout3 = `main_one_doc.toc'.
 
- [3] (./main_one_doc.lof)
+ [3]
+(./main_one_doc.lof)
 \tf@lof=\write4
 \openout4 = `main_one_doc.lof'.
 
  [4] (./main_one_doc.lot
 Overfull \hbox (0.71036pt too wide) in paragraph at lines 4--4
- [][] []\T1/cmr/m/n/10.95 Association be-tween Sup-ply short-ages, wage-share, in-ter-me-di-ate in-put share, 
+ [][] []\T1/cmr/m/n/10.95 Association be-tween Sup-ply short-ages, wage-share, 
+in-ter-me-di-ate in-put share, 
  []
 
 )
@@ -423,49 +476,60 @@ Overfull \hbox (0.71036pt too wide) in paragraph at lines 4--4
 <figures/introduction_disruption_plot.pdf, id=38, 505.89pt x 482.80376pt>
 File: figures/introduction_disruption_plot.pdf Graphic file (type pdf)
 <use figures/introduction_disruption_plot.pdf>
-Package pdftex.def Info: figures/introduction_disruption_plot.pdf  used on input line 92.
+Package pdftex.def Info: figures/introduction_disruption_plot.pdf  used on inpu
+t line 92.
 (pdftex.def)             Requested size: 341.43436pt x 325.85637pt.
  [2] [3 <./figures/introduction_disruption_plot.pdf>]
 Overfull \hbox (2.63573pt too wide) in paragraph at lines 107--108
-[]\T1/cmr/m/n/10.95 Despite the gov-ern-ment sub-si-dies, dis-tri-bu-tion com-pa-nies have run with large yearly deficits:
+[]\T1/cmr/m/n/10.95 Despite the gov-ern-ment sub-si-dies, dis-tri-bu-tion com-p
+a-nies have run with large yearly deficits:
  []
 
 [4]
 <figures/background_wbes.pdf, id=56, 504.88625pt x 504.88625pt>
 File: figures/background_wbes.pdf Graphic file (type pdf)
 <use figures/background_wbes.pdf>
-Package pdftex.def Info: figures/background_wbes.pdf  used on input line 122.
+Package pdftex.def Info: figures/background_wbes.pdf  used on input line 119.
 (pdftex.def)             Requested size: 341.43436pt x 341.43832pt.
 <figures/shortage_p_dl.pdf, id=57, 505.89pt x 505.89pt>
 File: figures/shortage_p_dl.pdf Graphic file (type pdf)
 <use figures/shortage_p_dl.pdf>
-Package pdftex.def Info: figures/shortage_p_dl.pdf  used on input line 130.
+Package pdftex.def Info: figures/shortage_p_dl.pdf  used on input line 127.
 (pdftex.def)             Requested size: 426.79134pt x 426.7973pt.
  [5 <./figures/background_wbes.pdf>] [6 <./figures/shortage_p_dl.pdf>]
-<figures/framework/framework_complexity_model_bw.png, id=79, 1207.51125pt x 543.02875pt>
-File: figures/framework/framework_complexity_model_bw.png Graphic file (type png)
+<figures/framework/framework_complexity_model_bw.png, id=79, 1207.51125pt x 543
+.02875pt>
+File: figures/framework/framework_complexity_model_bw.png Graphic file (type pn
+g)
 <use figures/framework/framework_complexity_model_bw.png>
-Package pdftex.def Info: figures/framework/framework_complexity_model_bw.png  used on input line 160.
+Package pdftex.def Info: figures/framework/framework_complexity_model_bw.png  u
+sed on input line 157.
 (pdftex.def)             Requested size: 341.43436pt x 153.54675pt.
 <figures/eci_cap.pdf, id=81, 505.89pt x 284.06125pt>
 File: figures/eci_cap.pdf Graphic file (type pdf)
 <use figures/eci_cap.pdf>
-Package pdftex.def Info: figures/eci_cap.pdf  used on input line 169.
+Package pdftex.def Info: figures/eci_cap.pdf  used on input line 166.
 (pdftex.def)             Requested size: 426.79134pt x 239.65005pt.
- [7]
+
+[7]
 <figures/richest_poorest_pci.pdf, id=86, 568.1225pt x 341.275pt>
 File: figures/richest_poorest_pci.pdf Graphic file (type pdf)
 <use figures/richest_poorest_pci.pdf>
-Package pdftex.def Info: figures/richest_poorest_pci.pdf  used on input line 178.
+Package pdftex.def Info: figures/richest_poorest_pci.pdf  used on input line 17
+5.
 (pdftex.def)             Requested size: 426.79134pt x 256.38783pt.
- [8 <./figures/framework/framework_complexity_model_bw.png>] [9 <./figures/eci_cap.pdf> <./figures/richest_poorest_pci.pdf>]
+ [8 <./figures/framework/framework_complexity_model_bw.png>] [9 <./figures/eci_
+cap.pdf> <./figures/richest_poorest_pci.pdf>]
 <figures/framework/framework_io_model.png, id=112, 1138.2525pt x 347.2975pt>
 File: figures/framework/framework_io_model.png Graphic file (type png)
 <use figures/framework/framework_io_model.png>
-Package pdftex.def Info: figures/framework/framework_io_model.png  used on input line 197.
+Package pdftex.def Info: figures/framework/framework_io_model.png  used on inpu
+t line 194.
 (pdftex.def)             Requested size: 341.43436pt x 104.17415pt.
- [10 <./figures/framework/framework_io_model.png>] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] (./tables/energy_validity/wbes_nonfloat.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 6--457
+ [10 <./figures/framework/framework_io_model.png>] [11] [12] [13] [14] [15] [16
+] [17] [18] [19] [20] [21]
+(./tables/energy_validity/wbes_nonfloat.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 6--454
 
  []
 
@@ -473,32 +537,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--457
 <figures/histogram_interaction_avg_sample.pdf, id=162, 505.89pt x 505.89pt>
 File: figures/histogram_interaction_avg_sample.pdf Graphic file (type pdf)
 <use figures/histogram_interaction_avg_sample.pdf>
-Package pdftex.def Info: figures/histogram_interaction_avg_sample.pdf  used on input line 472.
+Package pdftex.def Info: figures/histogram_interaction_avg_sample.pdf  used on 
+input line 469.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
 <figures/histogram_interaction_max_sample.pdf, id=163, 505.89pt x 505.89pt>
 File: figures/histogram_interaction_max_sample.pdf Graphic file (type pdf)
 <use figures/histogram_interaction_max_sample.pdf>
-Package pdftex.def Info: figures/histogram_interaction_max_sample.pdf  used on input line 479.
+Package pdftex.def Info: figures/histogram_interaction_max_sample.pdf  used on 
+input line 476.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
- [23 <./figures/histogram_interaction_avg_sample.pdf> <./figures/histogram_interaction_max_sample.pdf>] [24] (./tables/analysis_interaction_avg_pci.tex) (./tables/analysis_interaction_max_pci.tex) (./tables/analysis_interaction_wage_input.tex) [25] [26] [27] (./tables/filtered_input_shortage.tex) [28] [29]
-<figures/analysis_entry_sample_year_histograms.pdf, id=200, 505.89pt x 505.89pt>
+ [23 <./figures/histogram_interaction_avg_sample.pdf> <./figures/histogram_inte
+raction_max_sample.pdf>] [24] (./tables/analysis_interaction_avg_pci.tex)
+(./tables/analysis_interaction_max_pci.tex)
+(./tables/analysis_interaction_wage_input.tex) [25] [26] [27]
+(./tables/filtered_input_shortage.tex) [28] [29]
+<figures/analysis_entry_sample_year_histograms.pdf, id=200, 505.89pt x 505.89pt
+>
 File: figures/analysis_entry_sample_year_histograms.pdf Graphic file (type pdf)
+
 <use figures/analysis_entry_sample_year_histograms.pdf>
-Package pdftex.def Info: figures/analysis_entry_sample_year_histograms.pdf  used on input line 593.
+Package pdftex.def Info: figures/analysis_entry_sample_year_histograms.pdf  use
+d on input line 590.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<figures/analysis_entry_sample_state_histograms.pdf, id=201, 505.89pt x 505.89pt>
-File: figures/analysis_entry_sample_state_histograms.pdf Graphic file (type pdf)
+<figures/analysis_entry_sample_state_histograms.pdf, id=201, 505.89pt x 505.89p
+t>
+File: figures/analysis_entry_sample_state_histograms.pdf Graphic file (type pdf
+)
 <use figures/analysis_entry_sample_state_histograms.pdf>
-Package pdftex.def Info: figures/analysis_entry_sample_state_histograms.pdf  used on input line 600.
+Package pdftex.def Info: figures/analysis_entry_sample_state_histograms.pdf  us
+ed on input line 597.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
- [30 <./figures/analysis_entry_sample_year_histograms.pdf> <./figures/analysis_entry_sample_state_histograms.pdf>] (./tables/plant_entry/entry_minimal.tex)
-Overfull \hbox (24.40657pt too wide) in paragraph at lines 624--631
+ [30 <./figures/analysis_entry_sample_year_histograms.pdf> <./figures/analysis_
+entry_sample_state_histograms.pdf>] (./tables/plant_entry/entry_minimal.tex)
+Overfull \hbox (24.40657pt too wide) in paragraph at lines 621--628
  [] 
  []
 
-[31] (./tables/plant_entry/entry_max_max_pci.tex) [32] (./tables/plant_entry/entry_max_avg_pci.tex) [33] [34] [35] [36] [37] [38] [39] (./main_one_doc.bbl [40]
+[31] (./tables/plant_entry/entry_max_max_pci.tex) [32]
+(./tables/plant_entry/entry_max_avg_pci.tex) [33] [34] [35] [36] [37] [38]
+[39] (./main_one_doc.bbl [40]
 Underfull \hbox (badness 1852) in paragraph at lines 134--137
-[]\T1/cmr/m/n/10.95 Inoua, S. (2016).  A sim-ple mea-sure of eco-nomic com-plex-ity.  \T1/cmr/m/it/10.95 arXiv preprint
+[]\T1/cmr/m/n/10.95 Inoua, S. (2016).  A sim-ple mea-sure of eco-nomic com-plex
+-ity.  \T1/cmr/m/it/10.95 arXiv preprint
  []
 
 
@@ -508,47 +588,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--169
 
 
 Underfull \hbox (badness 4168) in paragraph at lines 176--180
-[]\T1/cmr/m/n/10.95 NSSO (2000:2016).  Na-tional Sam-ple Sur-vey (NSS) data (unit level): Sur-
+[]\T1/cmr/m/n/10.95 NSSO (2000:2016).  Na-tional Sam-ple Sur-vey (NSS) data (un
+it level): Sur-
  []
 
 
 Underfull \hbox (badness 3907) in paragraph at lines 176--180
-\T1/cmr/m/n/10.95 vey round: 55, 56, 57, 58, 60, 61, 62, 63, 64, 66, 68, 70, 71, 72.
+\T1/cmr/m/n/10.95 vey round: 55, 56, 57, 58, 60, 61, 62, 63, 64, 66, 68, 70, 71
+, 72.
  []
 
 [41]
-Underfull \hbox (badness 3590) in paragraph at lines 216--219
-[]\T1/cmr/m/n/10.95 World Bank (2020a).  En-ter-prise Sur-veys: Firm-level data on In-dia (2005).
+Underfull \hbox (badness 3590) in paragraph at lines 211--214
+[]\T1/cmr/m/n/10.95 World Bank (2020a).  En-ter-prise Sur-veys: Firm-level data
+ on In-dia (2005).
  []
 
 
-Underfull \hbox (badness 3503) in paragraph at lines 221--224
-[]\T1/cmr/m/n/10.95 World Bank (2020b).  En-ter-prise Sur-veys: Firm-level data on In-dia (2014).
+Underfull \hbox (badness 3503) in paragraph at lines 216--219
+[]\T1/cmr/m/n/10.95 World Bank (2020b).  En-ter-prise Sur-veys: Firm-level data
+ on In-dia (2014).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--229
-[]\T1/cmr/m/n/10.95 World Bank (2020c).  En-ter-prise Sur-veys In-di-ca-tors Data.
+Underfull \hbox (badness 10000) in paragraph at lines 221--224
+[]\T1/cmr/m/n/10.95 World Bank (2020c).  En-ter-prise Sur-veys In-di-ca-tors Da
+ta.
  []
 
 ) [42]
-Underfull \hbox (badness 10000) in paragraph at lines 779--779
-[][]\T1/cmr/m/n/9 http://www.csoisw.gov.in/CMS/En/1027-npcms-national-product-classification-for-manufacturing-
+Underfull \hbox (badness 10000) in paragraph at lines 766--766
+[][]\T1/cmr/m/n/9 http://www.csoisw.gov.in/CMS/En/1027-npcms-national-product-c
+lassification-for-manufacturing-
  []
 
 [43]
-<figures/appendix/appendix_density_product_match.pdf, id=258, 505.89pt x 505.89pt>
-File: figures/appendix/appendix_density_product_match.pdf Graphic file (type pdf)
+<figures/appendix/appendix_density_product_match.pdf, id=258, 505.89pt x 505.89
+pt>
+File: figures/appendix/appendix_density_product_match.pdf Graphic file (type pd
+f)
 <use figures/appendix/appendix_density_product_match.pdf>
-Package pdftex.def Info: figures/appendix/appendix_density_product_match.pdf  used on input line 785.
+Package pdftex.def Info: figures/appendix/appendix_density_product_match.pdf  u
+sed on input line 772.
 (pdftex.def)             Requested size: 341.43436pt x 341.43785pt.
  [44] [45 <./figures/appendix/appendix_density_product_match.pdf>] [46]
 <figures/framework/framework_z.pdf, id=274, 522.95375pt x 226.8475pt>
 File: figures/framework/framework_z.pdf Graphic file (type pdf)
 <use figures/framework/framework_z.pdf>
-Package pdftex.def Info: figures/framework/framework_z.pdf  used on input line 833.
+Package pdftex.def Info: figures/framework/framework_z.pdf  used on input line 
+820.
 (pdftex.def)             Requested size: 341.43436pt x 148.11024pt.
- [47 <./figures/framework/framework_z.pdf>] (./tables/appendix_data_cleaning_year_obs.tex) (./tables/appendix_data_cleaning_state_obs.tex
+
+[47 <./figures/framework/framework_z.pdf>] [48]
+(./tables/appendix_data_cleaning_year_obs.tex)
+(./tables/appendix_data_cleaning_state_obs.tex
 Overfull \hbox (21.99995pt too wide) in paragraph at lines 5--51
  [][] 
  []
@@ -558,25 +651,56 @@ Overfull \hbox (11.27083pt too wide) in paragraph at lines 5--32
  [][] 
  []
 
-) (./tables/appendix_data_cleaning_state_output.tex) [48] [49] [50] [51] (./main_one_doc.aux (./setup/titlepage.aux) (./setup/abstract.aux) (./setup/listofcontents.aux))
+) (./tables/appendix_data_cleaning_state_output.tex) [49] [50] [51] [52]
+(./main_one_doc.aux (./setup/titlepage.aux) (./setup/abstract.aux)
+(./setup/listofcontents.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6187 strings out of 482913
- 93614 string characters out of 5959408
- 379614 words of memory out of 5000000
- 21267 multiletter control sequences out of 15000+600000
+ 6184 strings out of 482913
+ 93518 string characters out of 5959408
+ 378578 words of memory out of 5000000
+ 21264 multiletter control sequences out of 15000+600000
  553416 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,16n,43p,1970b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on main_one_doc.pdf (57 pages, 820442 bytes).
+ 41i,16n,43p,1966b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> <
+/home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </hom
+e/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/po
+st/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/post/.
+TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/post/.Tiny
+TeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/post/.TinyTeX/
+texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/post/.TinyTeX/texm
+f-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/post/.TinyTeX/texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/post/.TinyTeX/texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/post/.TinyTeX/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecbx1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecrm1440.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecbx1728.600pk> </home/post/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecbx2488.600pk></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmex10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></hom
+e/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/post
+/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/post/.Tiny
+TeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/post/.TinyTeX/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/post/.TinyTeX/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/post/.TinyTeX/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr9.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy5.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></home/post/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+
+Output written on main_one_doc.pdf (58 pages, 821472 bytes).
 PDF statistics:
- 999 PDF objects out of 1000 (max. 8388607)
- 293 compressed objects within 3 object streams
+ 1006 PDF objects out of 1200 (max. 8388607)
+ 295 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

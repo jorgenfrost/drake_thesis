@@ -9,45 +9,45 @@ Database file #1: setup/collection.bib
 Warning--there's a number but no volume in abeberese_productivity_2019
 Warning--empty journal in adam_economic_2019
 Warning--empty journal in zhang_dark_2018
-You've used 44 entries,
+You've used 43 entries,
             1935 wiz_defined-function locations,
-            720 strings with 11004 characters,
-and the built_in function-call counts, 16103 in all, are:
-= -- 1615
-> -- 588
+            713 strings with 10840 characters,
+and the built_in function-call counts, 15670 in all, are:
+= -- 1572
+> -- 570
 < -- 30
-+ -- 218
-- -- 190
-* -- 1343
-:= -- 2852
-add.period$ -- 134
-call.type$ -- 44
-change.case$ -- 313
-chr.to.int$ -- 40
-cite$ -- 47
-duplicate$ -- 601
-empty$ -- 1129
-format.name$ -- 250
-if$ -- 3092
++ -- 210
+- -- 184
+* -- 1302
+:= -- 2778
+add.period$ -- 131
+call.type$ -- 43
+change.case$ -- 305
+chr.to.int$ -- 39
+cite$ -- 46
+duplicate$ -- 587
+empty$ -- 1099
+format.name$ -- 243
+if$ -- 3010
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 38
-newline$ -- 222
-num.names$ -- 133
-pop$ -- 233
+missing$ -- 37
+newline$ -- 217
+num.names$ -- 130
+pop$ -- 227
 preamble$ -- 1
-purify$ -- 315
+purify$ -- 307
 quote$ -- 0
-skip$ -- 463
+skip$ -- 453
 stack$ -- 0
-substring$ -- 1193
-swap$ -- 49
+substring$ -- 1154
+swap$ -- 48
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 256
+type$ -- 250
 warning$ -- 3
-while$ -- 141
+while$ -- 137
 width$ -- 0
-write$ -- 563
+write$ -- 550
 (There were 3 warnings)
